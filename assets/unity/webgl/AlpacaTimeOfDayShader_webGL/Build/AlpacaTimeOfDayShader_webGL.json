@@ -1,0 +1,16 @@
+{
+"companyName": "CreatureFrame.com",
+"productName": "Time of Day Shader",
+"productVersion": "0.83",
+"dataUrl": "AlpacaTimeOfDayShader_webGL.data.unityweb",
+"wasmCodeUrl": "AlpacaTimeOfDayShader_webGL.wasm.code.unityweb",
+"wasmFrameworkUrl": "AlpacaTimeOfDayShader_webGL.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"backgroundUrl": "AlpacaTimeOfDayShader_webGL.jpg",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#FFFFFF",
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.31f1"
+}
