@@ -1,12 +1,3 @@
-<head>
-<script src="microblog.js"></script> 
-<body onload="retrieveXML()">
-<script src="//rss.bloople.net/?url=https%3A%2F%2Fcreatureframe.com%2Frss.xml&showtitle=false&type=js"></script>
-<link data-chunk="client" rel="stylesheet" href="posts/rssstyle.css">
-</head>
-<body>
-<div id="rss">
-<style>
 #rss {
 			margin: auto;
 			box-sizing: border-box;
@@ -42,7 +33,3 @@
 		#rss div a {
 			font-size: 10px;
 		}
-</style>
-
-</div>
-</body>
