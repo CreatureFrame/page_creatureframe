@@ -7,6 +7,16 @@ href="../rss.xml" title="RSS">
 
 
 
+https://timestampgenerator.com/
+
+
+
+to check rss.xml is okay:
+
+https://validator.w3.org/feed/
+
+
+
 
 
 after pushing, use https://rss.bloople.net/ to get 
