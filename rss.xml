@@ -18,19 +18,27 @@
     <title>testpage02</title>
     <pubDate>Wed, 10 Sep 2024 15:52:00 EST</pubDate>
     <link>https://creatureframe.com/post/test01.html</link>
-    <guid>https://creatureframe.com/post/test01.html</guid>
+    <guid>00002</guid>
     <description>got some shtuff here &#x3C;img src=&#x22;https://64.media.tumblr.com/a3252ea288efc237fcd27b502b74d60c/8ed3a094cc57053e-5a/s400x600/6d1de0f7247350f8d42d36c44d59375993eefbdc.gif&#x22;&#x3E;</description>
 </item>
 <item>
     <title>testpage03</title>
     <pubDate>Wed, 12 Sep 2024 15:52:00 EST</pubDate>
     <link>https://creatureframe.com/post/test01.html</link>
-    <guid>https://creatureframe.com/post/test01.html</guid>
+    <guid>00003</guid>
     <description>
     got some shtuff here&lt;br&gt;&lt;img src=&quot;https://64.media.tumblr.com/a3252ea288efc237fcd27b502b74d60c/8ed3a094cc57053e-5a/s400x600/6d1de0f7247350f8d42d36c44d59375993eefbdc.gif&quot;&gt;
     </description>
 </item>
-
+<item>
+    <title>testpage03</title>
+    <pubDate>Wed, 12 Sep 2024 15:52:00 EST</pubDate>
+    <link>https://creatureframe.com/post/test01.html</link>
+    <guid>00004</guid>
+    <description>
+    got some shtuff here&lt;br&gt;&lt;img src=&quot;https://64.media.tumblr.com/a3252ea288efc237fcd27b502b74d60c/8ed3a094cc57053e-5a/s400x600/6d1de0f7247350f8d42d36c44d59375993eefbdc.gif&quot;&gt;
+    </description>
+</item>
 
 
 

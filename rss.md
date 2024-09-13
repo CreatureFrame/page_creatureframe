@@ -1,4 +1,4 @@
-for pages, in <head>
+for individual pages, in <head>
 
 ```
 <link rel="alternate" type="application/rss+xml"
