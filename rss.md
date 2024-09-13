@@ -17,6 +17,30 @@ https://validator.w3.org/feed/
 
 
 
+GUID must be unique, so is usually the page url. if wanting to not have an url, use `isPermaLink="false"`
+
+```
+<guid isPermaLink="false">article 54 at example.com</guid>
+```
+
+final <item> section
+
+```
+<item>
+<title>testpage03</title>
+<pubDate>Wed, 12 Sep 2024 15:52:00 EST</pubDate>
+<link>https://creatureframe.com/post/test01.html</link>
+<guid>00003</guid>
+<description> got some shtuff here<br><img src="https://64.media.tumblr.com/a3252ea288efc237fcd27b502b74d60c/8ed3a094cc57053e-5a/s400x600/6d1de0f7247350f8d42d36c44d59375993eefbdc.gif"> </description>
+</item>
+```
+
+
+
+
+
+
+
 
 
 after pushing, use https://rss.bloople.net/ to get 
