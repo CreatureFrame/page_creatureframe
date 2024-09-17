@@ -189,6 +189,8 @@ https://docs.google.com/spreadsheets/d/1A-TYXRt9DTRcCxszcQYPUUlbdJ2IVH6mYpFrRvuS
   --sidebarText: #fff;
   --cardBackground: #fefbf2;
   --cardBackground: #ffeece;
+  --cardBackgroundHov: #d1baa1;
+  --cardBackgroundHov: #eab676;
   --cardText: #3e3333;
 }
 
@@ -374,6 +376,14 @@ main {
   color: #fff;
 }
 
+.card:hover {
+    border:6px solid #ffeece;
+}
+.box:hover {
+    background: var(--cardBackgroundHov);
+    border-bottom: 15px solid var(--cardBackgroundHov);
+}
+
 /* .card img {
   width: var(--cardWidth);
   height: var(--imgHeight);
@@ -391,6 +401,8 @@ main {
   overflow: hidden;
   border-bottom: 15px solid var(--cardBackground);
 }
+
+
 
 .card {
   -webkit-box-shadow: 0px 0px 0px 2px rgb(0,0,0), 0px 3px 10px 5px rgba(30,0,0,0.45), 0px 5px 30px 10px rgba(30,0,0,0.3);
@@ -706,7 +718,7 @@ weapons
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
         <!--CSS DEMOING - COPY/PASTE START-->
         <!-- turn this on to see what each post will look like, code the css for it as needed, then hide -->
-<!--
+
 <div class="card f2">
 <div class="image-banner"><img src="http://placehold.jp/ddd/666666/250x250.png"></div>
 <div class="box">
@@ -731,7 +743,7 @@ adipiscing elit.
 </div>
 </div>
 </div>
- -->
+
 
         <!--COPY/PASTE END-->
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
@@ -767,31 +779,30 @@ adipiscing elit.
 <div class="card {{this.filters}}">
     <!-- top banner image -->
   <!-- <div class="image-banner"><img src="{{this.imageurl}}"></div> -->
+  <a href="{{this.link}}">
   <div class="box">
     <!-- no link header -->
-    <!-- <h2>{{this.headline}}</h2> --><!-- <i>{{this.title}}</i> -->
+    <h2>{{this.headline}}</h2> --><!-- <i>{{this.title}}</i>
 
     <!-- only header has link -->
     <!-- <h2><a href="{{this.link}}">{{this.headline}}</a></h2> -->
     <!-- <div class="subheader">{{this.title}}</div> -->
 
     <!-- header and subhead has link -->
-    <a href="{{this.link}}"><h2>{{this.headline}}</h2>
-    <div class="subheader">{{this.title}}</div></a>
+    <!-- <a href="{{this.link}}"><h2>{{this.headline}}</h2> -->
+    <!-- <div class="subheader">{{this.title}}</div></a> -->
 
     <div class="sep"></div>
     <div class="desc">
       {{{this.description}}}
     </div>
   </div>
+</a>
+
 </div>
   <!--GRID ITEM END-->
   {{/each}}
 </script>
-
-
-
-
 
 
 
