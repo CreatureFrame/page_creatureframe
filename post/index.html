@@ -626,6 +626,9 @@ a:hover {
 
 
 
+
+
+
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 <!-- TAGS ADDED:
 dimensions
@@ -640,43 +643,20 @@ weapons
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
 <nav>
-    <div class="title-filter">filter by tags :</div>
-<span>
-      <a href="#" data-filter=".devlog">devlog</a>
-</span>
-<span>
-      <a href="#" data-filter=".gamedev">gamedev</a>
-</span>
-<span>
-      <a href="#" data-filter=".3D-art">3D-art</a>
-</span>
-<span>
-      <a href="#" data-filter=".tools">tools</a>
-</span>
-<span>
-      <a href="#" data-filter=".3D-assets">3D-assets</a>
-</span>
-<span>
-      <a href="#" data-filter=".resources">resources</a>
-</span>
-<span>
-      <a href="#" data-filter="*">[all]</a>
-</span>
-</nav>
+<div class="title-filter">filter by tags :</div>
 
+<span> <a href="#" data-filter=".devlog">devlog</a> </span>
+<span> <a href="#" data-filter=".gamedev">gamedev</a> </span>
+<span> <a href="#" data-filter=".3D-art">3D-art</a> </span>
+<span> <a href="#" data-filter=".tools">tools</a> </span>
+<span> <a href="#" data-filter=".3D-assets">3D-assets</a> </span>
+<span> <a href="#" data-filter=".resources">resources</a> </span>
+<span> <a href="#" data-filter="*">[all]</a> </span>
+
+</nav>
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 
 
@@ -785,18 +765,19 @@ adipiscing elit.
 {{#each []}}
 <!--GRID ITEM START-->
 <div class="card {{this.filters}}">
-  <div class="image-banner"><img src="{{this.imageurl}}"></div>
+    <!-- top banner image -->
+  <!-- <div class="image-banner"><img src="{{this.imageurl}}"></div> -->
   <div class="box">
     <!-- no link header -->
     <!-- <h2>{{this.headline}}</h2> --><!-- <i>{{this.title}}</i> -->
 
     <!-- only header has link -->
-    <h2><a href="{{this.link}}">{{this.headline}}</a></h2>
-    <div class="subheader">{{this.title}}</div>
+    <!-- <h2><a href="{{this.link}}">{{this.headline}}</a></h2> -->
+    <!-- <div class="subheader">{{this.title}}</div> -->
 
     <!-- header and subhead has link -->
-    <!-- <a href="{{this.link}}"><h2>{{this.headline}}</h2> -->
-    <!-- <div class="subheader">{{this.title}}</div></a> -->
+    <a href="{{this.link}}"><h2>{{this.headline}}</h2>
+    <div class="subheader">{{this.title}}</div></a>
 
     <div class="sep"></div>
     <div class="desc">
@@ -807,9 +788,6 @@ adipiscing elit.
   <!--GRID ITEM END-->
   {{/each}}
 </script>
-
-
-
 
 
 
@@ -849,7 +827,7 @@ adipiscing elit.
 
 
 <!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
-<script type='text/javascript'>
+<!-- <script type='text/javascript'>
   if( window.localStorage )
   {
     if( !localStorage.getItem('firstLoad') )
@@ -860,19 +838,19 @@ adipiscing elit.
     else
       localStorage.removeItem('firstLoad');
   }
-</script>
+</script> -->
 
 
 
 <!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
-<!-- <script>
+<script>
 function reloadIt() {
     if (window.location.href.substr(-2) !== "?r") {
         window.location = window.location.href + "?r";
     }
 }
 setTimeout('reloadIt()', 500)();
-</script> -->
+</script>
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 
