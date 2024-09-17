@@ -830,10 +830,17 @@ adipiscing elit.
   <div class="image-banner"><img src="{{this.imageurl}}"></div>
   <!-- <img src="{{this.imageurl}}"> -->
   <div class="box">
-    <!-- <h2>{{this.headline}}</h2> -->
-    <h2><a href="{{this.link}}">{{this.headline}}</a></h2>
-    <!-- <i>{{this.title}}</i> -->
-    <div class="subheader">{{this.title}}</div>
+    <!-- no link header -->
+    <!-- <h2>{{this.headline}}</h2> --><!-- <i>{{this.title}}</i> -->
+
+    <!-- only header has link -->
+    <!-- <h2><a href="{{this.link}}">{{this.headline}}</a></h2> -->
+    <!-- <div class="subheader">{{this.title}}</div> -->
+
+    <!-- header and subhead has link -->
+    <a href="{{this.link}}"><h2>{{this.headline}}</h2>
+    <div class="subheader">{{this.title}}</div></a>
+
     <div class="sep"></div>
     <div class="desc">
       {{{this.description}}}
