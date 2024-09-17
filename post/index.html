@@ -169,49 +169,6 @@ https://docs.google.com/spreadsheets/d/1A-TYXRt9DTRcCxszcQYPUUlbdJ2IVH6mYpFrRvuS
 
 
 
-<!-- * * * * * * * * * * * * * * * * * * * *  -->
-  <!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
-<!-- <script type='text/javascript'>
-  window.onload = function() {
-    if(!window.location.hash) {
-        window.location = window.location + '#loaded';
-        window.location.reload();
-    }
-  }
-</script> -->
-
-
-
-<!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
-<!-- <script type='text/javascript'>
-  if( window.localStorage )
-  {
-    if( !localStorage.getItem('firstLoad') )
-    {
-      localStorage['firstLoad'] = true;
-      window.location.reload();
-    }
-    else
-      localStorage.removeItem('firstLoad');
-  }
-</script> -->
-
-
-
-<!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
-<!-- <script>
-function reloadIt() {
-    if (window.location.href.substr(-2) !== "?r") {
-        window.location = window.location.href + "?r";
-    }
-}
-setTimeout('reloadIt()', 500)();
-</script> -->
-<!-- * * * * * * * * * * * * * * * * * * * *  -->
-
-
-
-
 
 
 
@@ -829,18 +786,17 @@ adipiscing elit.
 <!--GRID ITEM START-->
 <div class="card {{this.filters}}">
   <div class="image-banner"><img src="{{this.imageurl}}"></div>
-  <!-- <img src="{{this.imageurl}}"> -->
   <div class="box">
     <!-- no link header -->
     <!-- <h2>{{this.headline}}</h2> --><!-- <i>{{this.title}}</i> -->
 
     <!-- only header has link -->
-    <!-- <h2><a href="{{this.link}}">{{this.headline}}</a></h2> -->
-    <!-- <div class="subheader">{{this.title}}</div> -->
+    <h2><a href="{{this.link}}">{{this.headline}}</a></h2>
+    <div class="subheader">{{this.title}}</div>
 
     <!-- header and subhead has link -->
-    <a href="{{this.link}}"><h2>{{this.headline}}</h2>
-    <div class="subheader">{{this.title}}</div></a>
+    <!-- <a href="{{this.link}}"><h2>{{this.headline}}</h2> -->
+    <!-- <div class="subheader">{{this.title}}</div></a> -->
 
     <div class="sep"></div>
     <div class="desc">
@@ -871,10 +827,58 @@ adipiscing elit.
 
 
 
-
     </div>
   </main>
 </div>
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+  <!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
+<!-- <script type='text/javascript'>
+  window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+  }
+</script> -->
+
+
+
+<!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
+<script type='text/javascript'>
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem('firstLoad') )
+    {
+      localStorage['firstLoad'] = true;
+      window.location.reload();
+    }
+    else
+      localStorage.removeItem('firstLoad');
+  }
+</script>
+
+
+
+<!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
+<!-- <script>
+function reloadIt() {
+    if (window.location.href.substr(-2) !== "?r") {
+        window.location = window.location.href + "?r";
+    }
+}
+setTimeout('reloadIt()', 500)();
+</script> -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
 
 </body>
 
