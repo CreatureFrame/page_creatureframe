@@ -373,16 +373,27 @@ main {
 .card > a {
   line-height: 0;
   position: relative;
-  color: #fff;
+  color: #635047;
+  color:inherit;
+  text-decoration: none;
 }
+
+/* this applies to any levels UNDER the card div */
+/* .card > a:hover {
+  color: #e4b176;
+} */
 
 .card:hover {
     border:6px solid #ffeece;
+    border:6px solid #8a6c4a;
+    border:6px solid #fffaed;
+    color: #e4b176;
 }
+/*
 .box:hover {
     background: var(--cardBackgroundHov);
     border-bottom: 15px solid var(--cardBackgroundHov);
-}
+} */
 
 /* .card img {
   width: var(--cardWidth);
@@ -750,6 +761,17 @@ adipiscing elit.
 
 
 
+<div class="card 3D-assets resources" style="margin: 15px 0px;">
+  <a href="https://creatureframe.com/post/3d/3dart-lowpolycomputers.html">
+  <div class="box">
+    <h2>3D models - computers</h2> --&gt;
+    <div class="sep"></div>
+    <div class="desc">
+      some free computer 3d models for you<br><img src="https://tools.creatureframe.com/assets/era_Gateway_2000_PC_from_1996_256px.gif">
+    </div>
+  </div>
+</a>
+</div>
 
 
 
@@ -775,10 +797,10 @@ adipiscing elit.
 <script id="handlebars-template-grid" type="text/x-handlebars-template">
 {{#each []}}
 <!--GRID ITEM START-->
+<a href="{{this.link}}">
 <div class="card {{this.filters}}">
     <!-- top banner image -->
   <!-- <div class="image-banner"><img src="{{this.imageurl}}"></div> -->
-  <a href="{{this.link}}">
   <div class="box">
     <!-- no link header -->
     <h2>{{this.headline}}</h2> --><!-- <i>{{this.title}}</i>
@@ -796,9 +818,8 @@ adipiscing elit.
       {{{this.description}}}
     </div>
   </div>
-</a>
-
 </div>
+</a>
   <!--GRID ITEM END-->
   {{/each}}
 </script>
