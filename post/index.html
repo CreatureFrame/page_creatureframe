@@ -669,13 +669,14 @@ weapons
 <nav>
 <div class="title-filter">filter by tags :</div>
 
+<span> <a href="#" data-filter="*">[all]</a> </span>
 <span> <a href="#" data-filter=".devlog">devlog</a> </span>
 <span> <a href="#" data-filter=".gamedev">gamedev</a> </span>
 <span> <a href="#" data-filter=".3D-art">3D-art</a> </span>
 <span> <a href="#" data-filter=".tools">tools</a> </span>
 <span> <a href="#" data-filter=".3D-assets">3D-assets</a> </span>
 <span> <a href="#" data-filter=".resources">resources</a> </span>
-<span> <a href="#" data-filter="*">[all]</a> </span>
+
 
 </nav>
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
@@ -872,7 +873,7 @@ adipiscing elit.
 </script> -->
 
 
-
+<!-- method 3 -->
 <!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
 <!-- <script>
 function reloadIt() {
@@ -884,7 +885,8 @@ setTimeout('reloadIt()', 500)();
 </script> -->
 
 
-<script>
+<!-- method 4 -->
+<!-- <script>
 reloadIt(){
     var timeoutResize;
     $(window).on('resize', function() {
@@ -895,8 +897,20 @@ reloadIt(){
     });
 }
 reloadIt;
-</script>
+</script> -->
 
+
+<!-- method 5 -->
+<script type='text/javascript'>
+// function jump(h){
+window.onload = function() {
+    var url = location.href;               //Save down the URL without hash.
+    location.href = "#"+h;                 //Go to the target element.
+    history.replaceState(null,null,url);   //Don't like hashes. Changing it back.
+// }
+// jump();
+}
+</script>
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 
