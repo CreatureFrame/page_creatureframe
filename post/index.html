@@ -846,19 +846,19 @@ adipiscing elit.
 
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
   <!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
-<script type='text/javascript'>
+<!-- <script type='text/javascript'>
   window.onload = function() {
     if(!window.location.hash) {
         window.location = window.location + '#loaded';
         window.location.reload();
     }
   }
-</script>
+</script> -->
 
 
 
 <!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
-<script type='text/javascript'>
+<!-- <script type='text/javascript'>
   if( window.localStorage )
   {
     if( !localStorage.getItem('firstLoad') )
@@ -869,7 +869,7 @@ adipiscing elit.
     else
       localStorage.removeItem('firstLoad');
   }
-</script>
+</script> -->
 
 
 
@@ -882,6 +882,21 @@ function reloadIt() {
 }
 setTimeout('reloadIt()', 500)();
 </script> -->
+
+
+<script>
+reloadIt(){
+    var timeoutResize;
+    $(window).on('resize', function() {
+        clearTimeout(timeoutResize);
+        timeoutResize = setTimeout(function() {
+            resizeGrid();
+        }, 500);
+    });
+}
+reloadIt;
+</script>
+
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 
