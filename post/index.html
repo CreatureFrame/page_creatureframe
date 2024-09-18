@@ -1142,20 +1142,6 @@ reloadIt(){
 reloadIt;
 </script> -->
 
-<!-- method 4 edit -->
-<script>
-// reloadIt(){
-    var timeoutResize;
-    // $(window).on('resize', function() {
-        clearTimeout(timeoutResize);
-        timeoutResize = setTimeout(function() {
-            resizeGrid();
-        }, 500);
-    // });
-// }
-// reloadIt;
-</script>
-
 
 <!-- method 5 -->
 <!-- <script type='text/javascript'>
@@ -1168,6 +1154,17 @@ window.onload = function() {
 jump();
 }
 </script> -->
+
+<script type='text/javascript'>
+function jump(h){
+window.onload = function() {
+    var url = location.href;
+    location.href = "#"+h;
+    history.replaceState(null,null,url);
+}
+}
+jump();
+</script>
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 
