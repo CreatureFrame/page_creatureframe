@@ -575,6 +575,7 @@ aside {
 .image-banner img {
   width: var(--cardWidth);
   height: var(--imgHeight);
+  height:auto;
   object-fit: cover;
   line-height: 0;
   margin-bottom: -3px;
@@ -970,7 +971,7 @@ adipiscing elit.
 
 
 
-
+  <!-- <div class="image-banner"><img src="assets/imgs/postheaders/3d_computers_header.png"></div> -->
 <!-- <h2>title</h2><div align="right"><i>day 1 (mon 3/7/23)</i></div> -->
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 <!-- <div class="card gamedev devlog" >
@@ -985,7 +986,6 @@ adipiscing elit.
   </div>
 </div> -->
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
-
 
 
 
@@ -1118,14 +1118,14 @@ var templateList = [
 
 <!-- method 3 -->
 <!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
-<script>
+<!-- <script>
 function reloadIt() {
     if (window.location.href.substr(-2) !== "?r") {
         window.location = window.location.href + "?r";
     }
 }
 setTimeout('reloadIt()', 500)();
-</script>
+</script> -->
 
 
 <!-- method 4 -->
@@ -1141,6 +1141,20 @@ reloadIt(){
 }
 reloadIt;
 </script> -->
+
+<!-- method 4 edit -->
+<script>
+// reloadIt(){
+    var timeoutResize;
+    // $(window).on('resize', function() {
+        clearTimeout(timeoutResize);
+        timeoutResize = setTimeout(function() {
+            resizeGrid();
+        }, 500);
+    // });
+// }
+// reloadIt;
+</script>
 
 
 <!-- method 5 -->
