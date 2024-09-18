@@ -75,8 +75,10 @@ background: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top center;
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <link rel="icon" type="image/png" href="{Favicon}">
-  <title>MC 1-20-1 server adventures</title>
+  <!-- <link rel="icon" type="image/png" href="{Favicon}"> -->
+  <!-- <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> -->
+  <link rel="icon" type="image/png" href="https://foollovers.com/mat/i-square/ga10-icon-square.gif">
+  <title>table of contents</title>
 
   <!--jQuery-->
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
@@ -279,6 +281,19 @@ nav a {
   position: relative;
   text-decoration: none;
   color: var(--sidebarText);
+  margin:19px 0px;
+  padding:3px 2px;
+
+  line-height:180%;
+  letter-spacing:2px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+nav a:hover{
+    border:none;
+    border-top:2px solid orange;
+    border-bottom:2px solid orange;
 }
 
 nav ul li {
@@ -290,22 +305,7 @@ nav ul li {
 }
 
 
-nav a{
-    margin:19px 0px;
-    padding:3px 2px;
 
-    line-height:180%;
-    letter-spacing:2px;
-
-    font-size: 14px;
-    font-weight: 600;
-}
-
-nav a:hover{
-    border:none;
-    border-top:2px solid orange;
-    border-bottom:2px solid orange;
-}
 
 #abt {
   line-height: 140%;
@@ -316,7 +316,20 @@ nav a:hover{
   text-align: justify;
   color: #b3a19b;
 }
-
+#abt:hover a {
+  text-decoration: overline underline;
+  color:#fff !important;
+}
+#abt a {
+text-decoration: none;
+text-decoration-color: #fff;
+color:#f5b043 !important;
+border:1px solid;
+border:none;
+margin:0;
+padding:2px 6px;
+line-height:160%;
+}
 
 #social {
   list-style-type: none;
@@ -457,7 +470,8 @@ aside {
 .box a, #abt a {
   color: var(--boxText);
   text-decoration: none;
-  box-shadow: inset 0 -5px var(--accent);
+  /* adds a hard shadow under urls */
+  /* box-shadow: inset 0 -5px var(--accent); */
 }
 
 
@@ -536,21 +550,52 @@ aside {
   line-height: 0;
 }
 
+.img-desc{
+    max-width: 100%;
+}
+.img-bord{
+    max-width: 100%;
+    border:1px solid #000;
+}
 
-
+/* .image-banner-desc {
+  width: var(--cardWidth);
+  height: var(--imgHeight);
+  width: 160% !important;
+  height: var(--imgHeight);
+  object-fit: cover;
+  line-height: 0;
+} */
 
 /*HOVER*/
 
 a {
   transition: all 0.2s ease-in-out;
 }
-
-
 a:hover {
   color: var(--accent);
 }
-
-
+.credits{
+    font-size:6pt !important;
+    position: absolute;
+    bottom:0px;
+    margin-bottom: 20px;
+}
+.credits li, .credits a{
+    font-size:6pt;
+    color:#a69590;
+    line-height: 170%;
+    margin:0px;
+}
+.credits-title{
+    margin: 2px 0px;
+    padding:4px;
+    border:none;
+    border-bottom: 2px solid #6c5c56;
+    border-top: 2px solid #6c5c56;
+    width:98%;
+    color:#a69590;
+}
 
 
 
@@ -630,6 +675,8 @@ a:hover {
 <!--DESCRIPTION-->
 <div id="abt">
   For recording our notes, discoveries, and diary entries as we explore the map.
+
+  <br><br>if posts have loaded weird, click <a href="#" data-filter="*">here</a>
 </div>
 
 
@@ -669,7 +716,7 @@ weapons
 <nav>
 <div class="title-filter">filter by tags :</div>
 
-<span> <a href="#" data-filter="*">[all]</a> </span>
+<span> <a href="#" data-filter="*">all</a> </span>
 <span> <a href="#" data-filter=".devlog">devlog</a> </span>
 <span> <a href="#" data-filter=".gamedev">gamedev</a> </span>
 <span> <a href="#" data-filter=".3D-art">3D-art</a> </span>
@@ -690,7 +737,7 @@ weapons
 
 
 
-<nav>
+<!-- <nav>
 <div class="title-filter">editing :</div>
 <ul>
 <li>
@@ -702,15 +749,40 @@ weapons
 </li>
 <li>
 <a href="https://docs.google.com/spreadsheets/d/1Ze6jEaQte0F9Te-FeqZ2HLaKBaEXRttHvsD_3GQgCjA/edit?usp=sharing">add coords</a>
-</li>
+</li> -->
 
 <!-- <div class="spacer"></div>
 <li>
 <a href="url">how to add images</a>
 </li> -->
 
+
+
+
+
+
+<!--  -->
+<!-- <div class="spacer"></div> -->
+<div style="height:40px;
+/* border:1px solid blue; */
+"></div>
+
+<div style="" class="credits">
+<!-- <nav> -->
+<div class="credits-title">credits :</div>
+<ul>
+    <li>
+    <a href="https://nonspace.dev/">code</a>
+    </li>
+    <li>
+    <a href="https://www.curseforge.com/minecraft/texture-packs/quadral-pack">background textures</a>
+    </li>
 </ul>
-</nav>
+<!-- </nav> -->
+</div>
+
+
+
 
 
 
@@ -761,14 +833,17 @@ adipiscing elit.
 
 
 
-        <!--CSS DEMOING 2 - COPY/PASTE START-->
+<!--CSS DEMOING 2 - COPY/PASTE START-->
 <!-- <div class="card 3D-assets resources" style="margin: 15px 0px;">
   <a href="https://creatureframe.com/post/3d/3dart-lowpolycomputers.html">
   <div class="box">
-    <h2>3D models - computers</h2> --&gt;
+    <h2>3D models - computers</h2>
     <div class="sep"></div>
     <div class="desc">
-      some free computer 3d models for you<br><img src="https://tools.creatureframe.com/assets/era_Gateway_2000_PC_from_1996_256px.gif">
+    <div class="image-banner"><img src="assets/imgs/bookshelves quadral.png"></div>
+      some free computer 3d models for you<br>
+      <div class="img-desc" align="center"><img src="https://tools.creatureframe.com/assets/era_Gateway_2000_PC_from_1996_256px.gif"></div>
+      <div class="img-bord" align="center"><img src="https://tools.creatureframe.com/assets/era_Gateway_2000_PC_from_1996_256px.gif"></div>
     </div>
   </div>
 </a>
@@ -791,6 +866,7 @@ adipiscing elit.
 
 
 
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 <!-- NEW GRID TEMPLATE -->
 
@@ -825,6 +901,7 @@ adipiscing elit.
   {{/each}}
 </script>
 
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 
 
@@ -841,6 +918,19 @@ adipiscing elit.
   </main>
 </div>
 
+</body>
+
+<!--SUCCULENT SCRIPTS-->
+<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/n0nspace/tumblr-themes@latest/sheet%20pages/succulent/succulent.js"></script> -->
+<script type="text/javascript" src="../assets/succulent.js"></script>
+
+<script>
+//TEMPLATE LIST
+//id + selector
+var templateList = [
+['#handlebars-template-grid', '#grid'],
+];
+</script>
 
 
 
@@ -859,7 +949,7 @@ adipiscing elit.
 
 
 <!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
-<!-- <script type='text/javascript'>
+<script type='text/javascript'>
   if( window.localStorage )
   {
     if( !localStorage.getItem('firstLoad') )
@@ -870,7 +960,7 @@ adipiscing elit.
     else
       localStorage.removeItem('firstLoad');
   }
-</script> -->
+</script>
 
 
 <!-- method 3 -->
@@ -901,35 +991,18 @@ reloadIt;
 
 
 <!-- method 5 -->
-<script type='text/javascript'>
-// function jump(h){
+<!-- <script type='text/javascript'>
+function jump(h){
 window.onload = function() {
     var url = location.href;               //Save down the URL without hash.
     location.href = "#"+h;                 //Go to the target element.
     history.replaceState(null,null,url);   //Don't like hashes. Changing it back.
-// }
-// jump();
 }
-</script>
+jump();
+}
+</script> -->
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 
-
-
-
-
-</body>
-
-  <!--SUCCULENT SCRIPTS-->
-  <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/n0nspace/tumblr-themes@latest/sheet%20pages/succulent/succulent.js"></script> -->
-   <script type="text/javascript" src="../assets/succulent.js"></script>
-
-  <script>
-  //TEMPLATE LIST
-  //id + selector
-  var templateList = [
-    ['#handlebars-template-grid', '#grid'],
-  ];
-  </script>
 
 </html>
