@@ -430,7 +430,13 @@ main {
   border-bottom: 15px solid var(--cardBackground);
 }
 
-
+.subtitle {
+  text-align: right;
+  /* align:right; */
+  /* font-style: italic; */
+  font-family: monospace;
+  color: #8a6c4a;
+}
 
 .card {
   -webkit-box-shadow: 0px 0px 0px 2px rgb(0,0,0), 0px 3px 10px 5px rgba(30,0,0,0.45), 0px 5px 30px 10px rgba(30,0,0,0.3);
@@ -571,6 +577,8 @@ aside {
   height: var(--imgHeight);
   object-fit: cover;
   line-height: 0;
+  margin-bottom: -3px;
+  /* border-bottom: 1px solid #70493d; */
 }
 
 .img-desc{
@@ -962,11 +970,13 @@ adipiscing elit.
 
 
 
+
+<!-- <h2>title</h2><div align="right"><i>day 1 (mon 3/7/23)</i></div> -->
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 <!-- <div class="card gamedev devlog" >
   <div class="image-banner"><img src="https://i.imgur.com/Z0SmYFv.jpg"></div>
   <div class="box" style="padding:15px;">
-    <h2></h2><i>day 1 (mon 3/7/23)</i>
+    <h2>title</h2><div class="subtitle">day 1 (mon 3/7/23)</div>
     <div class="sep"></div>
     <div class="desc" style="margin:0px !important;padding:0px;">
       <div class="photoborder"><img src="assets/imgs/postheaders/3d_computers_header.png" style="border:1px solid #000;border-radius:3px;"></div>
@@ -1011,7 +1021,9 @@ adipiscing elit.
     <!-- top banner image -->
   <!-- <div class="image-banner"><img src="{{this.imageurl}}"></div> -->
 
-  <!-- handlebars check if imageurl -->
+  <!-- handlebars check if imageurl
+https://handlebarsjs.com/guide/builtin-helpers.html
+ -->
   <!-- <div class="entry"> -->
   {{#if this.imageurl}}
   <div class="image-banner"><img src="{{this.imageurl}}"></div>
@@ -1021,7 +1033,7 @@ adipiscing elit.
   <div class="box">
     <!-- no link header -->
     <div class="titlebar">
-    <h2>{{this.headline}}</h2><i>{{this.title}}</i>
+    <h2>{{this.headline}}</h2><div class="subtitle">{{this.title}}</div>
     </div>
     <!-- only header has link -->
     <!-- <h2><a href="{{this.link}}">{{this.headline}}</a></h2> -->
