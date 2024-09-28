@@ -1,0 +1,1014 @@
+
+
+
+
+
+/* NOTES ON CLASSES FOR CUSTOMISING WITHIN POSTS :
+
+ON JAZZ 2 WIP POST, ONLY NEEDED TO CHANGE THE "post-cohostbarrier" px to a higher post height (800px), the thing looked fine with all the otehrs still at 650px wut
+
+
+IF ONLY USING THE BOTTOM BANNER:
+then change "margin-top" in .bannerend-inside (default is 5px) to whatever .banner-start has, eg:
+margin-top:30px;
+
+
+.post-bgimg and .textbox-bgimg, .textbox are for adding background images individually for each post
+
+.banner-img (which superceeded .bannerstart-img) shoudl have widths set for the exact image size,
+and CAN have drop shadows added but usually leave for banner-start etc instead
+
+.banner-start : margin-top:30px; should be half of image height, shadows can be added
+
+.banner-end can have rotations and shadows added
+
+
+.bannerend-inside should have height:500px; or whatever is being used in .post-cohostbarrier here
+
+.bannerstart-contain for post size + half of banner image size, eg if .post-cohostbarrier and .bannerend-inside{ both have height:700px; and banner image is 60px tall, then :
+margin-top:-730px;
+height:730px;
+
+
+*/
+
+
+
+
+
+
+/* . . . . . . . . . . . . . . . . . . . . . . */
+/*                  MAIN PAGE                  */
+/* . . . . . . . . . . . . . . . . . . . . . . */
+
+/* required for spacing in cohost */
+img {
+    margin:0px;
+    padding:0px;
+}
+
+br{
+  padding:0px;
+  margin:0px;
+}
+p{
+  padding:0px;
+  margin:0px;
+}
+
+/* img {
+  padding:0px;
+  margin:0px;
+} */
+
+.post-cohostbarrier{
+    border:1px solid #000;
+    width:100%;
+    height:500px;
+    box-shadow:
+    rgba(0, 0, 0, 0.14) 1px 3px 15px,
+    rgba(0, 0, 0, 0.22) 0px 2.5px 5px,
+    rgba(122, 122, 122, 0.32) 3px 3px 0px,
+    rgba(122, 85, 85, 0.35) 1px 1px 0.3px;
+    padding:0px;
+}
+/* NOTE : add "overflow:hidden;" to below class if wanting to use scrollbar */
+.post-background-full{
+    margin:0px;
+    padding:1%;
+    padding:8px;
+    overflow:hidden;
+}
+.final{
+    width:100%;
+    height:100%;
+    max-width:100%;
+    max-height:100%;
+}
+
+
+
+
+
+/* can change margin style by adding to "scrollbox" on pg between this thick border one, and the below 100%0% one that stylesheet uses */
+/* width: 94%;
+height:94%;
+margin:3%;
+
+width: 100%;
+height:100%;
+margin:0%; */
+
+
+.scrollbox{
+/* border:1px solid #fff; */
+justify-content:space-between;
+/* align-items:center; */
+box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -5px inset, rgba(0, 0, 0, 0.4) 0px 18px 36px -3px inset, rgba(0, 0, 0, 0.8) 0px 0px 5px -1px inset;
+width:100%;
+height:100%;
+margin:0px;
+padding:0px;
+
+overflow-x:hidden !important;
+overflow-y:auto !important;
+/* margin:-1%; */
+/* padding:0px 0px 0px 5px; */
+/* padding:4%; */
+
+position:relative;
+/* turn this off if wanting the background floating images to look "under" the inset dropshadow */
+/* position: inherit; */
+}
+
+
+
+/*
+.scrollbox-wheel{
+line-height:1.7em;
+overflow-y:auto;
+overflow-x:hidden;
+height:100%;
+width:100%;
+margin: auto;
+text-align:justify;
+} */
+
+
+
+/* IMAGES AND COLOURS FOR THIS POST  */
+/* .post-bg-m{
+background:url(https://i.ibb.co/Z1K8bfM/C61-A6952-Pano-Edit-Green-Patch-part-Left-mid-Blur.jpg);
+}
+.post-bg-l{
+background:url(https://i.ibb.co/ZLHD9r1/C61-A6952-Pano-Edit-Green-Patch-part-Left-heavy-Blur.jpg);
+}
+.post-bord-s{
+border:1px solid pink;
+border:1px solid #fff;
+border-radius:6px;
+}
+.post-bord-m{
+border:1px solid #fff;
+border-radius:6px;
+} */
+
+hr{
+margin: 15px 0px;
+border-bottom: none;
+border-top: 1px solid #529eac;
+padding: 0px;
+width: 100%;
+}
+
+.post-hr-s, hr{
+margin: 10px 25%;
+border-bottom: none;
+border-top: 1px solid #529eac;
+padding: 0px;
+width: 50%;
+}
+
+h2{
+border:none;
+border-bottom:1px solid #529eac;
+}
+
+h3{
+color:#fff;
+margin:20px 10px 5px 10px ;
+text-decoration:underline;
+text-decoration-color: #529eac;
+line-height:105%;
+letter-spacing:2.2px;
+}
+
+
+
+.font-styling{
+    font: 10pt Verdana;
+    font-weight: 600;
+    line-height: 145%;
+    letter-spacing: 1px;
+    color: #eee;
+    padding: 0px;
+    text-align: justify;
+    border-radius: 6px;
+
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5pt;
+
+    /* font: 9pt Courier; */
+    /* font-weight: 600; */
+}
+
+
+
+
+
+
+
+/*  - add to any img classes
+    - in individual photos can then add their own "rotate: 5deg;"
+    - have removed "padding-bottom:55px;"   */
+
+.photoborder{
+    border:1px;
+    background-color:#fff;
+    padding:13px;
+    position: relative;
+    /* rotate: 5deg; */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    /* image-rendering: pixelated; */
+}
+
+
+.lilborder{
+    border:1px solid #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+
+.photothinborder{
+    max-width:80%;
+    border:1px;
+    background-color:#fff;
+    padding:9px;
+    position: relative;
+    /* margin: 60px 90px -60px 0px;  */
+    /* pointer-events: none; */
+
+    rotate: -2deg;
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+    image-rendering: pixelated;
+    /* image-rendering: auto; */
+}
+
+
+
+
+/* <!--
+EXAMPLE URLYS
+
+ <br><br><a href="https://poly.pizza/m/goeJLARWbs" class="urly-div">download here</a>
+
+ <br><br><span class="urly-div"><a href="https://poly.pizza/m/goeJLARWbs">download here - span</a></span>
+
+ <br><br><div class="urly-div"><a href="https://poly.pizza/m/goeJLARWbs">download here - div</a></div>
+ --> */
+
+
+    .urly{
+        /* font: 10pt monospace; */
+        text-decoration:underline;
+        text-decoration-color:#529eaa;
+        padding:10px 8px;
+        /* line-height:160%; */
+        border:none;
+        margin:0;
+        letter-spacing: 1.5px;
+    }
+    /* .urly:hover{
+        padding:8px 6px;
+        text-decoration:none !important;
+    } */
+
+    .urly-div{
+        font: 10pt monospace;
+        color:#49c5ff !important;
+        color:#49dbff !important;
+        font-weight:800;
+        border:none;
+        margin:0;
+        padding:4px 8px;
+        line-height:160%;
+    }
+    /* .urly-div:hover{
+        border:none;
+        color:#fff !important;
+        border-top: 2px solid #ff49a3;
+        border-bottom: 2px solid #ff49a3;
+        padding:2px 8px;
+    } */
+
+
+    .urlyblock{
+        border:none;
+        border-bottom:1px solid #529eaa;
+        border-top:1px solid #529eaa;
+        padding:1px;
+        background:#3c5186;
+    }
+
+
+
+
+/* ABOVE IS FROM 3D COMOPUTERS */
+/* BELOW IS MINECRAF POST */
+
+    .posttitle{
+        font-size: 28pt;
+        font-family: courier;
+        color:#623008;
+        color:#723e13;
+        font-weight: 600;
+        text-decoration: none;
+        filter: drop-shadow(3px 0px 0px #FFDE78);
+        filter: drop-shadow(3px 0px 0px #c59172);
+        border:none;
+        border-bottom:3px dashed #fff;
+        padding:0px 7px;
+    }
+
+    .postsubtitle{
+        font-size: 18pt;
+        font-family: courier;
+        color:#723e13;
+        font-weight: 600;
+        filter: drop-shadow(3px 0px 0px #c59172);
+        padding:0px 7px;
+        text-align: right;
+    }
+
+    .font-styling{
+        font: 10pt Verdana;
+        font-weight: 200;
+        line-height: 160%;
+        letter-spacing: 1.4px;
+        color: #fff;
+
+        font: 10pt Verdana;
+        font-weight: 600;
+        line-height: 145%;
+        letter-spacing: 1px;
+        color: #eee;
+        padding: 0px;
+        text-align: justify;
+        border-radius: 6px;
+
+        font-size: 8.5pt;
+        font-family: 'DM Mono', 'Ac437 ACM VGA 8x16', 'Video Terminal Screen', 'Cascadia Mono', 'CaskaydiaCove Nerd Font', Consolas, Courier, monospace;
+
+    }
+
+
+
+    .textbox{
+        border-radius: 8px;
+        border:1px solid #eee;
+        padding:15px;
+        /* width: 98%; */
+        /* margin:5% 0% 5% 1%; */
+        width: 96%;
+        margin:5% 0% 5% 2%;
+        align-content: justify;
+        text-align: justify;
+
+        box-shadow:
+        rgba(0, 0, 0, 0.3) 1px 2px 3px,
+        rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
+    }
+
+
+
+
+
+    /* STUFF FOR THIS POST */
+
+
+/* backgroun image variants
+    2024-04-05_12-06-24.244_top_x4_blur-lvl1.jpg
+    2024-04-05_12-06-24.244_top_x4_blur-lvl2.jpg
+    2024-04-05_12-06-24.244_top_x4_blur-lvl3.jpg
+
+    background: fixed repeat url(assets/ACNLtxr_bgs/acnltxr_ground_3.png) bottom center;
+    background: #e4b176 repeat url('assets/ACNLtxr_bgs/acnltxr_ground_23.png') top left;
+*/
+
+    .acnlsnapshot{
+        display: inline-block;
+        max-width:90%;
+        width:90%;
+        max-height:auto;
+        inline-size: 550px;
+        overflow-wrap: break-word;
+        border:1px solid #eee;
+        background-color:#fff;
+        padding:13px;
+        position: relative;
+        pointer-events: none;
+        margin:-15px;
+        margin:0px -15px 0px 0px;
+        margin:0% 0% 0% 5%;
+        margin:0% 5% 0% 5%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        image-rendering: pixelated;
+        image-rendering: auto;
+    }
+
+
+
+
+
+
+.bgimg-alignment, .textbox, .coding{
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-attachment: fixed;
+    background-position: -400px -400px;
+    background-position: -100px -100px;
+    background-position:0% 0%;
+}
+
+
+
+
+
+.qrcodesbox{
+padding: 0px;
+margin:4px;
+align:center;
+}
+
+.qrcode-imgs{
+    display: inline-block;
+    /* display: inline; */
+    /* width:50%; */
+    /* width:100%; */
+    margin: 2px -2px;
+    padding: 3px;
+    /* max-width:400px; */
+    max-width:auto;
+    border:1px solid #ddd;
+
+}
+/* image-rendering: pixelated; */
+
+
+/* for sizing, write up from the HTML post */
+.bannerimg-div{
+margin:0px;
+z-index:1;
+position: relative;
+pointer-events: none;
+overflow:hidden;
+}
+.bannerimg{
+pointer-events: none;
+z-index:2;
+}
+
+
+
+/* towninfo-cell-title now tinfotitle */
+.towninfo-cell-title{
+    width:25%;
+}
+
+.towninfo-cell{
+    font-style: italic;
+}
+
+.towninfo-table td{
+    /* border-top:0.5px dashed #ccc; */
+    padding-top:4px;
+    border-top: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 5px;
+}
+
+
+
+
+
+
+.img-villager{
+    display: inline;
+    /* border: 1px solid red; */
+    /* this for when each imgsrc on new line */
+        margin:0px -6px;
+    /* this for tight ones out of google sheets */
+        margin:0px -3px;
+}
+.tinytextbox{
+    border-radius: 8px;
+    border:1px solid #eee;
+    padding:5px 7px;
+    /* width: 98%; */
+    /* margin:5% 0% 5% 1%; */
+    width: 200px;
+    /* margin:-30px -0px 5px 0px; */
+    align-content: justify;
+    text-align: justify;
+
+    box-shadow:
+    rgba(0, 0, 0, 0.3) 1px 2px 3px,
+    rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
+
+    font-family: verdana;
+    font-size: 8px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    line-height: 130%;
+}
+
+.tinytextbox-urly{
+    text-decoration:underline;
+    text-decoration-color:#529eaa;
+    margin:0;
+
+
+}
+
+.tinytextbox a{
+    text-decoration:underline;
+    text-decoration-color:#529eaa;
+    margin:0;
+}
+
+.tinybutton{
+    border-radius: 19px;
+    border:1px solid #eee;
+    padding:5px 7px;
+    width: 150px;
+    margin:5px 5px;
+    align-content: justify;
+    text-align: justify;
+
+    box-shadow:
+    rgba(0, 0, 0, 0.3) 1px 2px 3px,
+    rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
+
+    font-family: verdana;
+    font-size: 9pt;
+    font-weight: 600;
+    color: #529eaa;
+    text-align: center;
+    letter-spacing: 1.8px;
+}
+
+
+
+
+.posttitle{
+    font-size: 28pt;
+    font-family: courier;
+    color:#623008;
+    color:#FFDE78;
+    font-weight: 600;
+    text-decoration: none;
+    filter: drop-shadow(3px 0px 0px #FFDE78);
+    filter: drop-shadow(-3px 1px 0px #c59172);
+    filter: drop-shadow(3px 0px 0px #723e13);
+    border:none;
+    padding:0px 7px;
+}
+
+.postsubtitle{
+    font-size: 18pt;
+    font-family: courier;
+    color:#c59172;
+    font-weight: 600;
+    filter: drop-shadow(3px 0px 0px #723e13);
+    padding:0px 7px;
+    text-align: right;
+}
+
+.font-styling{
+    font: 10pt Verdana;
+    font-weight: 200;
+    line-height: 160%;
+    letter-spacing: 1.4px;
+    color: #fff;
+
+    font: 10pt Verdana;
+    font-weight: 600;
+    line-height: 145%;
+    letter-spacing: 1px;
+    color: #eee;
+    padding: 0px;
+    text-align: justify;
+    border-radius: 6px;
+
+    font-size: 8.5pt;
+    font-family: 'DM Mono', 'Ac437 ACM VGA 8x16', 'Video Terminal Screen', 'Cascadia Mono', 'CaskaydiaCove Nerd Font', Consolas, Courier, monospace;
+}
+
+
+.posttitle{
+    position: relative;
+    z-index: 0;
+    /* text-shadow: -1px 1px 0 #41ba45,
+    1px 1px 0 #c63d2b,
+    1px -1px 0 #42afac,
+    -1px -1px 0 #c6c23f; */
+    text-shadow: -2px 2px 0 #41ba45,
+    2px 2px 0 #c63d2b,
+    2px -2px 0 #42afac,
+    -2px -2px 0 #c6c23f;
+
+    text-shadow: 0px 3px 0px #8a563d;
+
+     border:2px solid #FFDE78;
+     border:2px solid #8a563d;
+     padding:12px 30px 17px 30px;
+     padding-bottom:17px;
+     display:inline;
+     border-radius: 15px;
+
+}
+
+.postsubtitle{
+    position: relative;
+    z-index: 0;
+    margin:12px -20px -10px -20px ;
+     border:2px solid;
+     padding:7px 30px;
+     border-radius: 15px;
+     background: #623008;
+     background: #45250c;
+     background: #2b1b0f;
+
+}
+
+
+
+
+    .posttitle-qr{
+
+        font-size: 28pt;
+        font-family: courier;
+        color:#623008;
+        color:#FFDE78;
+        color:#fff;
+        font-weight: 600;
+        text-decoration: none;
+
+        filter: drop-shadow(-3px -2px 0px #c59172);
+        filter: drop-shadow(3px 2px 0px #723e13);
+        border:none;
+        padding:0px 7px;
+
+
+        border-radius: 12px;
+        border:1px solid #eee;
+        /* padding:15px; */
+        /* width: 98%; */
+        /* margin:5% 0% 5% 1%; */
+        /* width: 96%; */
+        /* margin:5% 0% 5% 2%; */
+
+
+        /* box-shadow: */
+        /* rgba(0, 0, 0, 0.3) 1px 2px 3px, */
+        /* rgba(0, 0, 0, 0.2) 0px 2.5px 6px; */
+        filter: drop-shadow(3px 2px 0px #FFDE78);
+
+        /* 1. brown stripes */
+        /* background-image: url('https://foollovers.com/mat/slantstripe02/la08-bg-slantstripe.gif') ; */
+        background-image: url('https://tools.creatureframe.com/posts/media_ACNLdreams/assets/patterns/aa19-bg-grid.gif') ;
+        background-image: url('https://tools.creatureframe.com/posts/media_ACNLdreams/assets/patterns/aa18-bg-grid.gif');
+        /* background-position: -800px -400px; */
+
+        margin:-30px 0px;
+        height:60px;
+        padding:0px;
+        width:220px;
+        align-content: center;
+        text-align: center;
+    }
+
+
+    .textbox-qr{
+        border-radius: 8px;
+        border:1px solid #eee;
+        padding:15px;
+        /* width: 98%; */
+        /* margin:5% 0% 5% 1%; */
+        width: 96%;
+        margin:5% 0% 5% 2%;
+        align-content: justify;
+        text-align: justify;
+
+        box-shadow:
+        rgba(0, 0, 0, 0.3) 1px 2px 3px,
+        rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
+
+        /* 1. brown stripes */
+        background-image: url('https://tools.creatureframe.com/posts/media_ACNLdreams/assets/patterns/la08-bg-slantstripe.gif') ;
+        background-image: url('https://tools.creatureframe.com/posts/media_ACNLdreams/assets/patterns/aa18-bg-grid.gif') ;
+        background-position: -800px -400px;
+        background-position:0% 0%;
+    }
+
+    .post-bgimg-qr{
+        /* 1. purple stripes */
+        background-image: url('https://tools.creatureframe.com/posts/media_ACNLdreams/assets/patterns/la07-bg-slantstripe.gif');
+        background-image: url('https://tools.creatureframe.com/posts/media_ACNLdreams/assets/patterns/aa19-bg-grid.gif');
+
+
+        background-position: -800px -400px;
+        background-position:0% 0%;
+    }
+
+
+    .crediticons{
+        display: inline-block;
+        margin:5px 5px;
+        margin:0px;
+        padding: 5px 5%;
+        width:40%;
+        vertical-align: text-top;
+        vertical-align:middle;
+        /* border:1px solid red; */
+        line-height: 90%;
+    }
+
+    /* BANNER AT START OF POST */
+    .bannerstart-contain{
+        margin-top:-530px;
+        height:530px;
+        overflow:hidden;
+        position:relative;
+        z-index:50;
+        pointer-events: none;
+    }
+    .bannerstart-inside{
+        margin-bottom:-60px;
+        margin-top:-30px;
+        margin-bottom:-58px;
+        margin-top:-32px;
+        margin-top:-2px;
+        pointer-events: none;
+    }
+
+    /* has been superceeded by "banner-img" class that is kept in .html style tags */
+    .bannerstart-img{
+        margin-top:30px;
+        min-width: 800px;
+        max-width:
+        800px;
+        pointer-events: none;
+    }
+
+    .banner-img{
+        pointer-events: none;
+        image-rendering:pixelated;
+    }
+
+    .bannerend-inside{
+        /* margin-bottom:-58px;
+        margin-top:-32px;
+        margin-top:-2px; */
+        pointer-events: none;
+        /* display: inline-block; */
+        /* align-self: flex-end; */
+        /* border:2px solid greenyellow; */
+        display: flex;
+        height: 100%;
+        margin: 0px;
+        /* border: 1px solid red; */
+
+
+        /* DON'T NEED THIS ANYMORE, ADDING img 0px margin fixed it all */
+        /* for atom */
+        /* margin-top: 5px; */
+        /* position: relative; */
+        /* z-index: 1111; */
+        /* TODO TURN ON : for prechoster, bumps it into the right place  */
+        /* margin-top: -27px;
+        height:500px;
+        position: absolute; */
+        margin-top: 5px; /* CHANGE FOR PRECHOSTER */
+
+
+        height:500px;
+        position: absolute;
+        margin-top: 5px;
+        margin-top: 0px;
+    }
+
+    .banner-end{
+        filter: drop-shadow(-2px 2px 0px #6BFFF6);
+        filter: none;
+        filter: drop-shadow(-2px 2px 3px #813d00);
+        filter: drop-shadow(-2px 2px 6.7px rgba(0, 0, 0, 0.5));
+        pointer-events: none;
+        rotate:180deg;
+        bottom:0px;
+        display: inline-block;
+        align-self: flex-end;
+        margin: 0px;
+        margin-bottom:19px;
+        /* for prechoster */
+        margin-bottom:0px;
+    }
+
+
+
+    .image-fullscroll{
+        /* width:100%; */
+        /* max-width: auto; */
+        max-width: 100%;
+        width: auto;
+    }
+
+
+    /* . . . . . . . . . . . . . . . . . . . . . */
+    /* CODE BOXES */
+    /* . . . . . . . . . . . . . . . . . . . . . */
+    pre {
+        white-space: pre-wrap;
+    }
+
+    .codebox{
+        /* background: fixed url("../../../assets/backgrounds/backgrounds_painty_01_yellow_blur 0x12.jpg"); */
+        /* background: fixed url("../../../assets/backgrounds/backgrounds_painty_01_yellow_blur-0x12_dark.jpg"); */
+        /* background: fixed url("../../../assets/backgrounds/backgrounds_painty_01_yellow_blur-0x12_sat.jpg"); */
+        /* background: fixed url("../../../assets/backgrounds/backgrounds_painty_01_yellow_blur-0x12_orange.jpg"); */
+        /* background-position:bottom left; */
+
+        height:200px;
+        overflow-x:hidden;
+        overflow-y:auto;
+    }
+
+    .codebox{
+        border:1px solid #c59172;
+        width: 80%;
+        margin:0% 10% 0% 10%;
+        padding:10px;
+        padding:10px 22px;
+        border-radius: 3px;
+
+        font: 8pt "Verdana", "Courier", "Helvetica", sans-serif;
+        font-weight: 400;
+        line-height: 105%;
+        letter-spacing: 1.5px;
+        color: #623008;
+        /* color: #473627; */
+        text-align: left;
+        /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        /* box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset; */
+        /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 5px -11px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -15px inset; */
+        /* box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        /* box-shadow: 8px 3px 0px #c59172; */
+    }
+    .codebox1line{
+        margin: 20px 10% !important;
+        width:80%;
+        height:auto;
+        padding-bottom:14px;
+    }
+
+    .codebox2{
+        background: fixed url("../../../assets/backgrounds/backgrounds_painty_01_yellow_blur-0x12_orange.jpg");
+        background-position:bottom left;
+        background-position:0% 0%;
+
+        font: 8pt "Courier", "Helvetica", monospace;
+        color: #fff;
+        font-weight: 500;
+        text-align: left;
+    }
+
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* TITLES AND SUBTITLES */
+/* . . . . . . . . . . . . . . . . . . . . . */
+
+.bigtitle{
+font-size: 28pt;
+font-family: courier;
+
+color:#723e13;
+color:#FFDE78;
+color:#623008;
+font-weight: 600;
+text-decoration: none;
+filter: drop-shadow(3px 0px 0px #623008);
+filter: drop-shadow(3px 0px 0px #FFDE78);
+filter: drop-shadow(3px 0px 0px #c59172);
+border:none;
+background:transparent;
+padding:10px 17px;
+/* background:#c59172; */
+/* border-bottom:3px dashed #fff; */
+/* box-shadow:
+rgba(0, 0, 0, 0.3) 1px 2px 3px,
+rgba(0, 0, 0, 0.2) 0px 2.5px 6px; */
+/* border-radius: 8px; */
+margin:0px;
+/* margin-bottom:-4px !important; */
+
+/* for orange bubble */
+/* background: fixed url("../../../assets/backgrounds/backgrounds_painty_01_yellow_blur-0x12_sat.jpg"); */
+border-radius: 8px;
+margin:10px 40px;
+border:1px solid #c59172;
+box-shadow: 5px 3px 0px #c59172;
+padding:15px;
+line-height: 74%;
+}
+
+.liltitle{
+font-size: 18pt;
+/* background: none; */
+filter: none;
+margin:0% 22% -17px 22%;
+padding:11px;
+
+border:1px solid #623008;
+box-shadow: 5px 3px 0px #623008;
+
+/* #cdaf9b */
+color:#c59172 !important;
+color:#fff !important;
+background: #623008;
+border:1px solid #c59172;
+box-shadow: 5px 3px 0px #c59172;
+
+}
+
+.minititle{
+border:none;
+border-bottom:1px solid #529eac;
+}
+
+.boldme{
+    font-weight: 800;
+    color: #f5b043;
+    padding:2px 5px;
+    margin:-2px -1px;
+    /* background: #723e13; */
+    border-radius:5px;
+    border:1px solid #ccc;
+    /* background-image: url('../../media_ACNLdreams/assets/AMETHYST_5B00-0155-3525/bg/2024-04-05_12-06-24.244_top_x4_smudged_blur_2px.jpg'); */
+}
+
+
+/* spc here as 18px high, then in prechoster style window, change to .spc{
+    height:3px; or 4px
+    NAH ACTUALY LEAVE IT AT 18px, but sets of brs need to be different
+     */
+/* SPACERS */
+.spc{
+    height:18px;
+    margin:0px;
+    padding:0px;
+}
+
+.spc5{
+    height:5px;
+    margin:0px;
+    padding:0px;
+}
+.spc10{
+    height:10px;
+    margin:0px;
+    padding:0px;
+}
+.spc15{
+    height:15px;
+    margin:0px;
+    padding:0px;
+}
+.spc20{
+    height:18px;
+    margin:0px;
+    padding:0px;
+}
+.spc25{
+    height:25px;
+    margin:0px;
+    padding:0px;
+}
+
+
+/* CONTENT BOX IMAGE OVERLAP SETUPS */
+.imgoverlap-bot{
+    margin-top:-40px !important;
+    position:relative;
+    z-index:10;
+}
+.contentunderlap-bot{
+    margin-top:-40px !important;
+    position:relative;
+    z-index:10;
+}
+
+.imgoverlap-top{
+    margin-top:-40px !important;
+    position:relative;
+    z-index:10;
+}
+.contentunderlap-top{
+    margin-top:-40px !important;
+    position:relative;
+    z-index:10;
+}
