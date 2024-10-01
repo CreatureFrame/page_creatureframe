@@ -1,0 +1,191 @@
+/*COHOSTLIKE CSS*/
+
+body {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  line-height: 1.75;
+  background-color: #191919;
+  color: #191919;
+  font-size: 1em;
+}
+a {
+  color: #191919;
+}
+h1 {
+  margin: 0;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+/*A COHOST POST*/
+.cohost {
+  width: 85%;
+  max-width:40em;
+  margin: auto;
+  padding: .75rem;
+  background-color: #fff;
+  border-radius: .6rem;
+  overflow: hidden;
+}
+
+/*POST HEADER*/
+.header {
+  color: #4A4847;
+  background-color: #FFF9F2;
+  margin: -.75rem -.75rem .5rem -.75rem;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+  padding: .5rem .75rem;
+  border-bottom: 1px solid #BFBAB6;
+}
+.headertext {
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1 1 0%;
+  display: flex;
+}
+.date {
+  color: #817F7C;
+  font-size: .75em;
+  padding-left: .6em;
+  margin-top: .25em;
+  cursor: pointer;
+  display: flex;
+}
+.postmenu {
+  font-size: .7em;
+  text-align: right;
+  letter-spacing: .1em;
+  margin-top: .3em;
+  display: flex;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/*POST FOOTER*/
+.footer {
+  color: #191919;
+  font-size: 1.05em;
+  background-color: #FFF9F2;
+  margin: .5rem -.75rem -.75rem -.75rem;
+  border-radius: 0rem 0rem 0.5rem 0.5rem;
+  padding: .38rem .75rem;
+  border-top: 1px solid #BFBAB6;
+  text-align: right;
+}
+
+/*BOX FOR ASKS*/
+.ask {
+  background-color: #FFF9F2;
+  border-radius: 0.5rem;
+  border: 1px solid #BFBAB6;
+  padding: .75em .75em 0em .75em;
+  margin: .75em 0em;
+}
+
+/*POST TAGS*/
+.tags {
+  color: #888;
+  font-size: .875rem;
+  padding-top: .25em;
+  padding-bottom: .5em;
+}
+
+/*POST REPLY HEADER*/
+.reply {
+  color: #4A4847;
+  background-color: #FFF9F2;
+  margin: .75rem -.75rem .5rem -.75rem;
+  padding: .5rem .75rem;
+  border-top: 1px solid #BFBAB6;
+}
+.replytext {
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1 1 0%;
+  display: flex;
+}
+.replydate {
+  color: #817F7C;
+  font-size: .75em;
+  padding-left: .6em;
+  margin-top: .25em;
+  cursor: pointer;
+  display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+/*SPECIAL POST CSS*/
+/* these are specific for certain posts that are css crime-heavy. you probably don't need any of this. */
+
+.goncharov a {
+  font-size:14pt;
+  color:#ffb667;
+}
+.footergoncharov {
+  color: #191919;
+  font-size: 1.05em;
+  background-color: #FFF9F2;
+  margin: 0rem -.75rem -.75rem -.75rem;
+  border-radius: 0rem 0rem 0.5rem 0.5rem;
+  padding: .38rem .75rem;
+  border-top: 1px solid #BFBAB6;
+  text-align: right;
+}
+.vanitas a {
+  font-size:15pt;
+  color:#1E9BF0;
+}
+.vanitastwiny {
+  color: #fff;
+  font-size: .9em;
+}
+.vanitastwiny a {
+  color: #fff;
+  font-size: .9em;
+}
+.footerplanet {
+  color: #191919;
+  font-size: 1.05em;
+  background-color: #FFF9F2;
+  margin: 3.75rem -.75rem -.75rem -.75rem;
+  border-radius: 0rem 0rem 0.5rem 0.5rem;
+  padding: 4rem .75rem .38rem .75rem;
+  border-top: 1px solid #BFBAB6;
+  text-align: right;
+}
+.eurydice {
+  font-size: 16pt;
+  color:#ed8261;
+  padding-left:1.8em;
+  padding-right:1.8em;
+}
+.eurydice a {
+  color:#ed8261;
+}
+.orpheus {
+  padding-left:1.8em;
+  padding-right:1.8em;
+}
+.orpheus a {
+  color:#fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
