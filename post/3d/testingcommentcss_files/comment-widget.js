@@ -1,8 +1,4 @@
 /*
-
-    https://virtualobserver.moe/ayano/comment-widget
-
-
     (PLEASE DO NOT DELETE THIS HEADER OR CREDIT!)
 
     User customizable settings below!
@@ -20,34 +16,18 @@
     - Ayano (https://virtualobserver.moe/)
 */
 
-
-
-
-/*
-
-form link
-https://docs.google.com/forms/d/1FclhZ92Mq5q5xS0nZGF7-eaqDsOQIVVG-lfnsrPM8CA/edit
-
-*/
-
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 // The values in this section are REQUIRED for the widget to work! Keep them in quotes!
-const s_stylePath = 'http://creatureframe.com/post/assets/comment-widget-pink.css';
-const s_stylePath = '../../assets/comment-widget-pink.css';
-// https://docs.google.com/forms/d/e/1FAIpQLSfogBDOAZfBlrnJ2e9YsdlwNwdKlyUr4GvQVvKmiM6K48G2xQ/viewform?usp=pp_url&entry.694796007=Name&entry.605179758=Website&entry.341888751=Text&entry.1631738198=Page&entry.532799568=Reply
-const s_formId = '1FAIpQLSfogBDOAZfBlrnJ2e9YsdlwNwdKlyUr4GvQVvKmiM6K48G2xQ';
-const s_nameId = '694796007';
-const s_websiteId = '605179758';
-const s_textId = '341888751';
-const s_pageId = '1631738198';
-const s_replyId = '532799568';
-// https://docs.google.com/spreadsheets/d/1NqomtLThU7BGr7eUHZS6AP8eh0Ac7CRQV_TyTWb-B1I/edit?usp=sharing
-const s_sheetId = '1NqomtLThU7BGr7eUHZS6AP8eh0Ac7CRQV_TyTWb-B1I';
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+const s_stylePath = '/scripts/comments/comment-widget-dark.css';
+const s_formId = '1FAIpQLSehjOWKnRiEClXR42v4WMVCqLuUKg4Xoncu26yeYJoGVfd1Vw';
+const s_nameId = '1743958157';
+const s_websiteId = '103116453';
+const s_textId = '1487225851';
+const s_pageId = '2098775854';
+const s_replyId = '63675495';
+const s_sheetId = '1yM1qkcNHo-BoOzAeBm-z-4ZiInDO09argG1xgiSIWoc';
 
 // The values below are necessary for accurate timestamps, I've filled it in with EST as an example
-// const s_timezone = -5; // Your personal timezone (Example: UTC-5:00 is -5 here, UTC+10:30 would be 10.5)
-const s_timezone = 10; // Your personal timezone (Example: UTC-5:00 is -5 here, UTC+10:30 would be 10.5)
+const s_timezone = -5; // Your personal timezone (Example: UTC-5:00 is -5 here, UTC+10:30 would be 10.5)
 const s_daylightSavings = true; // If your personal timezone uses DST, set this to true
 // For the dates DST start and end where you live: [Month, Weekday, which number of that weekday, hour (24 hour time)]
 const s_dstStart = ['March', 'Sunday', 2, 2]; // Example shown is the second Sunday of March at 2:00 am
@@ -57,7 +37,7 @@ const s_dstEnd = ['November', 'Sunday', 1, 2]; // Example shown is the first Sun
 const s_commentsPerPage = 5; // The max amount of comments that can be displayed on one page, any number >= 1 (Replies not counted)
 const s_maxLength = 500; // The max character length of a comment
 const s_maxLengthName = 16; // The max character length of a name
-const s_commentsOpen = true; // Change to false if you'd like to close your comment section site-wide (Turn it off on Google Forms too!)
+const s_commentsOpen = false; // Change to false if you'd like to close your comment section site-wide (Turn it off on Google Forms too!)
 const s_collapsedReplies = true; // True for collapsed replies with a button, false for replies to display automatically
 const s_longTimestamp = false; // True for a date + time, false for just the date
 let s_includeUrlParameters = false; // Makes new comment sections on pages with URL parameters when set to true (If you don't know what this does, leave it disabled)
@@ -78,7 +58,7 @@ const s_textFieldLabel = '';
 const s_submitButtonLabel = 'Submit';
 const s_loadingText = 'Loading comments...';
 const s_noCommentsText = 'No comments yet!';
-const s_closedCommentsText = 'Comments are closed temporarily!';
+const s_closedCommentsText = 'Comments are closed temporarily! Virtual Observer is on hiatus due to health concerns and burnout. See you again soon!';
 const s_websiteText = 'Website'; // The links to websites left by users on their comments
 const s_replyButtonText = 'Reply'; // The button for replying to someone
 const s_replyingText = 'Replying to'; // The text that displays while the user is typing a reply
@@ -170,7 +150,7 @@ c_replyingText.style.display = 'none'; c_replyingText.id = 'c_replyingText';
 c_form.appendChild(c_replyingText);
 c_replyingText = document.getElementById('c_replyingText');
 
-// Add the invisible reply input to document
+// Add the invisble reply input to document
 let c_replyInput = document.createElement('input');
 c_replyInput.type = 'text'; c_replyInput.style.display = 'none';
 c_replyInput.id = 'entry.' + s_replyId; c_replyInput.name = c_replyInput.id;
@@ -377,7 +357,7 @@ function displayComments(comments) {
 // Create basic HTML comment, reply or not
 function createComment(data) {
     let comment = document.createElement('div');
-
+    
     // Get the right timestamps
     let timestamps = convertTimestamp(data.Timestamp);
     let timestamp;

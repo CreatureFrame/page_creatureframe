@@ -39,13 +39,14 @@
     The comment section:
         .c-comment - All comment <div>s
         .c-reply - All reply <div>s (contained within parent comment <div>s)
+        .c-replyContainer - The wrapper <div> for all replies
         .c-name - The name of the person submitting the comment/reply (an <h3> element)
         .c-timestamp - The timestamp of when the comment/reply was made (a <span> element)
         .c-site - The website linked at the top of the comment/reply (an <a> element)
         .c-text - The actual text body of the comment/reply (a <p> element)
         .c-replyButton - All reply <button>s
         .c-expandButton - The <button>s to reveal/hide replies (These only show if s_collapsedReplies is set to true in the JS)
-
+        
         #c_pagination - The <div> wrapper for the pagination at the bottom (Only shows if there's more than one page)
         .c-paginationButton - Both left and right directional <button>s
         #c_leftButton - The left <button>
@@ -56,132 +57,145 @@
 #c_widget {
     box-sizing: border-box;
     height: 100%;
-    padding: 15px;
     overflow: auto;
-    background-image: url('bow-bg.gif'); /* F2U background provided by https://sadgrl.online/webmastery/downloads/tiledbgs */
-    background-image: url('https://tools.creatureframe.com/assets/eachpost/jazzcat/bg_jazzcatwindow_blur0x10.png');
+    padding: 20px;
+    background-image: url('sparkle-bg.gif'); /* F2U background provided by https://sadgrl.online/webmastery/downloads/tiledbgs */
     background-attachment: fixed;
-    font-family: 'Trebuchet MS';
-    font-family: 'Courier';
-    font-size: 14px;
-    color: #211F24;
+    font-family: 'Courier New';
+    font-size: 16px;
+    color: white;
 }
 
 #c_widget button, #c_widget input[type=submit] {
     padding: 4px;
+    font-family: 'Courier New';
     text-decoration: none;
-	text-transform: lowercase;
 	text-align: center;
-    background-color: white;
-    color: #CE98FB;
-    border: 1px solid #CE98FB;
-    border-radius: 5px;
+    text-transform: uppercase;
+    background-color: black;
+    color: #B766FF;
+    border: 1px solid white;
 }
 #c_widget button:hover, #c_widget input[type=submit]:hover {
-    background-color: #FB96D8;
     color: white;
-    border: 1px solid #FB96D8;
+    border: 1px solid #B766FF;
 }
 #c_widget button:disabled, #c_widget input[type=submit]:disabled {opacity: 60%;}
 #c_widget button:disabled:hover, #c_widget input[type=submit]:disabled:hover {
-    background-color: white;
-    color: #CE98FB;
-    border: 1px solid #CE98FB;
+    color: #B766FF;
+    border: 1px solid white;
 }
 
 /* Input section */
 #c_inputDiv {
+    margin-bottom: 15px;
     padding: 10px;
-    text-transform: lowercase;
-    background-color: rgba(255, 255, 255, .8);
-    border: 1px dashed #CE98FB;
-    border-radius: 5px;
+    background-color: black;
+    border: 2px solid white;
 }
-#c_container {margin-top: 10px;}
 
 #c_widgetTitle {
-    margin: 0;
-    padding: 0;
+    margin: -10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    text-transform: uppercase;
     font-style: italic;
-    font-style: normal;
-    text-decoration: underline;
-    font-family: monospace;
+    font-weight: bold;
+    text-align: right;
+    background-color: #2D0B52;
 }
 
 .c-inputWrapper {
     display: block;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    text-align: right;
 }
 .c-input {
     padding: 4px;
-    color: #5E2C49;
-    border-radius: 4px;
-    border: 1px solid #CE98FB;
+    color: black;
+    border: 1px solid #2D0B52;
 	outline: none;
 }
-.c-input:focus {border: 1px solid #FB96D8;}
+.c-input:focus {border: 1px solid #B766FF;}
 
 .c-textInput {
     width: calc(100% - 10px);
     max-width: 900px;
     resize: none;
 }
-#c_submitButton {display: block;}
-#c_replyingText {color: #5E2C49;}
+#c_submitButton {
+    display: block; 
+    margin-left: auto; 
+    margin-right: 0;
+}
+#c_replyingText {
+    color: white;
+    text-align: right;
+}
 
 /* Comment section */
 .c-comment {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     padding: 10px;
-    background-color: rgba(255, 255, 255, .75);
-    border: 1px dashed #CE98FB;
-    border-radius: 4px;
+    border: 2px solid white;
+    background-color: #2D0B52; 
 }
 .c-reply {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 1);
-    border: 1px dashed #CE98FB;
-    border-radius: 4px;
-
-    /* added */
     display: block;
+    width: 90%;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 10px;
+    border: 2px solid white;
+    background-color: #2D0B52; 
 }
 .c-reply:last-child {margin-bottom: 0;}
+.c-replyContainer {
+    margin: -10px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: black;
+}
 
 .c-name {
     display: inline-block;
     margin: 0;
     margin-right: 10px;
     padding: 0;
-    text-decoration: underline;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 .c-site {
-    text-transform: lowercase;
-    color: #CE98FB;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #B766FF;
 }
-.c-site:hover {color: #211F24;}
+.c-site:hover {color: white;}
 .c-timestamp {
     float: right;
-    opacity: 60%;
+    opacity: 75%;
 }
 .c-text {
     margin: 0;
-    margin-top: 10px;
-    padding: 0;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 10px;
+    font-family: Verdana;
+    font-size: 14px;
     text-align: justify;
-    color: #5E2C49;
+    color: white;
+    background-color: black;
 }
 
 /* Pagination */
 #c_pagination {text-align: center;}
-.c-replyButton {margin-top: 10px;}
-.c-expandButton {
-    float: right;
+.c-replyButton {
     margin-top: 10px;
+    margin-right: 4px;
+}
+.c-expandButton {
+    margin-top: 10px;
+    margin-left: 4px;
 }
 .c-paginationButton {
     margin-right: 4px;
