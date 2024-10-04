@@ -1,23 +1,153 @@
+<!DOCTYPE html>
+<html>
+
 <head>
 <link data-chunk="client" rel="stylesheet" href="../../assets/cohoststyle.css">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="icon" type="image/png" href="assets/icons/green-computer.gif">
+<title>posting</title>
+
+<!-- RSS -->
+<link href="https://creatureframe.com/rss.xml" rel="alternate" type="application/rss+xml" title="the creatureframe RSS feed">
+
+<!--jQuery-->
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+<!--ISOTOPE PLUGIN https://isotope.metafizzy.co/ (for filtering)-->
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+<!--Icon Fonts-->
+<script src="https://unpkg.com/feather-icons"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+
+<!--Google Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i">
+
 </head>
 <body>
-<div align="center">
+<a href="https://creatureframe.com/post"><div class="goback"></div></a>
+
+<!-- <br> -->
+
+
+
+<!-- <style>
+.outermostbox{
+    border:2px solid blue;
+    height:100%;
+}
+.columnbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: block;
+flex-grow: 0;
+flex-shrink: 1;
+flex-basis: auto;
+align-self: auto;
+order: 0;
+border:2px solid red;
+}
+</style> -->
+
+
+
+<!-- VARIABLES TO ADD TO CSS STYLE STUFF:
+
+--postheight: 700px;
+--endbanner-size: 862px;
+--endbanner-size: 730px;
+
+--postheight: 500px;
+--endbanner-size: 530px;
+
+--postheight: 600px;
+--endbanner-size: 630px;
+
+
+
+for outermost banner:
+height: var(--postHeight);
+for banners at end:
+margin-top:calc(var(--endbanner-size) * -1);
+height:var(--endbanner-size);
+ -->
+
+
+
+<!-- add to :root below, then add variables to classes via
+font-size: var(--fontSize);
+ -->
+
+<style>
+    :root {
+      --postheight: 600px;
+      --endbanner-size: 630px;
+
+    }
+
+
+
+    .goback {
+        position:fixed;
+        /* position:absolute; */
+        top:5px;
+        left:5px;
+        width:30px;
+        height:30px;
+        background: url('https://i.imgur.com/ZRbc9ID.png') top left;
+        background: url('../assets/icons/gobackarrow_0.png') top left;
+    }
+    .goback:hover {
+        background: url('https://i.imgur.com/MJEkyuI.png') top left;
+        background: url('../assets/icons/gobackarrow_1.png') top left;
+    }
+
+
+
+    .outermostbox {
+
+        height:100%;
+        width:100%;
+        position:fixed;
+        min-height:100%;
+    }
+
+    .columnbox{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height:100%;
+
+    }
+</style>
+
+
+<div class="outermostbox">
+<div class="columnbox">
+
+<!-- <div align="center">
+<div style="v-align:middle;"> -->
 <div id="postsize">
+
+<!-- https://tools.creatureframe.com/posts/media_ACNLdreams/assets/icons/notebook.gif -->
 <style>
     body{
-        background: fixed url(../../../assets/eachpost/jazzcat/bg_jazzcatwindow_blur0x10.png);
+        background: fixed url(https://tools.creatureframe.com/assets/eachpost/jazzcat/bg_jazzcatwindow_blur0x10.png);
+        background: fixed url(../assets/backgrounds/BG_loopingGrids-assets/BG_loopingGrid_A_inv7.png);
         background-position:bottom left;
     }
 
     .final{
-        height:1200px !important;
+        <!-- height:1200px !important; -->
     }
 
     #postsize{
         max-width:580px;
         padding:auto;
-
+        <!-- max-height:800px; -->
     }
 
     .scrollbox-wheel{
@@ -51,15 +181,29 @@ box-shadow:inset 0 0 0.4em 0.4em #ffa8ea;
 border-radius:1em;
 }
 
+
+
+.post-cohostbarrier {
+    height:var(--postheight);
+
+}
+.bannerstart-contain {
+    margin-top:calc(var(--endbanner-size) * -1);
+    height:var(--endbanner-size);
+
+
+}
 </style>
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 
+<!-- border:1px dashed yellow; -->
 
 
 
 
+<div class="post-cohostbarrier" style="
+border:1px solid #000;width:100%;box-shadow:rgba(0,0,0,0.14) 1px 3px 15px,rgba(0,0,0,0.22) 0px 2.5px 5px,rgba(122,122,122,0.32) 3px 3px 0px,rgba(122,85,85,0.35) 1px 1px 0.3px">
 
-<div style="border:1px solid #000;width:100%;height:500px;box-shadow:rgba(0,0,0,0.14) 1px 3px 15px,rgba(0,0,0,0.22) 0px 2.5px 5px,rgba(122,122,122,0.32) 3px 3px 0px,rgba(122,85,85,0.35) 1px 1px 0.3px" class="post-cohostbarrier"><!--ps=2-->
 <div style="width:100%;height:100%;max-width:100%;max-height:100%;margin:0px;padding:8px;overflow:hidden;background-repeat:repeat;background-attachment:fixed;background:fixed url(https://tools.creatureframe.com/assets/BG_loopingGrids-assets/BG_loopingGrid_A.png);background-position:bottom center" class="post-background-full post-bgimg bgimg-alignment final">
 <div class="scrollbox" style="justify-content:space-between;box-shadow:rgba(50,50,93,0.25) 0px 30px 60px -5px inset,rgba(0,0,0,0.4) 0px 18px 36px -3px inset,rgba(0,0,0,0.8) 0px 0px 5px -1px inset;width:100%;height:100%;overflow-x:hidden;overflow-y:auto;padding:0px;margin:0px;position:inherit">
 
@@ -155,7 +299,38 @@ much as I love UVing and texturing, it was a pretty neat change of pace to not h
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 
-<div style="margin-top:-530px;height:530px;overflow:hidden;position:relative;z-index:50;pointer-events:none" class="bannerstart-contain">
+<!--
+original:
+margin-top:-530px;height:530px;
+
+replaced w
+--postheight: 700px;
+
+exmaple for calculating with variable:
+width: calc(var(--variable-width) + 20px);
+--widthA: 100px;
+--widthB: calc(var(--widthA) / 2);
+--widthC: calc(var(--widthB) / 2);
+width: var(--widthC);
+
+then to make it negative value:
+margin-bottom: calc(var(--margin-md) * -1);
+
+so we need :
+margin-top:calc(var(--postHeight) + 30px);
+height:calc(var(--postHeight) + 30px);
+or
+margin-top:calc((var(--postHeight) + 30px) * -1);
+height:calc(var(--postHeight) + 30px);
+-->
+
+
+
+
+
+
+<div style="
+overflow:hidden;position:relative;z-index:50;pointer-events:none" class="bannerstart-contain">
 <div style="margin-bottom:-58px;margin-top:-2px;pointer-events:none" class="bannerstart-inside">
 <img src="https://tools.creatureframe.com/assets/postBorder_60px-assets/postBorder_60px_B.png" class="banner-img banner-start" style="padding:0px;margin:0px;min-width:600px;max-width:600px;pointer-events:none;image-rendering:pixelated;margin-top:30px;filter:drop-shadow(2px 2px 0px #6BFFF6)"></div>
 <div style="margin-bottom:-58px;margin-top:-2px;pointer-events:none;display:flex;height:100%;margin:0px" class="bannerend-inside"><img src="https://tools.creatureframe.com/assets/postBorder_60px-assets/postBorder_60px_C.png" style="padding:0px;min-width:600px;max-width:600px;pointer-events:none;image-rendering:pixelated;margin-top:-45px;filter:drop-shadow(-2px 2px 0px #6BFFF6);rotate:180deg;bottom:0px;display:inline-block;align-self:flex-end;margin:0px;margin-bottom:13px" class="banner-img banner-end"></div>
@@ -164,7 +339,14 @@ much as I love UVing and texturing, it was a pretty neat change of pace to not h
 
 
 
+
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
-</div></div>
+</div>
 <!-- end id "postsize" -->
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+
+</div></div>
+<!-- end <div class="outermostbox"> -->
+</body>
+</html>
