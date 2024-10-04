@@ -443,19 +443,24 @@ overflow:hidden;position:relative;z-index:50;pointer-events:none" class="banners
   --commentsaccentcolor3:#FB96D8;
   --commentsaccentcolor4:#CE98FB;
   --commentsfontfam:Courier;
+  --commentsfontsize:14px;
+  --commentsfontsize:9pt;
 }
 
 .commentssection{
     width:100%;
+    max-width:600px;
     /* display: block; */
     /* background: aqua; */
     /* margin-top: -10%; */
-    margin-top: -63px;
+    margin-top: -60px;
     /* rmv later */
     /* margin-top: -200px; */
     position: relative;
     z-index: 100;
-    z-index: 1;
+    /* z-index: 1; */
+    /* align-content: justify; */
+    text-align: justify;
 }
 
 
@@ -473,7 +478,7 @@ overflow:hidden;position:relative;z-index:50;pointer-events:none" class="banners
     /* font-size: 14px; */
     color: var(--commentsfontcolor);
     font-weight: 600;
-
+    font-size: var(--commentsfontsize);
 }
 
 /* #c_widget div { */
@@ -508,6 +513,7 @@ overflow:hidden;position:relative;z-index:50;pointer-events:none" class="banners
     /* border: 1px dashed #CE98FB; */
     border: var(--commentsborder);
     border-radius: 4px;
+    margin-bottom: 0px;
 }
 
 
@@ -523,10 +529,11 @@ overflow:hidden;position:relative;z-index:50;pointer-events:none" class="banners
     background: #fff;
 }
 
+
+
 </style>
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 <!-- <br clear="all"> -->
-
 
 
 
@@ -548,14 +555,15 @@ overflow:hidden;position:relative;z-index:50;pointer-events:none" class="banners
 
 
 
-
+<div align="center">
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 <div class="commentssection">
 <div id="c_widget"></div>
 <script src="http://creatureframe.com/post/assets/comment-widget.js"></script>
 </div>
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
-
+</div>
+<!-- end div cneter -->
 
 
 
