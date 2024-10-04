@@ -31,22 +31,28 @@ https://docs.google.com/forms/d/1FclhZ92Mq5q5xS0nZGF7-eaqDsOQIVVG-lfnsrPM8CA/edi
 comments spreadsheet
 https://docs.google.com/spreadsheets/d/1NqomtLThU7BGr7eUHZS6AP8eh0Ac7CRQV_TyTWb-B1I/edit?resourcekey=&gid=1956279600#gid=1956279600
 
+
+
+
+// const s_stylePath = '../../assets/comment-widget-pink.css';
+// https://docs.google.com/forms/d/e/1FAIpQLSfogBDOAZfBlrnJ2e9YsdlwNwdKlyUr4GvQVvKmiM6K48G2xQ/viewform?usp=pp_url&entry.694796007=Name&entry.605179758=Website&entry.341888751=Text&entry.1631738198=Page&entry.532799568=Reply
+// https://docs.google.com/forms/d/e/1FAIpQLSfogBDOAZfBlrnJ2e9YsdlwNwdKlyUr4GvQVvKmiM6K48G2xQ/viewform?usp=pp_url&entry.694796007=Name&entry.605179758=Website&entry.341888751=Text&entry.1631738198=Page&entry.532799568=Reply&entry.1273030512=Moderated
+
+// https://docs.google.com/spreadsheets/d/1NqomtLThU7BGr7eUHZS6AP8eh0Ac7CRQV_TyTWb-B1I/edit?usp=sharing
 */
+
+
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 // The values in this section are REQUIRED for the widget to work! Keep them in quotes!
 const s_stylePath = 'http://creatureframe.com/post/assets/comment-widget-pink.css';
-// const s_stylePath = '../../assets/comment-widget-pink.css';
-// https://docs.google.com/forms/d/e/1FAIpQLSfogBDOAZfBlrnJ2e9YsdlwNwdKlyUr4GvQVvKmiM6K48G2xQ/viewform?usp=pp_url&entry.694796007=Name&entry.605179758=Website&entry.341888751=Text&entry.1631738198=Page&entry.532799568=Reply
 const s_formId = '1FAIpQLSfogBDOAZfBlrnJ2e9YsdlwNwdKlyUr4GvQVvKmiM6K48G2xQ';
 const s_nameId = '694796007';
 const s_websiteId = '605179758';
 const s_textId = '341888751';
-// https://docs.google.com/forms/d/e/1FAIpQLSfogBDOAZfBlrnJ2e9YsdlwNwdKlyUr4GvQVvKmiM6K48G2xQ/viewform?usp=pp_url&entry.694796007=Name&entry.605179758=Website&entry.341888751=Text&entry.1631738198=Page&entry.532799568=Reply&entry.1273030512=Moderated
-const s_moderatedId = '1273030512'; // The Moderated field ID
+const s_moderatedId = '1273030512';
 const s_pageId = '1631738198';
 const s_replyId = '532799568';
-// https://docs.google.com/spreadsheets/d/1NqomtLThU7BGr7eUHZS6AP8eh0Ac7CRQV_TyTWb-B1I/edit?usp=sharing
 const s_sheetId = '1NqomtLThU7BGr7eUHZS6AP8eh0Ac7CRQV_TyTWb-B1I';
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
