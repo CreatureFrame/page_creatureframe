@@ -45,7 +45,7 @@
         .c-text - The actual text body of the comment/reply (a <p> element)
         .c-replyButton - All reply <button>s
         .c-expandButton - The <button>s to reveal/hide replies (These only show if s_collapsedReplies is set to true in the JS)
-        
+
         #c_pagination - The <div> wrapper for the pagination at the bottom (Only shows if there's more than one page)
         .c-paginationButton - Both left and right directional <button>s
         #c_leftButton - The left <button>
@@ -58,7 +58,8 @@
     height: 100%;
     padding: 15px;
     overflow: auto;
-    background-image: url('bow-bg.gif'); /* F2U background provided by https://sadgrl.online/webmastery/downloads/tiledbgs */
+    /* background-image: url('bow-bg.gif');  */
+    /* F2U background provided by https://sadgrl.online/webmastery/downloads/tiledbgs */
     background-attachment: fixed;
     font-family: 'Trebuchet MS';
     font-size: 14px;
@@ -154,7 +155,8 @@
 }
 .c-site {
     text-transform: lowercase;
-    color: #CE98FB;
+    /* color: #CE98FB; */
+    color: #5E2C49;
 }
 .c-site:hover {color: #211F24;}
 .c-timestamp {

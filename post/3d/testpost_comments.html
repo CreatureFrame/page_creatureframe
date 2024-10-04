@@ -419,6 +419,119 @@ overflow:hidden;position:relative;z-index:50;pointer-events:none" class="banners
 
 
 
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- COMMENTS BOX -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<style>
+
+:root {
+    /* done either way */
+  /* --commentstransparency: 0.3; */
+  /* can also use a bg image */
+  --commentsbg: rgba(255, 255, 255, 0.4);
+  --commentsborder:2px dashed #fff;
+
+  --commentsfontcolor:#222;
+  --commentsfontfam:Verdana;
+  --commentsfontfam:Courier;
+
+  --backgroundblur1: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top left fixed;
+  --backgroundblur2: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top left fixed;
+
+  --commentsaccentcolor1:#222;
+  --commentsaccentcolor2:#5E2C49;
+  --commentsaccentcolor3:#FB96D8;
+  --commentsaccentcolor4:#CE98FB;
+  --commentsfontfam:Courier;
+}
+
+.commentssection{
+    width:100%;
+    /* display: block; */
+    /* background: aqua; */
+    /* margin-top: -10%; */
+    margin-top: -63px;
+    /* rmv later */
+    /* margin-top: -200px; */
+    position: relative;
+    z-index: 100;
+    z-index: 1;
+}
+
+
+
+#c_widget {
+    /* background-image: url('https://tools.creatureframe.com/assets/eachpost/jazzcat/bg_jazzcatwindow_blur0x10.png'); */
+    /* background-image: url('../../assets/backgrounds/fades/300px-assets/300px_middark.png'); */
+    /* padding-top: 20px; */
+    /* margin-bottom: 40px; */
+
+    /* border: 2px dashed #fff; */
+
+    /* font-family: 'Courier'; */
+    font-family: var(--commentsfontfam);
+    /* font-size: 14px; */
+    color: var(--commentsfontcolor);
+    font-weight: 600;
+
+}
+
+/* #c_widget div { */
+    /* padding:5px 5px; */
+/* } */
+
+/* Input section */
+#c_inputDiv {
+    padding: 10px;
+    text-transform: lowercase;
+    /* background-color: rgba(255, 255, 255, .3); */
+
+    /* done either way */
+    /* background-color: rgba(255, 255, 255, var(--commentstransparency) ); */
+    /* background-color: var(--commentsbg); */
+    background: var(--commentsbg);
+
+    border: 1px dashed #CE98FB;
+    border: 2px dashed #fff;
+    border: var(--commentsborder);
+    border-radius: 5px;
+    border-radius: 8px;
+    /* color:#222; */
+}
+
+.c-comment {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    /* background-color: rgba(255, 255, 255, var(--commentstransparency)); */
+    background: var(--commentsbg);
+    /* border: 1px dashed #CE98FB; */
+    border: var(--commentsborder);
+    border-radius: 4px;
+}
+
+
+.c-site {
+    color: var(--commentsaccentcolor1);
+    border:1px solid #fff;
+    padding:3px 6px;
+    border-radius: 4px;
+    background: var(--commentsaccentcolor3);
+ }
+.c-site:hover {
+    color: var(--commentsaccentcolor2);
+    background: #fff;
+}
+
+</style>
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- <br clear="all"> -->
+
+
+
+
+
+
 <!-- https://cusdis.com/dashboard/project/5d3be93d-065a-4f58-9cc7-e9edf5088fd7/settings -->
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 <!-- <div class="commentssection">
