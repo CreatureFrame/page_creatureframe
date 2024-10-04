@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+
+
+
+
+<!--PAGE THEME #11: SUCCULENT 2.0 by @nonspace.
+  Find more of my work at https://nonspace.tumblr.com
+
+    Don't steal.
+    Don't claim as your own.
+    Don't use as base code.
+    Editing for personal use is fine!
+
+    Need help? Have a look at this themes FAQ:
+    https://nonspace.tumblr.com/tagged/theme-help:+succulent
+    Or my general FAQ: https://nonspace.tumblr.com/help/support
+
+    Please report any bugs to me.
+-->
+
+
+
+
+<!--
+/*
+
+ #ffbfaf;
+ #ffbf3f;
+ #ffeecf;
+  #ffafad;
+ : #fffada;
+ #ffeac1;
+#ffeece;
+#44bbbb;
+#ddf611;
+#dd6611;
+
+
+background: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top center;
+
+--background: #eee;
+--accent: #B9CCB5;
+--sidebarBackground: #111;
+--sidebarText: #fff;
+--cardBackground: #fff;
+--cardText: #111;
+*/
+
+
+
+/*
+#4a3e3a
+#7a6963
+#998984
+#b3a19b
+#a69590
+
+
+#402b24
+#5e4138
+#70493d
+#9c5f4c
+#
+
+
+ */
+
+ -->
+
+
+
+
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <!-- <link rel="icon" type="image/png" href="{Favicon}"> -->
+  <!-- <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> -->
+  <!-- <link rel="icon" type="image/png" href="https://foollovers.com/mat/i-square/ga10-icon-square.gif"> -->
+  <link rel="icon" type="image/png" href="assets/icons/green-computer.gif">
+  <title>rss feed</title>
+
+  <!-- RSS -->
+<link href="../rss.xml" rel="alternate" type="application/rss+xml" title="the creatureframe RSS feed">
+
+  <!--jQuery-->
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+  <!--ISOTOPE PLUGIN https://isotope.metafizzy.co/ (for filtering)-->
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+  <!--Icon Fonts-->
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- require("@south-paw/typeface-minecraft"); -->
+
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+  <!--HANDLEBARS.JS-->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+
+  <!--PAGE SETTINGS-->
+  <!--The template spreadsheet is here:
+https://docs.google.com/spreadsheets/d/124yZTS885Mx4BYFN4PPxjP450LrRrTMmTubI0MoI4WE/edit?usp=sharing
+Instructions are in the "INSTRUCTIONS" tab.-->
+
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<script>
+    /*TO GET THE SHEET ID:
+    1. Go to your spreadsheet > File > Publish to web.
+    2. Click on "Entire Document" and select the speficic sheet (in the
+       example it is called "MAIN") > publish, ignore the URL.
+    3. File > Share > Anyone with link can share. This URL is important.
+    4. Copy the following string from the URL and paste it in sheetID:
+       Example:
+       https://docs.google.com/spreadsheets/d/
+         1jKi9Knw7e5qr4bXr_zQib8FwpGM7E6eqRx1tH3JruIA (this part)
+      /edit?usp=sharing
+
+
+    TO GET API KEY:
+    1. Go to https://console.cloud.google.com/projectselector2/apis/dashboard
+    (of the account the sheet is under)
+    2. Create new project
+    3. Create credentials, choose API key (copy this)
+    4. Restrict application access to HTTP referrer and add the wildcard yoururl.tumblr.com/* (or for multipe sites if needed)
+    5. Libraries > search for Google Sheets > Enable
+
+
+    From JOURNAL spreadsheet:
+    https://docs.google.com/spreadsheets/d/1Swar-rZUcStgl9-EZS9VelTuW_Ms2c8mLc-yVPfV79Y/edit#gid=0
+
+    which is shared to HTMLpipe:
+    https://docs.google.com/spreadsheets/d/1G0rvHkZQm9k7IZBDkYmx3BgJP5qw2jtBd52q9M_vfx8/edit#gid=0
+
+    and share "DATA" page to web, as CSV:
+    https://docs.google.com/spreadsheets/d/e/2PACX-1vTjIhLAshuac489P1cux9pq_P0vlM58ZXfuU_LDtoN7uIR9fnAj_tpSu_VCVEfRfI1TiUmywihMthsG/pub?gid=0&single=true&output=csv
+
+https://docs.google.com/spreadsheets/d/1A-TYXRt9DTRcCxszcQYPUUlbdJ2IVH6mYpFrRvuS6hk/edit?usp=sharing
+
+    */
+
+// mc journal
+    // const sheetID = '1G0rvHkZQm9k7IZBDkYmx3BgJP5qw2jtBd52q9M_vfx8';
+    // const sheetTab = 'DATA';
+    // const APIkey = 'AIzaSyAKuzBdtp1Q279bOvN32VRxTbL2pf_1qQ8';
+
+// blog posts
+    const sheetID = '1A-TYXRt9DTRcCxszcQYPUUlbdJ2IVH6mYpFrRvuS6hk';
+    const sheetTab = 'postslist';
+    const APIkey = 'AIzaSyAKuzBdtp1Q279bOvN32VRxTbL2pf_1qQ8';
+
+</script>
+
+
+
+<!--SHEET INTEGRATION-->
+<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/n0nspace/tumblr-sheets@main/nnspc-sheets.js"></script> -->
+<script type="text/javascript" src="../assets/nnspc-sheets.js"></script>
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- STYLESHEET -->
+<style>
+:root {
+  --fontSize: 15px;
+  --cardWidth: 400px; /*entire card*/
+  /* --imgHeight: 250px; */
+  --imgHeight: 150px;
+
+  --accent: #2f201d;
+  --accent: #e4b176;
+  --background: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top left;
+  --sidebarBackground: #e4b176 repeat url('assets/imgs/bg_blackstone.png') top center;
+  --sidebarText: #fff;
+  --cardBackground: #fefbf2;
+  --cardBackground: #ffeece;
+  --cardBackgroundHov: #d1baa1;
+  --cardBackgroundHov: #eab676;
+  --cardText: #3e3333;
+  /* swap these if needed */
+  --boxPadding: 0px;
+  --descPadding: 15px;
+}
+
+
+
+@font-face {
+  font-family: 'Minecraft';
+  font-style: normal;
+  font-weight: 400;
+  src: url(assets/minecraft.woff) format('woff');
+}
+
+
+
+
+
+/*STYLES*/
+
+/*GENERAL*/
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: var(--fontSize);
+  font-family: 'Verdana';
+}
+
+#wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+
+/*SIDEBAR*/
+
+aside {
+  position: fixed;
+  width: 220px;
+  background: var(--sidebarBackground);
+  color: var(--sidebarText);
+  height: 100%;
+  z-index: 1;
+  font-family: 'Raleway';
+  font-family: 'Courier';
+  font-family: 'Verdana';
+  font-family: 'Minecraft';
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  text-align: justify;
+  text-align: left;
+
+  /* margin:0px; */
+  /* padding: 40px; */
+  /* border:1px solid green; */
+}
+
+aside h1,
+nav {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+aside h1 {
+  /* font-size: 1.5rem; */
+  font-size: 1.3rem;
+}
+
+aside h1 {
+  display: block;
+  position: relative;
+}
+
+.sep {
+  height: 2px;
+  width: 100%;
+  background: var(--accent);
+  margin: 0px 0 0px;
+}
+
+nav {
+  /* padding: 5px 0px 5px ; */
+  padding: 0px;
+  /* padding:12px; */
+  /* border:1px solid blue; */
+}
+
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: var(--sidebarText);
+  margin:0px 0px 0px 25px;
+
+  margin:0px;
+
+  padding:0px 0px;
+
+  line-height:100%;
+  letter-spacing:1.5px;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+nav a:hover{
+    border:none;
+    border-top:2px solid orange;
+    border-bottom:2px solid orange;
+}
+
+nav ul li {
+  list-style-type: none;
+  /* margin: 0px 0px; */
+  /* padding:0px 20px; */
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 90%;
+}
+
+
+
+
+#abt {
+  line-height: 90%;
+  letter-spacing: 1.8px;
+  font-size: 11pt;
+
+  padding:10px 0px;
+  padding:0px 0px;
+  text-align: justify;
+  color: #b3a19b;
+}
+#abt:hover a {
+  text-decoration: overline underline;
+  color:#fff !important;
+}
+#abt a {
+text-decoration: none;
+text-decoration-color: #fff;
+color:#f5b043 !important;
+border:1px solid;
+border:none;
+margin:0;
+padding:2px 6px;
+line-height:160%;
+}
+
+
+.reloadsign {
+font-size: 8pt !important;
+/* border:1px solid #fff; */
+/* padding:5px 8px; */
+border-radius: 5px;
+text-transform: none;
+/* margin:0; */
+line-height: 130% !important;
+}
+
+nav i {
+/* font-size: 8pt !important; */
+/* border:1px solid #fff; */
+text-transform: none;
+/* margin:0; */
+/* line-height: 100% !important; */
+}
+
+nav i a {
+font-size: 9pt !important;
+/* border:1px solid #fff; */
+text-transform: none;
+/* margin:0; */
+/* line-height: 100% !important; */
+}
+
+
+#social {
+  list-style-type: none;
+  margin-top: auto;
+  align-self: bottom;
+}
+
+#social a {
+  color: var(--sidebarText);
+}
+
+#social li {
+  display: inline-block;
+  margin: 0 15px 0 0;
+}
+
+
+
+
+/*GRID*/
+
+main {
+  position: relative;
+  min-height: 100vh;
+  height: auto;
+  margin-left: 220px;
+  background: var(--background);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 35px 35px;
+  border-left: 20px solid var(--accent);
+}
+
+#grid {
+  margin: 0 auto;
+  width: calc(var(--cardWidth) + 30px);
+}
+
+
+/*CARDS*/
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: var(--cardWidth);
+  overflow: hidden;
+  margin: 25px;
+  color: var(--cardText);
+  border:2px solid #000;
+  border:6px solid #e4b176;
+}
+
+.card > a {
+  line-height: 0;
+  position: relative;
+  color: #635047;
+  color:inherit;
+  text-decoration: none;
+}
+
+/* this applies to any levels UNDER the card div */
+/* .card > a:hover {
+  color: #e4b176;
+} */
+
+.card:hover {
+    border:6px solid #ffeece;
+    border:6px solid #8a6c4a;
+    border:6px solid #fffaed;
+    color: #e4b176;
+}
+/*
+.box:hover {
+    background: var(--cardBackgroundHov);
+    border-bottom: 15px solid var(--cardBackgroundHov);
+} */
+
+/* .card img {
+  width: var(--cardWidth);
+  height: var(--imgHeight);
+  object-fit: cover;
+  line-height: 0;
+} */
+
+.box {
+  position: relative;
+  background: var(--cardBackground);
+  height: auto;
+  padding: 15px 20px 0;
+  padding:0px;
+  line-height: 160%;
+  line-height: 135%;
+  overflow: hidden;
+  border-bottom: 15px solid var(--cardBackground);
+}
+
+.subtitle {
+  text-align: right;
+  /* align:right; */
+  /* font-style: italic; */
+  font-family: monospace;
+  color: #8a6c4a;
+}
+
+.card {
+  -webkit-box-shadow: 0px 0px 0px 2px rgb(0,0,0), 0px 3px 10px 5px rgba(30,0,0,0.45), 0px 5px 30px 10px rgba(30,0,0,0.3);
+  -moz-box-shadow: 0px 0px 0px 2px rgb(0,0,0), 0px 3px 10px 5px rgba(30,0,0,0.45), 0px 5px 30px 10px rgba(30,0,0,0.3);
+  box-shadow: 0px 0px 0px 2px rgb(0,0,0), 0px 3px 10px 5px rgba(30,0,0,0.45), 0px 5px 30px 10px rgba(30,0,0,0.3);
+}
+
+aside {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px, 0px 0px 5px 1px rgba(110,40,40,0.8), 0px 0px 10px 2px rgba(110,40,40,0.2);
+    -moz-box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px, 0px 0px 5px 1px rgba(110,40,40,0.8), 0px 0px 10px 2px rgba(110,40,40,0.2);
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px, 0px 0px 5px 1px rgba(110,40,40,0.8), 0px 0px 10px 2px rgba(110,40,40,0.2);
+}
+
+
+
+
+
+.box h2 {
+  font-size: 1.1rem;
+  font-size: 1.4rem;
+  font-family: 'Raleway';
+  font-family: 'Courier';
+  font-weight:800;
+  text-transform: uppercase;
+
+  margin: var(--boxPadding);
+}
+
+.box .desc {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+  font-size: 0.75rem;
+  line-height: 130%;
+  text-align:justify;
+  letter-spacing: 1px;
+}
+
+.box .desc p:not(first-of-type) {
+  margin-top: 15px;
+}
+
+.box a, #abt a {
+  color: var(--boxText);
+  text-decoration: none;
+  /* adds a hard shadow under urls */
+  /* box-shadow: inset 0 -5px var(--accent); */
+}
+
+
+
+
+/* STYLES ADDED */
+
+/*
+.desc img{
+    width:100%;
+    height:100%;
+    align:center;
+    object-fit: scale-down;
+    border:1px solid #000;
+}
+ */
+
+
+.desc img{
+    max-width:100%;
+    /* border:1px solid #000; */
+}
+
+.desc{
+    /* margin:0px 15px; */
+    /* margin: var(--boxPadding); */
+    /* border:1px solid red; */
+    padding: var(--descPadding);
+    padding:0px 15px;
+}
+.box{
+    /* padding:15px; */
+    /* padding:0; */
+    /* border:1px solid red; */
+    padding: var(--boxPadding);
+}
+.titlebar{
+    padding: var(--descPadding);
+    <!-- margin:15px 5px; -->
+    padding:10px 13px 0px 13px;
+}
+
+.subheader{
+    font-family:Courier;
+    font-weight: 100;
+    text-align:right;
+    font-size:15px;
+    letter-spacing: 1px;
+}
+
+.title-filter{
+    /* margin: 0px 10px 9px 25px; */
+    margin: 0px 0px 5px 0px;
+    padding:4px;
+    border:none;
+    /* border-bottom: 1px solid #70493d; */
+    /* border-bottom: 2px solid #7a6963; */
+    border-bottom: 2px solid #6c5c56;
+    border-top: 2px solid #6c5c56;
+    width:98%;
+    color:#a69590;
+}
+
+.spacer{
+    height:11px;
+    margin:0px;
+}
+
+
+.icon_64px {
+    height:64px !important;
+    filter: drop-shadow(2px 3px 2px #482525);
+    object-fit: none;
+    padding:-20px 0px !important;
+    margin:0px 0px !important;
+    border:none !important;
+    filter: drop-shadow(2px 1px 3px rgba(110,40,40,0.3));
+}
+
+
+
+.image-float {
+    filter: drop-shadow(2px 1px 3px rgba(110,40,40,0.3));
+    align-content: center;
+    border:none !important;
+}
+
+
+.image-banner img {
+  width: var(--cardWidth);
+  height: var(--imgHeight);
+  height:auto;
+  object-fit: cover;
+  line-height: 0;
+  margin-bottom: -3px;
+  /* border-bottom: 1px solid #70493d; */
+}
+
+.img-desc{
+    max-width: 100%;
+}
+.img-bord{
+    max-width: 100%;
+    border:1px solid #000;
+}
+
+.photoborder{
+    border:1px;
+    background-color:#fff;
+    padding:9px;
+    position: relative;
+    /* rotate: 5deg; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    /* image-rendering: pixelated; */
+    border-radius:3px;
+}
+.lilborder{
+    border:1px solid #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+
+
+/* .image-banner-desc {
+  width: var(--cardWidth);
+  height: var(--imgHeight);
+  width: 160% !important;
+  height: var(--imgHeight);
+  object-fit: cover;
+  line-height: 0;
+} */
+
+/*HOVER*/
+
+a {
+  transition: all 0.2s ease-in-out;
+}
+a:hover {
+  color: var(--accent);
+}
+.credits{
+    font-size:6pt !important;
+    position: absolute;
+    bottom:0px;
+    margin-bottom: 20px;
+    width:90%;
+}
+.credits li, .credits a{
+    font-size:6pt;
+    color:#a69590;
+    line-height: 170%;
+    margin:0px;
+}
+.credits-title{
+    margin: 2px 0px;
+    padding:4px;
+    border:none;
+    border-bottom: 2px solid #6c5c56;
+    border-top: 2px solid #6c5c56;
+    width:98%;
+    color:#a69590;
+}
+
+
+.goback {
+    position:fixed;
+    /* position:absolute; */
+    top:5px;
+    left:250px;
+    width:30px;
+    height:30px;
+    background: url('https://i.imgur.com/ZRbc9ID.png') top left;
+}
+
+
+.goback:hover {
+    background: url('https://i.imgur.com/MJEkyuI.png') top left;
+}
+
+.topverticalspacer{
+    height:0px;
+}
+
+.navbox{
+    padding:30px 0px 10px 0px;
+    /* border:1px solid red; */
+}
+
+
+
+
+
+/* . . . . . . . . . . . . . . . . . . . . .  */
+/*MEDIA QUIERIES*/
+/* . . . . . . . . . . . . . . . . . . . . .  */
+@media only screen and (max-width: 720px) {
+  body > iframe:first-of-type {
+    top: 80px;
+  }
+
+  aside {
+    position: fixed;
+    width: 100%;
+    height: 230px;
+    /* height: auto; */
+    flex-direction: row;
+    justify-content: space-between;
+    /* justify-content: space-around; */
+    padding: 20px 20px;
+    margin:0px;
+    /* border:1px solid purple; */
+  }
+
+  #abt, nav {
+    <!-- display: none; -->
+
+  }
+
+  #social {
+    margin: inherit;
+    padding-top: 6px;
+  }
+
+  main {
+    width: 100%;
+    margin-left: 0;
+    border-left: none;
+    padding: 100px 0px 40px 0px;
+  }
+
+  #grid {
+    width: var(--gridWidth);
+  }
+
+  .credits {
+    display: none;
+  }
+
+  .goback {
+      /* position:absolute; */
+      /* position:relative; */
+      /* top:0px; */
+      /* left:20px; */
+      position:fixed;
+      top:22px;
+      top:6px;
+      left:10px;
+      left:8px;
+      z-index:50;
+  }
+
+
+  .sep {
+    display: none;
+  }
+
+
+    /* .parent {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    } */
+
+  .navbox{
+      padding:0px 10px 0px 10px;
+      padding:0px 0px 0px 20px;
+      /* border:1px solid red; */
+      /* flex-direction: column; */
+      /* justify-content: space-between; */
+      /* justify-content: space-around; */
+      /* align-content: : center;
+      vertical-align: middle;
+      align-items: center; */
+      display: flex;
+    align-items: center;
+  }
+
+  .topverticalspacer{
+      height:170px;
+  }
+
+  aside h1 {
+    font-size: 1.0rem;
+  }
+
+  #abt {
+  line-height: 120%;
+  letter-spacing: 1.8px;
+  font-size: 6.5pt;
+    }
+
+
+nav i  {
+font-size: 6.5pt !important;
+}
+nav i a  {
+font-size: 8.5pt !important;
+}
+
+}
+/* end of @media only screen and (max-width: 720px) { */
+/* . . . . . . . . . . . . . . . . . . . . .  */
+
+.aboutbox{
+    display: flex;
+    align-items: center;
+    /* align-items: flex-end; */
+}
+.aboutbox-inner{
+    display: flex;
+
+    flex-direction: column;
+}
+
+</style>
+</head>
+<body>
+<div id='wrapper'>
+<aside>
+
+
+
+<!--TITLE - there is no ID title code tho-->
+<div class='aboutbox'><div class='aboutbox-inner'>
+  <!-- <h1>the captain's log</h1> -->
+  <h1><a href="https://creatureframe.com/"> <img src="assets/icons/green-computer.gif"> </a>
+      devlogs & shenanigans</h1>
+
+<!--DESCRIPTION-->
+<div id="abt">
+<br><br>
+an index of posts you'll find on my <a href="https://creatureframe.com/rss.xml">RSS feed</a>
+
+      <br><br><br>
+      <div class="reloadsign">
+        <!-- <br><br>if posts have loaded weird, click  -->
+        <nav><span><i>if posts have loaded weird, click <a href="#" data-filter="*">here</a></i></span></nav>
+      </div>
+</div>
+<!-- end #abt -->
+
+
+<!-- orange seperator, don't really need -->
+<!-- <div class="sep"></div> -->
+
+
+</div></div>
+<!-- end aboutbox and aboutbox-inner -->
+
+
+
+
+
+
+<div class="navbox">
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<nav>
+<div class="title-filter">filter by tags :</div>
+
+<span> <a href="#" data-filter="*">all</a> </span> ■
+<span> <a href="#" data-filter=".devlog">devlog</a> </span> ■
+<span> <a href="#" data-filter=".gamedev">gamedev</a> </span> ■
+<span> <a href="#" data-filter=".3D-art">3D-art</a> </span> ■
+<span> <a href="#" data-filter=".tools">tools</a> </span> ■
+<span> <a href="#" data-filter=".3D-assets">3D-assets</a> </span> ■
+<span> <a href="#" data-filter=".resources">resources</a> </span> ■
+<span> <a href="#" data-filter=".css-crimes">css-crimes</a> </span>
+
+</nav>
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+</div>
+
+
+
+
+
+
+
+
+
+<!-- <nav>
+<div class="title-filter">editing :</div>
+<ul>
+<li>
+<a href="https://docs.google.com/spreadsheets/d/1Swar-rZUcStgl9-EZS9VelTuW_Ms2c8mLc-yVPfV79Y/edit?usp=sharing">add entries</a>
+</li>
+<div class="spacer"></div>
+<li>
+<a href="https://krawki.github.io/mc/map.html">map coordinates</a>
+</li>
+<li>
+<a href="https://docs.google.com/spreadsheets/d/1Ze6jEaQte0F9Te-FeqZ2HLaKBaEXRttHvsD_3GQgCjA/edit?usp=sharing">add coords</a>
+</li> -->
+
+<!-- <div class="spacer"></div>
+<li>
+<a href="url">how to add images</a>
+</li> -->
+
+
+
+
+
+
+<!--  CREDITS  -->
+<!-- <div class="spacer"></div> -->
+<div style="height:40px;
+/* border:1px solid blue; */
+"></div>
+<div style="" class="credits">
+<div class="credits-title">credits :</div>
+<ul>
+    <li>
+    <a href="https://nonspace.dev/">code</a>
+    </li>
+    <li>
+    <a href="https://www.curseforge.com/minecraft/texture-packs/quadral-pack">background textures</a>
+    </li>
+    <li>
+    <a href="https://web.archive.org/web/20200117210841/http://users.dakotacom.net/~trish/peachies-collection/">favicon</a>
+    </li>
+</ul>
+</div>
+
+
+
+
+
+</aside>
+<main>
+<a href="https://creatureframe.com/"><div class="goback"></div></a>
+<div id="grid">
+
+
+
+<div class="topverticalspacer"></div>
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+        <!--CSS DEMOING - COPY/PASTE START-->
+        <!-- turn this on to see what each post will look like, code the css for it as needed, then hide -->
+<!--
+<div class="card f2">
+<div class="image-banner"><img src="http://placehold.jp/ddd/666666/250x250.png"></div>
+<div class="box">
+<h2>Headline</h2>
+<i>subtitle</i>
+<div class="sep"></div>
+<div class="desc">Lorem ipsum dolores
+prosit lorem ipsum dolores pro dolores prosit lorem ipsum dolores prosit
+lorem ipsum dolores prosit bla ipsum dolor sit amet, consectetur
+adipiscing elit.
+
+<br><br>
+<img src='assets/imgs/diagrams/aether portal.png' class='image-float'>
+
+
+<br><br><img src='assets/imgs/default_icons/diamond_x4.png' class='icon_64px'>
+
+<br><br>
+<img src='https://camo.githubusercontent.com/4820d97b35c3c3391186fd2c8c03eae0083ef1b7eea1603f01aac6729cfd8c70/68747470733a2f2f692e6779617a6f2e636f6d2f66636532326431613137356231353264363636343266323966306535393936652e706e67'>
+
+
+</div>
+</div>
+</div> -->
+
+
+        <!--COPY/PASTE END-->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+<!--CSS DEMOING 2 - COPY/PASTE START-->
+<!-- <div class="card 3D-assets resources" style="margin: 15px 0px;">
+  <a href="https://creatureframe.com/post/3d/3dart-lowpolycomputers.html">
+  <div class="box">
+    <h2>3D models - computers</h2>
+    <div class="sep"></div>
+    <div class="desc">
+    <div class="image-banner"><img src="assets/imgs/bookshelves quadral.png"></div>
+      some free computer 3d models for you<br>
+      <div class="img-desc" align="center"><img src="https://tools.creatureframe.com/assets/era_Gateway_2000_PC_from_1996_256px.gif"></div>
+      <div class="img-bord" align="center"><img src="https://tools.creatureframe.com/assets/era_Gateway_2000_PC_from_1996_256px.gif"></div>
+    </div>
+  </div>
+</a>
+</div> -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+<!-- <style>
+
+</style> -->
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- can add this top banner image right under the class="card gamedev devlog" div -->
+<!-- <div class="image-banner"><img src="https://i.imgur.com/Z0SmYFv.jpg"></div> -->
+
+<!-- <div class="card gamedev devlog" >
+
+  <div class="box"><div class="titlebar">
+    <h2></h2><i>day 1 (mon 3/7/23)</i>
+    <div class="sep"></div>
+    </div>
+    <div class="desc">
+      <img src="assets/imgs/postheaders/3d_computers_header.png" class="photoborder" style="border-radius:3px;">
+
+      <div class="photoborder"><img src="assets/imgs/postheaders/3d_computers_header.png" style="border:1px solid #000;border-radius:3px;"></div>
+
+      <div class="lilborder"><img src="assets/imgs/postheaders/3d_computers_header.png" style="padding:10px;"></div>
+
+      <img src="assets/imgs/postheaders/3d_computers_header.png" class="lilborder">
+
+      <img src="assets/imgs/postheaders/3d_computers_header.png" class="img-fullbox" style="width:calc(100% + 40px); margin:0px;position:relative;">
+<br><br><div align="center"><img src="assets/imgs/default_icons/diamond_x4.png" class="icon_64px"></div>
+    </div>
+  </div>
+</div> -->
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+  <!-- <div class="image-banner"><img src="assets/imgs/postheaders/3d_computers_header.png"></div> -->
+<!-- <h2>title</h2><div align="right"><i>day 1 (mon 3/7/23)</i></div> -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<div class="card gamedev devlog" >
+  <div class="image-banner"><img src="https://i.imgur.com/Z0SmYFv.jpg"></div>
+  <div class="box" style="padding:15px;">
+    <h2>title</h2><div class="subtitle">day 1 (mon 3/7/23)</div>
+    <div class="sep"></div>
+    <div class="desc" style="margin:0px !important;padding:0px;">
+      <div class="photoborder"><img src="assets/imgs/postheaders/3d_computers_header.png" style="border:1px solid #000;border-radius:3px;"></div>
+<br><br><div align="center"><img src="assets/imgs/default_icons/diamond_x4.png" class="icon_64px"></div>
+    </div>
+  </div>
+</div>
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+<!-- NEW GRID TEMPLATE -->
+
+<!--GRID ITEM TEMPLATE-->
+<script id="handlebars-template-grid" type="text/x-handlebars-template">
+{{#each []}}
+<!--GRID ITEM START-->
+<a href="{{this.link}}">
+<div class="card {{this.filters}}">
+    <!-- top banner image -->
+  <!-- <div class="image-banner"><img src="{{this.imageurl}}"></div> -->
+
+  <!-- handlebars check if imageurl
+https://handlebarsjs.com/guide/builtin-helpers.html
+ -->
+  <!-- <div class="entry"> -->
+  {{#if this.imageurl}}
+  <div class="image-banner"><img src="{{this.imageurl}}"></div>
+  {{/if}}
+  <!-- </div> -->
+
+  <div class="box">
+    <!-- no link header -->
+    <div class="titlebar">
+    <h2>{{this.headline}}</h2><div class="subtitle">{{this.title}}</div>
+    </div>
+    <!-- only header has link -->
+    <!-- <h2><a href="{{this.link}}">{{this.headline}}</a></h2> -->
+    <!-- <div class="subheader">{{this.title}}</div> -->
+
+    <!-- header and subhead has link -->
+    <!-- <a href="{{this.link}}"><h2>{{this.headline}}</h2> -->
+    <!-- <div class="subheader">{{this.title}}</div></a> -->
+
+    <div class="sep"></div>
+    <div class="desc">
+      {{{this.description}}}
+    </div>
+  </div>
+</div>
+</a>
+  <!--GRID ITEM END-->
+  {{/each}}
+</script>
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </main>
+</div>
+
+</body>
+
+<!--SUCCULENT SCRIPTS-->
+<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/n0nspace/tumblr-themes@latest/sheet%20pages/succulent/succulent.js"></script> -->
+<script type="text/javascript" src="../assets/succulent.js"></script>
+
+<script>
+//TEMPLATE LIST
+//id + selector
+var templateList = [
+['#handlebars-template-grid', '#grid'],
+];
+</script>
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+  <!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
+<!-- <script type='text/javascript'>
+  window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+  }
+</script> -->
+
+
+
+<!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
+<!-- <script type='text/javascript'>
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem('firstLoad') )
+    {
+      localStorage['firstLoad'] = true;
+      window.location.reload();
+    }
+    else
+      localStorage.removeItem('firstLoad');
+  }
+</script> -->
+
+
+<!-- method 3 -->
+<!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
+<!-- <script>
+function reloadIt() {
+    if (window.location.href.substr(-2) !== "?r") {
+        window.location = window.location.href + "?r";
+    }
+}
+setTimeout('reloadIt()', 500)();
+</script> -->
+
+
+<!-- method 4 -->
+<!-- <script>
+reloadIt(){
+    var timeoutResize;
+    $(window).on('resize', function() {
+        clearTimeout(timeoutResize);
+        timeoutResize = setTimeout(function() {
+            resizeGrid();
+        }, 500);
+    });
+}
+reloadIt;
+</script> -->
+
+
+<!-- method 5 -->
+<!-- <script type='text/javascript'>
+function jump(h){
+window.onload = function() {
+    var url = location.href;               //Save down the URL without hash.
+    location.href = "#"+h;                 //Go to the target element.
+    history.replaceState(null,null,url);   //Don't like hashes. Changing it back.
+}
+jump();
+}
+</script> -->
+
+<!-- <script type='text/javascript'>
+function jump(h){
+window.onload = function() {
+    var url = location.href;
+    location.href = "#"+h;
+    history.replaceState(null,null,url);
+}
+}
+jump();
+</script> -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+</html>
