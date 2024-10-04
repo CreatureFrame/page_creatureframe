@@ -59,7 +59,7 @@
     padding: 15px;
     overflow: auto;
     background-image: url('bow-bg.gif'); /* F2U background provided by https://sadgrl.online/webmastery/downloads/tiledbgs */
-    background-image: url('https://tools.creatureframe.com/assets/eachpost/jazzcat/bg_jazzcatwindow_blur0x10.png');
+    /* background-image: url('https://tools.creatureframe.com/assets/eachpost/jazzcat/bg_jazzcatwindow_blur0x10.png'); */
     background-attachment: fixed;
     font-family: 'Trebuchet MS';
     font-family: 'Courier';

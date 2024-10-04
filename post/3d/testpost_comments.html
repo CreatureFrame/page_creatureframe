@@ -357,22 +357,21 @@ overflow:hidden;position:relative;z-index:50;pointer-events:none" class="banners
 
 
 
-<style>
-:root {
-  --accent: #2f201d;
-  --background: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top left fixed;
-  --sidebarBackground: #e4b176 repeat url('assets/imgs/bg_blackstone.png') top center;
-}
 
-/* .commentssection{
-    display: inline-block;
-    background:dodgerblue;
-    padding:22px 20px 0px 20px;
-    font: 10pt Tahoma;
-    width:100%;
-    color:#fff;
-    border:3px dashed gold;
-} */
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- COMMENTS BOX -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<style>
+
+:root {
+    /* done either way */
+  --commentstransparency: 0.3;
+  --commentsbg: rgba(255, 255, 255, 0.4);
+  --commentsborder:2px dashed #fff;
+
+  --backgroundblur1: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top left fixed;
+  --backgroundblur2: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top left fixed;
+}
 
 .commentssection{
     width:100%;
@@ -391,18 +390,43 @@ overflow:hidden;position:relative;z-index:50;pointer-events:none" class="banners
 #c_inputDiv {
     padding: 10px;
     text-transform: lowercase;
-    background-color: rgba(255, 255, 255, .5);
+    /* background-color: rgba(255, 255, 255, .3); */
+
+    /* done either way */
+    background-color: rgba(255, 255, 255, var(--commentstransparency) );
+    background-color: var(--commentsbg);
+
     border: 1px dashed #CE98FB;
     border: 2px dashed #fff;
+    border: var(--commentsborder);
     border-radius: 5px;
     border-radius: 8px;
     color:#222;
 }
+
+.c-comment {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, var(--commentstransparency));
+    background-color: var(--commentsbg);
+    border: 1px dashed #CE98FB;
+    border: var(--commentsborder);
+    border-radius: 4px;
+}
+
 </style>
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- <br clear="all"> -->
+
+
+
+
+
 
 <!-- https://cusdis.com/dashboard/project/5d3be93d-065a-4f58-9cc7-e9edf5088fd7/settings -->
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
-<div class="commentssection">
+<!-- <div class="commentssection">
 <div id="cusdis_thread"
   data-host="https://cusdis.com"
   data-app-id="5d3be93d-065a-4f58-9cc7-e9edf5088fd7"
@@ -411,7 +435,7 @@ overflow:hidden;position:relative;z-index:50;pointer-events:none" class="banners
   data-page-title="{{ PAGE_TITLE }}"
 ></div>
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-</div>
+</div> -->
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 
@@ -424,10 +448,12 @@ overflow:hidden;position:relative;z-index:50;pointer-events:none" class="banners
 </div>
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 
+
+
+
+
+
 </div>
-
-
-
 <!-- end <div class="outermostbox"> -->
 </body>
 </html>

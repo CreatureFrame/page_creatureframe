@@ -361,10 +361,50 @@ overflow:hidden;position:relative;z-index:50;pointer-events:none" class="banners
 
 
 
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<!-- EXAMPLES :
+for background colors in :root
+/* done either way */
+--commentstransparency: 0.3;
+--commentsbg: rgba(255, 255, 255, 0.4);
+
+then in the classes
+/* done either way */
+background-color: rgba(255, 255, 255, var(--commentstransparency) );
+background-color: var(--commentsbg);
+-->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<!-- TO DO :
+- get the correct .css file at top once its ready
+- copy the below css changes to the css file, unless unique for the page
+-->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+
+
+
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 <!-- COMMENTS BOX -->
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 <style>
+
+:root {
+    /* done either way */
+  --commentstransparency: 0.3;
+  --commentsbg: rgba(255, 255, 255, 0.4);
+  --commentsborder:2px dashed #fff;
+
+  --backgroundblur1: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top left fixed;
+  --backgroundblur2: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top left fixed;
+}
+
 .commentssection{
     width:100%;
     display: block;
@@ -382,16 +422,37 @@ overflow:hidden;position:relative;z-index:50;pointer-events:none" class="banners
 #c_inputDiv {
     padding: 10px;
     text-transform: lowercase;
-    background-color: rgba(255, 255, 255, .5);
+    /* background-color: rgba(255, 255, 255, .3); */
+
+    /* done either way */
+    background-color: rgba(255, 255, 255, var(--commentstransparency) );
+    background-color: var(--commentsbg);
+
     border: 1px dashed #CE98FB;
     border: 2px dashed #fff;
+    border: var(--commentsborder);
     border-radius: 5px;
     border-radius: 8px;
     color:#222;
 }
+
+.c-comment {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, var(--commentstransparency));
+    background-color: var(--commentsbg);
+    border: 1px dashed #CE98FB;
+    border: var(--commentsborder);
+    border-radius: 4px;
+}
+
 </style>
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 <!-- <br clear="all"> -->
+
+
+
 
 
 
@@ -428,7 +489,7 @@ overflow:hidden;position:relative;z-index:50;pointer-events:none" class="banners
 <script src="./testpost_comments_files/comment-widget.js"></script>
 </div> -->
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
-<div class="commentssection">
+<!-- <div class="commentssection">
 <div id="c_widget">
     <div id="c_inputDiv">
         <form id="c_form" onsubmit="c_submitButton.disabled = true; v_submitted = true;" method="post" target="c_hiddenIframe" action="https://docs.google.com/forms/d/e/1FAIpQLSfogBDOAZfBlrnJ2e9YsdlwNwdKlyUr4GvQVvKmiM6K48G2xQ/formResponse">
@@ -458,8 +519,37 @@ overflow:hidden;position:relative;z-index:50;pointer-events:none" class="banners
 <div id="c_container"><div id="test name|--|10/4/2024 15:18:27" class="c-comment" style="display: block;"><h3 class="c-name">test name</h3><span class="c-timestamp">04/10/2024</span><a href="https://creatureframe.com/" class="c-site">Website</a><p class="c-text">hello</p><button value="test name|--|10/4/2024 15:18:27" onclick="openReply(this.value)" class="c-replyButton">Reply</button></div></div>
 
 <script src="https://creatureframe.com/post/assets/comment-widget.js"></script>
-</div>
+</div> -->
 
+<div class="commentssection">
+<div id="c_widget">
+    <div id="c_inputDiv">
+        <form id="c_form" onsubmit="c_submitButton.disabled = true; v_submitted = true;" method="post" target="c_hiddenIframe" action="https://docs.google.com/forms/d/e/1FAIpQLSfogBDOAZfBlrnJ2e9YsdlwNwdKlyUr4GvQVvKmiM6K48G2xQ/formResponse">
+    <h2 id="c_widgetTitle">Leave a comment!</h2>
+
+    <div id="c_nameWrapper" class="c-inputWrapper">
+        <label class="c-label c-nameLabel" for="entry.694796007">Name</label>
+        <input class="c-input c-nameInput" name="entry.694796007" id="entry.694796007" type="text" maxlength="16" required="">
+    </div>
+
+    <div id="c_websiteWrapper" class="c-inputWrapper">
+        <label class="c-label c-websiteLabel" for="entry.605179758">Website (Optional)</label>
+        <input class="c-input c-websiteInput" name="entry.605179758" id="entry.605179758" type="url" pattern="https://.*">
+    </div>
+
+    <div id="c_textWrapper" class="c-inputWrapper">
+        <label class="c-label c-textLabel" for="entry.341888751"></label>
+        <textarea class="c-input c-textInput" name="entry.341888751" id="entry.341888751" rows="4" cols="50" maxlength="500" required=""></textarea>
+    </div>
+
+    <input id="c_submitButton" name="c_submitButton" type="submit" value="Submit">
+<input type="text" id="entry.1631738198" name="entry.1631738198" style="display: none;"><span id="c_replyingText" style="display: none;"></span><input type="text" id="entry.532799568" name="entry.532799568" style="display: none;"><iframe id="c_hiddenIframe" name="c_hiddenIframe" onload="if(v_submitted){fixFrame()}" style="display: none;"></iframe></form>
+    </div>
+    <div id="c_container"><div id="test name|--|10/4/2024 15:18:27" class="c-comment" style="display: block;"><h3 class="c-name">test name</h3><span class="c-timestamp">04/10/2024</span><a href="https://creatureframe.com/" class="c-site">Website</a><p class="c-text">hello</p><button value="test name|--|10/4/2024 15:18:27" onclick="openReply(this.value)" class="c-replyButton">Reply</button></div></div>
+</div>
+</div>
+<!-- end <div class="commentssection"> -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 
 
