@@ -42,11 +42,16 @@ const s_formId = '1FAIpQLSfogBDOAZfBlrnJ2e9YsdlwNwdKlyUr4GvQVvKmiM6K48G2xQ';
 const s_nameId = '694796007';
 const s_websiteId = '605179758';
 const s_textId = '341888751';
+// https://docs.google.com/forms/d/e/1FAIpQLSfogBDOAZfBlrnJ2e9YsdlwNwdKlyUr4GvQVvKmiM6K48G2xQ/viewform?usp=pp_url&entry.694796007=Name&entry.605179758=Website&entry.341888751=Text&entry.1631738198=Page&entry.532799568=Reply&entry.1273030512=Moderated
+const s_moderatedId = '1273030512'; // The Moderated field ID
 const s_pageId = '1631738198';
 const s_replyId = '532799568';
 // https://docs.google.com/spreadsheets/d/1NqomtLThU7BGr7eUHZS6AP8eh0Ac7CRQV_TyTWb-B1I/edit?usp=sharing
 const s_sheetId = '1NqomtLThU7BGr7eUHZS6AP8eh0Ac7CRQV_TyTWb-B1I';
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+
 
 // The values below are necessary for accurate timestamps, I've filled it in with EST as an example
 // const s_timezone = -5; // Your personal timezone (Example: UTC-5:00 is -5 here, UTC+10:30 would be 10.5)
@@ -130,6 +135,7 @@ const v_formHtml = `
         <textarea class="c-input c-textInput" name="entry.${s_textId}" id="entry.${s_textId}" rows="4" cols="50"  maxlength="${s_maxLength}" required></textarea>
     </div>
 
+    <input name="entry.${s_moderatedId}" id="entry.${s_moderatedId}" type="hidden" readonly value="false">
     <input id="c_submitButton" name="c_submitButton" type="submit" value="${s_submitButtonLabel}" disabled>
 `;
 
@@ -397,6 +403,9 @@ function createComment(data) {
     if (s_wordFilterOn) {filteredName = filteredName.replace(v_filteredWords, s_filterReplacement)}
     name.innerText = filteredName;
     name.className = 'c-name';
+    if(data.Moderated == false) {
+        name.innerText = 'Guest'; // Change 'Guest' to whatever you want
+    }
     comment.appendChild(name);
 
     // Timestamp
@@ -411,6 +420,9 @@ function createComment(data) {
         site.innerText = s_websiteText;
         site.href = data.Website;
         site.className = 'c-site';
+        if(data.Moderated == false) {
+            site.innerText = '';
+        }
         comment.appendChild(site);
     }
 
@@ -420,6 +432,9 @@ function createComment(data) {
     if (s_wordFilterOn) {filteredText = filteredText.replace(v_filteredWords, s_filterReplacement)}
     text.innerText = filteredText;
     text.className = 'c-text';
+    if(data.Moderated == false) {
+        text.innerText = 'This comment is awaiting moderation'; // Change this value to whatever you want
+    }
     comment.appendChild(text);
     
     return comment;
