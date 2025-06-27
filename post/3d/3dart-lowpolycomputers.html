@@ -348,13 +348,225 @@ overflow:hidden;position:relative;z-index:50;pointer-events:none" class="banners
 
 
 
+
+
+<!-- ADDING COHOST LINK TO POST -->
+<style>
+    .icon-cohost {
+        position:relative;
+        width:35px;
+        height:25px;
+        background: url('../assets/icons/cohost logo-assets/cohost_logo_35x25_white.png') top left;
+        /* border:1px solid red; */
+        z-index:100;
+        background-repeat: no-repeat;
+        margin-top: 5px;
+        /* margin-bottom: -5px; */
+    }
+    .icon-cohost:hover {
+        /* background: url('../assets/icons/cohost logo-assets/cohost_logo_35x25_purple.png') top left; */
+        background: url('../assets/icons/cohost logo-assets/cohost_logo_35x25_orange.png') top left;
+    }
+</style>
+<div align="right"><a href="https://web.archive.org/web/20240927161216/https://cohost.org/Cro/post/6392565-div-style-border-1" target="_blank"><div class="icon-cohost"></div></a></div>
+
+
+
+
+
+
+
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 </div>
 <!-- end id "postsize" -->
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
+</div>
+<!-- end columnbox -->
 
 
-</div></div>
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- COMMENTS BOX -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<style>
+.revealdetails{
+    margin-top:-40px;margin-left:25px;color:#fff;font-family:courier;
+}
+
+:root {
+    /* done either way */
+  /* --commentstransparency: 0.3; */
+  /* can also use a bg image */
+  --commentsbg: rgba(255, 255, 255, 0.4);
+  --commentsbg: rgba(0, 255, 255, 0.25);
+  --commentsbg: rgba(0, 180, 255, 0.35);
+  --commentsborder:2px dashed #fff;
+  --commentsbuttonsborder:1px solid #fff;
+  --commentsbuttonsborder-hover:1px solid #CE98FB;
+
+  --commentsreplybg: rgba(30, 90, 220, 0.75);
+  --commentsreplyborder:2px dashed #ffc6e4;
+
+  --commentsfontfam:Verdana;
+  --commentsfontfam:Courier;
+
+  --backgroundblur1: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top left fixed;
+  --backgroundblur2: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top left fixed;
+
+  --commentsfontcolor:#fff;
+  --commentsfontcolor:#b5ffe7;
+  --commentsaccentcolor1:#222;
+  --commentsaccentcolor2:#ffc6e4;
+  --commentsaccentcolor2:#ffffff;
+  --commentsaccentcolor3:#FB96D8;
+  --commentsaccentcolor4:#CE98FB;
+  --commentsaccentcolor5:#5E2C49;
+  --commentsaccentcolor6:#ffc6e4;
+
+  --commentsfontfam:Courier;
+  --commentsfontsize:14px;
+  --commentsfontsize:9.5pt;
+}
+
+.commentssection{
+    width:100%;
+    max-width:600px;
+    /* display: block; */
+    /* background: aqua; */
+    /* margin-top: -10%; */
+    /* margin-top: -60px; */
+    margin-top: 1px;
+    /* rmv later */
+    /* margin-top: -200px; */
+    position: relative;
+    z-index: 100;
+    /* z-index: 1; */
+    /* align-content: justify; */
+    text-align: justify;
+}
+
+
+
+#c_widget {
+    /* background-image: url('https://tools.creatureframe.com/assets/eachpost/jazzcat/bg_jazzcatwindow_blur0x10.png'); */
+    /* background-image: url('../../assets/backgrounds/fades/300px-assets/300px_middark.png'); */
+    /* padding-top: 20px; */
+    /* margin-bottom: 40px; */
+
+    /* border: 2px dashed #fff; */
+
+    /* font-family: 'Courier'; */
+    font-family: var(--commentsfontfam);
+    /* font-size: 14px; */
+    color: var(--commentsfontcolor);
+    font-weight: 600;
+    font-size: var(--commentsfontsize);
+}
+
+/* #c_widget div { */
+    /* padding:5px 5px; */
+/* } */
+
+/* Input section */
+#c_inputDiv {
+    padding: 10px;
+    text-transform: lowercase;
+    /* background-color: rgba(255, 255, 255, .3); */
+
+    /* done either way */
+    /* background-color: rgba(255, 255, 255, var(--commentstransparency) ); */
+    /* background-color: var(--commentsbg); */
+    background: var(--commentsbg);
+
+    /* border: 1px dashed #CE98FB; */
+    /* border: 2px dashed #fff; */
+    border: var(--commentsborder);
+    border-radius: 5px;
+    border-radius: 8px;
+    /* color:#222; */
+}
+
+.c-comment {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    /* background-color: rgba(255, 255, 255, var(--commentstransparency)); */
+    background: var(--commentsbg);
+    /* border: 1px dashed #CE98FB; */
+    border: var(--commentsborder);
+    border-radius: 4px;
+    /* margin-bottom: 0px; */
+}
+
+
+.c-site {
+    color: var(--commentsaccentcolor5);
+    border:1px solid #fff;
+    padding:3px 6px;
+    border-radius: 4px;
+    background: var(--commentsaccentcolor3);
+    border: var(--commentsbuttonsborder);
+ }
+.c-site:hover {
+    color: var(--commentsaccentcolor4);
+    background: #fff;
+    border: var(--commentsbuttonsborder-hover);
+}
+.c-text {
+    color: var(--commentsaccentcolor2);
+}
+
+.c-reply {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 1);
+    /* border: 1px dashed #CE98FB; */
+    border: var(--commentsbuttonsborder);
+    border-radius: 4px;
+
+    /* color:#000; */
+
+    border: var(--commentsreplyborder);
+    background: var(--commentsreplybg);
+}
+</style>
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- <br clear="all"> -->
+
+
+
+
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- COMMENTS SECTION -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<details class="revealdetails"><summary>comments</summary>
+<div align="center">
+<div class="commentssection">
+<div id="c_widget"></div>
+<script src="http://creatureframe.com/post/assets/comment-widget.js"></script>
+</div>
+</details>
+</div>
+<!-- end div cneter -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+</div>
 <!-- end <div class="outermostbox"> -->
 </body>
 </html>

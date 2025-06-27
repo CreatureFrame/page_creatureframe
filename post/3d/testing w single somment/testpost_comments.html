@@ -358,14 +358,11 @@ overflow:hidden;position:relative;z-index:50;pointer-events:none" class="banners
 </a></div>
 
 
-
-
+<!-- TURN THESE BACK ON AND RMV FROM BOTTOM IF WANTING COMMENTS AT BOTTOM OF PAGE -->
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 </div>
 <!-- end id "postsize" -->
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
-
-
 </div>
 <!-- end div columnbox -->
 
@@ -417,6 +414,8 @@ background-color: var(--commentsbg);
   --commentsbg: rgba(0, 255, 255, 0.25);
   --commentsbg: rgba(0, 180, 255, 0.35);
   --commentsborder:2px dashed #fff;
+  --commentsbuttonsborder:1px solid #fff;
+  --commentsbuttonsborder-hover:1px solid #CE98FB;
 
   --commentsreplybg: rgba(30, 90, 220, 0.75);
   --commentsreplyborder:2px dashed #ffc6e4;
@@ -430,15 +429,16 @@ background-color: var(--commentsbg);
   --commentsfontcolor:#fff;
   --commentsfontcolor:#b5ffe7;
   --commentsaccentcolor1:#222;
-  --commentsaccentcolor2:#5E2C49;
   --commentsaccentcolor2:#ffc6e4;
   --commentsaccentcolor2:#ffffff;
   --commentsaccentcolor3:#FB96D8;
   --commentsaccentcolor4:#CE98FB;
+  --commentsaccentcolor5:#5E2C49;
+  --commentsaccentcolor6:#ffc6e4;
 
   --commentsfontfam:Courier;
   --commentsfontsize:14px;
-  --commentsfontsize:9pt;
+  --commentsfontsize:9.5pt;
 }
 
 .commentssection{
@@ -491,8 +491,8 @@ background-color: var(--commentsbg);
     /* background-color: var(--commentsbg); */
     background: var(--commentsbg);
 
-    border: 1px dashed #CE98FB;
-    border: 2px dashed #fff;
+    /* border: 1px dashed #CE98FB; */
+    /* border: 2px dashed #fff; */
     border: var(--commentsborder);
     border-radius: 5px;
     border-radius: 8px;
@@ -508,20 +508,22 @@ background-color: var(--commentsbg);
     /* border: 1px dashed #CE98FB; */
     border: var(--commentsborder);
     border-radius: 4px;
-    margin-bottom: 0px;
+    /* margin-bottom: 0px; */
 }
 
 
 .c-site {
-    color: var(--commentsaccentcolor1);
+    color: var(--commentsaccentcolor5);
     border:1px solid #fff;
     padding:3px 6px;
     border-radius: 4px;
     background: var(--commentsaccentcolor3);
+    border: var(--commentsbuttonsborder);
  }
 .c-site:hover {
-    color: var(--commentsaccentcolor2);
+    color: var(--commentsaccentcolor4);
     background: #fff;
+    border: var(--commentsbuttonsborder-hover);
 }
 .c-text {
     color: var(--commentsaccentcolor2);
@@ -532,7 +534,8 @@ background-color: var(--commentsbg);
     margin-bottom: 10px;
     padding: 10px;
     background-color: rgba(255, 255, 255, 1);
-    border: 1px dashed #CE98FB;
+    /* border: 1px dashed #CE98FB; */
+    border: var(--commentsbuttonsborder);
     border-radius: 4px;
 
     /* color:#000; */
@@ -568,6 +571,8 @@ background-color: var(--commentsbg);
 
 <div align="center">
 <div class="commentssection">
+    <!-- <details class="revealdetails"> -->
+    <!-- <summary>comments</summary> -->
 <div id="c_widget">
     <div id="c_inputDiv">
         <form id="c_form" onsubmit="c_submitButton.disabled = true; v_submitted = true;" method="post" target="c_hiddenIframe" action="https://docs.google.com/forms/d/e/1FAIpQLSfogBDOAZfBlrnJ2e9YsdlwNwdKlyUr4GvQVvKmiM6K48G2xQ/formResponse">
@@ -595,9 +600,23 @@ background-color: var(--commentsbg);
 
     <div id="hey|--|10/4/2024 17:18:04" class="c-comment" style="display: block;"><h3 class="c-name">hey</h3><span class="c-timestamp">04/10/2024</span><p class="c-text">hallo</p><button value="hey|--|10/4/2024 17:18:04" onclick="openReply(this.value)" class="c-replyButton">Reply</button><button onclick="expandReplies(this.parentElement.id)" class="c-expandButton">Show Replies (1)</button><div id="hey|--|10/4/2024 17:18:04-replies" class="c-replyContainer" style="display: block;"><div id="hey you|--|10/4/2024 19:51:18" class="c-reply"><h3 class="c-name">hey you</h3><span class="c-timestamp">04/10/2024</span><p class="c-text">im replying to you</p></div></div></div>
 </div>
+<!-- </details> -->
 </div>
 <!-- end <div class="commentssection"> -->
 <!-- </details> -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+<!-- TURN THESE OFF AND TURN ON HIGHER UP IF WANTING COMMENTS AT RIGHT UNDER POST -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- </div> -->
+<!-- end id "postsize" -->
+<!-- </div> -->
+<!-- end div columnbox -->
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 

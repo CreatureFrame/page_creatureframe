@@ -18,6 +18,14 @@
 
     Have fun! Bug reports are encouraged if you happen to run into any issues.
     - Ayano (https://virtualobserver.moe/)
+
+
+
+
+
+    // TO TURN MODERATION OFF, REMOVE THE LINE:
+    <input name="entry.${s_moderatedId}" id="entry.${s_moderatedId}" type="hidden" readonly value="false">
+    // from right below the textarea line with id="entry.${s_textId}" in it
 */
 
 
@@ -139,9 +147,11 @@ const v_formHtml = `
     <div id="c_textWrapper" class="c-inputWrapper">
         <label class="c-label c-textLabel" for="entry.${s_textId}">${s_textFieldLabel}</label>
         <textarea class="c-input c-textInput" name="entry.${s_textId}" id="entry.${s_textId}" rows="4" cols="50"  maxlength="${s_maxLength}" required></textarea>
+
+        // TO TURN MODERATION OFF, REMOVE THE LINE:
         <input name="entry.${s_moderatedId}" id="entry.${s_moderatedId}" type="hidden" readonly value="false">
     </div>
-    
+
     <input id="c_submitButton" name="c_submitButton" type="submit" value="${s_submitButtonLabel}" disabled>
 `;
 

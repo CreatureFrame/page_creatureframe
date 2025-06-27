@@ -1,0 +1,40 @@
+<style>
+<partial src="style.css"/>
+
+table {
+    display: none;
+}
+#toshow table {
+    display: table;
+}
+.sf {
+    display: none;
+}
+</style>
+
+<a name="a"></a>
+<div id="toshow">
+<div id="allthethings">
+
+
+
+
+<partial src="molidor_part_welcome.html"/>
+<partial src="molidor_part_adoptplant.html"/>
+
+<partial src="molidor_part_travelpics.html"/>
+<partial src="molidor_part_photoresources.html"/>
+
+<partial src="molidor_part_artarchives.html"/>
+<partial src="molidor_part_sitely.html"/>
+
+
+
+
+
+<!-- FOR END OF ALL COMBINED PARTS -->
+
+<!-- end of allthethings div -->
+</div>
+<!-- end of toshow div -->
+</div>

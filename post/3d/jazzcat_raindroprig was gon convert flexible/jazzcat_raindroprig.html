@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html><head>
+<link data-chunk="client" rel="stylesheet" href="../../../assets/cohostclient.css">
+<!-- <link data-chunk="client" rel="stylesheet" href="../../../assets/styles/style_scrollpost_B.css"> -->
+<link data-chunk="client" rel="stylesheet" href="../../assets/acnldreams_stylesheet.css">
+</head>
+
+<!-- ################################################ -->
+<!-- ################################################ -->
+<!-- ################################################ -->
+<!-- ################################################ -->
+
+
+
+
+<!--
+TESTING EMBEDDING VIDEO
+
+<div class="sidebyside-image"><video autoplay="" muted="" loop="" playsinline="" webkit-playsinline="" class="gifloops fx-thinbord" width="540"><source src="https://creatureframe.github.io/assets/tech/images/cat_ripple_initialsize_x2_500k_HALD_match_bettaDark_01.mp4" type="video/mp4"></video><br><p>
+    The ripple animation initially started as a larger effect with more detailed motion.
+    </p></div> -->
+
+
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+<style>
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BACKGROUNDS */
+/* . . . . . . . . . . . . . . . . . . . . . */
+.post-bgimg{
+    background: fixed url(../../../assets/eachpost/jazzcat/bg_jazzcatwindow.png);
+    background: fixed url(../../../assets/eachpost/jazzcat/bg_jazzcatwindow_blur0x10.png);
+    background: fixed url(../../../assets/eachpost/jazzcat/bg_wallflat.jpg);
+    background-position:bottom left;
+}
+/* backgrounds_painty_01_yellow_blur 0x12.jpg
+backgrounds_painty_01_yellow_blur 0x8.jpg
+backgrounds_painty_01_yellow_blur 8x8.jpg */
+
+.textbox-bgimg, .textbox{
+    background: fixed url(../../../assets/backgrounds/C61A6932-Edit_900h_midBlur.jpg);
+    background: fixed url(../../../assets/backgrounds/mc_bookshelves_quadral_pink.jpg);
+    background: fixed url(../../../assets/backgrounds/backgrounds_painty_01_yellow_pale.jpg);
+    background: fixed url("../../../assets/backgrounds/backgrounds_painty_01_yellow_blur 8x8.jpg");
+    background: fixed url("../../../assets/backgrounds/backgrounds_painty_01_yellow_blur 0x8.jpg");
+    background: fixed url(../../../assets/eachpost/jazzcat/bg_jazzcatwindow_blur0x20.png);
+    background: fixed url(../../../assets/eachpost/jazzcat/bg_jazzcatwindow_blur0x20_darker4.jpg);
+    background: fixed url(../../../assets/eachpost/jazzcat/bg_wallflat_blur0x10.jpg);
+    background-position:bottom left;
+    /* box-shadow: 5px 3px 0px #c59172; */
+    box-shadow: 4px 3px 0px #529eaa;
+    box-shadow: 4px 3px 0px #3c5186;
+    box-shadow: 4px 3px 0px #5770b0;
+    border:1px dashed #5770b0;
+    /* box-shadow: 5px 3px 0px #f5b043; */
+    box-shadow:
+    rgba(0, 0, 0, 0.3) 1px 2px 3px,
+    rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
+    /* box-shadow:
+    rgba(245, 176, 67, 0.9) 1px 2px 3px,
+    rgba(245, 176, 67, 0.4) 0px 2.5px 6px; */
+}
+.codebox{
+    background: fixed url("../../../assets/backgrounds/backgrounds_painty_01_yellow_blur 0x12.jpg");
+    /* background: fixed url("../../../assets/backgrounds/backgrounds_painty_01_yellow_blur-0x12_dark.jpg"); */
+    background: fixed url("../../../assets/backgrounds/backgrounds_painty_01_yellow_blur-0x12_sat.jpg");
+    background: fixed url("../../../assets/eachpost/jazzcat/bg_wallflat_blur0x20.jpg");
+    /* background: fixed url("../../../assets/backgrounds/backgrounds_painty_01_yellow_blur-0x12_orange.jpg"); */
+    background-position:bottom left;
+}
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BANNER AT START AND END OF POST */
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* banner-img: this has replaced "bannerstart-img" in past posts  */
+.banner-img{
+    min-width: 1000px;
+    max-width: 1000px;
+}
+.banner-start{
+    margin-top:30px;
+    filter: none;
+    filter: drop-shadow(-2px 2px 3px #813d00);
+    filter: drop-shadow(-2px 2px 0.5px #333);
+    filter: drop-shadow(-2px 2px 3.7px rgba(0, 0, 0, 0.5));
+}
+.bannerstart-contain{
+    margin-top:-680px;
+    height:680px;
+}
+.bannerend-inside{
+    height:650px;
+    margin-top: 5px;
+    margin-top:30px;
+}
+.post-cohostbarrier{
+    height:650px;
+}
+.banner-end{
+    filter: none;
+    filter: drop-shadow(4px 5px 0px #f5b043);
+    /* filter: drop-shadow(-2px 2px 6.7px rgba(0, 0, 0, 0.5)); */
+    rotate:180deg;
+}
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* TEXT STYLES */
+/* . . . . . . . . . . . . . . . . . . . . . */
+.font-styling{
+font: 10pt Verdana;
+font: 10pt "Verdana", "Courier", "Helvetica", sans-serif;
+font-weight: 400;
+line-height: 145%;
+letter-spacing: 1px;
+color: #eee;
+color: #333;
+color: #473627;
+color: #212b47;
+color: #141d38;
+padding: 0px;
+text-align: justify;
+border-radius: 6px;
+
+/* font: 10pt "Courier", "Helvetica", monospace; */
+color: #ede4cf;
+}
+/* for the top h1 title box, should probs replace textbox w whatever main text is using, or rmv these altogether if not needed */
+.bigtitle{
+font-size: 28pt;
+font-family: courier;
+
+color:#723e13;
+color:#FFDE78;
+color:#623008;
+font-weight: 600;
+text-decoration: none;
+filter: drop-shadow(3px 0px 0px #623008);
+
+/* filter: drop-shadow(3px 0px 0px #c59172); */
+border:none;
+background:transparent;
+padding:10px 17px;
+/* background:#c59172; */
+/* border-bottom:3px dashed #fff; */
+/* box-shadow:
+rgba(0, 0, 0, 0.3) 1px 2px 3px,
+rgba(0, 0, 0, 0.2) 0px 2.5px 6px; */
+/* border-radius: 8px; */
+margin:0px;
+/* margin-bottom:-4px !important; */
+
+/* for orange bubble */
+background: fixed url("../../../assets/backgrounds/backgrounds_painty_01_yellow_blur-0x12_sat.jpg");
+border-radius: 8px;
+margin:10px 40px;
+border:1px solid #fcc724;
+filter: none;
+box-shadow: 5px 3px 0px #FFDE78;
+padding:15px;
+line-height: 74%;
+/* filter: drop-shadow(3px 0px 0px #FFDE78); */
+
+background: fixed url("../../../assets/eachpost/jazzcat/bg_wallflat_blur0x20.jpg");
+color:#fcc724;
+}
+
+
+
+.tinytext{
+font: 8pt "Tahoma", "DM Mono", "Courier", "Verdana", "Helvetica", sans-serif;
+font-weight: 500;
+line-height: 125%;
+letter-spacing: 0.5px;
+color: #fff;
+color: #473627;
+text-align: justify;
+}
+/* for credits box at end */
+.tinytextbox{
+    color:#473627;
+}
+.minititle{
+border:none;
+border-bottom:1px solid #529eac;
+}
+</style>
+<style>
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BULLET POINTS FOR LISTS */
+/* . . . . . . . . . . . . . . . . . . . . . */
+ul {
+  margin: 0 0 0 22px;
+  font: 8pt Verdana;
+  letter-spacing: 1.5px;
+}
+.list-notes li {
+    background: url(../../../posts/media_ACNLdreams/assets/icons/notebook.gif) no-repeat 7px 7px transparent;
+    list-style-type: none;
+    margin: 0;
+    padding: 8px 20px 0px 39px;
+    vertical-align: middle;
+    margin-top: 7px;
+    line-height: 140%;
+}
+
+
+
+.scrollbox{
+/* border:1px solid #fff; */
+justify-content:space-between;
+/* align-items:center; */
+box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -5px inset, rgba(0, 0, 0, 0.4) 0px 18px 36px -3px inset, rgba(0, 0, 0, 0.8) 0px 0px 5px -1px inset;
+width: 96%;
+height:96%;
+width:100%;
+height:100%;
+
+overflow-x:hidden;
+overflow-y:auto;
+/* margin:-1%; */
+/* padding:0px 0px 0px 5px; */
+/* padding:4%; */
+
+box-shadow:
+rgba(0, 0, 0, 0.14) 1px 3px 15px,
+rgba(0, 0, 0, 0.22) 0px 2.5px 5px,
+rgba(122, 122, 122, 0.32) 3px 3px 0px,
+rgba(122, 85, 85, 0.35) 1px 1px 0.3px;
+
+padding:0px;
+margin:0px;
+position:relative;
+/* turn this off if wanting the background floating images to look "under" the inset dropshadow */
+/* position: inherit; */
+}
+
+
+pre {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+
+    white-space: pre-wrap;
+}
+
+
+.codebox{
+    border:1px solid #c59172;
+    width: 80%;
+    margin:0% 10% 0% 10%;
+    padding:10px;
+    padding:10px 22px;
+    border-radius: 3px;
+
+    font: 8pt "Verdana", "Courier", "Helvetica", sans-serif;
+    font-weight: 400;
+    line-height: 105%;
+    letter-spacing: 1.5px;
+    color: #623008;
+    /* color: #473627; */
+    text-align: left;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    /* box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset; */
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 5px -11px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -15px inset; */
+    /* box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    box-shadow: 8px 3px 0px #c59172;
+}
+
+.codebox2{
+    background: fixed url("../../../assets/backgrounds/backgrounds_painty_01_yellow_blur-0x12_orange.jpg");
+    background-position:bottom left;
+
+    font: 8pt "Courier", "Helvetica", monospace;
+    color: #fff;
+    font-weight: 500;
+    text-align: left;
+}
+
+
+.liltitle{
+font-size: 18pt;
+/* background: none; */
+filter: none;
+margin:0% 22% -17px 22%;
+padding:11px;
+
+border:1px solid #5770b0;
+box-shadow: 5px 3px 0px #5770b0;
+
+/* #cdaf9b */
+/* color:#c59172 !important; */
+color:#fff !important;
+color:#1f3366 !important;
+color:#3c5186 !important;
+/* background: #623008; */
+/* border:1px solid #c59172; */
+/* box-shadow: 5px 3px 0px #c59172; */
+background: fixed url("../../../assets/eachpost/jazzcat/bg_wallflat_invert2_blur0x10.jpg");
+
+}
+</style>
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+<!--             POST CONTAINER TOP             -->
+<!-- . . . . . . . . . . . . . . . . . . . . .  -->
+<div style="" class="post-cohostbarrier">
+<div style="" class="post-background-full post-bgimg bgimg-alignment final">
+<div class="scrollbox">
+<div class="font-styling">
+<!-- spacer -->
+<div style="width:10px;height:25px;"></div>
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+
+<!-- POST TITLE -->
+<!-- <div class="posttitle textbox">
+post title
+</div> -->
+
+
+
+<div align="center" style="position:relative;z-index:1;margin-bottom:-55px;margin-left:5%;max-width:90%;"><img src="../../../assets/eachpost/jazzcat/contentboxdeco_topspillB.png" class="image-fullscroll"></div>
+<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+<div class="bigtitle liltitle" align="center" style="z-index:15;position:relative;">
+making 3D scenes
+<!-- making jazz the cat -->
+</div>
+
+<div class="bigtitle" align="center" style="position:relative;z-index:15;">
+raindrop rig
+</div>
+<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+<!--
+
+/Users/charlie/Documents/work/MEGAsync/cohost css posts/repo/csstesting/assets/eachpost/jazzcat/cat_ripple_initialsize_60_60_90.gif
+/Users/charlie/Documents/work/MEGAsync/cohost css posts/repo/csstesting/assets/eachpost/jazzcat/cat_fxRig_rain_27_RIGFAR_60_60_90.gif
+/Users/charlie/Documents/work/MEGAsync/cohost css posts/repo/csstesting/assets/eachpost/jazzcat/cat_fxRig_rain_27_RIGCLOSE_60_60_90.gif
+/Users/charlie/Documents/work/MEGAsync/cohost css posts/repo/csstesting/assets/eachpost/jazzcat/cat_fishunder_60_60_90.gif
+/Users/charlie/Documents/work/MEGAsync/cohost css posts/repo/csstesting/assets/eachpost/jazzcat/cat_raindrop_initiallarger_cropped_2_60_60_90.gif
+ -->
+
+
+
+
+<!-- CONTENT BOX -->
+<div align="center" style="margin-top:-20px;position:relative;z-index:5;font-size:9pt;line-height:155%;" class="textbox">
+<br>
+
+<!-- little scene of Jazz sitting in the rain -->
+
+
+    <!-- simple underline
+<a href="https://cohost.org/Cro/post/6464183-div-align-center" class="tinytextbox-urly">this little scene</a>
+
+or backgrounded
+<a href="https://wunkolo.tumblr.com/post/145127775127" class="urlyblock">
+ -->
+
+the raindrops from <a href="https://cohost.org/Cro/post/6464183-div-align-center" class="urlyblock">this little scene</a> were the result of a buttload of experimentation. i wanted a single flexible rig for both raindrop and the ripple so I could just drop a bunch into a scene and swing them around into place as needed
+<!-- made it a single rig for both raindrop and the ripple so I could just drop a bunch into a scene and swing them around into place as needed -->
+<br><br>
+<!-- it's a single rig for both raindrop and the ripple so I could just drop multiple into a scene and make all the rain come in from the same direction quickly if needed -->
+</div>
+<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+<!-- gif demo -->
+
+<!-- <div align="center" style="margin-top:-15px;position:relative;z-index:10;"><img src="../../../assets/eachpost/jazzcat/cat_fxRig_rain_27_RIGFAR_60_60_90.gif" class="image-fullscroll lilborder"></div> -->
+
+<div align="center" style="margin-top:-40px !important;position:relative;z-index:10;"><img src="../../../assets/eachpost/jazzcat/cat_fxRig_rain_27_RIGFAR_angledrop.gif" class="image-fullscroll lilborder"></div>
+ <!-- CONTENT BOX -->
+ <div align="center" style="margin-top:-20px !important;position:relative;z-index:5;font-size:9pt;line-height:155%;" class="textbox">
+ <br>
+ even added a control for the raindrop's falling angle. not something i used in the final render as i'd decided i wanted the drops to fall straight down so it'd look like a still night, but hey, futureproofing
+
+ <br><br>
+<!-- for the ripple side of it it's a ridiculously overcomplicated rig, and a traditional dedicated animator would hate working with it, but I wanted to play around and explore what could be done to stylise raindrops -->
+for the ripple side of it it's a silly overcomplicated rig, i think most traditional dedicated animators would hate working with it, but I wanted to play around and explore what could be done to stylise ripples using just flat meshes and movement.
+ <br><br>
+was really keen to try out an idea i'd had, getting an overlaying set of "cutout" meshes to slide towards the center, over the lit ones, and was stoked to see some promising results as i mucked around with it
+
+ <br><br></div>
+ <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+<div align="center" style="margin-top:-45px !important;position:relative;z-index:10;"><img src="../../../assets/eachpost/jazzcat/cat_fxRig_rain_27_RIGCLOSE_60_60_90.gif" class="image-fullscroll lilborder"></div>
+
+
+
+
+<!-- side by side images  -->
+<!-- <br><br>
+<img src="../../../assets/eachpost/jazzcat/cat_fxRig_rain_27_RIGFAR_60_60_90.gif" class="lilborder sidebysideimg" style="width:49.5%;display:inline-block;">
+<img src="../../../assets/eachpost/jazzcat/cat_fxRig_rain_27_RIGCLOSE_60_60_90.gif" class="lilborder sidebysideimg" style="width:49.5%;display:inline-block;">
+
+<style>
+.sidebysidecontainer{
+    width:100%;
+    display:inline-block;
+    padding:0px;
+}
+.sidebysideimg{
+    width:40%;
+    display:inline-block;
+    pointer-events: none;
+    image-rendering:auto;
+}
+</style> -->
+
+
+
+
+
+
+
+
+<div align="center" style="margin-top:40px;position:relative;z-index:10;"><img src="../../../assets/eachpost/jazzcat/cat_raindrop_initiallarger_cropped_2_60_60_90.gif" class="image-fullscroll lilborder"></div>
+
+
+<!-- CONTENT BOX -->
+<div align="center" style="margin-top:-20px;position:relative;z-index:5;font-size:9pt;line-height:155%;" class="textbox">
+
+<br>
+i worked at it a few hours and messed around til i found an effect i really liked, this large wavering rosette, but found it was just way too busy once the fish were added into the scene.
+
+<!-- so unfortunately just had to suck it up and start over with something smaller that wouldn't overwhelm the scene -->
+<br><br>
+best solution was to just suck it up and start over making something smaller and shorter that wouldn't overwhelm the scene
+
+<!-- something that demanded less attention -->
+
+<!-- <br><br>i might find use for the more complex animation in a future project tho, you never know~ -->
+
+<br><br></div>
+<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+<!-- final cat gif -->
+<div align="center" style="margin-top:-45px !important; position:relative; z-index:10;"><img src="https://64.media.tumblr.com/07e3c494c4b2a67117c6b5d2ccd8a20b/2901202291a8766e-34/s540x810/1f5ca14bc69a5691d34066a6a08971d773220ed3.gif" class="image-fullscroll lilborder"></div>
+
+
+
+
+
+
+
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- EYE RIG -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+
+<!-- spacer -->
+<div style="width:10px;height:50px;"></div>
+
+
+
+<div align="center" style="position:relative;z-index:10;margin-bottom:-35px;margin-left:5%;max-width:90%;"><img src="../../../assets/eachpost/jazzcat/contentboxdeco_topspillB.png" class="image-fullscroll"></div>
+<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+<div class="bigtitle" align="center" style="position:relative;z-index:15;">
+eye rig
+</div>
+<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+ <!-- CONTENT BOX -->
+ <div align="center" style="margin-top:-20px;position:relative;z-index:5;font-size:9pt;line-height:155%;" class="textbox">
+ <br>
+
+the eye highlight rig was super simple; flat white meshes that are constrained to average their rotation between the viewer camera and a typical old aim control for hand-animating
+
+<br><br>
+<div align="center" style="position:relative;z-index:10;"><img src="../../../assets/eachpost/jazzcat/eyes_twitter_20fps_30_90_80_30fps.gif" class="image-fullscroll"></div>
+
+
+<br><br>
+<div align="center" style="position:relative;z-index:10;"><img src="../../../assets/eachpost/jazzcat/wip/eyerig_nodes.jpg" class="image-fullscroll lilborder"></div>
+
+<br><br>
+
+and seeing how it looks on Jazz the cat. his face and eyes had to be remodelled a lot to account for the highlights cutting through the mesh, but it was worth it.
+<br><br>for one thing the highlights really tied the look together, (this being a character designed to be mostly constructed of generously rounded geometric shapes and curved points). but as a bonus, with all that reworking the face, i got it to a place where i was way happier with the shapes and the direction it was heading in.
+
+<!-- , it really tied the look together, this being a character designed to be mostly constructed of generously rounded geometric shapes and curved points -->
+<br><br>
+<div align="center" style="">
+<img src="../../../assets/eachpost/jazzcat/eyesshine_cameraspinaround.avif" class="image-fullscroll lilborder">
+<br>
+<img src="../../../assets/eachpost/jazzcat/wip/eyehighlights_rigdemo.avif" class="image-fullscroll lilborder">
+<span style="font-size:7pt;"><i>(heads up, you ain't gonna be able to see the above two images if you use firefox, animated avifs are still not supported pppffffft)</i></span>
+</div>
+<!-- <i>(you ain't gonna be able to see these if you use firefox lmao suck it, animated avifs aren't compatible)</i> -->
+<!-- <br><br></div> -->
+<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+<!-- <div align="center" style="margin-top:20px;position:relative;z-index:10;"><img src="../../../assets/eachpost/jazzcat/wip/demonstrating_rigs_web.jpg" class="image-fullscroll lilborder"></div> -->
+<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+ <!-- CONTENT BOX -->
+ <!-- <div align="center" style="margin-top:-20px;position:relative;z-index:5;font-size:9pt;line-height:155%;" class="textbox"> -->
+ <!-- <br> -->
+
+<br>
+<!-- <a href="https://dev.creatureframe.com/post/188546694536/just-chilling-been-learning-how-to-design" class="tinytextbox-urly" style="padding:3px;">a technique i'd figured out and used previously</a> -->
+
+
+<style>
+.urlyblock{
+    border:none;
+    border-bottom:1px solid #529eaa;
+    border-top:1px solid #529eaa;
+    padding:1px;
+    background:#3c5186;
+}
+</style>
+
+
+for the rest of the eye, it's just the UVs of the eye material being scrolled around, a technique
+<a href="https://dev.creatureframe.com/post/188546694536/just-chilling-been-learning-how-to-design" class="urlyblock" style="border:none; border-bottom:1px solid #529eaa; border-top:1px solid #529eaa; padding:1px; background:#3c5186;">i'd used previously</a> after clearly forgetting what a pita it is to work with.
+
+<!-- but the result looks so clean i'm probably going to try it yet again in future -->
+
+<!-- after seeing <a href="https://wunkolo.tumblr.com/post/145127775127" class="urlyblock">wunkolo's post</a> -->
+
+<br><br>even whipped up an awkward panel for it, just to make it slightly easier to key, but i would absolutely not let anyone else suffer to use it.
+
+<br><br>scrolling UVs for shaders in unity? easy. for scaling pupils on a character rig in maya? ehhhh.
+
+<br><br>though i don't know who i'm kidding, i know i'm going to try it again in future, the result is so clean.
+
+<br><br>
+
+<div align="center" style="margin-top:20px;position:relative;z-index:10;margin:0px -22px;"><img src="../../../assets/eachpost/jazzcat/wip/demonstrating_rigs_web.jpg" class="image-fullscroll lilborder"></div>
+
+
+</div>
+<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+<!--
+solid
+text-decoration-style: wavy;
+double
+dotted
+dashed
+
+text-decoration: underline dotted red;
+
+text-decoration-style: dotted; text-decoration-thickness: 5px;
+
+border:none;
+border-bottom:2px solid blue;
+
+text-decoration-line: overline underline line-through;
+
+text-decoration-line: overline underline;
+
+text-decoration:underline;
+text-decoration-color:#529eaa;
+margin:0;
+ -->
+
+
+
+
+
+
+
+
+<!-- CREDITS BOX -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<!-- <div align="center"><div style="padding:5px;line-height:150%;font-family: verdana, tahoma;font-size: 9px;" class="tinytextbox bgimg-alignment textbox-bgimg ">
+<b><u>credits:</u></b><br>
+book pixel sprite by <a href="https://web.archive.org/web/20160225014532/https://ouka.kuronowish.com/rehoeass2/">ReHoeass</a>
+</div></div><br> -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+<!-- spacer to scroll past bottom border image -->
+<div style="width:10px;height:70px;"></div>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+<!-- END OF POST CONTENT -->
+<!-- END BOXES FOR POST -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+</div></div></div>
+<!-- end <div class="font-styling" and "scrollbox" and "post-background-full final" -->
+
+
+
+<style>
+
+    .banner-end-noflip{
+        filter: drop-shadow(-2px 2px 0px #6BFFF6);
+        filter: none;
+        filter: drop-shadow(-2px 2px 3px #813d00);
+        filter: drop-shadow(-2px 2px 6.7px rgba(0, 0, 0, 0.5));
+        pointer-events: none;
+        bottom:0px;
+        display: inline-block;
+        align-self: flex-end;
+        margin: 0px;
+        margin-bottom:19px;
+        margin-bottom:-59px;
+        height:auto;
+        /* for prechoster */
+        margin-bottom:0px;
+
+        /* border:1px solid red; */
+    }
+
+
+
+
+
+.bannerend-inside-bg{
+    pointer-events: none;
+    display: flex;
+    height: 100%;
+    margin: 0px;
+    /* border: 1px solid red; */
+    margin-top: 5px; /* CHANGE FOR PRECHOSTER */
+    height:500px;
+    position: absolute;
+    margin-top: 5px;
+    margin-top: 0px;
+    margin-top: 180px;
+
+    /* margin-top:-93px; */
+    margin-bottom:-593px;
+}
+
+.banner-end-bg{
+    filter: drop-shadow(-2px 2px 0px #6BFFF6);
+    filter: none;
+    filter: drop-shadow(-2px 2px 3px #813d00);
+    filter: drop-shadow(-2px 2px 6.7px rgba(0, 0, 0, 0.5));
+    pointer-events: none;
+    /* rotate:180deg; */
+    bottom:0px;
+    display: inline-block;
+    align-self: flex-end;
+    margin: 0px;
+    margin-bottom:19px;
+    /* for prechoster */
+    margin-bottom:0px;
+}
+
+
+
+
+</style>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+<!--           NEW METHOD FOR BANNERS ADDED           -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+<div style="" class="bannerstart-contain">
+<!-- <div style="" class="bannerstart-inside">
+<img src="../../../assets/banners/postBorder_60x1000-assets/paintycrafts_top.png" class="banner-img banner-start">
+</div> -->
+<!-- <div style="" class="bannerend-inside"><img src="../../../assets/banners/postBorder_60x1000-assets/paintycrafts_orangeyellowbrown.png" style="" class="banner-img banner-end"></div> -->
+
+<!-- water transparent background -->
+<!-- <div style="margin-bottom:-693px;height:600px;" class="bannerend-inside-bg"><img src="../../../assets/eachpost/jazzcat/21_bgtrans_cohost_540px_x2B.png" style="z-index:25; position: absolute; " class="banner-img banner-end-bg"></div> -->
+<div style="margin-bottom:-693px !important;height:600px;" class="bannerend-inside-bg"><img src="../../../assets/eachpost/jazzcat/21_bgtrans_cohost_540px_x2_75opacity.png" style="z-index:25; position: absolute; " class="banner-img banner-end-bg"></div>
+</div>
+<!-- border: 1px solid yellow; -->
+<!-- <div style="margin-top: -680px; " class="bannerend-inside"><img src="../../../assets/eachpost/jazzcat/postframe_fishswim_540px_exportPS.gif" style="z-index:115; position: absolute;" class="banner-img banner-end-noflip"></div> -->
+
+<!-- fish swimming animation overlay -->
+<div style="margin-top: -600px !important; width:100%; margin-left: -1px; overflow-x:hidden;" class="bannerend-inside"><img src="../../../assets/eachpost/jazzcat/banner_raindrops.gif" style="z-index:115; position: absolute;" class="banner-img banner-end-noflip"></div>
+</div>
+
+
+
+
+<!-- fish overlays -->
+<!--
+../../../assets/eachpost/jazzcat/postframe_fishswim_540px_exportPS.gif
+21_fish anim render cohost_1024px_seq_30_5_50.gif
+21_fish anim render cohost_1024px_seq_40_10_70.gif
+21_fishoverlay_cohost_1024px15fps_seq_30_5_50.gif <double speed, shows at 30fps
+21_fishoverlay_cohost_1024px15fps_seq_30_5_50_15fps.gif
+ -->
+
+
+
+
+<!-- <div style="z-index:25; position: absolute;" class="bannerend-inside-bg"><img src="../../../assets/eachpost/jazzcat/21_bgtrans_cohost_540px.png" style="z-index:25; position: absolute;" class="banner-img banner-end-bg"></div>
+</div>
+<div style="margin-top: -680px; z-index:45; position: absolute; border: 1px solid yellow;" class="bannerend-inside"><img src="../../../assets/eachpost/jazzcat/postframe_fishswim_540px_exportPS.gif" style="z-index:115; position: absolute;" class="banner-img banner-end-noflip"></div>
+</div> -->
+
+
+<!-- /Users/charlie/Documents/work/MEGAsync/cohost css posts/repo/csstesting/assets/eachpost/jazzcat/21_fish anim render cohost_540px_seq_40_10_70.gif -->
+<!-- /Users/charlie/Documents/work/MEGAsync/cohost css posts/repo/csstesting/assets/eachpost/jazzcat/postframe_fishswim_540px_exportPS.gif -->
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+</div>
+<!-- end div outermost "post-cohostbarrier" -->
+<!-- end <div style="" class="post-background-full final"> -->
+<!-- spacer for end of post needed for cohost -->
+<div style="width:10px;height:6px;"></div>

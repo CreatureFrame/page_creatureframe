@@ -1,4 +1,10 @@
 .DS_Store
+._*
 *_ver
 *.zip
 _*
+*.md
+*notes*
+*.psd
+*WIP*
+*aside*

@@ -1,0 +1,4121 @@
+<style>
+
+body {
+	background: fixed url("https://i.imgur.com/YMdYmRX.jpg") bottom center;
+}
+
+table {
+    background-color: transparent;
+}
+.sf {
+    display: none;
+}
+tr, td, body, .text {
+    font: 10pt Tahoma;
+    color: #fff;
+    text-align: justify;
+    line-height: 20pt;
+    margin: 18px 12px 18px 12px;
+    padding: 20px 20px 20px 20px;
+}
+
+#allthethings {
+    margin: 0 auto;
+    width: 815px;
+    padding-bottom: 30px;
+    text-align: right;
+}
+.section {
+	background: fixed repeat url("https://i.imgur.com/OblTNd9.jpg") bottom center;
+    margin: 50px 0 70px 0;
+    padding: 27px 35px 49px 35px;
+    width: 740px;
+    text-align: justify;
+    border-radius:20px;
+    border: 1px solid #fff;
+}
+.updatebox {
+	background: fixed repeat url("https://i.imgur.com/a1WqDsq.jpg") bottom center;
+	height: 90px;
+	display: block;
+	color: #6e6e6e;
+	line-height: 15px;
+	text-align: justify;
+	overflow: auto;
+	padding: 16px 30px;
+	font-family: menlo, courier, tahoma, georgia;
+	font-size: 9px;
+	margin: 20px 130px 20px 130px;
+	line-height: 13pt;
+	border: solid 1px #fff;
+	border-radius: 3px;
+	color: #fff;
+}
+.bookbox {
+	background: fixed repeat url("https://i.imgur.com/UeN3wJE.jpg") bottom center;
+	height: 550px;
+	width:415px;
+	display: block;
+	color: #6e6e6e;
+	overflow: auto;
+	padding: 0px 0px;
+	font-family: menlo, courier, tahoma, georgia;
+	font-size: 9px;
+	border: solid 1px #fff;
+	border-radius: 3px;
+	color: #000;
+}
+h1 {
+	background: fixed repeat url("https://i.imgur.com/4xSAsWX.jpg") bottom center;
+    padding: 22px 40px;
+    font-family: courier, tahoma, georgia;
+	font-style:bold;
+	font-size: 33px;
+    text-transform: lowercase;
+    letter-spacing: 3px;
+    margin: -65px -10px 30px -10px;
+    line-height: 13pt;
+    border: solid 2px #fff;
+    border-radius: 6px;
+    color: #fff;
+}
+h2 {
+	background: fixed repeat url("https://i.imgur.com/4xSAsWX.jpg") bottom center;
+    padding: 16px 30px;
+    font-family: courier, tahoma, georgia;
+	font-style:bold;
+	font-size: 24px;
+    text-transform: lowercase;
+    letter-spacing: 3px;
+    margin: 20px 130px 20px 130px;
+    line-height: 13pt;
+    border: solid 2px #fff;
+    border-radius: 10px;
+    color: #fff;
+	text-align: right;
+}
+
+h3 {
+	font: 10pt monospace;
+    padding: 10px 12px;
+    color: #fff;
+    letter-spacing: 2px;
+    line-height: 11pt;
+    border-bottom: 2px dashed #e9e9e9;
+    border-top: 2px dashed #e9e9e9;
+
+}
+h4 {
+    border-bottom: 1px solid #e9e9e9;
+    border-top: 1px solid #e9e9e9;
+    font: 9pt monospace;
+    padding-right: 180px;
+    padding-left: 180px;
+    color: #999;
+    text-align: justify;
+    line-height: 15pt;
+    margin: 6px -10px 14px -10px;
+}
+
+.fam-subtitle{
+	font: 10pt monospace;
+	padding: 10px 12px;
+	color: #fff;
+	letter-spacing: 2px;
+	line-height: 11pt;
+	border-bottom: 2px dashed #e9e9e9;
+	margin-top:-18px;
+	margin-bottom:18px;
+	text-transform:uppercase;
+}
+
+.note {
+    border-bottom: 1px solid #e9e9e9;
+    border-top: 1px solid #e9e9e9;
+	font-family: Menlo,monospace;
+	font-size:10pt;
+    padding-right: 110px;
+    padding-left: 110px;
+    color: #fff;
+    text-align: justify;
+    line-height: 19pt;
+    margin: 6px -10px 14px -10px;
+}
+
+.note2 {
+	border-bottom: 1px solid #e9e9e9;
+	border-top: 1px solid #e9e9e9;
+	font: 10pt Menlo, monospace;
+	padding-right: 110px;
+	padding-left: 110px;
+	color: #fff;
+	text-align: justify;
+	line-height: 19pt;
+	margin: 6px -10px 14px -10px;
+	letter-spacing: -0.6px;
+	color: #fff;
+	background: url("quote_darken3.png") center center;
+	background-size: cover;
+}
+
+.par {
+    font: 10pt Tahoma;
+    color: #fff;
+    text-align: justify;
+    line-height: 20pt;
+	letter-spacing: 0.8px;
+    margin: 6px 12px 10px 12px;
+    padding: 5px 20px 15px 20px;
+}
+
+a:link, a:visited {
+	color: #c8ed8e;
+    text-decoration: underline;
+	text-decoration-color: #fff;
+}
+a:hover {
+    color: #fff;
+	text-decoration: none;
+}
+
+
+a:link .urly, a:visited .urly {
+	color: #c8ed8e;
+	letter-spacing: 0.5px;
+    text-decoration: underline;
+	padding:6px 8px;
+	text-decoration-color: #fff;
+}
+
+a:hover .urly {
+    color: #fff;
+	text-decoration: none;
+	padding:5px 8px;
+	border-bottom: 1px solid #a0cc5b;
+	border-top: 1px solid #a0cc5b;
+}
+
+.urly:link, .urly:visited, .urly {
+    color: #c8ed8e;
+    text-decoration: underline;
+	text-decoration-color: #fff;
+	padding:6px 8px;
+}
+.urly:hover {
+    color: #fff;
+	text-decoration: none;
+	padding:5px 8px;
+	border-bottom: 1px solid #a0cc5b;
+	border-top: 1px solid #a0cc5b;
+}
+
+
+
+
+strong {
+	font:14px tahoma;
+	background: #9cc261;
+	padding: 3px 9px;
+	margin: -1px 1px;
+	color: #fff;
+	letter-spacing: 1.5px;
+	font-weight: 800;
+	border-radius: 4px;
+	line-height: 13pt;
+	font-variant: small-caps;
+}
+b {
+	color: #c8ed8e;
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+u {
+	letter-spacing: 1px;
+	text-decoration: underline;
+	text-decoration-color: #9cc261;
+}
+i {
+	font-style: italic;
+	letter-spacing: 1px;
+	color: edd7c8;
+}
+strike {
+	font-style: italic;
+	color: #e1cdbd;
+	text-decoration-color: #fff;
+}
+
+ .adoptytext {
+    font: 7pt courier new;
+    color: #ffffff;
+	background: #3dac62;
+	text-decoration: bold;
+    letter-spacing: 1px;
+    line-height: 9pt;
+    width: 100%;
+    height: 75px;
+    padding: 10px;
+    border: 1px solid #000;
+	resize: none;
+}
+
+ .adoptytext:hover {
+	background: #fff;
+    color: #000;
+}
+
+.phototext {
+   font: 7pt courier new;
+   color: #ffffff;
+   background: #3dac62;
+   text-decoration: bold;
+   letter-spacing: 1px;
+   line-height: 9pt;
+   width: 100%;
+   height: 75px;
+   padding: 10px;
+   border: 1px solid #000;
+   resize: none;
+}
+
+.phototext:hover {
+   background: #fff;
+   color: #000;
+}
+
+
+.bgurl-display-td{
+	border-right:1px solid #fff;
+	border-bottom:1px solid #fff;
+	padding:0px;
+	width:25%;
+	height:auto;
+}
+
+.bgurl-display-div{
+	width: 100%;
+	  margin: 0 auto;
+	  overflow: hidden;
+	  position: relative;
+	  height: 230px;
+}
+
+.bgurl-display-img{
+	height:250px;
+	height:100%;
+	position: absolute;
+}
+
+
+.bgurl {
+  font: 6pt courier new;
+   color: #ffffff;
+   background: #3dac62;
+   font-weight:800;
+   letter-spacing: 1px;
+   line-height: 6pt;
+   width: 100%;
+   height: 35px;
+   padding: 7px;
+   border: 1px solid #000;
+   resize: none;
+}
+
+.bgurl:hover {
+   background: #fff;
+   color: #000;
+}
+
+.bgurl-titles {
+  font: 7pt courier new;
+   color: #ffffff;
+   font-weight:800;
+   letter-spacing: 2px;
+   line-height: 9pt;
+   padding: 5px 9px;
+   border: 1px solid #fff;
+}
+
+.bgurl-td {
+  width:25%;
+  height:auto;
+  border-right:1px solid #fff;
+}
+
+
+
+
+
+.box-top {
+    width: 100%;
+    margin-bottom: 170px;
+    padding: 0px;
+}
+
+.spacertop {
+    width:100%;
+    height: 100px;
+    margin: -178 0 0 0;
+    text-align:center;
+}
+
+.box-bottom-pic {
+    width:100%;
+    height: 100px;
+    margin: -150 0 0 0;
+    text-align:center;
+}
+
+.box-deco-top {
+    width:100%;
+    height: 0px;
+    margin: -198 30 0 0;
+    text-align:center;
+}
+
+.overbanner-holder {
+    width: 100%;
+    margin-left: -20px;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+.overbanner-content {
+    width:100%;
+    height: 425px;
+    margin: 180 0 -140 0;
+    text-align:center;
+}
+.overbanner-img {
+    z-index: 5;
+    margin: 20 auto;
+    margin: 0 0 0 0;
+}
+.button-1 {
+    top: 15px;
+    z-index: 15;
+	background: url("button_1_backToTop.png");
+	border: 1px solid #fff;
+}
+.button-1:hover{
+    top: 15px;
+    z-index: 15;
+    background: url("button_1_backToTop_hov.png");
+}
+.button-2 {
+    top: 15px;
+    z-index: 15;
+	background: url("button_2_adopts.png");
+	border: 1px solid #fff;
+}
+.button-2:hover{
+    top: 15px;
+    z-index: 15;
+    background: url("button_2_adopts_hov.png");
+}
+
+.button-4 {
+    top: 15px;
+    z-index: 15;
+	background: url("button_4_resources.png");
+	border: 1px solid #fff;
+}
+.button-4:hover{
+    top: 15px;
+    z-index: 15;
+    background: url("button_4_resources_hov.png");
+}
+
+.button-5 {
+    top: 15px;
+    z-index: 15;
+	background: url("button_5_lookup.png");
+	border: 1px solid #fff;
+}
+.button-5:hover{
+    top: 15px;
+    z-index: 15;
+    background: url("button_5_lookup_hov.png");
+}
+
+.font-onWhiteBox {
+    background:#ffffff; border-radius:4px;border: 1px solid #000000;
+}
+.font-onBlackBox {
+    background:#3e3e3e; border-radius:4px;border: 1px solid #ffffff;
+}
+.img-link {
+	background: fixed repeat url("https://i.imgur.com/4xSAsWX.jpg") bottom center;
+	width:auto;
+	height:auto;
+	margin: auto;
+	padding:16px;
+	text-decoration: none;
+}
+
+.img-link:hover{
+	border:1px solid #a0cc5b;;
+	padding:15px;
+	text-decoration: none;
+	border-bottom: 1px solid #a0cc5b;
+	border-top: 1px solid #a0cc5b;
+}
+
+.img-disp {
+	background: fixed repeat url("https://i.imgur.com/4xSAsWX.jpg") bottom center;
+	padding:16px;
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+	.plantplant-showspace {
+	    top: -601px;
+	    text-align: center;
+	}
+	.plant-show {
+	    visibility: hidden;
+
+
+
+	}
+
+	.plant-thumb {
+	    visibility: visible;
+	    margin: 0 3px 1px 3px;
+	    top: 530px;
+		border: 3px dashed #9cc261;
+		padding:5px;
+		border-radius:3px;
+	    height: 65px;
+	}
+	.plant-show .plant-full img {
+	    display: none;
+	}
+	.plant-show:hover .plant-full {
+	    visibility: visible;
+	    left: 0;
+	    top: 0;
+	    width: 740px;
+	    height: 600px;
+	    display: block;
+	    color: #6e6e6e;
+	    text-align: center;
+	    overflow: hidden;
+	}
+	.plant-show:hover .plant-full img {
+	    display: inline-block;
+	    border: none;
+	}
+	.plantroomBG {
+		background: fixed repeat url("https://i.imgur.com/4xSAsWX.jpg") bottom center;
+		border: solid 1px #fff;
+		border: 3px dashed #9cc261;
+		border-radius:3px;
+		border-radius: 7px;
+	    letter-spacing: -2px;
+	    text-align: center;
+	    padding-top: 340px;
+	    line-height: 100px;
+	    padding-bottom: 260px;
+	}
+
+	.previewbox-eldart {
+	    top: -520px;
+	    text-align: center;
+	}
+	.preview-eldart {
+	    visibility: hidden;
+	}
+	.previewshelf-eldart {
+	    visibility: visible;
+	    margin: 10px 10px 3px 10px;
+	    top: 520px;
+	    border: 1px solid #f1f1f1;
+	    height: 100px;
+	}
+	.preview-eldart .full img {
+	    display: none;
+	}
+	.preview-eldart:hover .full {
+	    visibility: visible;
+	    left: 0;
+	    top: 0;
+	    width: 740px;
+	    height: 550px;
+	    display: block;
+	    line-height: 25px;
+	    text-align: center;
+	    overflow: hidden;
+	}
+	.preview-eldart:hover .full img {
+	    display: inline-block;
+	    border: none;
+	}
+	.displaybox-eldart {
+		background: fixed repeat url("DSCF9467_blurLo_Darker.jpg") bottom center;
+		border: solid 1px #fff;
+		border-radius: 7px;
+	    letter-spacing: -2px;
+	    text-align: center;
+	    padding-top: 350px;
+	    line-height: 100px;
+	    padding-bottom: 120px;
+	}
+
+	.previewbox-note{
+		font: 10pt monospace;
+	    padding: 4px 12px;
+	    color: #fff;
+	    letter-spacing: 2px;
+	    line-height: 11pt;
+	    border-top: 2px dashed #e9e9e9;
+		border-left: 1px solid #fff;
+		border-right: 1px solid #fff;
+		margin-top:-30px;
+	}
+
+
+
+
+
+	.linkinfobox {
+		background: fixed repeat url("DSCF9467_blurLo_Darker.jpg") bottom center;
+	    text-align: center;
+	    padding-top: 20px;
+	    padding-bottom: 20px;
+	}
+
+	.linkinfobuttonshelf {
+	    top: -40px;
+	    text-align: center;
+	}
+	.linkinfoshow {
+	    visibility: hidden;
+	}
+	.linkinfobuttons {
+	    visibility: visible;
+		margin: 0px -1px 0px -1px;
+	    top: -45px;
+	    border: 1px dashed #ccc;
+	    height: auto;
+	}
+	.linkinfobuttons:hover {
+	    border: 1px solid #f1f1f1;
+	}
+	.linkinfoshow .fulllink img {
+	    display: none;
+		background: yellow;
+	}
+	.linkinfoshow:hover .fulllink {
+	    visibility: visible;
+	    left: 0;
+	    top: 0;
+	    width: 100%;
+	    height: 40px;
+	    display: block;
+	    line-height: 25px;
+	    text-align: center;
+	    overflow: hidden;
+		border: 1px solid #fff;
+	}
+	.linkinfoshow:hover .fulllink img {
+	    display: inline-block;
+	    border: none;
+	}
+
+
+	.linkinfonote{
+		font: 8pt Verdana;
+	    padding: 4px 52px;
+	    color: #fff;
+	    letter-spacing: 1.4px;
+	    line-height: 12pt;
+	}
+
+	.linkinfosquare {
+	    visibility: visible;
+		margin: -6px -4px -3px -1px;
+		padding:0px;
+	    top: 5px;
+		border: 1px dashed #ddd;
+	    height: auto;
+	}
+	.linkinfosquare:hover {
+		border: 1px solid #f1f1f1;
+	}
+
+
+
+
+.creds-td{
+	width:50%;
+	vertical-align: text-top;
+	margin:0px;
+}
+.creds-title{
+	background: fixed repeat url("https://i.imgur.com/4xSAsWX.jpg") bottom center;
+	padding: 12px 16px;
+	font-family: courier, tahoma, georgia;
+	font-size: 24px;
+	text-transform: lowercase;
+	letter-spacing: 2px;
+	line-height: 13pt;
+	border: solid 2px #fff;
+	border-radius: 10px;
+	color: #fff;
+	text-align: center;
+	font-weight:600;
+}
+
+
+table {
+    display: none;
+}
+#toshow table {
+    display: table;
+}
+.sf {
+    display: none;
+}
+</style>
+
+<a name="a"></a>
+<div id="toshow">
+<div id="allthethings">
+
+
+
+
+<HEAD><link href="style.css" rel="stylesheet" type="text/css" media="all"></HEAD>
+<style>
+</style>
+<a name="a"></a>
+<div id="allthethings">
+
+
+
+<!-- IMPORTANT TO DO
+
+remove all    text-transform: lowercase; from textarea stuff in style.css it ruins to imgur urls
+
+write new instructions clearer for how to clean stylesheet, then page
+
+
+remove these from the stylesheet that combines
+
+/* PLANT GALLERY ROLLOVER STUFF */
+
+
+remove  from u
+text-decoration-color: #9cc261;
+
+ -->
+
+
+
+
+
+
+<!-- - - FADER AND NAVI BAR - - - - - -->
+
+
+<!-- <div style="position: relative; left: -1039px; top: -31px;">
+	<img src="/Users/charlie/Documents/Work/3D/Next/QuickCritters/pet lookups/page - folio page/petpage_codeo/images/topFader_invertCheck.png"  style="position: fixed; height: auto; width: auto; z-index: 10;">
+</div> -->
+
+<!-- <br><br><br><br><br><br> -->
+
+<div align="center">
+
+<div style="position: fixed; top: 0px; z-index:15;content-align:center;">
+
+	<!-- back to top -->
+	<a href="#top">
+		<img class="button-1" src="https://i.imgur.com/1syswPt.png" style="position: relative; left:100px ;border-radius: 5px;"></a>
+
+	<!-- plant adopts	 -->
+	<a href="#plants">
+		<img class="button-2" src="https://i.imgur.com/1syswPt.png" style="position: relative; left:110px ;border-radius: 5px;"></a>
+
+	<a href="#a">
+		<img class="button-3" src="https://i.imgur.com/1syswPt.png" style="position: relative; left:120px ;border-radius: 5px;"></a>
+
+	<a href="#bgs">
+		<img class="button-4" src="https://i.imgur.com/1syswPt.png" style="position: relative; left:130px ;border-radius: 5px;"></a>
+
+	<!-- pet lookup -->
+	<a href="http://www.neopets.com/petlookup.phtml?pet=Molidor">
+		<img class="button-5" src="https://i.imgur.com/1syswPt.png" style="position: relative; left:140px ;border-radius: 5px;"></a>
+
+</div>
+</div>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- BOTTOM SIDEBAR IMAGES (CURRENTLY THE ROSES) -->
+
+<!-- <img src="images/side_wave3_L.gif" style="position: fixed; left: -23px; bottom: -10px; height: auto; width: auto; z-index: 15	; pointer-events: none;"> -->
+
+<!-- <img src="images/side_wave3_R.gif" style="position: fixed; right: -23px; bottom: -10px; height: auto; width: auto; z-index: 15	; pointer-events: none;"> -->
+
+
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<!-- larger version of top banner -->
+
+<!-- <style>
+	.topbanner-pos {
+	    width:100%;
+	    height: 425px;
+	    margin: 80 0 0 0;
+	    text-align:center;
+	}
+
+</style> -->
+
+<!-- MOLIDOR AT TOP OF FIRST BOX -->
+	<!-- <div class="overbanner-holder">
+	<div class="topbanner-pos"><img class="overbanner-img" src="topimg_new.png">
+	</div>
+    </div> -->
+
+
+<!-- MOLIDOR AT TOP OF FIRST BOX -->
+	<div class="overbanner-holder">
+	<div class="overbanner-content"><img class="overbanner-img" src="topimg5_fixsig2.png" style="pointer-events:none;position: relative;">
+	</div>
+    </div>
+
+<!-- replace box-top-pic-1st with spacertop -->
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<a name="a"></a>
+<!-- INTRO/NEWS/UPDATES -->
+<div class="section">
+
+<br><br><div style="height:10px;"></div>
+	<h1>
+		ahoy there!
+	</h1>
+
+
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- DECORATIONS -->
+
+	<div class="box-top">
+	<div class="box-deco-top">
+
+<!-- first must be relative and the rest can be absolute -->
+
+		<!-- left vine -->
+		<img src="https://i.imgur.com/9OcDGeS.png" style="
+			z-index: 12;
+		    margin: 800 750 0 -65;
+		    position: relative;">
+
+		<!-- left top leaves -->
+		<img src="https://i.imgur.com/90i3Pec.png" style="
+			z-index: 12;
+			margin: 30 0 0 -788;
+			position: absolute;">
+
+		<!-- snail right -->
+		<img src="https://i.imgur.com/hieEK5C.png" style="
+			z-index: -2;
+		    margin: 480 0 0 33;
+		    position: absolute;">
+
+		<!-- vine right for snail monch -->
+		<img src="https://i.imgur.com/2k9BKsm.png" style="
+			z-index: 12;
+			margin: 380 0 0 22;
+			position: absolute;">
+
+
+
+		<!-- leaves right -->
+		<!-- <img src="https://i.imgur.com/k3FuBBJ.png" style="
+		z-index: 12;
+		margin: -100 0 0 22;
+		position: absolute;"> -->
+
+		<!-- leaves small left -->
+		<!-- <img src="https://i.imgur.com/wE2h7ir.png" style="
+		z-index: 12;
+		margin: -100 0 0 -788;
+		position: absolute;"> -->
+
+		<!-- specks green left -->
+		<!-- <img src="https://i.imgur.com/cw31kjr.png" style="
+		z-index: 12;
+		margin: -150 0 0 -794;
+		position: absolute;"> -->
+
+		<!-- specks white left -->
+		<!-- <img src="https://i.imgur.com/hTJoHX4.png" style="
+		z-index: 12;
+		margin: -250 0 0 -794;
+		position: absolute;"> -->
+
+
+	</div>
+	</div>
+<!-- END SIDE DECORATIONS -->
+
+
+
+<!-- start of box content -->
+
+
+
+
+
+<!-- - - - - - - - - - - - - - - - - - -
+
+REMEMBER NOTES
+
+text links have class="urly"
+linked images have class="img-link"
+
+
+careful of the anchors, because adding padding to a:link without a class will also add it to the navi buttons and move them off center!
+
+
+
+
+
+- - - - - - - - - - - - - - - - - -  -->
+
+
+
+
+
+<!-- - - - - - - - - - - - - - - - - - - - -  -->
+<!-- FOR WHEN IN THE BC
+just unhide the whole section below -->
+
+
+
+<div style="height:10px;"></div>
+<h3>
+	CURRENT NEWS :
+</h3>
+
+<div class="par">
+
+			Hey I'm in the beauty contest this week (starting 3rd September 2021), <a href="http://www.neopets.com/beauty/details.phtml?pet=Molidor" class="urly">you can go take a peek and shoot me a vote if you want.</a>
+		<br><br>
+
+		<div align="center">
+			<a href="http://www.neopets.com/beauty/details.phtml?pet=Molidor">
+				<img src='https://i.imgur.com/tdv4nFj.jpg' class="img-link">
+			</a>
+		</div>
+		<br>
+
+</div>
+
+
+<!-- div end par -->
+<!-- - - - - - - - - - - - - - - - - - - - -  -->
+<!-- END BC SEGMENT -->
+
+
+<style>
+	.urly2:link, .urly2:visited, .urly2 {
+	    color: #c8ed8e;
+	    text-decoration: none;
+		text-decoration-color: #fff;
+		padding:6px 0px;
+		text-decoration: bold;
+		font-weight:800;
+	}
+	.urly2:hover {
+	    color: #fff;
+		text-decoration: none;
+		padding:5px 0px;
+		border-bottom: 1px solid #a0cc5b;
+		border-top: 1px solid #a0cc5b;
+	}
+</style>
+
+<!-- - - - - - - - - - - - - - - - - - - - -  -->
+<div style="height:10px;"></div>
+<h3>
+	WELCOME
+</h3>
+<div class="par">
+
+	Hey thanks for dropping by! Good job actually catching me at home, I'm not around very often. I've got a bit of a travel bug and like to get away and see new things whenever I can.
+
+
+	<!-- This page has a little bit of everything, <a href="#about" class="urly2">about me</a> and my <a href="#ez" class="urly2">petpet</a> and so on. -->
+
+
+
+	<!-- <br><br>Please note, this page is a heavy work in progress currently and gets worked on a few days each week. You should check back in a few weeks if you'd like to see more neat stuff.Please note, this page is a heavy work in progress currently and gets worked on a few days each week. You should check back in a few weeks if you'd like to see more neat stuff. -->
+
+	<br><br>
+
+	<div style="background: fixed repeat url(https://i.imgur.com/4xSAsWX.jpg) bottom center;border-radius: 10px;padding:5px 12px;"><i style="color:#f4e5e5;">Please note, this page is a heavy work in progress currently and is probably about <strong>5%</strong> complete. You should check back in a few weeks if you'd like to see more neat stuff.</i>
+	</div>
+
+
+	<!-- <div style="background: fixed repeat url(DSCF9467_blurLo_Darker.jpg) bottom center;border-radius: 10px;padding:5px 12px;"><i>Please note, this page is a heavy work in progress currently and gets worked on a few days each week. You should check back in a few weeks if you'd like to see more neat stuff.</i>
+	</div>
+	<br><br> -->
+
+
+
+		<!-- <strong>First</strong> of all, say, there is an image with an
+
+		<br><i>less</i> than 575px, you might want to put line breaks --
+
+		<br><b>second</b> image tag, and after it. This may help
+
+		<br><a href="/userlookup.phtml?user=zippo92740"  class="urly">a linkydoo with urly class</a>
+
+		<br><a href="/userlookup.phtml?user=zippo92740">a normal link</a>
+
+		<br><u>underline</u>
+
+		<br><strike>a strikeythroo</strike> -->
+
+
+<!-- div end par -->
+</div>
+<!-- - - - - - - - - - - - - - - - - - - - -  -->
+<!-- END WELCOME SEGMENT -->
+
+
+
+<!-- - - - - - - - - - - - - - - - - - - - -  -->
+
+<h2>page updates</h2>
+
+<div class="updatebox">
+	<u>22-Oct-2021</u> : Have edited and added 12 new backgrounds to the resources section, and have started another new section for 33 new decorative assets.
+	<br><br>
+	<u>03-Sep-2021</u> : Fixed urls for the blurred backgrounds, they should all go to the correct images now.
+	<br><br>
+	<u>19-Aug-2021</u> : Been editing some wearables into background images for petpages, and working out how to display them for use on the page.
+	<br><br>
+	<u>16-Aug-2021</u> : Added a petpet section and did up some art of Ezzie.
+	<br><br>
+	<u>15-Aug-2021</u> : Made the linkback section all fancy. I can't stand waiting for in-browser anchor notes to pop up so I made a slick rollover notes section from Em's gallery code.
+	<br><br>
+	<u>14-Aug-2021</u> : Spent waaaay too many hours trying to work out the best way to batch find&replace image urls so it's a little less fiddly to update code after they've been uploaded. Ended up just tracking all the file names and upload urls in an excel sheet and then using a little python script that updates all the image addresses.
+	<br>(I don't even use enough images to warrant the time spent working that out lol, but at least the other benefit is I can switch them back to local files again in a pinch if I need to work offline for example.)
+	<br><br>
+	<u>26-Jul-2021</u> : Been editing and updated the background images.
+	<br><br>
+	<u>24-Jul-2021</u> : Have started working on this new page layout for Molidor finally, yay! It's been long enough lol.
+
+</div>
+<!-- - - - - - - - - - - - - - - - - - - - -  -->
+<!-- END PAGE UPDATES SEGMENT -->
+<div style="height:6px;"></div>
+<h3 style="border-bottom:none;"></h3>
+
+
+
+
+
+
+
+
+
+<!-- dumb cursors, delete later -->
+
+<!--
+
+body, #main, #content, table, a, a:visited, a:hover{
+	cursor: url('https://i.imgur.com/aOO07vD.png'), auto;
+}
+ -->
+
+ <!-- body, #main, #content, table, a, a:visited, a:hover{
+ 	cursor: url('cursor-leaf.gif'), auto;
+ } -->
+
+
+ <!-- body, #main, #content, table, a, a:visited, a:hover{
+ 	cursor: url('https://cur.cursors-4u.net/symbols/images3/sym249.gif'), auto;
+ } -->
+
+<!--
+ <style type="text/css">* {cursor: url(krawk.gif), auto !important;}</style> -->
+
+
+
+
+
+<!-- - - - - - - - - - - - - - - - - - - - -  -->
+<a name="about"></a>
+<br><br><div style="height:10px;"></div>
+<h1>
+	about
+</h1>
+
+<h3>
+	ALL THE JUICY DETAILS
+</h3>
+<div class="par">
+
+
+<!-- <div style="border:2px solid #fff;border-top:none;border-radius:5px;padding:20px;">	</div> -->
+
+
+	<img src="sketch-molilikes.png" style="margin-right:-120px;margin-left:20px;float:right;">
+	<br>
+	<b>Name :</b> Molidor; MOL-LEE-DORR (Germanic surname)
+	<!-- <img src="sketch-molihead.png" align=right style="margin-right:-20px;margin-left:20px;> -->
+	<br><b>Nicknames :</b> Molsy, Mo, Ollie, <strike>Dory</strike> <i>(please just don't)</i>
+	<br><b>Age :</b> mid 30s
+	<br><b>Birthday:</b> 16th October (Y7)
+	<br><b>Gender:</b> male (he/him)
+	<br><b>Orientation:</b> uhhh I'd like to keep that private :)
+	<br><b>Species:</b> Faerie Peophin
+
+
+
+<br><br>
+<img src="sketch-moliangry.png" style="float:left;margin-left:-20px;margin-right:20px;float:left;">
+
+<b>Likes :</b>
+ • <strong>Travel</strong> : trying new food, seeing really enormous natural rock formations, meeting new people, exploring unfamiliar cities on foot, singing shanties with sailors
+ • <strong>Storytelling</strong> : keeping good memories alive, seeing listeners on the edge of their seats, sharing experiences and lessons learned
+ • <strong>Sleeping</strong> : afternoon siestas, warm breezy day naps under the cozy sun, exhausted sweaty deep sleep after a long day trekking in the wilderness
+ • <strong>Flora</strong> : houseplants, rainforests, basically anything with leaves makes me smile
+
+<br><br><b>Dislikes :</b>
+ • <strong>Pungent food</strong> : enough travelling in cramped spaces has given me a distaste for overpowering smells, bleh!
+
+  •  [to add more...]
+ <!-- • <strong>Dishonesty</strong> : and the smug look a person gives when they think they've gotten away with a big fib (yes, I'm thinking of one particular instance) -->
+
+
+ <br><br>
+<b>Occupation :</b> waiter and bartending mostly, along with any other seasonal jobs I can find
+<br><b>Home :</b> a small neatly kept apartment in one of the more cramped parts of Qasala
+
+ <br><br><b>Appearance :</b> wiry lithe frame, looong tail with plenty of floof on the end, feathered hocks and long white socks (this is what I'm going to name my band), dragonfly shaped gossamer wings, big layered dorsal fin, maroon and orange main coat in no particular pattern (gets fluffier in cold weather with a <b>winter coat</b>), brown eyes, darker muzzle and front of face, silver mane (sometimes dyed or styled, currently purple streaks)
+
+<br><br>
+
+<!-- put a ref sheet here -->
+
+
+
+<!-- div end par -->
+</div>
+<!-- - - - - - - - - - - - - - - - - - - - -  -->
+<!-- END ABOUT SEGMENT -->
+
+
+
+
+
+
+
+<!-- - - - - - - - - - - - - - - - - - - - -  -->
+<!-- DECORATIONS -->
+<div class="box-top">
+<div class="box-deco-top">
+	<!-- <img class="boxDecoImg-starfish" src="/Users/charlie/Documents/Work/3D/Next/QuickCritters/pet lookups/page - folio page/petpage_codeo/images/box_starfish.png"> -->
+	<!-- left speckles white -->
+	<img src="https://i.imgur.com/hTJoHX4.png" style="
+		z-index: 12;
+		margin: -40 750 0 -65;
+		position: relative;white-space: nowrap;">
+
+	<!-- <img src="https://i.imgur.com/hieEK5C.png" style="
+		z-index: -2;
+		margin: 50 0 0 33;
+		position: absolute;"> -->
+
+		<!-- right leaves -->
+	<img src="https://i.imgur.com/k3FuBBJ.png" style="
+		z-index: 12;
+		margin: -220 0 0 20;
+		position: absolute;">
+
+		<!-- left snail -->
+	<!-- <img src="https://i.imgur.com/VuGwLxJ.png" style="
+			z-index: -2;
+			margin: 0 0 0 -809;
+			position: absolute;"> -->
+
+<!-- FOR SOME WEIRD REASON THE VERY TOP ONE MUST BE RELATIVE AND THE OTHERS HAVE TO BE ABSOLUTE?????? -->
+
+	<!-- style="position: relative; left: -206px; top: -31px; height: auto; width: auto; z-index: 10; overflow: hidden;" -->
+</div>
+</div>
+<!-- - - - - - - - - - - - - - - - - - - - -  -->
+<!-- END DECORATIONS -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="ez"></a>
+	<!-- - - - - - - - - - - - - - - - - - - - -  -->
+	<!--PETPET -->
+
+	<br><img src="petpet_soreen7.png" style="float:left;margin-left:-180px;margin-bottom:-60px;margin-right:-10px;">
+	<h2>my petpet</h2>
+
+<div class="par">
+
+	<strong>Ezzie</strong> is my little soreen, gifted to me by my owner as a welcome home present when I was first adopted, and I just adore him. He doesn't do so well outside of water (soreens skins dry up very quickly!) so a lot of the time I have to leave him with a sitter or friend whenever I'm away. I'm lucky he's so easy to look after, except that he can get pretty demanding when he wants to play!
+
+	<br><br>I <i>did</i> try the keep-him-in-a-jar thing briefly so that I could bring him along, but I ended up paranoid that I'd misplace him somewhere. Plus, I think it's kinda cruel when he's such a high-energy creature
+
+	<br><br>I often get asked if I'm going to paint him, seems its such a common thing to do these days. I do kinda like the <b>green</b> and <b>electric</b> colours on soreens, but also kinda hope some new colours will be discovered, so I probably won't be painting him anytime soon.
+
+</div>
+<!-- div end par -->
+
+<!-- - - - - - - - - - - - - - - - - - - - -  -->
+<!-- END PETPET -->
+
+
+
+<!-- <div align="center"><img src="peo-peophin-day-art-gallery-entry-2021-500pxmax.jpg" class="img-disp">
+</div> -->
+
+
+
+
+
+	<!-- <br><img src="petpet_soreen7.png" style="float:left;margin-left:-180px;margin-bottom:-60px;margin-right:-10px;"> -->
+
+	<!-- <h2>another heading</h2>
+<div class="par">
+
+	<strong>Ezzie</strong> is my little soreen, gifted to me by my owner as a welcome home present when I was first adopted, and I just adore him. He doesn't do so well outside of water (soreens skins dry up very quickly!) so a lot of the time I have to leave him with a sitter or friend whenever I'm away. I'm lucky he's so easy to look after, except that he can get pretty demanding when he wants to play!
+
+
+
+
+
+			i frequently get close to maxing it out (it then converts it to its own proprietary video format, which i wish was open source because its amazing and more websites should have it)shaders 101 / how computers render images to a screen
+		<br><br>
+
+			All images larger than 850px in width should be given the class="large" specification as shown above.
+
+THIS IS THE OVERLAPPING IMAGE ACROSS BOTH BOXES
+
+			<img src="juaro_reffor3d.png" width="300px" align="right" class="img-disp" style="border:1px dashed #fff;margin-left:20px;margin-right:-20px;margin-bottom:20px;border-radius:5px;">
+
+		<br><br>
+
+			This allows them to fit snugly into the box. Beware of using this class in images significantly less wide than 850px! The image quality may become blurry and unappealing.
+
+		<br><br>
+
+</div> -->
+<!-- div end par -->
+
+
+
+
+
+
+
+	<div class="box-top">
+	<div class="box-deco-top">
+
+
+			<!-- left leaves (besties box) -->
+		<img src="https://i.imgur.com/90i3Pec.png" style="
+			z-index: 12;
+		    margin: 480 750 0 -65;
+		    position: relative;white-space: nowrap;">
+
+			<!-- right vine -->
+		<img src="https://i.imgur.com/9OcDGeS.png" style="
+			z-index: 12;
+			margin: 130 0 0 20;
+			position: absolute;">
+
+			<!-- left snail -->
+		<!-- <img src="https://i.imgur.com/VuGwLxJ.png" style="
+				z-index: -2;
+			    margin: 0 0 0 -809;
+			    position: absolute;"> -->
+	</div>
+	</div>
+	<!-- div end decorations -->
+
+
+
+<!-- div end section -->
+</div>
+
+
+
+
+
+
+
+
+
+<a name="a"></a>
+<!-- INTRO/NEWS/UPDATES -->
+<div class="section">
+
+<br><br><div style="height:10px;"></div>
+	<h1>
+		besties
+	</h1>
+
+<div class="par">While a have a ton of aquaintences and some great buddies I catch up with once or twice a year, I don't have many close friends (because of this whole travelling lifestyle thing) so I treasure these guys with my whole heart.
+</div>
+
+
+
+<!-- . . . . . . . . . . . . . . . . . . . . . . . . -->
+<!-- <h2 style="margin: 20px 0px 20px 0px;">TROODON</h2>
+<h3>TROODON</h3> -->
+
+
+
+<div class="par">
+
+	<h2 style="margin: 20px 0px 20px 0px;">Troodon</h2>
+	<!-- <h3>TROODON</h3> -->
+	<div class="fam-subtitle">I'VE NEVER SEEN ANYONE GET PEOPLE HYPED LIKE HE DOES</div>
+
+<strong>Troodon</strong> is the only pet that's been here longer than I have, though he doesn't act it and is perpetually young at heart. He's the life of every party I've seen him at, and immediately lights up a room with his contagious energy.
+
+<br><br>Sometimes I'll be feeling depressed and then realise I haven't talked to him in a month. A quick phonecall fixes me right up.
+
+<br><br>I would protect him with my life. Speaking of which I <i>have</i> had to get between him and aggressive strangers on more than a few occassions when his bubbliness overflows and annoys some tough guy.
+
+<br><br>Go say <a href="/~Troodon" class="urly">hi</a> to him, he's always up for a chat and honestly you're doing yourself a disservice by not meeting him.
+
+</div>
+<!-- div end par -->
+
+
+	<!-- troodon transparent gif -->
+			<div align="center"><img src="https://i.imgur.com/NkWa9Yp.gif" class="img-disp">
+			</div>
+		<br>
+<!-- . . . . . . . . . . . . . . . . . . . . . . . . -->
+
+
+
+
+<!-- . . . . . . . . . . . . . . . . . . . . . . . . -->
+<!-- <h2 style="margin: 20px 0px 20px 0px;">JUARO</h2> -->
+<!-- <h3>JUARO</h3> -->
+
+<div class="par">
+
+	<h2 style="margin: 20px 0px 20px 0px;">Juaro</h2>
+	<!-- <h3>TROODON</h3> -->
+	<div class="fam-subtitle">OH YOU SWEET SUMMERCHILD</div>
+
+I am very protective of gentle little <strong>Juaro</strong>. Not too many people know this but I actually hatched him. It's true! It's too long a story to go into right now, but making the decision to raise him afterwards was the craziest thing I've ever done.
+
+<!-- but long story short, a badly timed blizzard during a mountainside tour had me trapped  -->
+
+<!-- <br><br>I was on this trip passing through (highest mountain range in meridell?), on one of those ~experience tours~ y'know? (I was a much less confident traveller back then.)
+<br><br>-twisted an (ankle) and had to wait with one of the guides for 1st aid, storm was rolling in fast so thought it better they get shelter.
+<br><br>The guide said it would be a dead egg by now, or if it wasn't it soon would be, and there was nothing really that could be done. I was always that kid that wanted to raise every baby weewoo that was thrown out of its nest, I couldn't really leave it. - the storm turned into a surprise disaster blizzard so they got snowed in for a few days. -->
+
+<!-- It definitely made me appreciate having my own time and being able to travel again lol -->
+
+<!-- <img src="juaro_reffor3d.png" width="400px" align="right" style="padding:12px;margin-top:-130px;margin-bottom:-150px;margin-right:-70px;"> -->
+<img src="fam_juaro.png" width="400px" style="padding:12px;margin-top:-130px;margin-bottom:-150px;margin-right:-70px;float:right;">
+<br><br>
+	<div class="note" style="
+	padding-left: 40px;
+	">
+		"You worry about me too much I think.
+
+		<br>
+
+		And you don't worry about yourself enough..."
+	</div>
+	<!-- end div note -->
+<div style="height:10px;"></div>
+
+
+He's all grown up now of course (draiks mature pretty quickly!) and I don't get to see him too often but I'll always see him as my baby boy.
+
+</div>
+<!-- div end par -->
+<!-- . . . . . . . . . . . . . . . . . . . . . . . . -->
+
+
+
+<style>
+
+
+
+	</style>
+
+
+
+<!-- . . . . . . . . . . . . . . . . . . . . . . . . -->
+<!-- <h2 style="margin: 20px 0px 20px 0px;">CODEO</h2>
+<h3>CODEO</h3> -->
+
+<div class="par">
+
+	<h2 style="margin: 20px 0px 20px 0px;">Codeo</h2>
+	<!-- <h3>TROODON</h3> -->
+	<div class="fam-subtitle">WHY CAN'T I TRUST YOU?</div>
+
+I don't fully know how to feel about <strong>Codeo</strong>. I mean he's fun to hang out with casually (at first) and I want the best for him, but I'll always end up starting some ridiculous argument with him. No one else brings out this side of me, I really don't like it. Maybe it's his immaturity, idk.
+
+<br><br>I think he's a bad influence on Juaro too. I was never too keen on them hanging out together, but they seem to be spending more time with each other than ever...
+
+<!-- <br><br>I met Codeo not long before hatching the egg, and I hadn't actually met draiks very often in person, at least none that I had time to get to know (this being around the time they were starting to grow more common as a species)
+<br><br>It wasn't 'cos he was darigan either, I was pretty familiar with their quirks.
+<br><br>So with this guy as my ...introduction to the species. I'm afraid I developed some bad preconceptions towards the species for a few years there, even to the point that I thought raising Juaro would be a nightmare. -->
+
+<!-- if align doesnt work on petpage, try float:left inside style tags -->
+<!-- <img src="ref_codeo.png" width="340px" align="left" style="padding:12px;margin-top:-80px;margin-bottom:-120px;margin-left:-60px;"> -->
+<img src="fam_codeo.png" style="padding:12px;margin-top:-80px;margin-bottom:-120px;margin-left:-60px;float:left;">
+<br><br>
+	<div class="note" style="
+	padding-right: 40px;
+	">
+	<!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
+		"Dude, you just need to chill is all. You're always in such a hurry.<br>All those places they aren't going anywhere. Just be a cool guy for like two seconds?"
+
+	</div>
+	<!-- end div note -->
+<div style="height:10px;"></div>
+
+People ask what my problem <i>really</i> is with him and it's like, nothing? Can't I just not like how irresponsible and thoughtless he is? Idk man, I just can't live with him for more than a few days, and I know I'm <a href="/~Codeo#letters" class="urly">not the only one</a>.
+
+</div>
+<!-- div end par -->
+<!-- . . . . . . . . . . . . . . . . . . . . . . . . -->
+
+
+
+
+
+
+<!-- . . . . . . . . . . . . . . . . . . . . . . . . -->
+<!-- <h2 style="margin: 20px 0px 20px 0px;">others</h2> -->
+
+<!-- <h3>IRYOJUN</h3> -->
+
+<!-- <div class="par">
+<strong>Iryo</strong> was the uni I lived with briefly before being adopted out. She's tough as nails and most people find her pretty difficult to get close to, but she'll always be very dear to me
+<br><br>Speaking of close though, I wouldn't actually recommend anyone approach her... I forgot to mention she's a kelpie
+
+</div> -->
+
+<!-- div end par -->
+<!-- . . . . . . . . . . . . . . . . . . . . . . . . -->
+
+
+
+	<br><br>
+
+
+
+
+	<div class="box-bottom">
+	<div class="box-bottom-pic">
+		<!-- <img class="boxBottomImg" src="file:///Users/charlie/Documents/Work/3D/Next/QuickCritters/pet%20lookups/page%20-%20folio%20page/petpage_codeo/images/box_bottom.png"> -->
+	</div>
+	</div>
+
+	<div class="box-top">
+	<div class="box-deco-top">
+		<!-- <img class="boxDecoImg-starfish" src="/Users/charlie/Documents/Work/3D/Next/QuickCritters/pet lookups/page - folio page/petpage_codeo/images/box_starfish.png"> -->
+
+			<!-- left vine -->
+		<img src="https://i.imgur.com/9OcDGeS.png" style="
+			z-index: 12;
+		    margin: 50 750 0 -65;
+		    position: relative;white-space: nowrap;">
+
+		<!-- <img src="https://i.imgur.com/hieEK5C.png" style="
+			z-index: -2;
+		    margin: 50 0 0 33;
+		    position: absolute;"> -->
+
+			<!-- right vine -->
+		<img src="https://i.imgur.com/9OcDGeS.png" style="
+			z-index: 12;
+			margin: -350 0 0 20;
+			position: absolute;">
+
+			<!-- left snail -->
+		<img src="https://i.imgur.com/VuGwLxJ.png" style="
+				z-index: -2;
+			    margin: 0 0 0 -809;
+			    position: absolute;">
+	</div>
+	</div>
+	<!-- div end decorations -->
+
+
+
+<!-- div end section -->
+</div>
+
+
+
+
+
+
+
+<!--
+<img src="http://i.imgur.com/x6kalqE.png" style="position: fixed; bottom: -135px; z-index: 9;">
+
+<img src="http://i.imgur.com/x6kalqE.png" style="position: fixed; bottom: -135px; z-index: 9; left:center;"> -->
+
+<HEAD><link href="style.css" rel="stylesheet" type="text/css" media="all"></HEAD>
+<style>
+</style>
+<a name="a"></a>
+<div id="allthethings">
+
+
+
+
+
+
+
+
+
+
+<a name="plants"></a>
+<div class="section" style="border-radius: 20px;">
+
+<h1>my plants</h1>
+<!-- <h2>yeah its a problem</h2> -->
+<h3>IM A BIT ADDICTED</h3>
+
+
+- you might think that having a travel bug and  plant collecting don't go together, and you might be right under different circumstances. As it turns out/Thankfully I've lost so many plants over the years (so many...RIP) that I've perfected my collection
+I keep only the hardiest species that can happily survive a week or two at a time without attention, check them out :
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- DECORATIONS -->
+
+<div class="box-top">
+<div class="box-deco-top">
+
+<!-- first must be relative and the rest can be absolute -->
+
+	<!-- left vine -->
+	<img src="https://i.imgur.com/9OcDGeS.png" style="
+		z-index: 12;
+		margin: 800 750 0 -65;
+		position: relative;">
+
+	<!-- left top leaves -->
+	<img src="https://i.imgur.com/90i3Pec.png" style="
+		z-index: 12;
+		margin: -20 0 0 -788;
+		position: absolute;">
+
+	<!-- snail right -->
+	<img src="https://i.imgur.com/hieEK5C.png" style="
+		z-index: -2;
+		margin: 480 0 0 33;
+		position: absolute;">
+
+	<!-- vine right for snail monch -->
+	<img src="https://i.imgur.com/2k9BKsm.png" style="
+		z-index: 12;
+		margin: 380 0 0 22;
+		position: absolute;">
+
+
+
+	<!-- leaves right -->
+	<!-- <img src="https://i.imgur.com/k3FuBBJ.png" style="
+	z-index: 12;
+	margin: -100 0 0 22;
+	position: absolute;"> -->
+
+	<!-- leaves small left -->
+	<!-- <img src="https://i.imgur.com/wE2h7ir.png" style="
+	z-index: 12;
+	margin: -100 0 0 -788;
+	position: absolute;"> -->
+
+	<!-- specks green left -->
+	<!-- <img src="https://i.imgur.com/cw31kjr.png" style="
+	z-index: 12;
+	margin: -150 0 0 -794;
+	position: absolute;"> -->
+
+	<!-- specks white left -->
+	<!-- <img src="https://i.imgur.com/hTJoHX4.png" style="
+	z-index: 12;
+	margin: -250 0 0 -794;
+	position: absolute;"> -->
+
+
+</div>
+</div>
+<!-- END SIDE DECORATIONS -->
+
+
+
+<br><br>
+
+
+
+<div class="plantroomBG" style="border-radius: 7px;"></div>
+
+<div class="plantplant-showspace" style="position: relative;">
+
+<img src="plantGallery_room.png" style="margin-bottom:-500px;">
+
+<a class="plant-show">
+<img src="plantGallery_cardTemp.png" class="plant-thumb" style="position: relative;"><span class="plant-full" style="position: absolute;">
+
+<div style="height:30px;"></div>
+<img src="plantGallery_cardTemp.png" style="max-height:575px;">
+
+</span></a>
+
+
+
+
+<a class="plant-show">
+<img src="plantGallery_cardTemp.png" class="plant-thumb" style="position: relative;"><span class="plant-full" style="position: absolute;">
+
+	<!-- this makes a 540px image center perfectly -->
+	<div style="height:30px;"></div>
+<img src="plantGallery_cardTemp.png" style="max-height: 575px;">
+
+<!-- <br>Codeo - by Ben (zippo92740)! -->
+</span></a>
+
+
+
+
+
+<!-- div end rollover plant gallery -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+<h2>take a plant, please!</h2>
+
+		Seriously I have way too many, and they keep propogating, I give more away every time I have guests over and can't get rid of them fast enough.
+	<br><br>
+
+<table cellspacing="0px" align="center" style="width:120%;position:relative;left:-10%;border:solid 2px; border-radius:19px;background: fixed repeat url(https://i.imgur.com/4xSAsWX.jpg) bottom center;">
+<!-- <table cellspacing="0px" align="center" style="width:120%;position:relative;left:-10%;border:solid 2px; border-radius:14px;background: fixed repeat url(https://i.imgur.com/UeN3wJE.jpg) bottom center;"> -->
+<tr>
+
+	<td width="25%" height="auto"  style="border-right:1px solid #fff;"><div align="center">
+	<img src="plantadopt_01.gif" style="border:1px solid #fff;">
+	</div></td>
+
+	<td width="25%" height="auto"  style="border-right:1px solid #fff;"><div align="center">
+	<img src="plant_type1.png">
+	</div></td>
+
+	<td width="25%" height="auto" style="border-right:1px solid #fff;"><div align="center">
+	<img src="plant_type1.png">
+	</div></td>
+
+	<td width="25%" height="auto"><div align="center">
+	<img src="plant_type1.png">
+	</div></td>
+
+</tr>
+
+<tr>
+<td width="25%" height="auto" style="border-right:1px solid #fff;">
+<textarea class="adoptytext">
+<a href="neopets.com/~Molidor"><img src=""></a>
+</textarea>
+</td>
+
+<td width="25%" height="auto" style="border-right:1px solid #fff;">
+<textarea class="adoptytext">
+		.flashRIP__2020 {
+		   width: 500px;
+		   height: 500px;
+		   background: url("http://pets.neopets.com/cpn/PETNAME/1/5.png") center no-repeat;
+		}
+
+		.flashRIP-content__2020 {
+		   display: none;
+		}
+</textarea>
+</td>
+
+<td width="25%" height="auto" style="border-right:1px solid #fff;">
+<textarea class="adoptytext">
+		.flashRIP__2020 {
+		   width: 500px;
+		   height: 500px;
+		   background: url("http://pets.neopets.com/cpn/PETNAME/1/5.png") center no-repeat;
+		}
+
+		.flashRIP-content__2020 {
+		   display: none;
+		}
+</textarea>
+</td>
+
+<td width="25%" height="auto">
+<textarea class="adoptytext">
+		.flashRIP__2020 {
+		   width: 500px;
+		   height: 500px;
+		   background: url("http://pets.neopets.com/cpn/PETNAME/1/5.png") center no-repeat;
+		}
+
+		.flashRIP-content__2020 {
+		   display: none;
+		}
+</textarea>
+</td>
+
+</tr>
+
+
+
+
+
+
+
+<!-- next row - add top border -->
+<tr>
+
+	<td width="25%" height="auto"  style="border-right:1px solid #fff;border-top:1px solid #fff;"><div align="center">
+	<img src="https://items.jellyneo.net/assets/imgs/items/16524.gif">
+	</div></td>
+
+	<td width="25%" height="auto"  style="border-right:1px solid #fff;border-top:1px solid #fff;"><div align="center">
+	<img src="https://items.jellyneo.net/assets/imgs/items/16524.gif">
+	</div></td>
+
+	<td width="25%" height="auto"  style="border-right:1px solid #fff;border-top:1px solid #fff;"><div align="center">
+	<img src="https://items.jellyneo.net/assets/imgs/items/16524.gif">
+	</div></td>
+
+<!-- last in row - has NO border right -->
+	<td width="25%" height="auto" style="border-top:1px solid #fff;"><div align="center">
+	<img src="https://items.jellyneo.net/assets/imgs/items/16524.gif">
+	</div></td>
+
+</tr>
+
+<tr>
+<td width="25%" height="auto" style="border-right:1px solid #fff;">
+<textarea class="adoptytext">
+		a href
+		img url
+</textarea>
+</td>
+
+<td width="25%" height="auto" style="border-right:1px solid #fff;">
+<textarea class="adoptytext">
+		.flashRIP__2020 {
+		   width: 500px;
+		   height: 500px;
+		   background: url("http://pets.neopets.com/cpn/PETNAME/1/5.png") center no-repeat;
+		}
+
+		.flashRIP-content__2020 {
+		   display: none;
+		}
+</textarea>
+</td>
+
+<td width="25%" height="auto" style="border-right:1px solid #fff;">
+<textarea class="adoptytext">
+		.flashRIP__2020 {
+		   width: 500px;
+		   height: 500px;
+		   background: url("http://pets.neopets.com/cpn/PETNAME/1/5.png") center no-repeat;
+		}
+
+		.flashRIP-content__2020 {
+		   display: none;
+		}
+</textarea>
+</td>
+
+<!-- last in row - has NO border right -->
+<td width="25%" height="auto">
+<textarea class="adoptytext">
+		.flashRIP__2020 {
+		   width: 500px;
+		   height: 500px;
+		   background: url("http://pets.neopets.com/cpn/PETNAME/1/5.png") center no-repeat;
+		}
+
+		.flashRIP-content__2020 {
+		   display: none;
+		}
+</textarea>
+</td>
+
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+
+
+
+
+<p>
+In addition, here are some tips that may be helpful for your organization! <strong>First</strong> of all, say, there is an image with an original height <i>less</i> than 575px, you might want to put line breaks -- <i>(br)</i>s -- before the <b>second</b> image tag, and after it. This may help position the image nicer for you. This is demonstrated in the last code segment, of the Food Faerie PNG. However, when using line breaks, remember <i>not to go overboard</i>! Once the height is over 600px, anything that comes next won't display. <strong>Secondly</strong>, if you don't want a caption/title, you can set <i>max-width</i> to <b>600px</b> instead of the default 575. This allows a plant-full display of the image.
+
+</p>
+
+
+</div>
+
+<!-- end div MY PLANTS -->
+
+
+<HEAD><link href="style.css" rel="stylesheet" type="text/css" media="all"></HEAD>
+<style>
+</style>
+<a name="a"></a>
+<div id="allthethings">
+
+
+
+
+
+
+
+
+<!-- MOLIDOR AT TOP OF FIRST BOX -->
+	<!-- <div class="overbanner-holder">
+	<div class="overbanner-content"><img class="overbanner-img" src="topimg5.png">
+	</div>
+    </div> -->
+
+
+
+<!-- start div PHOTO ALBUM -->
+
+<a name="bgs"></a>
+<div class="section">
+
+
+<h1>travel photos</h1>
+
+<h3>RESOURCES FOR YOUR PETPAGES</h3>
+<br>
+
+<!-- SIDE DECORATIONS -->
+<div class="box-top">
+<div class="box-deco-top">
+
+	<img src="https://i.imgur.com/9OcDGeS.png" style="
+		z-index: 12;
+		margin: 200 750 0 -65;
+		position: relative;white-space: nowrap;">
+
+	<img src="https://i.imgur.com/hieEK5C.png" style="
+		z-index: -2;
+		margin: 80 0 0 32;
+		position: absolute;">
+
+</div>
+</div>
+<!-- END SIDE DECORATIONS -->
+
+<div class="par">
+		Of course being a really well travelled peophin I have a TON of pictures taken. And before you ask "how'd you use a camera without hands?", the answer is "with great difficulty" so uhh, try not to judge too harshly haha.
+
+		<br><br>Each image has two blurred "frosted glass" versions below it in different strengths. All are 1920x1080px resolution.
+
+</div>
+<!-- div end par -->
+
+
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+<!-- START GALLERY TABLE BACKGROUND RESOURCES -->
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- NEWEST BATCH ADDED 23rd OCT 2021 -->
+
+
+
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+<!-- / / / / / / / PASTE ROW 1 / / / / / / /  -->
+<table cellspacing="0px" align="center" style="width:120%;position:relative;left:-10%;border:solid 2px; border-radius:19px;overflow: hidden;background: fixed repeat url(https://i.imgur.com/4xSAsWX.jpg) bottom center;">
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+<!-- / / / / / / /  / / / / / / /  -->
+
+	<tr>
+
+	<td class="bgurl-display-td">
+
+				<div class="bgurl-display-div"> <img class="bgurl-display-img" src="res-bgimg-exports/Altadorian-Pasture-Background_preview.jpg"> </div>
+
+	</td>
+
+	<td class="bgurl-display-td">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/Charming-Summer-Garden-Background_preview.jpg">
+	</div>
+
+	</td>
+
+	<td class="bgurl-display-td">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/Among-Tropical-Flowers-Background_preview.jpg">
+	</div>
+
+	</td>
+
+	<td class="bgurl-display-td" style="border-right:none;">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/Into-the-Glittering-Forest-Background_preview.jpg">
+	</div>
+
+	</td>
+
+	</tr><tr>
+
+	<td class="bgurl-td">
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/Altadorian-Pasture-Background_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/Altadorian-Pasture-Background_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/Altadorian-Pasture-Background_blurHi.jpg</textarea>
+
+	</td>
+
+	<td class="bgurl-td">
+
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/Charming-Summer-Garden-Background_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/Charming-Summer-Garden-Background_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/Charming-Summer-Garden-Background_blurHi.jpg</textarea>
+
+
+	</td>
+
+	<td class="bgurl-td">
+
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/Among-Tropical-Flowers-Background_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/Among-Tropical-Flowers-Background_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/Among-Tropical-Flowers-Background_blurHi.jpg</textarea>
+
+
+	</td>
+
+	<td class="bgurl-td" style="border-right:none;">
+
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/Into-the-Glittering-Forest-Background_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/Into-the-Glittering-Forest-Background_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/Into-the-Glittering-Forest-Background_blurHi.jpg</textarea>
+
+
+	</td>
+
+	</tr>
+
+
+</table>
+<br><br>
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+
+
+
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+<!-- / / / / / / / PASTE ROW 2 / / / / / / /  -->
+<table cellspacing="0px" align="center" style="width:120%;position:relative;left:-10%;border:solid 2px; border-radius:19px;overflow: hidden;background: fixed repeat url(https://i.imgur.com/4xSAsWX.jpg) bottom center;">
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+<!-- / / / / / / /  / / / / / / /  -->
+
+	<tr>
+
+	<td class="bgurl-display-td">
+
+				<div class="bgurl-display-div"> <img class="bgurl-display-img" src="res-bgimg-exports/Lustrous-Forest-Background_preview.jpg"> </div>
+
+	</td>
+
+	<td class="bgurl-display-td">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/Lustrous-Forest-Background_VAR2_preview.jpg">
+	</div>
+
+	</td>
+
+	<td class="bgurl-display-td">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/Lost-in-the-Forest-Background_preview.jpg">
+	</div>
+
+	</td>
+
+	<td class="bgurl-display-td" style="border-right:none;">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/Winter-Wonderland-Sunset-Background_preview.jpg">
+	</div>
+
+	</td>
+
+	</tr><tr>
+
+	<td class="bgurl-td">
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/Lustrous-Forest-Background_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/Lustrous-Forest-Background_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/Lustrous-Forest-Background_blurHi.jpg</textarea>
+
+	</td>
+
+	<td class="bgurl-td">
+
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/Lustrous-Forest-Background_VAR2_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/Lustrous-Forest-Background_VAR2_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/Lustrous-Forest-Background_VAR2_blurHi.jpg</textarea>
+
+
+	</td>
+
+	<td class="bgurl-td">
+
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/Lost-in-the-Forest-Background_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/Lost-in-the-Forest-Background_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/Lost-in-the-Forest-Background_blurHi.jpg</textarea>
+
+
+	</td>
+
+	<td class="bgurl-td" style="border-right:none;">
+
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/Winter-Wonderland-Sunset-Background_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/Winter-Wonderland-Sunset-Background_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/Winter-Wonderland-Sunset-Background_blurHi.jpg</textarea>
+
+
+	</td>
+
+	</tr>
+
+
+</table>
+<br><br>
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+
+
+
+
+
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+<!-- / / / / / / / PASTE ROW 3 / / / / / / /  -->
+<table cellspacing="0px" align="center" style="width:120%;position:relative;left:-10%;border:solid 2px; border-radius:19px;overflow: hidden;background: fixed repeat url(https://i.imgur.com/4xSAsWX.jpg) bottom center;">
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+<!-- / / / / / / /  / / / / / / /  -->
+
+	<tr>
+
+	<td class="bgurl-display-td">
+
+				<div class="bgurl-display-div"> <img class="bgurl-display-img" src="res-bgimg-exports/Island-of-Buried-Treasure-Background_preview.jpg"> </div>
+
+	</td>
+
+	<td class="bgurl-display-td">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/Lost-Desert-Silhouette-Background_VAR1_preview.jpg">
+	</div>
+
+	</td>
+
+	<td class="bgurl-display-td">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/Lost-Desert-Silhouette-Background_VAR2_preview.jpg">
+	</div>
+
+	</td>
+
+	<td class="bgurl-display-td" style="border-right:none;">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/Lost-Desert-Silhouette-Background_VAR3_preview.jpg">
+	</div>
+
+	</td>
+
+	</tr><tr>
+
+	<td class="bgurl-td">
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/Island-of-Buried-Treasure-Background_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/Island-of-Buried-Treasure-Background_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/Island-of-Buried-Treasure-Background_blurHi.jpg</textarea>
+
+	</td>
+
+	<td class="bgurl-td">
+
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/Lost-Desert-Silhouette-Background_VAR1_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/Lost-Desert-Silhouette-Background_VAR1_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/Lost-Desert-Silhouette-Background_VAR1_blurHi.jpg</textarea>
+
+
+	</td>
+
+	<td class="bgurl-td">
+
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/Lost-Desert-Silhouette-Background_VAR2_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/Lost-Desert-Silhouette-Background_VAR2_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/Lost-Desert-Silhouette-Background_VAR2_blurHi.jpg</textarea>
+
+
+	</td>
+
+	<td class="bgurl-td" style="border-right:none;">
+
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/Lost-Desert-Silhouette-Background_VAR3_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/Lost-Desert-Silhouette-Background_VAR3_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/Lost-Desert-Silhouette-Background_VAR3_blurHi.jpg</textarea>
+
+
+	</td>
+
+	</tr>
+
+
+</table>
+<br><br>
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ORIGINAL BATCH FROM JULY 2021 -->
+
+
+
+<table cellspacing="0px" align="center" style="width:120%;position:relative;left:-10%;border:solid 2px; border-radius:19px;overflow: hidden;background: fixed repeat url(https://i.imgur.com/4xSAsWX.jpg) bottom center;">
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+<!-- / / / / / / / PASTE ROW 1 / / / / / / /  -->
+
+	<tr>
+
+	<td class="bgurl-display-td">
+
+				<div class="bgurl-display-div"> <img class="bgurl-display-img" src="res-bgimg-exports/labspill_preview.jpg"> </div>
+
+	</td>
+
+	<td class="bgurl-display-td">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/eventide-mountains_preview.jpg">
+	</div>
+
+	</td>
+
+	<td class="bgurl-display-td">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/exploring-maraqua_preview.jpg">
+	</div>
+
+	</td>
+
+	<td class="bgurl-display-td" style="border-right:none;">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/exploring-kreludor_preview.jpg">
+	</div>
+
+	</td>
+
+	</tr><tr>
+
+	<td class="bgurl-td">
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/labspill_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/labspill_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/labspill_blurHi.jpg</textarea>
+
+	</td>
+
+	<td class="bgurl-td">
+
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/eventide-mountains_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/eventide-mountains_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/eventide-mountains_blurHi.jpg</textarea>
+
+
+	</td>
+
+	<td class="bgurl-td">
+
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/exploring-maraqua_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/exploring-maraqua_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/exploring-maraqua_blurHi.jpg</textarea>
+
+
+	</td>
+
+	<td class="bgurl-td" style="border-right:none;">
+
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/exploring-kreludor_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/exploring-kreludor_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/exploring-kreludor_blurHi.jpg</textarea>
+
+
+	</td>
+
+	</tr>
+
+
+</table>
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+
+<br><br>
+<table cellspacing="0px" align="center" style="width:120%;position:relative;left:-10%;border:solid 2px; border-radius:19px;overflow: hidden;background: fixed repeat url(https://i.imgur.com/4xSAsWX.jpg) bottom center;">
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+<!-- / / / / / / / PASTE ROW 2 / / / / / / /  -->
+
+	<tr>
+
+	<td class="bgurl-display-td">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/exquisite-wintery-ball_preview.jpg">
+	</div>
+
+	</td>
+
+	<td class="bgurl-display-td">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/evening-garden-party_preview.jpg">
+	</div>
+
+	</td>
+
+	<td class="bgurl-display-td">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/magical-twilit-garden_preview.jpg">
+	</div>
+
+	</td>
+
+	<td class="bgurl-display-td" style="border-right:none;">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/magical-ice-town_preview.jpg">
+	</div>
+
+	</td>
+
+	</tr><tr>
+
+	<td class="bgurl-td">
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/exquisite-wintery-ball_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/exquisite-wintery-ball_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/exquisite-wintery-ball_blurHi.jpg</textarea>
+
+	</td>
+
+	<td class="bgurl-td">
+
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/evening-garden-party_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/evening-garden-party_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/evening-garden-party_blurHi.jpg</textarea>
+
+
+	</td>
+
+	<td class="bgurl-td">
+
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/magical-twilit-garden_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/magical-twilit-garden_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/magical-twilit-garden_blurHi.jpg</textarea>
+
+
+	</td>
+
+	<td class="bgurl-td" style="border-right:none;">
+
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/magical-ice-town_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/magical-ice-town_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/magical-ice-town_blurHi.jpg</textarea>
+
+
+	</td>
+
+	</tr>
+
+</table>
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+
+<br><br>
+<table cellspacing="0px" align="center" style="width:120%;position:relative;left:-10%;border:solid 2px; border-radius:19px;overflow: hidden;background: fixed repeat url(https://i.imgur.com/4xSAsWX.jpg) bottom center;">
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+<!-- / / / / / / / PASTE ROW 3 / / / / / / /  -->
+
+	<tr>
+
+	<td class="bgurl-display-td">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/magical-faerie-glade-var2_preview.jpg">
+	</div>
+
+	</td>
+
+	<td class="bgurl-display-td">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/magical-faerie-glade_preview.jpg">
+	</div>
+
+	</td>
+
+	<td class="bgurl-display-td">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/cave_preview.jpg">
+	</div>
+
+	</td>
+
+	<td class="bgurl-display-td" style="border-right:none;">
+
+				<div class="bgurl-display-div">
+	<img class="bgurl-display-img" src="res-bgimg-exports/magical-spring-kingdom_preview.jpg">
+	</div>
+
+	</td>
+
+	</tr><tr>
+
+	<td class="bgurl-td">
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/magical-faerie-glade-var2_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/magical-faerie-glade-var2_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/magical-faerie-glade-var2_blurHi.jpg</textarea>
+
+	</td>
+
+	<td class="bgurl-td">
+
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/magical-faerie-glade_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/magical-faerie-glade_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/magical-faerie-glade_blurHi.jpg</textarea>
+
+
+	</td>
+
+	<td class="bgurl-td">
+
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/cave_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/cave_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/cave_blurHi.jpg</textarea>
+
+
+	</td>
+
+	<td class="bgurl-td" style="border-right:none;">
+
+
+			<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/magical-spring-kingdom_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/magical-spring-kingdom_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/magical-spring-kingdom_blurHi.jpg</textarea>
+
+
+	</td>
+
+	</tr>
+
+
+</table>
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+
+<br><br>
+<table cellspacing="0px" align="center" style="width:120%;position:relative;left:-10%;border:solid 2px; border-radius:19px;overflow: hidden;background: fixed repeat url(https://i.imgur.com/4xSAsWX.jpg) bottom center;">
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+<!-- / / / / / / / PASTE ROW 4 / / / / / / /  -->
+
+<tr>
+
+<td class="bgurl-display-td">
+
+			<div class="bgurl-display-div">
+<img class="bgurl-display-img" src="res-bgimg-exports/magic-of-autumn_preview.jpg">
+</div>
+
+</td>
+
+<td class="bgurl-display-td">
+
+			<div class="bgurl-display-div">
+<img class="bgurl-display-img" src="res-bgimg-exports/magical-lotus-stream-var2-water_preview.jpg">
+</div>
+
+</td>
+
+<td class="bgurl-display-td">
+
+			<div class="bgurl-display-div">
+<img class="bgurl-display-img" src="res-bgimg-exports/candy-trees_preview.jpg">
+</div>
+
+</td>
+
+<td class="bgurl-display-td" style="border-right:none;">
+
+			<div class="bgurl-display-div">
+<img class="bgurl-display-img" src="res-bgimg-exports/magical-lotus-stream-var2-trees_preview.jpg">
+</div>
+
+</td>
+
+</tr><tr>
+
+<td class="bgurl-td">
+
+		<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/magic-of-autumn_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/magic-of-autumn_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/magic-of-autumn_blurHi.jpg</textarea>
+
+</td>
+
+<td class="bgurl-td">
+
+
+		<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/magical-lotus-stream-var2-water_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/magical-lotus-stream-var2-water_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/magical-lotus-stream-var2-water_blurHi.jpg</textarea>
+
+
+</td>
+
+<td class="bgurl-td">
+
+
+		<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/candy-trees_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/candy-trees_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/candy-trees_blurHi.jpg</textarea>
+
+
+</td>
+
+<td class="bgurl-td" style="border-right:none;">
+
+
+		<span class="bgurl-titles">background</span><br> <textarea class="bgurl">res-bgimg-exports/magical-lotus-stream-var2-trees_crisp.jpg</textarea><br><br> <span class="bgurl-titles">low blur</span><br> <textarea class="bgurl">res-bgimg-exports/magical-lotus-stream-var2-trees_blurLo.jpg</textarea><br><br> <span class="bgurl-titles">high blur</span><br> <textarea class="bgurl">res-bgimg-exports/magical-lotus-stream-var2-trees_blurHi.jpg</textarea>
+
+
+</td>
+
+</tr>
+
+
+
+
+</table>
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+
+<!-- <br><br>
+<table cellspacing="0px" align="center" style="width:120%;position:relative;left:-10%;border:solid 2px; border-radius:19px;overflow: hidden;background: fixed repeat url(https://i.imgur.com/4xSAsWX.jpg) bottom center;">
+
+
+NEXT PAIR OF TRs
+
+
+
+
+</table> -->
+
+
+
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+<!-- END GALLERY TABLE BACKGROUND RESOURCES -->
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+
+
+
+<!-- <div class="par">
+
+</div> -->
+<!-- div end par -->
+
+
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<div class="box-top">
+<div class="box-deco-top">
+
+	<img src="https://i.imgur.com/k3FuBBJ.png" style="
+	z-index: 12;
+	margin: 230 750 0 -65;
+	position: relative;white-space: nowrap;">
+
+
+<!-- bubbbles, when there is a "how to use section" margin: 650 0 0 18; -->
+	<img src="https://i.imgur.com/hTJoHX4.png" style="
+	z-index: 12;
+	margin: 480 0 0 18;
+	position: absolute;">
+
+</div>
+</div>
+<!-- END SIDE DECORATIONS -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+
+<br><br>
+
+<!-- <h2>how to use</h2>
+
+<div class="par">
+
+[however you want<br>
+but am gonna put some CSS layout tips and stuff here too]
+
+</div> -->
+<!-- div end par -->
+
+
+<br>
+
+
+<h2>crediting</h2>
+
+<div class="par">
+
+<div style="width:150px;height:200px;float:right;padding-left:50px;text-align:center;">
+	<div style="height:30px;"></div>
+	<img src="backgrounds_flatbutton.gif">
+	<br><div style="height:10px;"></div>
+	<textarea style="
+	height:45px;
+	font: 7pt courier new;
+	font-weight:800;
+	color: #ffffff;
+	background: fixed repeat url('https://i.imgur.com/4xSAsWX.jpg') bottom center;
+	text-decoration: bold;
+	letter-spacing: 0px;
+	line-height: 5pt;
+	overflow:hidden;
+	padding: 7px;
+	border: 1px solid #fff;
+	resize: none;
+	width:120px;
+	"><a href="/~Molidor#bgs"><img src="backgrounds_flatbutton.gif"></a></textarea>
+</div>
+
+As there's no watermarking on these images, I'd appreciate some sort of credit and link back to here if you use any, so that other people can make use of them too.
+
+<br><br>It can be a discreet link if necessary, or if you wanna use this convenient little button go for it!
+
+</div>
+<!-- div end par -->
+
+
+
+</div>
+<!-- end div RESOURCES TRAVEL PICS -->
+
+<HEAD><link href="style.css" rel="stylesheet" type="text/css" media="all"></HEAD>
+<style>
+</style>
+<a name="a"></a>
+<div id="allthethings">
+
+
+
+
+
+
+
+
+<!-- MOLIDOR AT TOP OF FIRST BOX -->
+	<!-- <div class="overbanner-holder">
+	<div class="overbanner-content"><img class="overbanner-img" src="topimg5.png">
+	</div>
+    </div> -->
+
+
+
+<!-- start div PHOTO ALBUM -->
+
+<a name="res"></a>
+<div class="section">
+
+
+<h1>travel photos</h1>
+<!-- <h2>yeah its a problem</h2> -->
+<h3>RESOURCES FOR YOUR PETPAGES</h3>
+<br>
+
+<!-- SIDE DECORATIONS -->
+<div class="box-top">
+<div class="box-deco-top">
+	<!-- <img class="boxDecoImg-starfish" src="/Users/charlie/Documents/Work/3D/Next/QuickCritters/pet lookups/page - folio page/petpage_codeo/images/box_starfish.png"> -->
+	<img src="https://i.imgur.com/9OcDGeS.png" style="
+		z-index: 12;
+		margin: 500 750 0 -65;
+		position: relative;white-space: nowrap;">
+
+	<img src="https://i.imgur.com/hieEK5C.png" style="
+		z-index: -2;
+		margin: 280 0 0 33;
+		position: absolute;">
+
+	<!-- <img src="https://i.imgur.com/2k9BKsm.png" style="
+		z-index: 12;
+		margin: 900 0 0 22;
+		position: absolute;"> -->
+
+	<!-- <img src="https://i.imgur.com/k3FuBBJ.png" style="
+	z-index: 12;
+	margin: 400 0 0 22;
+	position: absolute;"> -->
+
+	<img src="https://i.imgur.com/90i3Pec.png" style="
+	z-index: 12;
+	margin: 50 0 0 -788;
+	position: absolute;">
+
+	<!-- <img src="https://i.imgur.com/wE2h7ir.png" style="
+	z-index: 12;
+	margin: 850 0 0 -788;
+	position: absolute;"> -->
+
+	<!-- <img src="https://i.imgur.com/cw31kjr.png" style="
+	z-index: 12;
+	margin: 1250 0 0 -794;
+	position: absolute;"> -->
+
+	<!-- <img src="https://i.imgur.com/hTJoHX4.png" style="
+	z-index: 12;
+	margin: 250 0 0 -794;
+	position: absolute;"> -->
+
+
+<!-- FOR SOME WEIRD REASON THE VERY TOP ONE MUST BE RELATIVE AND THE OTHERS HAVE TO BE ABSOLUTE?????? -->
+
+	<!-- style="position: relative; left: -206px; top: -31px; height: auto; width: auto; z-index: 10; overflow: hidden;" -->
+</div>
+</div>
+<!-- END SIDE DECORATIONS -->
+
+
+		Of course being a really well travelled peophin I have a TON of pictures taken. And before you ask "how'd you use a camera without hands?", the answer is "with great difficulty" so uhh, try not to judge too harshly kthx
+
+		<br><br>
+
+		Each photo has its frosted glass version below it
+
+		<br><br>Remember to link back somewhere on your page, with either of these buttons
+		<br><br>table Here, one for MOLIDOR page (animated) and one for "image resources / assets"
+		<br><br>And please don't take any of the other assets on my page, they're custom made to suit me
+
+		<br><br>
+		For the other phtography geeks checking out this page
+		I take these mostly with vintage lenses, 35 to 65 years old as my current collection spans. They give the images some unique colours and bokeh!
+		That also means focusing completely manually
+
+		<br><br>All are 1920x1080 resolution, which is most commonly used (by nearly 20% of internet users).
+
+
+	<br><br>
+
+
+	<h2>plants</h2>
+	For the other phtography geeks checking out this page
+	I take these mostly with vintage lenses, 35 to 65 years old as my current collection spans. They give the images some unique colours and bokeh!
+	That also means focusing completely manually
+	<br><br>
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+<!-- START GALLERY TABLE BACKGROUND RESOURCES -->
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+
+<table cellspacing="0px" align="center" style="width:120%;position:relative;left:-10%;border:solid 2px; border-radius:19px;overflow: hidden;background: fixed repeat url(https://i.imgur.com/4xSAsWX.jpg) bottom center;">
+<!-- <table cellspacing="0px" align="center" style="width:120%;position:relative;left:-10%;border:solid 2px; border-radius:14px;background: fixed repeat url(https://i.imgur.com/UeN3wJE.jpg) bottom center;"> -->
+<tr>
+
+	<td width="25%" height="auto"  style="border-right:1px solid #fff; border-bottom:1px solid #fff; padding:0px;">
+
+			<div style="width: 100%;
+			  margin: 0 auto;
+			  overflow: hidden;
+			  position: relative;
+			  height: 230px;">
+			<img style="left: 50%;
+			  margin-left: -200px;
+			  height:100%;
+			  position: absolute;
+			  " src="bgphotosets/IMG_8902_crisp.jpg">
+	        </div>
+
+	</td>
+
+	<td width="25%" height="auto"  style="border-right:1px solid #fff; border-bottom:1px solid #fff; padding:0px;">
+
+			<div style="width: 100%;
+			  margin: 0 auto;
+			  overflow: hidden;
+			  position: relative;
+			  height: 230px;">
+			<img style="left: 50%;
+			  margin-left: -200px;
+			  height:100%;
+			  position: absolute;
+			  " src="bgphotosets/DSCF9464_crisp.jpg">
+			</div>
+
+	</td>
+
+	<td width="25%" height="auto"  style="border-right:1px solid #fff; border-bottom:1px solid #fff; padding:0px;">
+
+			<div style="width: 100%;
+			  margin: 0 auto;
+			  overflow: hidden;
+			  position: relative;
+			  height: 230px;">
+			<img style="left: 50%;
+			  margin-left: -200px;
+			  height:100%;
+			  position: absolute;
+			  " src="bgphotosets/C61A0336_crisp.jpg">
+	        </div>
+
+	</td>
+
+	<!-- <td width="25%" height="auto"><div align="center">
+	<img src="DSCF9464_crisp.jpg" width="180px">
+	</div></td> -->
+
+	<td width="25%" height="auto"  style="border-bottom:1px solid #fff; padding:0px;">
+
+			<div style="width: 100%;
+			  margin: 0 auto;
+			  overflow: hidden;
+			  position: relative;
+			  height: 230px;">
+			<img style="left: 50%;
+			  margin-left: -200px;
+			  height:100%;
+			  position: absolute;
+			  " src="bgphotosets/C61A0340_crisp.jpg">
+			</div>
+
+	</td>
+
+
+
+</tr>
+
+<tr>
+<td width="25%" height="auto" style="border-right:1px solid #fff;">
+<textarea class="phototext">
+<a href="neopets.com/~Molidor"><img src=""></a>
+</textarea>
+</td>
+
+<td width="25%" height="auto" style="border-right:1px solid #fff;">
+<textarea class="phototext">
+		.flashRIP__2020 {
+		   width: 500px;
+		   height: 500px;
+		   background: url("http://pets.neopets.com/cpn/PETNAME/1/5.png") center no-repeat;
+		}
+
+		.flashRIP-content__2020 {
+		   display: none;
+		}
+</textarea>
+</td>
+
+<td width="25%" height="auto" style="border-right:1px solid #fff;">
+<textarea class="phototext">
+		.flashRIP__2020 {
+		   width: 500px;
+		   height: 500px;
+		   background: url("http://pets.neopets.com/cpn/PETNAME/1/5.png") center no-repeat;
+		}
+
+		.flashRIP-content__2020 {
+		   display: none;
+		}
+</textarea>
+</td>
+
+<td width="25%" height="auto">
+<textarea class="phototext">
+		.flashRIP__2020 {
+		   width: 500px;
+		   height: 500px;
+		   background: url("http://pets.neopets.com/cpn/PETNAME/1/5.png") center no-repeat;
+		}
+
+		.flashRIP-content__2020 {
+		   display: none;
+		}
+</textarea>
+</td>
+
+</tr>
+
+
+
+
+
+
+
+<!-- next row - add top border -->
+<tr>
+
+	<!-- <td width="25%" height="auto"  style="border-right:1px solid #fff;border-top:1px solid #fff;"><div align="center">
+	<img src="DSCF9464_blur.jpg" width="180px">
+	</div></td> -->
+
+	<td width="25%" height="auto"  style="border-right:1px solid #fff; border-bottom:1px solid #fff; border-top:1px solid #fff; padding:0px;">
+
+			<div style="width: 100%;
+			  margin: 0 auto;
+			  overflow: hidden;
+			  position: relative;
+			  height: 230px;">
+			<img style="left: 50%;
+			  margin-left: -200px;
+			  height:100%;
+			  position: absolute;
+			  " src="bgphotosets/IMG_8902_blurHi.jpg">
+			</div>
+
+	</td>
+
+
+
+	<!-- <td width="25%" height="auto"  style="border-right:1px solid #fff;border-top:1px solid #fff;"><div align="center">
+	<img src="DSCF9464_blur.jpg" width="180px">
+	</div></td> -->
+
+	<td width="25%" height="auto"  style="border-right:1px solid #fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding:0px;">
+
+			<div style="width: 100%;
+			  margin: 0 auto;
+			  overflow: hidden;
+			  position: relative;
+			  height: 230px;">
+			<img style="left: 50%;
+			  margin-left: -200px;
+			  height:100%;
+			  position: absolute;
+			  " src="bgphotosets/DSCF9464_blur.jpg">
+			</div>
+
+	</td>
+
+
+
+
+	<!-- <td width="25%" height="auto"  style="border-right:1px solid #fff;border-top:1px solid #fff;"><div align="center">
+	<img src="DSCF9464_blur.jpg" width="180px">
+	</div></td> -->
+
+	<td width="25%" height="auto"  style="border-right:1px solid #fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding:0px;">
+
+			<div style="width: 100%;
+			  margin: 0 auto;
+			  overflow: hidden;
+			  position: relative;
+			  height: 230px;">
+			<img style="left: 50%;
+			  margin-left: -200px;
+			  height:100%;
+			  position: absolute;
+			  " src="bgphotosets/C61A0336_blurHi.jpg">
+			</div>
+
+	</td>
+
+<!-- last in row - has NO border right -->
+	<!-- <td width="25%" height="auto" style="border-top:1px solid #fff;"><div align="center">
+	<img src="DSCF9464_blur.jpg" width="180px">
+	</div></td> -->
+
+	<td width="25%" height="auto"  style="border-top:1px solid #fff; border-bottom:1px solid #fff; padding:0px;">
+
+			<div style="width: 100%;
+			  margin: 0 auto;
+			  overflow: hidden;
+			  position: relative;
+			  height: 230px;">
+			<img style="left: 50%;
+			  margin-left: -200px;
+			  height:100%;
+			  position: absolute;
+			  " src="bgphotosets/C61A0340_blurHi.jpg">
+			</div>
+
+	</td>
+
+
+</tr>
+
+<tr>
+<td width="25%" height="auto" style="border-right:1px solid #fff;">
+<textarea class="phototext">
+		a href
+		img url
+</textarea>
+</td>
+
+<td width="25%" height="auto" style="border-right:1px solid #fff;">
+<textarea class="phototext">
+		.flashRIP__2020 {
+		   width: 500px;
+		   height: 500px;
+		   background: url("http://pets.neopets.com/cpn/PETNAME/1/5.png") center no-repeat;
+		}
+
+		.flashRIP-content__2020 {
+		   display: none;
+		}
+</textarea>
+</td>
+
+<td width="25%" height="auto" style="border-right:1px solid #fff;">
+<textarea class="phototext">
+		.flashRIP__2020 {
+		   width: 500px;
+		   height: 500px;
+		   background: url("http://pets.neopets.com/cpn/PETNAME/1/5.png") center no-repeat;
+		}
+
+		.flashRIP-content__2020 {
+		   display: none;
+		}
+</textarea>
+</td>
+
+<!-- last in row - has NO border right -->
+<td width="25%" height="auto">
+<textarea class="phototext">
+		.flashRIP__2020 {
+		   width: 500px;
+		   height: 500px;
+		   background: url("http://pets.neopets.com/cpn/PETNAME/1/5.png") center no-repeat;
+		}
+
+		.flashRIP-content__2020 {
+		   display: none;
+		}
+</textarea>
+</td>
+
+</tr>
+
+
+
+
+</table>
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+<!-- END GALLERY TABLE BACKGROUND RESOURCES -->
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+
+
+<h2>misc</h2>
+For the other phtography geeks checking out this page
+I take these mostly with vintage lenses, 35 to 65 years old as my current collection spans. They give the images some unique colours and bokeh!
+That also means focusing completely manually
+<br><br>
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+<!-- START GALLERY TABLE BACKGROUND RESOURCES -->
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+
+<table cellspacing="0px" align="center" style="width:120%;position:relative;left:-10%;border:solid 2px; border-radius:19px;overflow: hidden;background: fixed repeat url(https://i.imgur.com/4xSAsWX.jpg) bottom center;">
+<!-- <table cellspacing="0px" align="center" style="width:120%;position:relative;left:-10%;border:solid 2px; border-radius:14px;background: fixed repeat url(https://i.imgur.com/UeN3wJE.jpg) bottom center;"> -->
+<tr>
+
+<td width="25%" height="auto"  style="border-right:1px solid #fff; border-bottom:1px solid #fff; padding:0px;">
+
+		<div style="width: 100%;
+		  margin: 0 auto;
+		  overflow: hidden;
+		  position: relative;
+		  height: 230px;">
+		<img style="left: 50%;
+		  margin-left: -200px;
+		  height:100%;
+		  position: absolute;
+		  " src="bgphotosets/IMG_8902_crisp.jpg">
+		</div>
+
+</td>
+
+<td width="25%" height="auto"  style="border-right:1px solid #fff; border-bottom:1px solid #fff; padding:0px;">
+
+		<div style="width: 100%;
+		  margin: 0 auto;
+		  overflow: hidden;
+		  position: relative;
+		  height: 230px;">
+		<img style="left: 50%;
+		  margin-left: -200px;
+		  height:100%;
+		  position: absolute;
+		  " src="bgphotosets/DSCF1241_crisp.jpg">
+		</div>
+
+</td>
+
+<td width="25%" height="auto"  style="border-right:1px solid #fff; border-bottom:1px solid #fff; padding:0px;">
+				<!-- HAS HAD MARGIN LEFT CHANGED -->
+		<div style="width: 100%;
+		  margin: 0 auto;
+		  overflow: hidden;
+		  position: relative;
+		  height: 230px;">
+		<img style="left: 0px;
+		  margin-left: 0px;
+		  height:100%;
+		  position: absolute;
+		  " src="bgphotosets/DSCF1266_crisp.jpg">
+		</div>
+
+</td>
+
+<!-- <td width="25%" height="auto"><div align="center">
+<img src="DSCF9464_crisp.jpg" width="180px">
+</div></td> -->
+
+<td width="25%" height="auto"  style="border-bottom:1px solid #fff; padding:0px;">
+
+		<div style="width: 100%;
+		  margin: 0 auto;
+		  overflow: hidden;
+		  position: relative;
+		  height: 230px;">
+		<img style="left: 50%;
+		  margin-left: -200px;
+		  height:100%;
+		  position: absolute;
+		  " src="bgphotosets/C61A0340_crisp.jpg">
+		</div>
+
+</td>
+
+
+
+</tr>
+
+<tr>
+<td width="25%" height="auto" style="border-right:1px solid #fff;">
+<textarea class="phototext">
+<a href="neopets.com/~Molidor"><img src=""></a>
+</textarea>
+</td>
+
+<td width="25%" height="auto" style="border-right:1px solid #fff;">
+<textarea class="phototext">
+	.flashRIP__2020 {
+	   width: 500px;
+	   height: 500px;
+	   background: url("http://pets.neopets.com/cpn/PETNAME/1/5.png") center no-repeat;
+	}
+
+	.flashRIP-content__2020 {
+	   display: none;
+	}
+</textarea>
+</td>
+
+<td width="25%" height="auto" style="border-right:1px solid #fff;">
+<textarea class="phototext">
+	.flashRIP__2020 {
+	   width: 500px;
+	   height: 500px;
+	   background: url("http://pets.neopets.com/cpn/PETNAME/1/5.png") center no-repeat;
+	}
+
+	.flashRIP-content__2020 {
+	   display: none;
+	}
+</textarea>
+</td>
+
+<td width="25%" height="auto">
+<textarea class="phototext">
+	.flashRIP__2020 {
+	   width: 500px;
+	   height: 500px;
+	   background: url("http://pets.neopets.com/cpn/PETNAME/1/5.png") center no-repeat;
+	}
+
+	.flashRIP-content__2020 {
+	   display: none;
+	}
+</textarea>
+</td>
+
+</tr>
+
+
+
+
+
+
+
+<!-- next row - add top border -->
+<tr>
+
+<!-- <td width="25%" height="auto"  style="border-right:1px solid #fff;border-top:1px solid #fff;"><div align="center">
+<img src="DSCF9464_blur.jpg" width="180px">
+</div></td> -->
+
+<td width="25%" height="auto"  style="border-right:1px solid #fff; border-bottom:1px solid #fff; border-top:1px solid #fff; padding:0px;">
+
+		<div style="width: 100%;
+		  margin: 0 auto;
+		  overflow: hidden;
+		  position: relative;
+		  height: 230px;">
+		<img style="left: 50%;
+		  margin-left: -200px;
+		  height:100%;
+		  position: absolute;
+		  " src="bgphotosets/IMG_8902_blurHi.jpg">
+		</div>
+
+</td>
+
+
+
+<!-- <td width="25%" height="auto"  style="border-right:1px solid #fff;border-top:1px solid #fff;"><div align="center">
+<img src="DSCF9464_blur.jpg" width="180px">
+</div></td> -->
+
+<td width="25%" height="auto"  style="border-right:1px solid #fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding:0px;">
+
+		<div style="width: 100%;
+		  margin: 0 auto;
+		  overflow: hidden;
+		  position: relative;
+		  height: 230px;">
+		<img style="left: 50%;
+		  margin-left: -200px;
+		  height:100%;
+		  position: absolute;
+		  " src="bgphotosets/DSCF1241_blurHi.jpg">
+		</div>
+
+</td>
+
+
+
+
+<!-- <td width="25%" height="auto"  style="border-right:1px solid #fff;border-top:1px solid #fff;"><div align="center">
+<img src="DSCF9464_blur.jpg" width="180px">
+</div></td> -->
+
+<td width="25%" height="auto"  style="border-right:1px solid #fff; border-top:1px solid #fff; border-bottom:1px solid #fff; padding:0px;">
+
+		<!-- HAS HAD MARGIN LEFT CHANGED -->
+		<div style="width: 100%;
+		  margin: 0 auto;
+		  overflow: hidden;
+		  position: relative;
+		  height: 230px;">
+		<img style="left: 0px;
+		  margin-left: 0px;
+		  height:100%;
+		  position: absolute;
+		  " src="bgphotosets/DSCF1266_blurHi.jpg">
+		</div>
+
+</td>
+
+<!-- last in row - has NO border right -->
+<!-- <td width="25%" height="auto" style="border-top:1px solid #fff;"><div align="center">
+<img src="DSCF9464_blur.jpg" width="180px">
+</div></td> -->
+
+<td width="25%" height="auto"  style="border-top:1px solid #fff; border-bottom:1px solid #fff; padding:0px;">
+
+		<div style="width: 100%;
+		  margin: 0 auto;
+		  overflow: hidden;
+		  position: relative;
+		  height: 230px;">
+		<img style="left: 50%;
+		  margin-left: -200px;
+		  height:100%;
+		  position: absolute;
+		  " src="bgphotosets/C61A0340_blurHi.jpg">
+		</div>
+
+</td>
+
+
+</tr>
+
+<tr>
+<td width="25%" height="auto" style="border-right:1px solid #fff;">
+<textarea class="phototext">
+	a href
+	img url
+</textarea>
+</td>
+
+<td width="25%" height="auto" style="border-right:1px solid #fff;">
+<textarea class="phototext">
+	.flashRIP__2020 {
+	   width: 500px;
+	   height: 500px;
+	   background: url("http://pets.neopets.com/cpn/PETNAME/1/5.png") center no-repeat;
+	}
+
+	.flashRIP-content__2020 {
+	   display: none;
+	}
+</textarea>
+</td>
+
+<td width="25%" height="auto" style="border-right:1px solid #fff;">
+<textarea class="phototext">
+	.flashRIP__2020 {
+	   width: 500px;
+	   height: 500px;
+	   background: url("http://pets.neopets.com/cpn/PETNAME/1/5.png") center no-repeat;
+	}
+
+	.flashRIP-content__2020 {
+	   display: none;
+	}
+</textarea>
+</td>
+
+<!-- last in row - has NO border right -->
+<td width="25%" height="auto">
+<textarea class="phototext">
+	.flashRIP__2020 {
+	   width: 500px;
+	   height: 500px;
+	   background: url("http://pets.neopets.com/cpn/PETNAME/1/5.png") center no-repeat;
+	}
+
+	.flashRIP-content__2020 {
+	   display: none;
+	}
+</textarea>
+</td>
+
+</tr>
+
+
+
+
+</table>
+
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+<!-- END GALLERY TABLE BACKGROUND RESOURCES -->
+<!-- / / / / / / / / / / / / / / / / / / / / / / / / / / /  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+	Add button here , please link back if you use any
+
+</p>
+
+
+</div>
+
+<!-- end div PHOTO ALBUM -->
+
+
+<HEAD><link href="style.css" rel="stylesheet" type="text/css" media="all"></HEAD>
+<style>
+</style>
+<a name="a"></a>
+<div id="allthethings">
+
+
+
+
+
+
+<a name="EwSoOld"></a>
+<div class="section">
+
+<br>
+
+
+
+<h1>want to see something funny?</h1>
+<!-- <h2>yeah its a problem</h2> -->
+<h3>THIS IS A LIL EMBARRASSING BUT ALSO HILARIOUS</h3>
+<br>
+
+
+
+<!-- SIDE DECORATIONS -->
+<div class="box-top">
+<div class="box-deco-top">
+	<!-- <img class="boxDecoImg-starfish" src="/Users/charlie/Documents/Work/3D/Next/QuickCritters/pet lookups/page - folio page/petpage_codeo/images/box_starfish.png"> -->
+	<img src="https://i.imgur.com/9OcDGeS.png" style="
+		z-index: 12;
+		margin: 500 750 0 -65;
+		position: relative;white-space: nowrap;">
+
+	<img src="https://i.imgur.com/hieEK5C.png" style="
+		z-index: -2;
+		margin: 280 0 0 33;
+		position: absolute;">
+
+	<img src="https://i.imgur.com/2k9BKsm.png" style="
+		z-index: 12;
+		margin: 900 0 0 22;
+		position: absolute;">
+
+	<img src="https://i.imgur.com/k3FuBBJ.png" style="
+	z-index: 12;
+	margin: 400 0 0 22;
+	position: absolute;">
+
+	<img src="https://i.imgur.com/90i3Pec.png" style="
+	z-index: 12;
+	margin: 50 0 0 -788;
+	position: absolute;">
+
+	<img src="https://i.imgur.com/wE2h7ir.png" style="
+	z-index: 12;
+	margin: 850 0 0 -788;
+	position: absolute;">
+
+	<img src="https://i.imgur.com/cw31kjr.png" style="
+	z-index: 12;
+	margin: 1250 0 0 -794;
+	position: absolute;">
+
+	<img src="https://i.imgur.com/hTJoHX4.png" style="
+	z-index: 12;
+	margin: 250 0 0 -794;
+	position: absolute;">
+
+
+<!-- FOR SOME WEIRD REASON THE VERY TOP ONE MUST BE RELATIVE AND THE OTHERS HAVE TO BE ABSOLUTE?????? -->
+
+	<!-- style="position: relative; left: -206px; top: -31px; height: auto; width: auto; z-index: 10; overflow: hidden;" -->
+</div>
+</div>
+<!-- END SIDE DECORATIONS -->
+
+
+
+
+
+
+
+<style>
+
+	.par {
+	    /* border-bottom: 1px solid #e9e9e9; */
+	    font: 10pt Tahoma;
+	    /* padding-right: 120px; */
+	    /* padding-left: 120px; */
+	    color: #fff;
+	    text-align: justify;
+	    line-height: 20pt;
+	    margin: 6px 12px 10px 12px;
+	    padding: 5px 20px 15px 20px;
+	}
+
+	/* a:link, a:visited { */
+	    /* color: #c8ed8e; */
+	    /* text-decoration: underline; */
+
+	    /* font-weight: bold; */
+		/* color: #fff; */
+		/* padding:7px 8px; */
+	/* } */
+
+
+
+</style>
+
+
+<div class="par">
+These were all from 2006 - 2007, when Ben was a wee babby and barely knew how to use a wacom tablet lol. I was hoping to find more but I'm afraid these are all that remain
+
+</div>
+<!-- div end par -->
+
+
+
+<!-- <p>
+<strong>First</strong> of all, say, there is an image with an
+
+<br><i>less</i> than 575px, you might want to put line breaks --
+
+<br><b>second</b> image tag, and after it. This may help
+
+<br><a href="/userlookup.phtml?user=zippo92740"  class="urly">a linkydoo with urly class</a>
+
+<br><a href="/userlookup.phtml?user=zippo92740">a normal link</a>
+
+<br><u>a linkydoo</u>
+
+<br><strike>a linkydoo</strike>
+
+</p> -->
+
+
+
+<!-- - - - - - - - - - - - - - - - - - -
+
+REMEMBER
+
+text links have class="urly"
+linked images have class="img-link"
+
+
+- - - - - - - - - - - - - - - - - -  -->
+
+
+
+<!-- <style>
+	.td-eldart{
+		padding:0px;
+		margin:0px;
+	}
+</style> -->
+<!--
+<table>
+	<tr><td class="td-eldart"><img src="oldpic2007_01.jpg"></td><td class="td-eldart"><img src="oldpic2007_02.jpg"></td></tr>
+	<tr><td class="td-eldart"><img src="oldpic2007_03.jpg"></td><td class="td-eldart"><img src="oldpic2007_04.jpg"></td></tr>
+	</table>
+<br><br> -->
+
+
+<div class="displaybox-eldart"></div>
+
+<div class="previewbox-eldart" style="position: relative;">
+
+<a href="http://www.neopets.com/art/gallery.phtml?place=821" class="preview-eldart">
+<img src="oldpic2006_01-preview.jpg" class="previewshelf-eldart" style="position: relative;"><span class="full" style="position: absolute;">
+  <br><br><br><img src="oldpic2006-01.jpg" style="max-height: 575px;"><br><br>
+<div class="previewbox-note">
+	I'm dying, this is immortalised in the <u>art gallery</u>.<br>
+	There were no event days on either.
+	<br>
+</div>
+</span></a>
+
+<a class="preview-eldart">
+<img src="oldpic2007_02-preview.jpg" class="previewshelf-eldart" style="position: relative;"><span class="full" style="position: absolute;">
+  <br><br><br><img src="oldpic2007_02.jpg" style="max-height: 575px;"><br><br>
+<div class="previewbox-note">
+	Go to TOWN with that dodge and burn!<br>
+	Incredible.
+	<br>
+</div>
+</span></a>
+
+
+
+
+<a class="preview-eldart">
+<img src="oldpic2007_03-preview.jpg" class="previewshelf-eldart" style="position: relative;"><span class="full" style="position: absolute;">
+  <br><br><br><img src="oldpic2007_03.jpg" style="max-height: 575px;"><br><br>
+<div class="previewbox-note">
+	Aww I remember Iryo, from my old family pre-2006<br>
+	before I got adopted out to Ben.
+</div>
+</span></a>
+
+
+
+
+<a class="preview-eldart">
+<img src="oldpic2007_04-preview.jpg" class="previewshelf-eldart" style="position: relative;"><span class="full" style="position: absolute;">
+  <br><br><br><img src="oldpic2007_04.jpg" style="max-height: 575px;"><br><br>
+<div class="previewbox-note">
+	Haha omg I'm a maraquan peophin! And look,
+	<br>even Ezzie got a fantasy paintjob.
+</div>
+</span></a>
+
+
+<a class="preview-eldart">
+<img src="oldpic2007_05-preview.jpg" class="previewshelf-eldart" style="position: relative;"><span class="full" style="position: absolute;">
+  <br><br><br><img src="oldpic2007_05.jpg" style="max-height: 575px;"><br><br>
+<div class="previewbox-note">
+
+	Lawd I went through some chonky phases
+</div>
+</span></a>
+
+
+<!-- div end rollover gallery -->
+</div>
+
+
+<div class="par">
+It's so funny looking back, I almost want to try recreating something in that style that was so hot and trendy back then.
+
+<br>Let's do it, for the heck of it.
+
+
+<h2>How to make 2000s dodge&burn art!</h2>
+<b>Step 1.</b> We want some fully sick lineart, so let's bang out some thumbnails to work out what direction to go in. (Now this I <i>did not do</i> as a kid. Big mistake lol.) One important thing we can't forget is some vast background environment (with probably too many details in it), so I'm going to go with a .......here
+
+<br><br>
+
+<b>Step 2.</b> Lineart styles that are <i>in</i> include thin ballpoint lines or a thin whispy mechanical pencil look
+	<br>I am going to be drawing them digitally though and not suffer using a fineliner pen like I did as a kid. Thank goodness for having steadier hands now as an adult.
+	<br><b>Important Note!</b> Need to make the canvas way too big, like at least 6000px wide so that it scales down horribly... oh wait no, my computer won't even allow it without crashing. Heh, they don't make 'em like they used to. Alright we'll go with 2000px wide, that's still waaaay bigger than I'd ever use now. We didn't appreciate JPG artifacting like we do now.
+
+<br><br>
+
+<b>Step 3.</b> Flat colours onto everything, aw yeah! No subsurface scattering or bounce illumination to consider here, no sirree!
+<br>And of course we need a palette that is all the rage, so let's make me a richer, colder purple than my current look
+
+<br><br>
+
+<b>Step 4.</b> Shading time! Using these key tools ICONS HERE. Bit embarrassing that I couldn't even find them at first. Oh no it's already looking bad, idk if we can save it.
+<br><br>Do you know how exciting it was finding these at the age of 12? I was trying every button and dropdown option in Photoshop (Elements 2 lol), trying out everything I could find. And then wow, what's this? An easy shading and highlight button?
+<br><br>Remember how all VHS covers for cartoon movies were shaded like this? What good times we lived in.
+<br><br>I had a school textbook with all the illustrations dodged and burned in the most horrendous way I've ever ever seen. I wish I had it still or could remember what it was called. But the highlights were like this (DEMONSTRATE GIF)
+
+<br><br>
+
+<b>Step 5.</b> Only solution is to keep. Adding. More. Shadows.
+<br>Thank you hands. Steady hands are better than a steady relationship, remember that.
+<br><br>Really exaggerate the form, make him scrumptious. Pfft.
+
+<br><br>
+
+<b>Step 6.</b> Extra little highlighty bits now
+<br>Squiggly lines where the water caustics are falling
+<br>GIF Here
+<br>Ooh I love it when they criss-cross over and you get a little bright spot, that's so exciting.
+<br><br>We're gonna want to spend at least 10 hrs on this, so no rush, just take it niiiiice and easy. We've got nowhere to be.
+<br><br>(cut to) Gee this is kinda theraputic actually, maybe I should make slow art more often.
+
+<br><br>
+
+<b>Step 7.</b> I almost forgot, probably should've started with the eye as its the most important thing of all. Make sure I spend a few hours on it to get it as glossy and jewellike as possible.
+<br>There, perfect. It's basically rescued the entire picture from disaster.
+
+<br><br>
+
+<b>Step 8.</b> And of course how could I forget, gotta colour that lineart!
+
+<br><br>
+
+<b>Step 9.</b> Let's get into that environment, it must have clouds, and stars, and fireflies for good measure
+
+
+
+
+<br><br>And I'll laugh at it, but I really do feel nostagia for this style. Ew.
+
+
+
+</div>
+<!-- div end par -->
+
+
+
+
+
+
+</div>
+
+<!-- end div ART ARCHIVES -->
+
+<HEAD><link href="style.css" rel="stylesheet" type="text/css" media="all"></HEAD>
+<style>
+</style>
+<a name="a"></a>
+<div id="allthethings">
+
+
+
+
+
+
+
+
+<!-- start div PHOTO ALBUM -->
+
+<a name="urls"></a>
+<div class="section">
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- DECORATIONS -->
+
+<div class="box-top">
+<div class="box-deco-top">
+
+<!-- first must be relative and the rest can be absolute -->
+
+	<!-- left specks green -->
+	<img src="https://i.imgur.com/cw31kjr.png" style="
+		z-index: 12;
+		margin: 550 750 0 -72;
+		position: relative;">
+
+	<!-- right leaves -->
+	<img src="https://i.imgur.com/k3FuBBJ.png" style="
+	z-index: 12;
+	margin: 100 0 0 22;
+	position: absolute;">
+
+	<!-- right vine -->
+	<img src="https://i.imgur.com/2k9BKsm.png" style="
+		z-index: 12;
+		margin:760 0 0 22;
+		position: absolute;">
+
+</div>
+</div>
+<!-- END SIDE DECORATIONS -->
+
+
+
+<!-- <h1>kthxbye</h1> -->
+<!-- <h2>yeah its a problem</h2> -->
+<!-- <h3>SITELY</h3> -->
+<br>
+<!-- Hope you enjoyed your stay -->
+<!-- <br><br> -->
+
+
+<table style="width:100%;"><tr>
+	<td class="sitely-td" style="padding:0px 16px 0px 0px;">
+		<div class="sitely-title">credit</div>
+		<!-- <span class="sitely-title">credits</span> -->
+
+
+<div style="height:10px;"></div>
+<div class="smalltext" align="center" style="padding:10px;">
+
+<a href="/~jiethe" style="
+border-top: 1px solid gold;
+border-bottom: 1px solid gold;
+padding-left: 6px;
+padding-right: 6px;
+text-decoration: none;
+">
+layout / coding by</a>
+<br><a href="/~jiethe">
+<!-- <img src="https://i.imgur.com/E1W7Qk2.gif"> -->
+<img src="http://u.cubeupload.com/codrant/syzygys.gif">
+</a>
+<br>including all the nifty rollover gallery stuff
+
+
+
+
+<!-- <hr style="border:7px dashed #c8ed8e;margin:9px;"> -->
+<!-- <hr style="border:3px double #c8ed8e;margin:9px 0px;color:#fff;border-radius: 5px;"> -->
+<!-- <hr style="border-top:1px solid #c8ed8e;margin:3px -10px;"> -->
+
+<div style="height:10px;"></div>
+
+<hr style="border:2px dashed #c8ed8e;margin:9px -10px;color:#fff;border-radius: 5px;">
+
+<div style="height:10px;"></div>
+
+
+Additional coding, edits of Neopets.com images, and all other illustrations and graphic assets on this page were created by
+	<a href="userlookup.phtml?user=zippo92740" style="
+	border-top: 1px solid gold;
+	border-bottom: 1px solid gold;
+	padding-left: 3px;
+	padding-right: 3px;
+	text-decoration: none;
+	">
+	my owner Ben</a>.
+	<br><br>Feel free to <a href="neomessages.phtml?type=send&recipient=zippo92740" style="
+	border-top: 1px solid gold;
+	border-bottom: 1px solid gold;
+	padding-left: 3px;
+	padding-right: 3px;
+	text-decoration: none;
+	">message</a> if you have any questions.
+
+<!-- <hr style="border:2px dashed #c8ed8e;margin:9px -10px;color:#fff;border-radius: 5px;"> -->
+
+	</td>
+
+	<td class="sitely-td" style="padding:0px 0px 0px 16px;">
+
+		<div class="sitely-title">link back?</div>
+
+		<div align=center><br>
+
+
+
+		<img src="https://i.imgur.com/E8QCr9B.png">
+		<br><div style="height:10px;"></div>
+
+		<textarea rows="3" cols="10" style="
+		height:50px;
+		width:200px;
+		font: 8pt courier new;
+		font-weight:800;
+		color: #ffffff;
+		background: fixed repeat url('https://i.imgur.com/4xSAsWX.jpg') bottom center;
+		text-decoration: bold;
+		letter-spacing: 0px;
+		line-height: 7pt;
+		overflow:hidden;
+		padding: 10px;
+		border: 1px solid #fff;
+		resize: none;
+		"><a href="/~Molidor"><img src="https://i.imgur.com/E8QCr9B.png"></a>
+		</textarea>
+
+<br><br>
+
+		<!-- <img src="https://i.imgur.com/9XwtmqF.png" style="border:1px solid #fff;"> -->
+		<img src="https://i.imgur.com/9XwtmqF.png">
+		<br><div style="height:6px;"></div>
+
+		<textarea rows="3" cols="10" style="
+		height:50px;
+		width:200px;
+		font: 8pt courier new;
+		font-weight:800;
+		color: #ffffff;
+		background: fixed repeat url('https://i.imgur.com/4xSAsWX.jpg') bottom center;
+		text-decoration: bold;
+		letter-spacing: 0px;
+		line-height: 7pt;
+		overflow:hidden;
+		padding: 10px;
+		border: 1px solid #fff;
+		resize: none;
+		"><a href="/~Molidor"><img src="https://i.imgur.com/9XwtmqF.png"></a>
+		</textarea>
+
+
+		</div>
+
+
+
+	</td>
+</tr></table>
+
+
+<br>
+<!-- <hr style="border:2px dashed #c8ed8e;margin:9px -10px;color:#fff;border-radius: 5px;"> -->
+
+<!-- Of course being really well travelled I have a TON of pictures taken. And before you ask "how'd you use a camera without hands?", the answer is "with great difficulty" so uhh, try not to judge too harshly kthx -->
+
+
+
+<h2>where to next?</h2>
+
+<div align="center">
+	<div style="margin-top:10px;margin-bottom:-20px;width:400px;line-height:17px;">My fam have some really nifty pages you should check out, some including resources and handy guides (soon) :
+</div></div>
+
+<!-- <br><br> -->
+
+
+
+<!--
+NOTES ON CHANGED CLASSES
+preview-oldart 		linkinfoshow
+displaybox-oldart 	linkinfobox
+previewbox-oldart	linkinfobuttonshelf
+previewshelf-oldart	linkinfobuttons
+previewbox-note 	linkinfonote
+ -->
+
+
+
+
+ <!-- START BUTTONS FOR FAM PAGES -->
+ <!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+<br><br><br><div class="linkinfobox"></div>
+
+<div class="linkinfobuttonshelf" style="position: relative;">
+
+
+<!-- codeo flat https://i.imgur.com/ji8t7tp.gif -->
+<!-- codeo square https://i.imgur.com/EQ9QXpl.gif -->
+
+<a href="/~Codeo" class="linkinfoshow">
+<img src="https://i.imgur.com/ji8t7tp.gif" class="linkinfobuttons" style="position: relative;">
+<span class="fulllink" style="position: absolute;">
+<div class="linkinfonote">
+	Codeo's a surfy draik, he's cool to hang out with occasionally but I find him pretty irresponsible tbh.
+
+	<!-- Not the kind of guy I'd want to be <b>stuck on a desert island with</b>, if you know what I mean ~ -->
+</div>
+</span></a>
+
+
+
+
+<a href="/~Troodon" class="linkinfoshow">
+<img src="WIPbutton.png" class="linkinfobuttons" style="position: relative;">
+<span class="fulllink" style="position: absolute;">
+  <div class="linkinfonote">
+  	Troodon is a funky little jetsam and has a cool page in the works but it's not uploaded yet.
+  </div>
+</span></a>
+
+
+
+
+<a href="/~Codeo#gifs" class="linkinfoshow">
+<img src="WIPbutton.png" class="linkinfobuttons" style="position: relative;">
+<span class="fulllink" style="position: absolute;">
+  <div class="linkinfonote">
+  	Have a GIF-making guide in the works, check back later.
+  </div>
+</span></a>
+
+
+<a href="/~Hugno" class="linkinfoshow">
+<img src="http://i.imgur.com/e9mWnXg.gif" class="linkinfobuttons" style="position: relative;">
+<!-- border:1px solid salmon; -->
+<span class="fulllink" style="position: absolute;">
+<div class="linkinfonote">
+	If you miss the classic pre-conversion layout for pet lookups, boy oh boy do I have the petpage CSS theme for you!
+	<!-- If your pet is old enough to have had one of these old style lookups (before 2007), they're old enough to get a skidoo license lol -->
+</div>
+</span></a>
+
+
+<!-- div end rollover gallery -->
+<!-- </div> -->
+
+
+
+
+<!-- START BUTTONS FOR OTHER RECOMMENDED PAGES -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+<br>
+<div align="center">
+	<div style="margin-top:20px;margin-bottom:-10px;width:300px;line-height:17px;">
+		[links to other really cool pages to go here]
+
+		<!-- And here's a bunch of other really cool pets I've found on my travels around Neopia -->
+</div></div>
+<br>
+
+
+<!--
+why doesnt she have buttons noooo
+http://www.neopets.com/~misaki_tove
+http://www.neopets.com/~Millamant#char
+ -->
+
+
+
+<!-- <div class="linkinfobuttonshelf" style="position: relative;"> -->
+
+<!-- <a href="/~mikahara" class="linkinfoshow">
+<img src="http://i.imgur.com/XaF3gU1.png" class="linkinfosquare" style="position: relative;">
+<span class="fulllink" style="position: absolute;">
+<div class="linkinfonote">
+	Hands down some of best pages I've ever seen (check out her other pets at the bottom of the page!) just beautifully crafted and designed in every way, and a darling story
+</div>
+</span></a> -->
+
+
+
+
+<!-- <a href="/~muzoni" class="linkinfoshow">
+<img src="http://i.imgur.com/qbLsD7o.gif" class="linkinfosquare" style="position: relative;">
+<span class="fulllink" style="position: absolute;">
+  <div class="linkinfonote">
+  	Semmy's pages are some of my faves, you can see how much love she's put into them over many years, tons of art, and I always appreciate an obvious Digimon aesthetic!
+  </div>
+</span></a> -->
+
+
+<!-- BLANK -->
+
+<!-- <a href="/~muzoni" class="linkinfoshow">
+<img src="http://i.imgur.com/qbLsD7o.gif" class="linkinfosquare" style="position: relative;">
+<span class="fulllink" style="position: absolute;">
+  <div class="linkinfonote">
+  	Semmy's pages are some of my faves, you can see how much love she's put into them over many years, tons of art, and I always appreciate an obvious Digimon aesthetic!
+  </div>
+</span></a> -->
+
+
+
+<!-- BLANK -->
+
+<!-- <a href="/~muzoni" class="linkinfoshow">
+<img src="http://i.imgur.com/qbLsD7o.gif" class="linkinfosquare" style="position: relative;">
+<span class="fulllink" style="position: absolute;">
+  <div class="linkinfonote">
+  	Semmy's pages are some of my faves, you can see how much love she's put into them over many years, tons of art, and I always appreciate an obvious Digimon aesthetic!
+  </div>
+</span></a> -->
+
+
+
+
+
+<!-- OTHER PAGES BUTTONS NEXT ROW -->
+<!-- <br> -->
+
+<!-- <a href="/~troodon" class="linkinfoshow">
+<img src="http://i.imgur.com/qbLsD7o.gif" class="linkinfosquare" style="position: relative;">
+<span class="fulllink" style="position: absolute;">
+<div class="linkinfonote">
+	one
+</div>
+</span></a> -->
+
+
+<!-- <a href="/~troodon" class="linkinfoshow">
+<img src="http://i.imgur.com/qbLsD7o.gif" class="linkinfosquare" style="position: relative;">
+<span class="fulllink" style="position: absolute;">
+<div class="linkinfonote">
+	one
+</div>
+</span></a> -->
+
+
+<!-- <a href="/~troodon" class="linkinfoshow">
+<img src="http://i.imgur.com/qbLsD7o.gif" class="linkinfosquare" style="position: relative;">
+<span class="fulllink" style="position: absolute;">
+<div class="linkinfonote">
+	one
+</div>
+</span></a> -->
+
+
+<!-- <a href="/~troodon" class="linkinfoshow">
+<img src="http://i.imgur.com/qbLsD7o.gif" class="linkinfosquare" style="position: relative;">
+<span class="fulllink" style="position: absolute;">
+<div class="linkinfonote">
+	one
+</div>
+</span></a> -->
+
+
+
+
+
+
+
+
+<!-- OTHER PAGES FLAT BUTTONS NEXT ROW (max 4 per row) -->
+
+<!-- <br><br><br> -->
+
+
+<!-- <a href="/~troodon" class="linkinfoshow">
+<img src="http://u.cubeupload.com/codrant/syzygys.gif" class="linkinfobuttons" style="position: relative;">
+<span class="fulllink" style="position: absolute;">
+<div class="linkinfonote">
+	Codeo's a surfy draik, he's cool but I find him pretty irresponsible tbh.
+	 Codeo's a surfy draik, he's cool but I find him pretty irresponsible tbh. Codeo's a surfy draik, he's cool but I find him pretty irresponsible tbh.
+</div>
+</span></a> -->
+
+
+
+<!-- <a href="/~troodon" class="linkinfoshow">
+<img src="http://u.cubeupload.com/codrant/syzygys.gif" class="linkinfobuttons" style="position: relative;">
+<span class="fulllink" style="position: absolute;">
+<div class="linkinfonote">
+	Codeo's a surfy draik, he's cool but I find him pretty irresponsible tbh.
+	 Codeo's a surfy draik, he's cool but I find him pretty irresponsible tbh. Codeo's a surfy draik, he's cool but I find him pretty irresponsible tbh.
+</div>
+</span></a> -->
+
+
+
+<!-- <a href="/~troodon" class="linkinfoshow">
+<img src="http://u.cubeupload.com/codrant/syzygys.gif" class="linkinfobuttons" style="position: relative;">
+<span class="fulllink" style="position: absolute;">
+<div class="linkinfonote">
+	Codeo's a surfy draik, he's cool but I find him pretty irresponsible tbh.
+	 Codeo's a surfy draik, he's cool but I find him pretty irresponsible tbh. Codeo's a surfy draik, he's cool but I find him pretty irresponsible tbh.
+</div>
+</span></a> -->
+
+
+
+<!-- <a href="/~troodon" class="linkinfoshow">
+<img src="http://u.cubeupload.com/codrant/syzygys.gif" class="linkinfobuttons" style="position: relative;">
+<span class="fulllink" style="position: absolute;">
+<div class="linkinfonote">
+	Codeo's a surfy draik, he's cool but I find him pretty irresponsible tbh.
+	 Codeo's a surfy draik, he's cool but I find him pretty irresponsible tbh. Codeo's a surfy draik, he's cool but I find him pretty irresponsible tbh.
+</div>
+</span></a> -->
+
+
+
+
+
+<br>
+
+
+<!-- div end rollover buttons gallery -->
+</div>
+
+<!-- END BUTTONS GALLERY -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+
+<!-- to shrink down the last part of the page -->
+<div style="height:100px;margin-top:-200px;"></div>
+
+</div>
+<!-- end div section SITELY -->
+
+
+
+
+
+
+
+
+
+</div>
+<!-- end div allthethings -->
+
+
+
+
+
+
+<!-- FOR END OF ALL COMBINED PARTS -->
+
+<!-- end of allthethings div -->
+</div>
+<!-- end of toshow div -->
+</div>
