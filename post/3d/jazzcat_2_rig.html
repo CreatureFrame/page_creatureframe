@@ -10,10 +10,11 @@
 <!-- <link data-chunk="client" rel="stylesheet" href="https://tools.creatureframe.com/assets/styles/style_scrollpost_B.css"> -->
 <!-- <link data-chunk="client" rel="stylesheet" href="../assets/acnldreams_stylesheet.css"> -->
 
+<!-- CURRENT CSSes I'M USING THAT'VE BEEN COMBINED AND MINIFIED -->
 <!-- THIS ONE COMBINES A SLIMMED DOWN VERSION OF acnldreams_stylesheet.css AND THE MINIFIED cohostclient.css -->
-<link data-chunk="client" rel="stylesheet" href="../assets/acnldreams_stylesheet_min.css">
-<link data-chunk="client" rel="stylesheet" href="jazzcat_style.css">
-
+<!-- <link data-chunk="client" rel="stylesheet" href="../assets/acnldreams_stylesheet_min.css"> -->
+<!-- <link data-chunk="client" rel="stylesheet" href="jazzcat_style.css"> -->
+<link data-chunk="client" rel="stylesheet" href="../assets/combined.css">
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
@@ -34,6 +35,9 @@
 
 <!--Google Fonts-->
 <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
 </head>
@@ -258,6 +262,16 @@ border-radius: 6px;
 
 /* font: 10pt "Courier", "Helvetica", monospace; */
 color: #ede4cf;
+
+font: 11pt "Raleway", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+
+font: 12pt "Space Grotesk", sans-serif;
+font-optical-sizing: auto;
+font-weight: 300;
+letter-spacing: 0.45px;
+letter-spacing: normal;
 }
 /* for the top h1 title box, should probs replace textbox w whatever main text is using, or rmv these altogether if not needed */
 .bigtitle{
@@ -586,7 +600,7 @@ or backgrounded
  -->
  <!-- https://cohost.org/Cro/post/6464183-div-align-center -->
 
-the raindrops from <a href="https://creatureframe.com/post/3d/jazzcat_1_scene.html" class="urlyblock">this little scene</a> were the result of a buttload of experimentation. i wanted a single flexible rig for both raindrop and the ripple so I could just drop a bunch into a scene and swing them around into place as needed
+the raindrops from <a href="https://creatureframe.com/post/3d/jazzcat_1_scene.html" class="urlyblock">this little scene</a> were the result of a buttload of experimentation. i wanted a single flexible rig for both raindrop and the ripple so I could just drop a bunch of rain into a scene and swing them around into place as needed
 <!-- made it a single rig for both raindrop and the ripple so I could just drop a bunch into a scene and swing them around into place as needed -->
 <br><br>
 <!-- it's a single rig for both raindrop and the ripple so I could just drop multiple into a scene and make all the rain come in from the same direction quickly if needed -->
@@ -602,19 +616,25 @@ the raindrops from <a href="https://creatureframe.com/post/3d/jazzcat_1_scene.ht
 <!-- <div align="center" style="margin-top:-15px;position:relative;z-index:10;"><img src="https://tools.creatureframe.com/assets/eachpost/jazzcat/cat_fxRig_rain_27_RIGFAR_60_60_90.gif" class="image-fullscroll lilborder"></div> -->
 
 <div align="center" style="margin-top:-40px !important;position:relative;z-index:10;"><img src="https://tools.creatureframe.com/assets/eachpost/jazzcat/cat_fxRig_rain_27_RIGFAR_angledrop.gif" class="image-fullscroll lilborder"></div>
- <!-- CONTENT BOX -->
- <div align="center" style="margin-top:-20px !important;" class="textbox">
- <br>
- even added a control for the raindrop's falling angle. not something i used in the final render as i'd decided i wanted the drops to fall straight down so it'd look like a still night, but hey, futureproofing
+<!-- CONTENT BOX -->
+<div align="center" style="margin-top:-20px !important;" class="textbox">
+<br>
+even added a control for the raindrop's falling angle. not something i used in the final render as i'd decided i wanted the drops to fall straight down so it'd look like a still night, but hey, futureproofing!
+<br><br></div>
+ <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
 
- <br><br>
+<div class="deco-imgA-div" align="center" style="margin-top:-50px;margin-bottom:10px;"><img src="../assets/deco/small/decos-assets/ripples_3combined.png" class="deco-imgA"></div>
+
+<!-- CONTENT BOX -->
+<div align="center" style="margin-top:-20px !important;" class="textbox">
+<br>
 <!-- for the ripple side of it it's a ridiculously overcomplicated rig, and a traditional dedicated animator would hate working with it, but I wanted to play around and explore what could be done to stylise raindrops -->
-for the ripple side of it it's a silly overcomplicated rig, i think most traditional dedicated animators would hate working with it, but I wanted to play around and explore what could be done to stylise ripples using just flat meshes and movement.
- <br><br>
+for the ripple side of it, it's a silly overcomplicated rig. i think most dedicated animators would hate it, but I wanted to play around and explore what could be done to stylise ripples using just flat meshes and movement.
+<br><br>
 was really keen to try out an idea i'd had, getting an overlaying set of "cutout" meshes to slide towards the center, over the lit ones, and was stoked to see some promising results as i mucked around with it
 
- <br><br></div>
- <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+<br><br></div>
+<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
 <div align="center" style="margin-top:-45px !important;position:relative;z-index:10;"><img src="https://tools.creatureframe.com/assets/eachpost/jazzcat/cat_fxRig_rain_27_RIGCLOSE_60_60_90.gif" class="image-fullscroll lilborder"></div>
 
 
@@ -645,12 +665,12 @@ was really keen to try out an idea i'd had, getting an overlaying set of "cutout
 <!-- CONTENT BOX -->
 <div align="center" style="margin-top:-20px;" class="textbox">
 <br>
-also i found the original really rough plan for the rig, when i was initially trying to figure out how it could be done
+and i found the original really rough plan for the rig, when i was initially trying to figure out how it could be done
 <br><br></div>
 <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
 <br><br>
-    <div align="center" style="margin-top:-80px;position:relative;z-index:10; ">
-    <img src="https://tools.creatureframe.com/assets/eachpost/jazzcat/wip/rig plan raindrop-0.jpg" class="image-fullscroll lilborder" style="border:2px solid #fff; rotate:2deg;image-rendering:auto;width:70%;"></div>
+    <div align="center" style="margin-top:-90px;position:relative;z-index:10; ">
+    <img src="https://tools.creatureframe.com/assets/eachpost/jazzcat/wip/rig plan raindrop-0.jpg" class="image-fullscroll lilborder" style="border:2px solid #fff; rotate:2deg;image-rendering:auto;width:50%;"></div>
 
 <!-- <a href="https://cohost.org/Cro/post/6630216-raindrop-rig-mak" target="_blank" class="urlyblock" style="">raindrop rig</a> -->
 
@@ -677,7 +697,7 @@ i worked at it a few hours and messed around til i found an effect i really like
 
 <!-- so unfortunately just had to suck it up and start over with something smaller that wouldn't overwhelm the scene -->
 <br><br>
-best solution was to just suck it up and start over making something smaller and shorter that wouldn't overwhelm the scene
+best solution was to just suck it up and start over, making something smaller and shorter that wouldn't overwhelm the scene
 
 <!-- something that demanded less attention -->
 
@@ -686,8 +706,47 @@ best solution was to just suck it up and start over making something smaller and
 <br><br></div>
 <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
 
+
+
+
+
 <!-- final cat gif -->
 <div align="center" style="margin-top:-45px !important; position:relative; z-index:10;"><img src="https://64.media.tumblr.com/07e3c494c4b2a67117c6b5d2ccd8a20b/2901202291a8766e-34/s540x810/1f5ca14bc69a5691d34066a6a08971d773220ed3.gif" class="image-fullscroll lilborder"></div>
+
+<!--  ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼  -->
+<!-- windowframe open
+style="max-width:740px;"
+video size at end of post:
+width="1080"
+ -->
+<!-- <div align="center"><div class="sidebyside-image lilborder" style="max-width:540px;">
+<video autoplay muted loop playsinline webkit-playsinline class="gifloops" width="540" style="margin-bottom:0px;">
+    <source src="jazzcat_WIPnight_assets/cat_final_720px_sigged_hald_15fpsR15.mp4" type="video/mp4"/> </video> </div></div> -->
+<!-- ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ -->
+
+
+<!-- double sized video, but I think it's older version -->
+<!-- <div class="sidebyside-image">
+<video autoplay="" muted="" loop="" playsinline="" webkit-playsinline="" class="gifloops" width="540">
+    <source src="https://creatureframe.com/assets/images/cat_catfinal_x2_1500k.mp4" type="video/mp4"> </video> </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -728,7 +787,7 @@ the eye highlight rig was super simple; flat white meshes that are constrained t
 
 <br><br>
 
-and seeing how it looks on Jazz the cat. his face and eyes had to be remodelled a lot to account for the highlights cutting through the mesh, but it was worth it.
+and seeing how it looks on Jazz the cat (thought he needed a name at this point). his face and eyes had to be remodelled a lot to account for the highlights cutting through the mesh, but it was worth it.
 <br><br>for one thing the highlights really tied the look together, (this being a character designed to be mostly constructed of generously rounded geometric shapes and curved points). but as a bonus, with all that reworking the face, i got it to a place where i was way happier with the shapes and the direction it was heading in.
 
 <!-- , it really tied the look together, this being a character designed to be mostly constructed of generously rounded geometric shapes and curved points -->
@@ -813,7 +872,7 @@ scene setup & animation
 <!-- CONTENT BOX -->
 <div align="center" style="margin-top:-20px;" class="textbox">
 
-<br>things get fuzzier here, i was doing some of the animation in 2020, then some final stuff the following year, but here's some fun screenshots i'd taken during the process.
+<br>my memory gets fuzzier here, i was doing some of the animation in 2020, then some final stuff the following year, overall very slow going and a lot of tweaking tiny things. but here's some fun screenshots i'd taken during the process.
 
 <br><br>
 
@@ -826,14 +885,14 @@ top down view of the whole scene, the water plane was also rigged and animated
 
 <div align="center" class=""><img src="https://tools.creatureframe.com/assets/eachpost/jazzcat/wip/3dscene_topdown.jpg" class="image-fullscroll lilborder"></div>
 
-<br>gets a bit hectic between the rigs for the cat, the water's surface and edge, the fish, the raindrops, the plants, the windows, and also had to set up the cat's eyes following the fish.
+<br>the viewport gets a bit hectic between the rigs for the cat, the water's surface and edge, the fish, the raindrops, the plants, the windows, and also had to set up the cat's eyes following the fish.
 <br><br>
 
 <div align="center" class=""><img src="https://tools.creatureframe.com/assets/eachpost/jazzcat/wip/3dscene_animatingtoomuchstuff.jpg" class="image-fullscroll lilborder"></div>
 <br>
 <div align="center" class=""><img src="https://tools.creatureframe.com/assets/eachpost/jazzcat/wip/3dscene_animatingfishpathsunder.jpg" class="image-fullscroll lilborder"></div>
 
-<br>back view, the "lit room" is just a sphere with it's normals reversed
+<br>back view, the "lit room" is just a sphere with it's normals reversed.
 <br><br>
 
 <div align="center" class=""><img src="https://tools.creatureframe.com/assets/eachpost/jazzcat/wip/3dscene_back.jpg" class="image-fullscroll lilborder"></div>
@@ -856,7 +915,7 @@ top down view of the whole scene, the water plane was also rigged and animated
 <div align="center" style="margin-top:0px;position:relative;z-index:10;"><img src="https://tools.creatureframe.com/assets/eachpost/jazzcat/wip/rig plan raindrop-0.jpg" class="image-fullscroll lilborder"></div> -->
 
 
-<br>holy shit i was glad to finally finish the damn thing, even with such long breaks in between working on it
+<br>holy shit i was glad to finally finish the damn thing, even with such long breaks in between working on it.
 
 <br><br>if you take one thing away from this it should be: go back and look at your old unfinished projects. there's so much crap i completely forgot about, sitting on the back burner.
 <!-- , felt real good to finally feel it was "done" enough that i could do that final render -->
