@@ -4,7 +4,8 @@
 *.zip
 _*
 *.md
-*notes*
+*_notes.*
+*_notes
 *.psd
 *_WIP
 *aside*

@@ -1,0 +1,5 @@
+could copy over to local, or just
+f&r
+../../../assets/
+w
+../../../assets/

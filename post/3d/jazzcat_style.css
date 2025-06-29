@@ -287,6 +287,14 @@ body{
 	background:#3c5186;
 }
 
+.urlyblock:hover{
+	border:none;
+	border-bottom:1px solid #f5b043;
+	border-top:1px solid #f5b043;
+	padding:1px;
+	background:#3c5186;
+}
+
 /* BANNERS */
 .banner-img{
 	min-width: 1000px;
