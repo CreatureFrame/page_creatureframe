@@ -338,7 +338,6 @@ border:1px solid #fcc724;
 filter: none;
 box-shadow: 5px 3px 0px #FFDE78;
 padding:15px;
-line-height: 74%;
 
 /* background: fixed url("https://tools.creatureframe.com/assets/eachpost/jazzcat/bg_wallflat_blur0x20.jpg"); */
 background: var(--bg-titlebox);
@@ -357,6 +356,7 @@ rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
 
 padding:15px;
 line-height: 74%;
+line-height: 104%;
 
 position:relative;
 z-index:15;
@@ -660,12 +660,12 @@ border-radius:0.9em;
 
 
 /* CUSTOM WINDOW CHANGES FOR BTWN DESKTOP AND MOBILE */
-.window-remodelling-end{
+/* .window-remodelling-end{
     margin-bottom:-85px;
-}
-.window-reshapecat{
+} */
+/* .window-reshapecat{
     padding:10px 90px;
-}
+} */
 /* .mimage-1{
     width:50%;
     margin: -35px 40px -55px -30px;
@@ -703,7 +703,7 @@ border-radius:0.9em;
 /* Mobile-first approach - hide side images on smaller screens */
 @media only screen and (max-width: 768px) {
 
-    /* CUSTOM WINDOW CHANGES */
+    /* CUSTOM WINDOW AND IMAGE CHANGES */
     .photoborder{
         padding:6px;
     }
@@ -712,13 +712,16 @@ border-radius:0.9em;
         width:100%  !important;
     }
     .window-remodelling-end{
-        margin-bottom:20px;
+        margin-bottom:20px !important;
     }
     .window-reshapecat{
-        padding:10px 0px;
+        padding:10px 0px !important;
     }
     .window-casting-end{
         margin-bottom:20px !important;
+    }
+    .mmargin-smaller{
+        margin-top:-60px !important;
     }
     .mimage-inline{
         width:100% !important;
@@ -746,7 +749,12 @@ border-radius:0.9em;
         padding-bottom: 10px;
         /* border:1px solid red; */
     }
-
+    .title-remodelling{
+        max-width:100% !important;
+        padding:14px 0px  !important;
+        margin-bottom:15px !important;
+        margin-top:-25px !important;
+    }
 
 
 
@@ -955,11 +963,11 @@ style="max-width:740px;"
 when textbox uses stylesheet css, this image needs: margin: -40px;padding:0px;
 for this page texbox has: padding: 0px 30px;
 so this image needs: margin: -25px;margin-right:-135px;padding:0px; -->
-<img src="jazzcat_WIPnight_assets/cat_intersecting geo.png" style="width:60%;display:inline-block;position:relative;float:right;margin: -25px;margin-right:-135px;padding:0px;" class="image-fullscroll">
+<img src="jazzcat_WIPnight_assets/cat_intersecting geo.png" style="width:60%;display:inline-block;position:relative;float:right;margin: -25px;margin-right:-135px;padding:0px;" class="image-fullscroll mimage-inline">
 <!-- style="width:40%;display:inline-block;position:relative;float:left" -->
 <!-- </div> -->
 <!-- <div align="center"> -->
-<div class="bigtitle liltitle" align="center" style="max-width:300px;padding:14px 60px;margin-bottom:30px;margin-top:-45px;">
+<div class="bigtitle liltitle title-remodelling" align="center" style="max-width:300px;padding:14px 60px;margin-bottom:30px;margin-top:-45px;">
 remodelling
 </div>
 <!-- </div> -->
@@ -975,7 +983,7 @@ like i said in a previous post, designing something for a single camera angle is
 
 
 <br clear="all">
-<div class="window-remodelling-end" style=""></div>
+<div class="window-remodelling-end" style="margin-bottom:-85px;"></div>
 </div>
 <!-- end content box -->
 <!-- . . . . . . . . . . . . . . . . . . . . . -->
@@ -1001,7 +1009,7 @@ like i said in a previous post, designing something for a single camera angle is
 
 <div align="center" style="margin-top:-20px;" class="textbox">
 <br>
-<div class="window-reshapecat">
+<div class="window-reshapecat" style="padding:10px 90px;">
 so in working out what was important to change, i figured everything needed to be chonkier, so it doesnt break,
     and smoother, so that less bubbles get caught in the casts.
     <br><br>
@@ -1612,7 +1620,7 @@ oddfauna's interview in CLUTTER (starts pg 38)
 <!-- . . . . . . . . . . . . . . . . . . . . . -->
 
 
-<div style="margin-top:-90px;"></div>
+<div style="margin-top:-90px;" class="mmargin-smaller"></div>
 <div class="deco-imgA-div" align="center"><img src="../assets/deco/small/decos-assets/fish_04_orange.png" class="deco-imgA" style="width:117px;"></div>
 <div class="deco-imgA-div" align="center"><img src="../assets/deco/small/decos-assets/fish_03_red.png" class="deco-imgA" style="width:134px;"></div>
 
