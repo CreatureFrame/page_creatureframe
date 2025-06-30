@@ -154,7 +154,9 @@ bigtitles
        --bg-codebox: fixed url(../../assets/deco/backgrounds/roos_DSCF8759/Edit_900h_blur0x20.jpg);
        /* --bg-titlebox: fixed url(../../assets/deco/backgrounds/roos_DSCF8759/DSCF8759_blur_60px_noise_darken.jpg); */
        --bg-titlebox: fixed url(../../assets/deco/backgrounds/roos_DSCF8759/DSCF8759_blur0x30.jpg);
-       --bg-pos: top left;
+       --bg-pos: top right;
+       /* contain, cover, 30%; 200px 100px; */
+       --bg-size: cover;
      }
      .outermostbox {
          height:100%;
@@ -210,14 +212,15 @@ bigtitles
 /* . . . . . . . . . . . . . . . . . . . . . */
 .post-bgimg{
 background: var(--bg-post);
-background-position:bottom left;
 background-position: var(--bg-pos);
+background-size: var(--bg-size);
 }
 
 /* textbox-bgimg not used anymore */
 .textbox{
 background: var(--bg-textbox);
 background-position: var(--bg-pos);
+background-size: var(--bg-size);
 box-shadow: 5px 3px 0px var(--palette-textboxshad);
 box-shadow:
 rgba(0, 0, 0, 0.3) 1px 2px 3px,
@@ -275,6 +278,7 @@ border:none;
 background:transparent;
 background: var(--bg-titlebox);
 background-position: var(--bg-pos);
+background-size: var(--bg-size);
 padding:10px 17px;
 margin:0px;
 
@@ -340,6 +344,7 @@ margin:0% 10% -17px 10%;
 color: var(--palette3) !important;
 background: var(--bg-titlebox);
 background-position: var(--bg-pos);
+background-size: var(--bg-size);
 border:1px solid var(--palette3);
 box-shadow: 5px 3px 0px #f5b043;
 }
@@ -397,6 +402,7 @@ line-height: 140%;
 body{
 background: var(--bg-wholepage);
 background-position: var(--bg-pos);
+background-size: var(--bg-size);
 }
 .scrollbox-wheel{
 line-height:1.7em;
@@ -411,6 +417,8 @@ text-align:justify;
 width:1.1em;
 width:1.75em;
 width:1.60em;
+/* box-shadow:inset 0 0 0.9em 0.1em var(--palette6); */
+/* border:2px solid yellow; */
 }
 .scrollbox-wheel::-webkit-scrollbar-thumb{
 border:0.45em solid transparent;
@@ -419,8 +427,8 @@ border:.3em solid var(--palette5);
 box-shadow:inset 0 0 0.5em 0.8em var(--palette4);
 box-shadow:
 inset 0 0 0.5em 0.8em var(--palette4),
-rgba(0, 0, 0, 0.3) 1px 2px 3px,
-rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
+rgba(0, 0, 0, 0.9) 1px 2px 3px,
+rgba(0, 0, 0, 0.6) 0px 2.5px 6px;
 border-radius:0.9em;
 border-radius:0.4em;
 }
