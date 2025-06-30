@@ -79,8 +79,8 @@ banners:
        --postheight: 680px;
        /* --postheight: 100%; */
        --postheight: calc(100% - 20px);
-       --postheight: -moz-calc(100% - 20px);
-       --postheight: -webkit-calc(100% - 20px);
+       /* --postheight: -moz-calc(100% - 20px); */
+       /* --postheight: -webkit-calc(100% - 20px); */
        --postheight-margintop: 15px;
        --postwidth: 580px;
        --postwidth: 780px;
@@ -119,8 +119,8 @@ banners:
      .outermostbox {
          height:100%;
          height:calc(100% - 30px);
-         height:-moz-calc(100% - 30px);
-         height:-webkit-calc(100% - 30px);
+         /* height:-moz-calc(100% - 30px); */
+         /* height:-webkit-calc(100% - 30px); */
          /* height:-o-calc(100% - 30px); */
          width:100%;
          position:fixed;
@@ -333,7 +333,6 @@ margin-top: 7px;
 line-height: 140%;
 }
 
-
 body{
 background: var(--bg-wholepage);
 background-position: var(--bg-pos);
@@ -358,10 +357,11 @@ border:0.45em solid transparent;
 border:.1em solid #fff;
 border:.3em solid var(--palette5);
 box-shadow:inset 0 0 0.5em 0.8em var(--palette4);
-box-shadow:
+/* shadows outside dont show up in chrome ugh */
+/* box-shadow:
 inset 0 0 0.5em 0.8em var(--palette4),
 rgba(0, 0, 0, 0.3) 1px 2px 3px,
-rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
+rgba(0, 0, 0, 0.2) 0px 2.5px 6px; */
 border-radius:0.9em;
 border-radius:0.4em;
 }
@@ -467,8 +467,8 @@ rotate:180deg;
 /* BANNER STYLE FROM ACNL */
 .bannerstart-contain {
 margin-top:calc(var(--bannerend-height) * -1);
-margin-top:-moz-calc(var(--bannerend-height) * -1);
-margin-top:-webkit-calc(var(--bannerend-height) * -1);
+/* margin-top:-moz-calc(var(--bannerend-height) * -1); */
+/* margin-top:-webkit-calc(var(--bannerend-height) * -1); */
 /* margin-top:-o-calc(var(--bannerend-height) * -1); */
 height:var(--bannerend-height);
 }

@@ -114,8 +114,8 @@ bigtitles
        --postheight: 680px;
        /* --postheight: 100%; */
        --postheight: calc(100% - 20px);
-       --postheight: -moz-calc(100% - 20px);
-       --postheight: -webkit-calc(100% - 20px);
+       /* --postheight: -moz-calc(100% - 20px);
+       --postheight: -webkit-calc(100% - 20px); */
        --postheight-margintop: 15px;
        --postwidth: 580px;
        --postwidth: 780px;
@@ -161,14 +161,15 @@ bigtitles
      .outermostbox {
          height:100%;
          height:calc(100% - 30px);
-         height:-moz-calc(100% - 30px);
-         height:-webkit-calc(100% - 30px);
+         /* height:-moz-calc(100% - 30px);
+         height:-webkit-calc(100% - 30px); */
          /* height:-o-calc(100% - 30px); */
          width:100%;
          position:fixed;
          min-height:100%;
          overflow-y:auto;
          /* border:1px solid var(--palette1); */
+         /* margin:0px; */
          box-shadow:
         inset rgba(0, 0, 0, 0.3) 1px 2px 25px,
         inset rgba(0, 0, 0, 0.3) 1px 2px 15px,
@@ -180,6 +181,7 @@ bigtitles
          display: flex;
          justify-content: center;
          height:100%;
+
          /* border:2px solid green; */
      }
      .postsize{
@@ -189,10 +191,18 @@ bigtitles
          /* height:100%; */
          height:var(--postheight);
          margin-top:var(--postheight-margintop);
+         /* margin:0px; */
+         /* padding:0px; */
          /* border:1px solid red; */
      }
 
-
+     .post-cohostbarrier {
+     height:var(--postheight);
+     border:1px solid var(--palette-postborder);
+     /* margin:0px; */
+     /* padding:0px; */
+     /* border:2px solid green; */
+     }
 
  </style>
  <!-- * * * * * * * * * * * * * * * * * * * * *  -->
@@ -416,7 +426,7 @@ text-align:justify;
 .scrollbox-wheel::-webkit-scrollbar{
 width:1.1em;
 width:1.75em;
-width:1.60em;
+/* width:1.60em; */
 /* box-shadow:inset 0 0 0.9em 0.1em var(--palette6); */
 /* border:2px solid yellow; */
 }
@@ -424,20 +434,16 @@ width:1.60em;
 border:0.45em solid transparent;
 border:.1em solid #fff;
 border:.3em solid var(--palette5);
-box-shadow:inset 0 0 0.5em 0.8em var(--palette4);
-box-shadow:
+box-shadow:inset 0 0 0.5em 1.0em var(--palette4);
+/* box-shadow:
 inset 0 0 0.5em 0.8em var(--palette4),
 rgba(0, 0, 0, 0.9) 1px 2px 3px,
-rgba(0, 0, 0, 0.6) 0px 2.5px 6px;
+rgba(0, 0, 0, 0.6) 0px 2.5px 6px; */
 border-radius:0.9em;
-border-radius:0.4em;
 }
 /* for solid drop shadow
 rgba(255, 255, 255, 1.0) -2px 2px 0px, */
-.post-cohostbarrier {
-height:var(--postheight);
-border:1px solid var(--palette-postborder);
-}
+
 
 
 </style>
@@ -473,8 +479,10 @@ height:var(--bannerstart-height);
 /* rotate:180deg; */
 object-fit:cover;
 /* image-rendering:pixelated; */
+
 }
 
+/* currently used for start and end banners, w end's own style adding "rotate:180deg;" */
 .bannerstart-img2{
 margin:0px 0px;
 pointer-events:none;
@@ -484,6 +492,8 @@ width:inherit;
 height:var(--bannerstart-height);
 max-width:100%;
 width:100%;
+filter: drop-shadow(0 0 0.45rem rgba(0, 0, 0, 0.6));
+image-rendering:pixelated;
 }
 
 
@@ -491,10 +501,7 @@ width:100%;
 /* BANNER AT START AND END OF POST */
 /* . . . . . . . . . . . . . . . . . . . . . */
 /* banner-img: this has replaced "bannerstart-img" in past posts  */
-.banner-img{
-    min-width: 1000px;
-    max-width: 1000px;
-}
+
 .banner-start{
     margin-top:30px;
     filter: none;
@@ -513,6 +520,12 @@ width:100%;
 /* .post-cohostbarrier{
     height:650px;
 } */
+
+/* these two were used for end banner */
+.banner-img{
+    min-width: 1000px;
+    max-width: 1000px;
+}
 .banner-end{
     filter: none;
     filter: drop-shadow(4px 5px 0px #f5b043);
@@ -535,8 +548,8 @@ rotate:180deg;
 /* BANNER STYLE FROM ACNL */
 .bannerstart-contain {
 margin-top:calc(var(--bannerend-height) * -1);
-margin-top:-moz-calc(var(--bannerend-height) * -1);
-margin-top:-webkit-calc(var(--bannerend-height) * -1);
+/* margin-top:-moz-calc(var(--bannerend-height) * -1);
+margin-top:-webkit-calc(var(--bannerend-height) * -1); */
 /* margin-top:-o-calc(var(--bannerend-height) * -1); */
 height:var(--bannerend-height);
 }
@@ -865,7 +878,8 @@ banner-end-bg
 <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
 <div style="" class="bannerstart-contain">
 <div style="" class="bannerend-inside">
-<img src="../../assets/deco/banners/postBorder_60x1000-assets/paintycrafts_top.png" style="" class="banner-img banner-end"></div>
+<!-- <img src="../../assets/deco/banners/postBorder_60x1000-assets/paintycrafts_top.png" style="" class="banner-img banner-end"></div> -->
+<img src="../../assets/deco/banners/postBorder_60x1000-assets/paintycrafts_top.png" style="rotate:180deg;" class="bannerstart-img2"></div>
 </div>
 
 
