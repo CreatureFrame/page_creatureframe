@@ -400,14 +400,14 @@ background-position: var(--bg-pos);
 background-size: var(--bg-size);
 }
 /* this one is in the stylesheets and sets up the shadows */
-.scrollbox{
+/* .scrollbox{ */
     /* over-the-top shadow */
 	/* box-shadow:rgba(0, 0, 0, 0.14) 1px 3px 15px,rgba(0, 0, 0, 0.22) 0px 2.5px 5px,rgba(122, 122, 122, 0.32) 3px 3px 0px,rgba(122, 85, 85, 0.35) 1px 1px 0.3px; */
-    /* for firefox */
-    overflow: scroll;
+    /* for firefox, testing. NOPE it overrides the custom nice one so fuck it! */
+    /* overflow: scroll;
     scrollbar-color: red orange;
-    scrollbar-width: thin;
-}
+    scrollbar-width: thin; */
+/* } */
 .scrollbox-wheel{
 line-height:1.7em;
 overflow-y:auto;
@@ -437,12 +437,82 @@ border-radius:0.9em;
 }
 /* for solid drop shadow
 rgba(255, 255, 255, 1.0) -2px 2px 0px, */
-
-
-
 </style>
 <!-- * * * * * * * * * * * * * * * * * * * * *  -->
 
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+<!-- SCROLLBAR COMPATIBILITY FOR FIREFOX -->
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+<style>
+    .scrollbox {
+        justify-content: space-between;
+        box-shadow: rgba(50, 50, 93, .25) 0 30px 60px -5px inset,
+                    rgba(0, 0, 0, .4) 0 18px 36px -3px inset,
+                    rgba(0, 0, 0, .8) 0 0 5px -1px inset;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        position: relative;
+    }
+
+    .scrollbox-wheel {
+        line-height: 1.7em;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        text-align: justify;
+
+        /* Firefox scrollbar styling */
+        scrollbar-width: thin;
+        scrollbar-color: var(--palette4) var(--palette5);
+    }
+
+    /* Webkit browsers (Chrome, Safari, Edge) */
+    .scrollbox-wheel::-webkit-scrollbar {
+        width: 1.75em;
+    }
+
+    .scrollbox-wheel::-webkit-scrollbar-track {
+        background: var(--palette5);
+        border-radius: 0.9em;
+    }
+
+    .scrollbox-wheel::-webkit-scrollbar-thumb {
+        background: var(--palette4);
+        border: 0.3em solid var(--palette5);
+        border-radius: 0.9em;
+        box-shadow: inset 0 0 0.5em 1.0em var(--palette4);
+    }
+
+    .scrollbox-wheel::-webkit-scrollbar-thumb:hover {
+        background: var(--palette4);
+        filter: brightness(1.1);
+    }
+
+    /* Alternative approach for more Firefox control (if needed) */
+    @supports (scrollbar-width: thin) {
+        .scrollbox-wheel {
+            scrollbar-width: thin;
+            scrollbar-color: var(--palette4) transparent;
+        }
+    }
+
+    /* Fallback for older browsers */
+    /* @supports not (scrollbar-width: thin) and not (-webkit-scrollbar-width: thin) { */
+        /* .scrollbox-wheel { */
+            /* Fallback styling - browser default scrollbar */
+        /* } */
+    /* } */
+
+</style>
 
 
 
