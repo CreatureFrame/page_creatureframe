@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- THIS ONE COMBINES A SLIMMED DOWN VERSION OF acnldreams_stylesheet.css AND THE MINIFIED cohostclient.css -->
+<link data-chunk="client" rel="stylesheet" href="../../assets/acnldreams_stylesheet_min.css">
+<!-- <link data-chunk="client" rel="stylesheet" href="../3d/jazzcat_style.css"> -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="icon" type="image/png" href="assets/icons/green-computer.gif">
+<title>posting</title>
+<!-- RSS -->
+<link href="https://creatureframe.com/rss.xml" rel="alternate" type="application/rss+xml" title="the creatureframe RSS feed">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+
+<!--Google Fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<a href="https://creatureframe.com/post/"><div class="goback"></div></a>
+
+<!-- <div class="qrcode"><img src="../assets/qrcodes/qrcode_cohostpost_rainrig.png"></div> -->
+
+<!-- .bannerstart-contain{
+    margin-top:-680px;
+    height:680px;
+} -->
+
+<!--
+/* Firefox */
+height: -moz-calc(100% - 18px);
+/* WebKit */
+height: -webkit-calc(100% - 18px);
+/* Opera */
+height: -o-calc(100% - 18px);
+/* Standard */
+height: calc(100% - 18px);
+ -->
+
+
+<!--
+ORDER:
+outermostbox
+columnbox
+postsize
+post-cohostbarrier
+post-background-full post-bgimg bgimg-alignment final
+scrollbox
+ -->
+
+
+ <!--
+banners:
+ 1000x55px
+ -->
+
+
+ <!-- color:#623008;
+ color:#723e13;
+ color:#FFDE78;
+#623008
+#f5b043
+#c59172);
+
+#f9b351
+#44b173
+#70331d
+#ffffff
+ -->
+
+
+
+
+ <style>
+     :root {
+       --postheight: 680px;
+       /* --postheight: 100%; */
+       --postheight: calc(100% - 20px);
+       --postheight: -moz-calc(100% - 20px);
+       --postheight: -webkit-calc(100% - 20px);
+       --postheight-margintop: 15px;
+       --postwidth: 580px;
+       --postwidth: 780px;
+
+       --bannerstart-height: 55px;
+       --bannerend-height: 55px;
+
+       --palette1: #efe3cf;
+       /* for main text (light #ede4cf) */
+       --palette2: #141d38;
+       --palette2: #ede4cf;
+       --palette2: #ffffff;
+       --palette2: #efe3cf;
+       /* for bigtitles (and liltitles which are kinda a mess rnow) */
+       --palette3: #fcc724;
+       /* for scrollbar */
+       --palette4: #44b173;
+       /* and it's border */
+       --palette5: transparent;
+       /* for tinytext and tinytextbox (credits box) */
+       --palette6: #faf4e9;
+       --palette7: #c59172;
+       /* for HRs and underlines of .minititle */
+       --palette8: #c59172;
+       --palette9: #c59172;
+
+       --bg-wholepage: fixed url(../../assets/deco/backgrounds/echidnas_C61A6932/C61A6932-Edit_900h_blur0x12.jpg);
+       --bg-post: fixed url(../../assets/deco/backgrounds/echidnas_C61A6932/C61A6932-Edit_900h_blur0x15.jpg);
+       --bg-textbox: fixed url(../../assets/deco/backgrounds/echidnas_C61A6932/C61A6932-Edit_900h_blur0x20_dark.jpg);
+       --bg-codebox: fixed url(../../assets/deco/backgrounds/echidnas_C61A6932/C61A6932-Edit_900h_blur0x20.jpg);
+       --bg-titlebox: fixed url(../../assets/deco/backgrounds/echidnas_C61A6932/C61A6932-Edit_900h_blur0x6.jpg);
+       --bg-pos: top left;
+     }
+     .outermostbox {
+         height:100%;
+         height:calc(100% - 30px);
+         height:-moz-calc(100% - 30px);
+         height:-webkit-calc(100% - 30px);
+         /* height:-o-calc(100% - 30px); */
+         width:100%;
+         position:fixed;
+         min-height:100%;
+         overflow-y:auto;
+         /* border:1px solid var(--palette1); */
+         box-shadow:
+        inset rgba(0, 0, 0, 0.3) 1px 2px 25px,
+        inset rgba(0, 0, 0, 0.3) 1px 2px 15px,
+        inset rgba(0, 0, 0, 0.2) 3px 3.5px 6px;
+     }
+     .columnbox{
+         align-items: center;
+         display: flex;
+         justify-content: center;
+         height:100%;
+         /* border:2px solid green; */
+     }
+     #postsize{
+         max-width:var(--postwidth);
+         padding:auto;
+
+         /* height:100%; */
+         height:var(--postheight);
+         margin-top:var(--postheight-margintop);
+         /* border:1px solid red; */
+     }
+
+
+
+ </style>
+ <!-- * * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+<style>
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BACKGROUNDS */
+/* . . . . . . . . . . . . . . . . . . . . . */
+.post-bgimg{
+background: var(--bg-post);
+background-position:bottom left;
+background-position: var(--bg-pos);
+}
+
+/* textbox-bgimg not used anymore */
+.textbox{
+background: var(--bg-textbox);
+background-position: var(--bg-pos);
+/* border:1px dashed #5770b0; */
+/* box-shadow: 5px 3px 0px #f5b043; */
+box-shadow:
+rgba(0, 0, 0, 0.3) 1px 2px 3px,
+rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
+
+position:relative;
+z-index:5;
+/* font-size:9pt; */
+line-height:135%;
+}
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BANNER AT START AND END OF POST */
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* banner-img: this has replaced "bannerstart-img" in past posts  */
+
+
+
+/* margin-top: -670px !important; overflow-x:hidden; width:100%; margin-left:-1px; */
+
+
+
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* TEXT STYLES */
+/* . . . . . . . . . . . . . . . . . . . . . */
+.font-styling{
+font: 10pt "Verdana", "Courier", "Helvetica", sans-serif;
+/* font: 12pt "Verdana", "Courier", "Helvetica", sans-serif; */
+font-weight: 400;
+letter-spacing: 0.85px;
+text-align: justify;
+color: var(--palette2);
+
+font: 11pt "Raleway", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+
+font: 12pt "Space Grotesk", sans-serif;
+font-optical-sizing: auto;
+font-weight: 300;
+letter-spacing: 0.45px;
+letter-spacing: normal;
+}
+/* for the top h1 title box, should probs replace textbox w whatever main text is using, or rmv these altogether if not needed */
+.bigtitle{
+font-size: 28pt;
+font-family: courier;
+font-weight: 600;
+text-decoration: none;
+filter: drop-shadow(3px 0px 0px #623008);
+border:none;
+background:transparent;
+background: var(--bg-titlebox);
+background-position: var(--bg-pos);
+padding:10px 17px;
+margin:0px;
+
+/* for orange bubble */
+border-radius: 8px;
+margin:10px 40px;
+border:1px solid #fcc724;
+border:1px solid var(--palette3);
+filter: none;
+padding:15px;
+line-height: 74%;
+
+
+color: var(--palette3);
+box-shadow: none;
+/* filter: drop-shadow(3px 0px 0px #623008); */
+box-shadow:
+rgba(0, 0, 0, 0.2) 2px 4px 12px,
+rgba(0, 0, 0, 0.1) 1px 3px 8px,
+rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
+box-shadow: 5px 3px 0px #FFDE78;
+
+padding:15px;
+line-height: 74%;
+
+position:relative;
+z-index:15;
+
+/* font-family: "Lusitana", serif; */
+/* font-weight: 400; */
+/* font-weight: 700; */
+}
+.liltitle{
+font-size: 18pt;
+/* background: none; */
+filter: none;
+margin:0% 22% -17px 22%;
+padding:11px;
+border-radius: 8px;
+width:80%;
+margin:0% 10% -17px 10%;
+color: var(--palette3) !important;
+background: var(--bg-titlebox);
+background-position: var(--bg-pos);
+border:1px solid var(--palette3);
+box-shadow: 5px 3px 0px #f5b043;
+}
+
+
+.tinytext{
+font: 8pt "Tahoma", "DM Mono", "Courier", "Verdana", "Helvetica", sans-serif;
+font-weight: 500;
+
+font: 9.5pt "Space Grotesk", sans-serif;
+font-optical-sizing: auto;
+font-weight: 100;
+letter-spacing: 0.45px;
+font: 9pt "Raleway", sans-serif;
+/* letter-spacing: normal; */
+
+line-height: 125%;
+letter-spacing: 0.5px;
+color: var(--palette6);
+text-align: justify;
+}
+/* for credits box at end */
+.tinytextbox{
+color: var(--palette6);
+}
+.minititle{
+border:none;
+border-bottom:1px solid var(--palette8);
+}
+</style>
+<style>
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BULLET POINTS FOR LISTS */
+/* . . . . . . . . . . . . . . . . . . . . . */
+ul {
+margin: 0 0 0 22px;
+font: 9pt Verdana;
+letter-spacing: 1.5px;
+font: 10pt "Space Grotesk", sans-serif;
+font-optical-sizing: auto;
+font-weight: 300;
+letter-spacing: 0.45px;
+}
+.list-notes li {
+background: url("../../assets/deco/icons/notebook.gif") no-repeat 7px 7px transparent;
+list-style-type: none;
+margin: 0;
+padding: 8px 20px 0px 39px;
+vertical-align: middle;
+margin-top: 7px;
+line-height: 140%;
+}
+
+
+body{
+background: var(--bg-wholepage);
+background-position: var(--bg-pos);
+}
+.scrollbox-wheel{
+line-height:1.7em;
+overflow-y:auto;
+overflow-x:hidden;
+height:100%;
+width:100%;
+margin: auto;
+text-align:justify;
+}
+.scrollbox-wheel::-webkit-scrollbar{
+width:1.1em;
+width:1.75em;
+width:1.60em;
+}
+.scrollbox-wheel::-webkit-scrollbar-thumb{
+border:0.45em solid transparent;
+border:.1em solid #fff;
+border:.3em solid var(--palette5);
+box-shadow:inset 0 0 0.5em 0.8em var(--palette4);
+box-shadow:
+inset 0 0 0.5em 0.8em var(--palette4),
+rgba(0, 0, 0, 0.3) 1px 2px 3px,
+rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
+border-radius:0.9em;
+border-radius:0.4em;
+}
+/* for solid drop shadow
+rgba(255, 255, 255, 1.0) -2px 2px 0px, */
+.post-cohostbarrier {
+height:var(--postheight);
+}
+
+
+</style>
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+<div class="outermostbox">
+<div class="columnbox">
+
+<!-- <div align="center">
+<div style="v-align:middle;"> -->
+<div id="postsize">
+
+
+
+
+
+<style>
+
+
+.bannerstart-top{
+top:0px;
+overflow:hidden;
+position:relative;
+z-index:60;
+pointer-events:none;
+margin-top:0px;
+margin-bottom:calc(var(--bannerstart-height) * -1);
+height:var(--bannerstart-height);
+/* border:1px solid red; */
+/* rotate:180deg; */
+object-fit:cover;
+/* image-rendering:pixelated; */
+}
+
+.bannerstart-img2{
+margin:0px 0px;
+pointer-events:none;
+object-fit:cover;
+overflow:hidden;
+width:inherit;
+height:var(--bannerstart-height);
+max-width:100%;
+width:100%;
+}
+
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BANNER AT START AND END OF POST */
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* banner-img: this has replaced "bannerstart-img" in past posts  */
+.banner-img{
+    min-width: 1000px;
+    max-width: 1000px;
+}
+.banner-start{
+    margin-top:30px;
+    filter: none;
+    filter: drop-shadow(-2px 2px 3px #813d00);
+    filter: drop-shadow(-2px 2px 0.5px #333);
+    filter: drop-shadow(-2px 2px 3.7px rgba(0, 0, 0, 0.5));
+}
+/* .bannerstart-contain{
+    margin-top:-680px;
+    height:680px;
+} */
+.bannerend-inside{
+    height:100%;
+    margin-top:30px;
+}
+/* .post-cohostbarrier{
+    height:650px;
+} */
+.banner-end{
+    filter: none;
+    filter: drop-shadow(4px 5px 0px #f5b043);
+    rotate:180deg;
+}
+
+
+.bannerend-inside{
+/* border:1px solid red; */
+margin-top: 0px;
+}
+.banner-end{
+filter: none;
+/* filter: drop-shadow(4px 5px 0px #f5b043); */
+/* filter: drop-shadow(-2px 2px 6.7px rgba(0, 0, 0, 0.5)); */
+rotate:180deg;
+/* border:1px solid purple; */
+}
+
+/* BANNER STYLE FROM ACNL */
+.bannerstart-contain {
+margin-top:calc(var(--bannerend-height) * -1);
+margin-top:-moz-calc(var(--bannerend-height) * -1);
+margin-top:-webkit-calc(var(--bannerend-height) * -1);
+/* margin-top:-o-calc(var(--bannerend-height) * -1); */
+height:var(--bannerend-height);
+}
+</style>
+
+
+
+
+
+
+
+
+    <!-- * * * * * * * * * * * * * * * * * * * * *  -->
+    <!--             POST CONTAINER TOP             -->
+    <!-- . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+    <div style="" class="post-cohostbarrier">
+
+    <!-- TOP BANNER -->
+    <div style="" class="bannerstart-top">
+    <img src="../../assets/deco/banners/postBorder_60x1000-assets/paintycrafts_yellgreen2.png" class="bannerstart-img2">
+    </div>
+
+
+
+    <!-- * * * * * * * * * * * * * * * * * * * * *  -->
+    <!--             POST CONTAINER TOP             -->
+    <!-- . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- <div style="" class="post-cohostbarrier"> -->
+    <div style="" class="post-background-full post-bgimg bgimg-alignment final">
+    <div class="scrollbox">
+
+        <!-- * * * * * * * * * * * * * * * * * * * *  -->
+        <!-- ADDING SCROLLBOX WHEEL -->
+        <div class="scrollbox-wheel">
+        <!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+    <div class="font-styling">
+    <!-- spacer -->
+    <div style="width:10px;height:25px;"></div>
+    <!-- * * * * * * * * * * * * * * * * * * * * *  -->
+
+    <!-- POST TITLE -->
+    <!-- <div class="posttitle textbox">
+    post title
+    </div> -->
+
+
+
+
+    <!-- old post title from 3dcomputers -->
+    <!-- <div class="postsubtitle">
+    <u>3D quickies</u> : <br> old computers
+    </div> -->
+    <!-- spacer -->
+    <!-- <div style="width:10px;height:0px;"></div> -->
+
+
+
+
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- photo of final echidna toys batch A -->
+    <div align="center" style="margin-top:-10px !important;"><img src="echida_roo_toys_assets/PXL_20240524_043232136_web.jpg" width="100%" class="image-fullscroll lilborder"></div>
+
+    <!-- CONTENT BOX -->
+    <div align="center" style="margin-top:-10% !important;position:relative;" class="textbox">
+
+    <!-- someone lovely gave me access to his shed for a couple months , so -->
+    i got back into making little toys, and managed to finish up a few old projects.    here's the first batch of six echidnas, laboriously hand-cast and painted, and each one is a little different.
+    <br><br>
+    <strike>half of them have found homes already, i might chuck the remaining 3 up for sale online at some point</strike>. all these guys've been claimed now
+
+    </div>
+    <!-- end content box -->
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- CONTENT BOX -->
+    <!-- <div align="left"> -->
+    <!-- <div style="position:relative;display:inline-block;width:40%;margin-right:-30px;" class="textbox"> -->
+    <!-- NOTE :
+                - having "display:inline-block;" in the outer textbox's div as well as the image will make the box bounds stretch out to surround the image, else it'll let it overhang the bottom -->
+
+    <!-- <div style="display:inline-block;" class="textbox"> -->
+    <div style="padding:20px;" class="textbox">
+
+    <!-- <div align="right" style="width:40%;display:inline-block;position:relative;"> -->
+    <img src="https://tools.creatureframe.com/assets/backgrounds/echidnas_C61A6932/C61A6932-Edit_900h_photo.jpg" style="width:55%;width:250px;display:inline-block;position:relative;float:left;margin-right:5%;margin-left:-20px;margin: -35px 3% 5px -20px;rotate:3deg;padding:6px;" class="image-fullscroll photoborder">
+    <!-- style="width:40%;display:inline-block;position:relative;float:left" -->
+    <!-- </div> -->
+
+    <!-- <br> -->
+    this was a project i initially started in 2020 during the fires.
+
+    <!-- spacer -->
+    <div style="width:1px;height:6px;"></div>
+
+    <!-- - - - - - - - - - - - underlining hr - - - - - - - - - - -   -->
+    <div style="border:none;border-bottom:1px solid var(--palette8);margin:2px 0px 0px 0px;"></div>
+
+    <div class="tinytext">
+    <br>i hadn't lived in my childhood home since i was 15. it was a weird year.
+
+    <br><br>i grew up dealing with bushfires annually, often caused by arson. most summers we'd evacuate. one times it got close enough we could see the flames from the house. every resident in the hamlet was part of the volunteer brigade.
+
+    <!-- there'd been a couple of times it got close enough we could see the whiter flames from the house. -->
+
+    <br><br>it effected my sleep for years, shocking i know /s. i spent every night staring at the curtains, thinking the flickering light of every passing car in the distance was a an encroaching torrent of flame. i tricked myself into thinking i could smell smoke at all hours of the day.
+
+    <!-- i was terrified of using matches until i was 10,  -->
+
+    <br><br>the 2020 fires felt like going through the motions, spent those days getting super high and clearing ton after ton of brush and fallen boughs, creating firebreaks, soaking the ground. the fires had been hovering for a few days some 12km away, but the weather prediction was that severe winds would pick up the following day and the whole tiny village would be pincered by the fires. the only plan was to try and hold it off, and if it broke through we'd all go stand in the ocean.
+    <!-- (for staying distracted from physical exhaustion) -->
+
+    <br><br>the wind changed. it flared up as predicted, but tore past and wrecked a different area.
+
+    <!-- the wind did flare up. but changed direction.  -->
+    <!-- create as many opportunities for it to die as we could, and if it came down the  -->
+
+    <!-- <br><br>i'm still so angry about the funding and what happened to nearby victims of it, but i'll save that for another post -->
+    <br><br>there's a lot more, and i'm still angry about the funding and what happened to nearby victims of it, but that's a story for later
+    <!-- but that's a rant for another time -->
+
+    </div>
+    <!-- end tinytext effect -->
+
+    <!-- - - - - - - - - - - - underlining hr - - - - - - - - - - -   -->
+    <!-- <div style="border:none;border-bottom:1px solid #529eac;margin:12px 0px -8px 0px;"></div> -->
+    <div style="border:none;border-bottom:1px solid var(--palette8);margin:16px 0px -14px 0px;"></div>
+
+    <br>anyway, echidnas are pretty common around the area. they're fun to watch, and i'll always find it entertaining trying to get in under their armpits to pick them up (never succeeded).
+
+    <br><br>
+    one time we stopped to help one cross the road, only a few weeks after a bushfire, all its back spikes were burnt down to short hollow stubs. it'd buried itself and let the fires pass over
+
+    <!-- echidnas are pretty common around the house, i'll always drop what i'm doing if someone spots one. -->
+
+    </div>
+    <!-- end content box -->
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+    <br clear="all">
+
+
+
+
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- CONTENT BOX -->
+
+    <!-- <div class="posttitle textbox"> -->
+    <div class="bigtitle" align="center">
+    concepting
+    </div>
+
+
+
+    <!-- image : echidnas concept sketches -->
+    <div align="center"> <img src="echida_roo_toys_assets/echidna_visualDevelopment.jpg" class="image-fullscroll lilborder"> </div>
+
+    <div align="center" style="position:relative;margin-top:-10px;" class="textbox">
+
+    <!-- started off leaning a little too hard into overdetailed forms and too much realism, but it didn't take long to start hitting some interesting shapes.
+
+    <br><br>often i'll sketch up a page of real life studies of a subject first, both to learn it's natural form, which can sometimes inform interesting things in a design, but also to "get it out of my system". -->
+
+    <!-- <br><br> -->
+
+    this guy was a really fun one to design. i thought that i'd pretty quickly run out of directions to go in, especially with trying to pare it down into as few geometric shapes as i could get away with. but i ended up getting a lot of mileage out of it and had quite a few that i liked. made it hard to choose which way to go with it, which is a great problem to have
+
+    </div>
+    <!-- end content box -->
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+
+
+    <div class="bigtitle" align="center">
+    3D model
+    </div>
+
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- CONTENT BOX -->
+
+    <!-- image : UV flatten -->
+    <div align="center"> <img src="echida_roo_toys_assets/echidna_UVsDisplay_GIF_02_convert.gif" class="image-fullscroll"> </div>
+
+    <div align="center" style="position:relative;" class="textbox">
+
+    <!-- <i>(would you believe this is the first time i've googled "3D modelling or 3D modeling" and found that wikipedia knows best)</i> -->
+    <!-- <br><br> -->
+
+
+    UVs and texturing was unnecessary, but i was thinking it might make it easier to plan out final palettes and patterns. it wasn't really helpful and a sketch would've sufficed just as well, as most of that work needs to be figured out while doing the actual paint mixing.
+
+    <br><br>it's kinda tricky trying to keep a sense of scale when working digitally. i knew the snout especially could be a problematic bit that would break when demoulding if it was too thin.
+
+    <br><br>i'll usually tear off a copy of my working window and shrink it down to roughly the size i'm planning the final print to be, to get a better idea of what the final's going to look like.
+
+    <br><br><div align="center"> <img src="echida_roo_toys_assets/screenieWIP_echidna_tearOffInMaya.png" class="image-fullscroll lilborder"></div>
+
+    <div align="center"><img src="echida_roo_toys_assets/screenieWIP_echidna_sizing.png" class="image-fullscroll lilborder" style="margin:10px 0px 0px 0px;"></div>
+
+    <br>
+    despite this, expect surprises every time. and because i hate making things easy for myself i still managed to make the finished snout only a few mm wide hahaha
+
+
+    <!-- NOTE VIDEO : like i'm sure SOME people can accurately envision it, but those people can go fuck themselves
+    gotta keep practicing, it's getting easier with each mold made
+    -->
+
+
+    </div>
+    <!-- end content box -->
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+
+
+
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- CONTENT BOX -->
+
+    <!-- image : echidna model turnaround -->
+    <div align="center"> <img src="echida_roo_toys_assets/echidna_modelTurnaround_PS_20fps_cropped.gif" class="image-fullscroll" style="border:none;"> </div>
+
+    <!-- <div align="center" style="position:relative;" class="textbox">
+    why didn't I stick to this palette? it's still on the table *if* i ever make more of these guys in future. but paint mixing is a stupid and annoying job, and
+    </div> -->
+
+    <!-- end content box -->
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- POST MORTEM / WHAT I'D FIX NEXT TIME -->
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+    <!-- image :  -->
+    <!-- <div align="center"> <img src="echida_roo_toys_assets/.jpg" class="image-fullscroll lilborder"> </div> -->
+
+    <div align="center" style="position:relative;" class="textbox">
+    <!-- <h2 style="padding:5px 0px;margin:0px 0px 7px 0px;">what'd i learn for next time :</h2> -->
+    <div class="minititle" style="padding:5px 0px;margin:0px 0px 7px 0px;">what'd i learn for next time :</div>
+    <!-- <div style="height:5px;"></div> -->
+
+    i can't remember a whole lot of the modelling / molding / casting process, as that was all done in 2020, pretty much everything outside of painting them. but i do have some notes for myself to remember in future :
+    <!-- there isn't that much i remember about the whole process as all the modelling/molding/casting was all done in 2020, pretty much everything outside of painting them. but i do have some notes for myself to remember in future : -->
+
+    <!-- ▶⬤ -->
+    <ul class="list-notes">
+        <li>
+            the edges around the head are way too tiny a space, making painting them a huge timesink. trying to get such a chunky pigment into the crevices, much less with clean lines, was a pain in the ass with every layer of paint, even after the base layers were filled
+        </li>
+        <li>
+            this is my only "no-cuts" mold to date and boy is it great. way less cleanup and sanding after demoulding each echidna, compared to all my other figures which can <i>each</i> take anywhere from 15 to 80+ minutes to clean up. really want to design more molds like this
+
+            <!-- <div align="center" style="margin-top:6px;"><img src="echida_roo_toys_assets/DSCF6870_post_echid_212-217_sizedown_815.jpg" class="image-fullscroll lilborder"></div> -->
+
+            <img src="echida_roo_toys_assets/DSCF6870_post_echid_212-217_sizedown_815.jpg" style="padding:9px;width:100%; margin: 7px 0px 10px -5px;rotate: -2deg;" class="image-fullscroll photoborder">
+
+            <!-- link to uploaded quickly -->
+            <!-- <img src="https://tools.creatureframe.com/posts/making/echida_roo_toys/echida_roo_toys_assets/DSCF6870_post_echid_212-217_sizedown_815.jpg" style="padding:9px;width:100%; margin: 7px 0px 10px -5px;rotate: -2deg;" class="image-fullscroll photoborder"> -->
+
+        </li>
+        <li>
+            in the end wish i'd leaned a bit more into more stylisation instead of the more broadly cute angle i went for. though on the other hand, i think that would've had its own issues in making details readable at such a small size
+        </li>
+    </ul>
+
+    <!-- <div align="center" style="margin-top:-10px !important;"><img src="echida_roo_toys_assets/DSCF6870_post_echid_212-217_sizedown_815.jpg" width="100%" class="image-fullscroll lilborder"></div> -->
+
+
+    <br>
+    cool, onto more things
+
+    <br><br>oh and a million thankyous to the cool guy who let me use his shed for the last couple of months, wouldn't have been able to get any of this stuff done otherwise!
+
+    </div>
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+    <!-- <br><br>▶ the edges around the head are way too tiny a space, making painting them a huge timesink. trying to get such a chunky pigment into the crevices, much less with clean lines, was a pain in the ass with every layer of paint, even after the base layers were filled -->
+    <!-- <br><br>▶ this is my only "no-cuts" mold to date and boy is it great. minimal cleanup and sanding after demoulding compared -->
+
+    <!-- <br>- in the end wish i'd leaned a bit more into more stylisation instead of the more broadly cute angle i went for, though i think that would've had its own issues in making details readable at such a small size -->
+    <!-- <br>- do like having no-cut molds, this is really my only one so far was a real hassle with previous designs with more complex shapes/ not as much cleanup needed for each cast -->
+
+
+
+
+
+
+
+
+
+    <!-- image : roos concept sketches -->
+    <!-- <div align="center"> <img src="echida_roo_toys_assets/roo_visualDevelopment.jpg" class="image-fullscroll lilborder"> </div> -->
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+
+
+
+
+    <!-- <div style="display:inline-block;width:100%;">
+    <div style="display:inline-block;
+    width: -moz-calc(100% - 100px);
+    width: -webkit-calc(100% - 100px);
+    width: calc(100% - 100px);
+    " class="textbox tdhalf">
+    Super cute town!
+    </div>
+    <div align="right" style="margin:-196px -40px -40px 0px;"><img src="https://dodo.ac/np/images/9/90/Gulliver_NLWa_2.png" style="pointer-events: none;image-rendering:pixelated;width:120px;margin-right:60px;margin-top:70px;margin-bottom:10px;z-index:10;position: relative;"></div>
+    </div> -->
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+
+
+
+    <!-- CREDITS BOX -->
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+    <!-- <div style="margin:10px;padding:0px;height:24px;width:1px;"></div> -->
+    <!-- if add tinytext class, have to manually add text-align: center;  -->
+    <div align="center"><div style="padding:5px;line-height:150%;font-family: verdana, tahoma;font-size: 9px;" class="tinytextbox bgimg-alignment textbox">
+        <!-- font-size:8pt;font-family:Courier,monospace; -->
+    <b><u>credits:</u></b><br>
+    book pixel sprite by <a href="https://web.archive.org/web/20160225014532/https://ouka.kuronowish.com/rehoeass2/">ReHoeass</a>
+    </div></div><br>
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+
+
+
+
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+    <!-- spacer to scroll past bottom border -->
+    <div style="width:10px;height:25px;"></div>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+    <!-- END OF POST CONTENT -->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+    <!-- END BOXES FOR POST -->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+    </div>      <!-- end of  font-styling -->
+    </div></div></div>
+
+
+
+
+
+
+
+
+
+<!-- CLASSES IN jazzcat_style.css TO OVERWRITE HERE IF NEEDING TO CHANGE STUFF :
+banner-end-noflip
+bannerend-inside-bg
+banner-end-bg
+ -->
+
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+<!--           NEW METHOD FOR BANNERS ADDED           -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+<div style="" class="bannerstart-contain">
+<div style="" class="bannerend-inside">
+<img src="../../assets/deco/banners/postBorder_60x1000-assets/paintycrafts_yellgreen.png" style="" class="banner-img banner-end"></div>
+</div>
+
+
+
+<!-- /Users/charlie/Documents/work/Folios/charlierenwick_folio_site/creatureframe-com/repo/page_creatureframe/post/assets/deco/banners/postBorder_60x1000-assets/paintycrafts_yellgreen2.png -->
+
+
+
+    <!-- end <div class="font-styling"> and "scrollbox-wheel" and "scrollbox" -->
+
+
+
+</div>
+    <!-- end <div style="" class="post-background-full final"> and outermost "post-cohostbarrier" -->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+
+    <!-- * * * * * * * * * * * * * * * * * * * *  -->
+    <!-- ADD END DIV FOR SCROLLBOX-WHEEL -->
+    </div>
+    <!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ADDING COHOST LINK TO POST -->
+        <!-- /* background: url('../../assets/icons/cohost logo-assets/cohost_logo_35x25_purple.png') top left; */ -->
+<!--
+<style>
+    .icon-cohost {
+        position:relative;
+        width:35px;
+        height:25px;
+        background: url('../../assets/icons/cohost logo-assets/cohost_logo_35x25_white.png') top left;
+        z-index:100;
+        background-repeat: no-repeat;
+        margin-top: 5px;
+    }
+    .icon-cohost:hover {
+        background: url('../../assets/icons/cohost logo-assets/cohost_logo_35x25_orange.png') top left;
+    }
+</style>
+<div align="right">
+    <a href="https://web.archive.org/web/20240927103348/https://cohost.org/Cro/post/6630216-raindrop-rig-mak" target="_blank"><div class="icon-cohost"></div></a>
+</div>
+ -->
+
+
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+</div>
+<!-- end id "postsize" -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+</div>
+<!-- end columnbox -->
+
+
+
+
+
+
+
+    <!-- * * * * * * * * * * * * * * * * * * * *  -->
+    <!-- COMMENTS BOX -->
+    <!-- * * * * * * * * * * * * * * * * * * * *  -->
+    <style>
+    .revealdetails{
+        margin-top:-40px;margin-left:25px;color:#fff;font-family:courier;
+    }
+
+    :root {
+        /* done either way */
+      /* --commentstransparency: 0.3; */
+      /* can also use a bg image */
+      --commentsbg: rgba(255, 255, 255, 0.4);
+      --commentsbg: rgba(0, 255, 255, 0.25);
+      --commentsbg: rgba(0, 180, 255, 0.35);
+      --commentsborder:2px dashed #fff;
+      --commentsbuttonsborder:1px solid #fff;
+      --commentsbuttonsborder-hover:1px solid #CE98FB;
+
+      --commentsreplybg: rgba(30, 90, 220, 0.75);
+      --commentsreplyborder:2px dashed #ffc6e4;
+
+      --commentsfontfam:Verdana;
+      --commentsfontfam:Courier;
+
+      --backgroundblur1: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top left fixed;
+      --backgroundblur2: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top left fixed;
+
+      --commentsfontcolor:#fff;
+      --commentsfontcolor:#b5ffe7;
+      --commentsaccentcolor1:#222;
+      --commentsaccentcolor2:#ffc6e4;
+      --commentsaccentcolor2:#ffffff;
+      --commentsaccentcolor3:#FB96D8;
+      --commentsaccentcolor4:#CE98FB;
+      --commentsaccentcolor5:#5E2C49;
+      --commentsaccentcolor6:#ffc6e4;
+
+      --commentsfontfam:Courier;
+      --commentsfontsize:14px;
+      --commentsfontsize:9.5pt;
+    }
+
+    .commentssection{
+        width:100%;
+        max-width:600px;
+        /* display: block; */
+        /* background: aqua; */
+        /* margin-top: -10%; */
+        /* margin-top: -60px; */
+        margin-top: 1px;
+        /* rmv later */
+        /* margin-top: -200px; */
+        position: relative;
+        z-index: 100;
+        /* z-index: 1; */
+        /* align-content: justify; */
+        text-align: justify;
+    }
+
+
+
+    #c_widget {
+        /* background-image: url('https://tools.creatureframe.com/assets/eachpost/jazzcat/bg_jazzcatwindow_blur0x10.png'); */
+        /* background-image: url('../../assets/backgrounds/fades/300px-assets/300px_middark.png'); */
+        /* padding-top: 20px; */
+        /* margin-bottom: 40px; */
+
+        /* border: 2px dashed #fff; */
+
+        /* font-family: 'Courier'; */
+        font-family: var(--commentsfontfam);
+        /* font-size: 14px; */
+        color: var(--commentsfontcolor);
+        font-weight: 600;
+        font-size: var(--commentsfontsize);
+    }
+
+    /* #c_widget div { */
+        /* padding:5px 5px; */
+    /* } */
+
+    /* Input section */
+    #c_inputDiv {
+        padding: 10px;
+        text-transform: lowercase;
+        /* background-color: rgba(255, 255, 255, .3); */
+
+        /* done either way */
+        /* background-color: rgba(255, 255, 255, var(--commentstransparency) ); */
+        /* background-color: var(--commentsbg); */
+        background: var(--commentsbg);
+
+        /* border: 1px dashed #CE98FB; */
+        /* border: 2px dashed #fff; */
+        border: var(--commentsborder);
+        border-radius: 5px;
+        border-radius: 8px;
+        /* color:#222; */
+    }
+
+    .c-comment {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 10px;
+        /* background-color: rgba(255, 255, 255, var(--commentstransparency)); */
+        background: var(--commentsbg);
+        /* border: 1px dashed #CE98FB; */
+        border: var(--commentsborder);
+        border-radius: 4px;
+        /* margin-bottom: 0px; */
+    }
+
+
+    .c-site {
+        color: var(--commentsaccentcolor5);
+        border:1px solid #fff;
+        padding:3px 6px;
+        border-radius: 4px;
+        background: var(--commentsaccentcolor3);
+        border: var(--commentsbuttonsborder);
+     }
+    .c-site:hover {
+        color: var(--commentsaccentcolor4);
+        background: #fff;
+        border: var(--commentsbuttonsborder-hover);
+    }
+    .c-text {
+        color: var(--commentsaccentcolor2);
+    }
+
+    .c-reply {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 1);
+        /* border: 1px dashed #CE98FB; */
+        border: var(--commentsbuttonsborder);
+        border-radius: 4px;
+
+        /* color:#000; */
+
+        border: var(--commentsreplyborder);
+        background: var(--commentsreplybg);
+    }
+    </style>
+    <!-- * * * * * * * * * * * * * * * * * * * *  -->
+    <!-- <br clear="all"> -->
+
+
+
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- COMMENTS SECTION DEMOING COLOURS -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- <div align="center">
+<div class="commentssection">
+<div id="c_widget">
+    <div id="c_inputDiv">
+        <form id="c_form" onsubmit="c_submitButton.disabled = true; v_submitted = true;" method="post" target="c_hiddenIframe" action="https://docs.google.com/forms/d/e/1FAIpQLSfogBDOAZfBlrnJ2e9YsdlwNwdKlyUr4GvQVvKmiM6K48G2xQ/formResponse">
+    <h2 id="c_widgetTitle">Leave a comment!</h2>
+
+    <div id="c_nameWrapper" class="c-inputWrapper">
+        <label class="c-label c-nameLabel" for="entry.694796007">Name</label>
+        <input class="c-input c-nameInput" name="entry.694796007" id="entry.694796007" type="text" maxlength="16" required="">
+    </div>
+
+    <div id="c_websiteWrapper" class="c-inputWrapper">
+        <label class="c-label c-websiteLabel" for="entry.605179758">Website (Optional)</label>
+        <input class="c-input c-websiteInput" name="entry.605179758" id="entry.605179758" type="url" pattern="https://.*">
+    </div>
+
+    <div id="c_textWrapper" class="c-inputWrapper">
+        <label class="c-label c-textLabel" for="entry.341888751"></label>
+        <textarea class="c-input c-textInput" name="entry.341888751" id="entry.341888751" rows="4" cols="50" maxlength="500" required=""></textarea>
+    </div>
+
+    <input id="c_submitButton" name="c_submitButton" type="submit" value="Submit">
+<input type="text" id="entry.1631738198" name="entry.1631738198" style="display: none;"><span id="c_replyingText" style="display: none;"></span><input type="text" id="entry.532799568" name="entry.532799568" style="display: none;"><iframe id="c_hiddenIframe" name="c_hiddenIframe" onload="if(v_submitted){fixFrame()}" style="display: none;"></iframe></form>
+    </div>
+    <div id="c_container"><div id="test name|--|10/4/2024 15:18:27" class="c-comment" style="display: block;"><h3 class="c-name">test name</h3><span class="c-timestamp">04/10/2024</span><a href="https://creatureframe.com/" class="c-site">Website</a><p class="c-text">hello</p><button value="test name|--|10/4/2024 15:18:27" onclick="openReply(this.value)" class="c-replyButton">Reply</button></div></div>
+
+    <div id="hey|--|10/4/2024 17:18:04" class="c-comment" style="display: block;"><h3 class="c-name">hey</h3><span class="c-timestamp">04/10/2024</span><p class="c-text">hallo</p><button value="hey|--|10/4/2024 17:18:04" onclick="openReply(this.value)" class="c-replyButton">Reply</button><button onclick="expandReplies(this.parentElement.id)" class="c-expandButton">Show Replies (1)</button><div id="hey|--|10/4/2024 17:18:04-replies" class="c-replyContainer" style="display: block;"><div id="hey you|--|10/4/2024 19:51:18" class="c-reply"><h3 class="c-name">hey you</h3><span class="c-timestamp">04/10/2024</span><p class="c-text">im replying to you</p></div></div></div>
+</div> </div> </div> -->
+
+
+
+
+
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- COMMENTS SECTION GENERATED -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- <details class="revealdetails"><summary>comments</summary>
+<div align="center">
+<div class="commentssection">
+<div id="c_widget"></div>
+<script src="http://creatureframe.com/post/assets/comment-widget.js"></script>
+</div>
+</div>
+</details> -->
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+</div>
+<!-- end <div class="outermostbox"> -->
+</body>
+</html>
