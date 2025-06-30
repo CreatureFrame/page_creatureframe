@@ -399,6 +399,11 @@ background: var(--bg-wholepage);
 background-position: var(--bg-pos);
 background-size: var(--bg-size);
 }
+
+
+/* - - - - - - - - - - - -
+        SCROLLBARS
+- - - - - - - - - - - -  */
 /* this one is in the stylesheets and sets up the shadows */
 /* .scrollbox{ */
     /* over-the-top shadow */
@@ -437,78 +442,41 @@ border-radius:0.9em;
 }
 /* for solid drop shadow
 rgba(255, 255, 255, 1.0) -2px 2px 0px, */
-</style>
-<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+.scrollbox-wheel::-webkit-scrollbar-thumb:hover {
+    background: var(--palette4);
+    filter: brightness(1.1);
+    border: 0.3em solid var(--palette1);
+}
+
+/* dont really need this one for this page yet do i */
+/* .scrollbox-wheel::-webkit-scrollbar-track {
+    background: var(--palette5);
+    border-radius: 0.9em;
+    border:1px solid aqua;
+} */
 
 
-
-
-<!-- * * * * * * * * * * * * * * * * * * * * *  -->
-<!-- SCROLLBAR COMPATIBILITY FOR FIREFOX -->
-<!-- * * * * * * * * * * * * * * * * * * * * *  -->
-<style>
-
-        .scrollbox {
-            justify-content: space-between;
-            box-shadow: rgba(50, 50, 93, .25) 0 30px 60px -5px inset,
-                        rgba(0, 0, 0, .4) 0 18px 36px -3px inset,
-                        rgba(0, 0, 0, .8) 0 0 5px -1px inset;
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden !important;
-            overflow-y: auto !important;
-            position: relative;
-        }
-
-        .scrollbox-wheel {
-            line-height: 1.7em;
-            overflow-y: auto;
-            overflow-x: hidden;
-            height: 100%;
-            width: 100%;
-            margin: auto;
-            text-align: justify;
-
-            /* Firefox scrollbar styling */
-            scrollbar-color: var(--palette4) var(--palette5);
-        }
-
-        /* Webkit browsers (Chrome, Safari, Edge) */
-        .scrollbox-wheel::-webkit-scrollbar {
-            width: 1.75em;
-        }
-
-        .scrollbox-wheel::-webkit-scrollbar-track {
-            background: var(--palette5);
-            border-radius: 0.9em;
-
-        }
-
-        .scrollbox-wheel::-webkit-scrollbar-thumb {
-            background: var(--palette5);
-            border: 0.3em solid var(--palette5);
-            box-shadow: inset 0 0 0.5em 1.0em var(--palette4);
-            border-radius: 0.9em;
-        }
-
-        .scrollbox-wheel::-webkit-scrollbar-thumb:hover {
-            background: var(--palette4);
-            filter: brightness(1.1);
-            border: 0.3em solid var(--palette1);
-        }
-
+/** Mozilla Firefox ONLY */
+@-moz-document url-prefix(){
+    .scrollbox-wheel{
+        scrollbar-color: var(--palette4) var(--palette5);
+    }
+}
 
 </style>
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
 
 
 
 <div class="outermostbox">
 <div class="columnbox">
 
-<!-- <div align="center">
-<div style="v-align:middle;"> -->
 <div class="postsize">
 
 
