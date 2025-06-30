@@ -447,70 +447,62 @@ rgba(255, 255, 255, 1.0) -2px 2px 0px, */
 <!-- SCROLLBAR COMPATIBILITY FOR FIREFOX -->
 <!-- * * * * * * * * * * * * * * * * * * * * *  -->
 <style>
-    .scrollbox {
-        justify-content: space-between;
-        box-shadow: rgba(50, 50, 93, .25) 0 30px 60px -5px inset,
-                    rgba(0, 0, 0, .4) 0 18px 36px -3px inset,
-                    rgba(0, 0, 0, .8) 0 0 5px -1px inset;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-        position: relative;
-    }
 
-    .scrollbox-wheel {
-        line-height: 1.7em;
-        overflow-y: auto;
-        overflow-x: hidden;
-        height: 100%;
-        width: 100%;
-        margin: auto;
-        text-align: justify;
-
-        /* Firefox scrollbar styling */
-        scrollbar-width: thin;
-        scrollbar-color: var(--palette4) var(--palette5);
-    }
-
-    /* Webkit browsers (Chrome, Safari, Edge) */
-    .scrollbox-wheel::-webkit-scrollbar {
-        width: 1.75em;
-    }
-
-    .scrollbox-wheel::-webkit-scrollbar-track {
-        background: var(--palette5);
-        border-radius: 0.9em;
-    }
-
-    .scrollbox-wheel::-webkit-scrollbar-thumb {
-        background: var(--palette4);
-        border: 0.3em solid var(--palette5);
-        border-radius: 0.9em;
-        box-shadow: inset 0 0 0.5em 1.0em var(--palette4);
-    }
-
-    .scrollbox-wheel::-webkit-scrollbar-thumb:hover {
-        background: var(--palette4);
-        filter: brightness(1.1);
-    }
-
-    /* Alternative approach for more Firefox control (if needed) */
-    @supports (scrollbar-width: thin) {
-        .scrollbox-wheel {
-            scrollbar-width: thin;
-            scrollbar-color: var(--palette4) transparent;
+        .scrollbox {
+            justify-content: space-between;
+            box-shadow: rgba(50, 50, 93, .25) 0 30px 60px -5px inset,
+                        rgba(0, 0, 0, .4) 0 18px 36px -3px inset,
+                        rgba(0, 0, 0, .8) 0 0 5px -1px inset;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden !important;
+            overflow-y: auto !important;
+            position: relative;
         }
-    }
 
-    /* Fallback for older browsers */
-    /* @supports not (scrollbar-width: thin) and not (-webkit-scrollbar-width: thin) { */
-        /* .scrollbox-wheel { */
-            /* Fallback styling - browser default scrollbar */
-        /* } */
-    /* } */
+        .scrollbox-wheel {
+            line-height: 1.7em;
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 100%;
+            width: 100%;
+            margin: auto;
+            text-align: justify;
+
+            /* Firefox scrollbar styling */
+            scrollbar-color: var(--palette4) var(--palette5);
+        }
+
+        /* Webkit browsers (Chrome, Safari, Edge) */
+        .scrollbox-wheel::-webkit-scrollbar {
+            width: 1.75em;
+        }
+
+        .scrollbox-wheel::-webkit-scrollbar-track {
+            background: var(--palette5);
+            border-radius: 0.9em;
+
+        }
+
+        .scrollbox-wheel::-webkit-scrollbar-thumb {
+            background: var(--palette4);
+            border: 0.3em solid var(--palette5);
+            border-radius: 0.9em;
+            box-shadow: inset 0 0 0.5em 1.0em var(--palette4);
+            box-shadow:
+            inset 0 0 0.5em 0.8em var(--palette4),
+            rgba(0, 0, 0, 0.9) 1px 2px 3px,
+            rgba(0, 0, 0, 0.6) 0px 2.5px 6px;
+        }
+
+        .scrollbox-wheel::-webkit-scrollbar-thumb:hover {
+            background: var(--palette4);
+            filter: brightness(1.1);
+            border: 0.3em solid var(--palette1);
+        }
+
 
 </style>
 
