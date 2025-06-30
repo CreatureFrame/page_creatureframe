@@ -212,7 +212,7 @@ bg_watersurface_unlit_1024_blur0x12.jpg */
         /* height:100%; */
         height:var(--postheight);
         margin-top:var(--postheight-margintop);
-        border:3px solid red;
+        /* border:3px solid red; */
     }
 
 
@@ -666,18 +666,89 @@ border-radius:0.9em;
 .window-reshapecat{
     padding:10px 90px;
 }
+/* .mimage-1{
+    width:50%;
+    margin: -35px 40px -55px -30px;
+    position:relative;
+    float:left;
+    rotate: 5deg;
+} */
+/* .mimage-1-text{
+    width:48%;
+    margin: 0px 10px 0px -30px;
+    position:relative;
+    float:right;
+} */
+/* .mimage-2{
+    width:50%;
+    margin: 15px -30px 15px 40px;
+    position:relative;
+    float:right;
+    rotate: -1deg;
+} */
+/* .mimage-3{
+    margin-top:20px !important;
+    padding-bottom: 40px !important;
+} */
+/* .mimage-4{
+    width:50%;
+    margin: 5px 40px 15px -30px;
+    position:relative;
+    float:left;
+    rotate: 5deg;
+} */
+
 
 
 /* Mobile-first approach - hide side images on smaller screens */
 @media only screen and (max-width: 768px) {
 
     /* CUSTOM WINDOW CHANGES */
+    .photoborder{
+        padding:6px;
+    }
+    .buttontext{
+        font-size: 10pt !important;
+        width:100%  !important;
+    }
     .window-remodelling-end{
         margin-bottom:20px;
     }
     .window-reshapecat{
         padding:10px 0px;
     }
+    .window-casting-end{
+        margin-bottom:20px !important;
+    }
+    .mimage-inline{
+        width:100% !important;
+        margin: 10px 0px !important;
+        position:inherit !important;
+        rotate: 0deg !important;
+        float:none !important;
+    }
+    .mimage-1, .mimage-2, .mimage-4{
+        width:100% !important;
+        margin: 10px 0px !important;
+        position:inherit !important;
+        rotate: 0deg !important;
+    }
+    .mimage-1-text{
+        width:100%;
+        margin: 10px 0px;
+        position:inherit;
+        rotate: 0deg;
+    }
+    .mimage-3{
+        margin-top:20px;
+        margin:20px -5% 0px -10%;
+        max-width:120%;
+        padding-bottom: 10px;
+        /* border:1px solid red; */
+    }
+
+
+
 
 
 
@@ -710,9 +781,6 @@ border-radius:0.9em;
     /* Adjust font size for mobile */
     .bigtitle {
       font-size: 16pt;
-    }
-    .liltitle {
-      font-size: 18pt;
     }
 
     .font-styling {
@@ -834,7 +902,7 @@ making the figurines
 <br>
 
 <div align="center">
-<img src="jazzcat_WIPnight_assets/cat_catfinal.gif" style="width:50%;margin: -35px 40px -55px -30px;position:relative;float:left;rotate: 5deg;" class="image-fullscroll photoborder">
+<img src="jazzcat_WIPnight_assets/cat_catfinal.gif" style="width:50%; margin: -35px 40px -55px -30px; position:relative; float:left; rotate: 5deg;" class="image-fullscroll photoborder mimage-1">
 </div>
 <!-- cat_catfinal.gif -->
 <!-- cat_catfinal_x2_2000k.mp4 -->
@@ -842,7 +910,7 @@ making the figurines
 
 <div style="height:10px;"></div>
 
-<div style="width:48%;margin: 0px 10px 0px -30px;position:relative;float:right;">
+<div style="width:48%; margin: 0px 10px 0px -30px; position:relative; float:right;" class="mimage-1-text">
 so i'd really wanted to make an interactive figurine for ages, and the opening window seemed like a great contender.
 <br><br>especially if it could be posed in place, and i thought it had cute potential to have paper backdrops tacked to the back as decoration.
 <br><br>
@@ -1011,14 +1079,17 @@ being able to just use a smooth preview and pull geometrical shapes around is a 
 <!-- <br> -->
 <br>
 
-<img src="jazzcat_WIPnight_assets/cat_sprues_flip.png" style="margin-top:20px;padding-bottom: 40px;" class="image-fullscroll">
+<img src="jazzcat_WIPnight_assets/cat_sprues_flip.png" class="image-fullscroll mimage-3" style="margin-top:20px; padding-bottom: 40px;">
 
-<div style="width:50%;margin: 15px -30px 15px 40px;position:relative;float:right;rotate: -1deg;">
+<!-- style="width:50%; margin: 15px -30px 15px 40px; position:relative; float:right; rotate: -1deg;" -->
+<div class="mimage-2" style="width:50%; margin: 15px -30px 15px 40px; position:relative; float:right; rotate: -1deg;">
 <img src="jazzcat_WIPnight_assets/rawrtoyz_5038602_orig.jpg"  class="image-fullscroll photoborder" style="border:3px solid var(--palette4);">
-<div align="center"><a href="http://www.rawrztoys.com/how-we-create-rawrztoys.html"><div class="bigtitle lilnote" align="center" style="">
+<div align="center"><a href="http://www.rawrztoys.com/how-we-create-rawrztoys.html"><div class="bigtitle lilnote buttontext" align="center" style="">
 a generous amount of sprues<br><i>(image from Victoria Rose)</i>
 <!-- rawrz toys -->
 </div></a></div></div>
+
+
 
 <br>
 <!-- at this point i had to toss up between some risky casting decisions and aesthetic direction. some of the redesign was influenced by how casting works (tho not influenced enough!)
@@ -1040,7 +1111,7 @@ this would've been much less of a problem if i'd been casting with a polyurethan
 <br clear="all">
 <br><br>
 
-<img src="jazzcat_WIPnight_assets/casting/PXL_20240507_032452915_web.jpg" style="width:50%;margin: 5px 40px 15px -30px;position:relative;float:left;rotate: 5deg;" class="image-fullscroll photoborder">
+<img src="jazzcat_WIPnight_assets/casting/PXL_20240507_032452915_web.jpg" style="width:50%; margin: 5px 40px 15px -30px; position:relative; float:left; rotate: 5deg;" class="image-fullscroll photoborder mimage-4">
 
 
 at first i thought it'd be a better to get around this issue by printing the front and back of the cat separately and making two moulds. even got as far as 3D printing the parts.
@@ -1322,9 +1393,9 @@ at some point i want to do up a post on casting materials, i like trying a lot a
 
 
 <!-- photo image side -->
-<img src="jazzcat_WIPnight_assets/casting/PXL_20241117_042918028_web.jpg" style="width:50%;margin: -95px 40px 15px -30px;position:relative;float:left;rotate: 4deg;" class="image-fullscroll photoborder">
+<img src="jazzcat_WIPnight_assets/casting/PXL_20241117_042918028_web.jpg" style="width:50%;margin: -95px 40px 15px -30px;position:relative;float:left;rotate: 4deg;" class="image-fullscroll photoborder mimage-inline">
 
-<img src="jazzcat_WIPnight_assets/casting/PXL_20241117_043119545_web.jpg" style="width:60%;margin: -225px -40px -315px -30px;position:relative;float:right;rotate: -2deg;" class="image-fullscroll photoborder">
+<img src="jazzcat_WIPnight_assets/casting/PXL_20241117_043119545_web.jpg" style="width:60%;margin: -225px -40px -315px -30px;position:relative;float:right;rotate: -2deg;" class="image-fullscroll photoborder mimage-inline">
 <br><br>
 
 
@@ -1357,7 +1428,7 @@ then a bunch of cutting off the rough bits from each cast, sanding them down smo
 
 
 
-<div style="margin-bottom:225px;"></div>
+<div class="window-casting-end" style="margin-bottom:225px;"></div>
 
 
 <!-- . . . . . . . . . . . . . . . . . . . . . -->
@@ -1516,17 +1587,17 @@ it started with an old 3d printing course by joseph drust (uartsy) that just hap
 and these were the other most helpful bits i found:
 
 <br><br>
-<div align="center"><a href="https://www.youtube.com/watch?v=VHoUAybsqUk"><div class="bigtitle lilnote" align="center" style="width:50%;margin:0px;">
+<div align="center"><a href="https://www.youtube.com/watch?v=VHoUAybsqUk"><div class="bigtitle lilnote buttontext" align="center" style="width:50%;margin:0px;">
 Victoria Rose & Ann Sidenblad's casting process video
 </div></a></div>
 <br>
 
-<div align="center"><a href="http://www.rawrztoys.com/how-we-create-rawrztoys.html"><div class="bigtitle lilnote" align="center" style="width:50%;margin:0px;">
+<div align="center"><a href="http://www.rawrztoys.com/how-we-create-rawrztoys.html"><div class="bigtitle lilnote buttontext" align="center" style="width:50%;margin:0px;">
 "how we make rawrztoys"
 </div></a></div>
 <br>
 
-<div align="center"><a href="https://issuu.com/cluttermagazine/docs/clutter_magazine_issue35_is"><div class="bigtitle lilnote" align="center" style="width:50%;margin:0px;">
+<div align="center"><a href="https://issuu.com/cluttermagazine/docs/clutter_magazine_issue35_is"><div class="bigtitle lilnote buttontext" align="center" style="width:50%;margin:0px;">
 oddfauna's interview in CLUTTER (starts pg 38)
 </div></a></div>
 <br>
