@@ -29,16 +29,6 @@
     height:680px;
 } -->
 
-<!--
-/* Firefox */
-height: -moz-calc(100% - 18px);
-/* WebKit */
-height: -webkit-calc(100% - 18px);
-/* Opera */
-height: -o-calc(100% - 18px);
-/* Standard */
-height: calc(100% - 18px);
- -->
 
 
 <!--
@@ -114,8 +104,6 @@ bigtitles
        --postheight: 680px;
        /* --postheight: 100%; */
        --postheight: calc(100% - 20px);
-       /* --postheight: -moz-calc(100% - 20px);
-       --postheight: -webkit-calc(100% - 20px); */
        --postheight-margintop: 15px;
        --postwidth: 580px;
        --postwidth: 780px;
@@ -161,9 +149,6 @@ bigtitles
      .outermostbox {
          height:100%;
          height:calc(100% - 30px);
-         /* height:-moz-calc(100% - 30px);
-         height:-webkit-calc(100% - 30px); */
-         /* height:-o-calc(100% - 30px); */
          width:100%;
          position:fixed;
          min-height:100%;
@@ -414,6 +399,15 @@ background: var(--bg-wholepage);
 background-position: var(--bg-pos);
 background-size: var(--bg-size);
 }
+/* this one is in the stylesheets and sets up the shadows */
+.scrollbox{
+    /* over-the-top shadow */
+	/* box-shadow:rgba(0, 0, 0, 0.14) 1px 3px 15px,rgba(0, 0, 0, 0.22) 0px 2.5px 5px,rgba(122, 122, 122, 0.32) 3px 3px 0px,rgba(122, 85, 85, 0.35) 1px 1px 0.3px; */
+    /* for firefox */
+    overflow: scroll;
+    scrollbar-color: red orange;
+    scrollbar-width: thin;
+}
 .scrollbox-wheel{
 line-height:1.7em;
 overflow-y:auto;
@@ -548,9 +542,6 @@ rotate:180deg;
 /* BANNER STYLE FROM ACNL */
 .bannerstart-contain {
 margin-top:calc(var(--bannerend-height) * -1);
-/* margin-top:-moz-calc(var(--bannerend-height) * -1);
-margin-top:-webkit-calc(var(--bannerend-height) * -1); */
-/* margin-top:-o-calc(var(--bannerend-height) * -1); */
 height:var(--bannerend-height);
 }
 </style>
@@ -582,10 +573,9 @@ height:var(--bannerend-height);
     <!-- <div style="" class="post-cohostbarrier"> -->
     <div style="" class="post-background-full post-bgimg bgimg-alignment final">
     <div class="scrollbox">
-
-        <!-- * * * * * * * * * * * * * * * * * * * *  -->
-        <!-- ADDING SCROLLBOX WHEEL -->
-        <div class="scrollbox-wheel">
+    <!-- * * * * * * * * * * * * * * * * * * * *  -->
+    <!-- ADDING SCROLLBOX WHEEL -->
+    <div class="scrollbox-wheel">
         <!-- * * * * * * * * * * * * * * * * * * * *  -->
 
     <div class="font-styling">
