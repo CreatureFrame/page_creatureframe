@@ -365,6 +365,12 @@ rgba(0, 0, 0, 0.2) 0px 2.5px 6px; */
 border-radius:0.9em;
 border-radius:0.4em;
 }
+/** Mozilla Firefox ONLY */
+@-moz-document url-prefix(){
+    .scrollbox-wheel{
+        scrollbar-color: var(--palette4) var(--palette5);
+    }
+}
 /* for solid drop shadow
 rgba(255, 255, 255, 1.0) -2px 2px 0px, */
 .post-cohostbarrier {

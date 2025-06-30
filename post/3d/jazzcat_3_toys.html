@@ -580,6 +580,13 @@ border-radius:0.9em;
     border-radius:0.9em;
 }
 
+/** Mozilla Firefox ONLY */
+@-moz-document url-prefix(){
+    html{
+        scrollbar-color: #5770b0 #f5b043;
+    }
+}
+
 .bannerstart-contain {
     margin-top:calc(var(--endbanner-size) * -1);
     margin-top:-moz-calc(var(--endbanner-size) * -1);
