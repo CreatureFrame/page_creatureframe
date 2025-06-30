@@ -11,7 +11,8 @@
 
 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+<!-- <meta name="viewport" content="width=device-width"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <link rel="icon" type="image/png" href="assets/icons/green-computer.gif">
 <title>posting</title>
 
@@ -47,16 +48,6 @@
     height:680px;
 } -->
 
-<!--
-/* Firefox */
-height: -moz-calc(100% - 18px);
-/* WebKit */
-height: -webkit-calc(100% - 18px);
-/* Opera */
-height: -o-calc(100% - 18px);
-/* Standard */
-height: calc(100% - 18px);
- -->
 
 
 
@@ -129,11 +120,6 @@ scrollbox
       --postheight: 680px;
       --postheight: 100%;
       --postheight: calc(100% - 30px);
-      --postheight-moz: -moz-calc(100% - 30px);
-      --postheight-wkit: -webkit-calc(100% - 30px);
-
-      /* --postheight: (100% - 30px); */
-      /* --postheight: -o-calc(100% - 30px); */
       --postheight-margintop: 15px;
 
       --postwidth: 780px;
@@ -200,13 +186,6 @@ bg_watersurface_unlit_1024_blur0x12.jpg */
     .outermostbox {
         height:100%;
         height:calc(100% - 30px);
-        height:-moz-calc(100% - 30px);
-        height:-webkit-calc(100% - 30px);
-        /* height:var(--postheight);
-        height:var(--postheight-moz);
-        height:var(--postheight-wkit); */
-        /* delete */
-        /* height:-o-calc(100% - 30px); */
 
         width:100%;
         position:fixed;
@@ -225,14 +204,15 @@ bg_watersurface_unlit_1024_blur0x12.jpg */
 
         /* border:2px solid green; */
     }
-    #postsize{
+    /* #postsize{ */
+    .postsize{
         max-width:var(--postwidth);
         padding:auto;
 
         /* height:100%; */
         height:var(--postheight);
         margin-top:var(--postheight-margintop);
-        /* border:3px solid red; */
+        border:3px solid red;
     }
 
 
@@ -589,9 +569,6 @@ border-radius:0.9em;
 
 .bannerstart-contain {
     margin-top:calc(var(--endbanner-size) * -1);
-    margin-top:-moz-calc(var(--endbanner-size) * -1);
-    margin-top:-webkit-calc(var(--endbanner-size) * -1);
-    /* margin-top:-o-calc(var(--endbanner-size) * -1); */
     height:var(--endbanner-size);
 }
 </style>
@@ -680,6 +657,96 @@ border-radius:0.9em;
     /* inline-size: 550px; */
     /* overflow-wrap: break-word; */
 }
+
+
+/* CUSTOM WINDOW CHANGES FOR BTWN DESKTOP AND MOBILE */
+.window-remodelling-end{
+    margin-bottom:-85px;
+}
+.window-reshapecat{
+    padding:10px 90px;
+}
+
+
+/* Mobile-first approach - hide side images on smaller screens */
+@media only screen and (max-width: 768px) {
+
+    /* CUSTOM WINDOW CHANGES */
+    .window-remodelling-end{
+        margin-bottom:20px;
+    }
+    .window-reshapecat{
+        padding:10px 0px;
+    }
+
+
+
+    .postsize {
+      width: calc(100% - 20px);
+      max-width: calc(100% - 20px);
+      margin-left: 10px;
+      margin-right: 10px;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    .columnbox {
+      width: 100%;
+      padding: 0;
+    }
+
+    /* Hide side images on mobile to prevent horizontal scrolling */
+    .sideimg-left,
+    .sideimg-right {
+      display: none;
+    }
+
+    /* Adjust font size for mobile */
+    .bigtitle {
+      font-size: 16pt;
+    }
+    .liltitle {
+      font-size: 18pt;
+    }
+
+    .font-styling {
+      font-size: 10pt;
+      padding: 10px;
+    }
+}
+
+/* Tablet and small desktop */
+@media only screen and (min-width: 769px) and (max-width: 999px) {
+    .postsize {
+      width: 90%;
+      max-width: 90%;
+    }
+
+    /* Hide side images on tablets too */
+    .sideimg-left,
+    .sideimg-right {
+      display: none;
+    }
+}
+
+/* Large desktop */
+@media (min-width: 1000px) {
+  .postsize {
+    max-width:var(--postwidth);
+  }
+
+  /* Show side images only on large screens */
+  .sideimg-left,
+  .sideimg-right {
+    display: block;
+  }
+}
 </style>
 
 
@@ -727,37 +794,7 @@ border-radius:0.9em;
 
 <!-- <div class="outermostbox"> -->
 <div class="columnbox">
-
-<!-- <div align="center">
-<div style="v-align:middle;"> -->
-<div id="postsize">
-
-
-
-
-
-
-    <!-- TEMPORARY ONLY : hacking brs -->
-<!--
-    <style>
-    br{
-        border: 1px dashed #eee;
-        border-color: rgba(255,255,255,0.2) transparent;
-        line-height: 50%;
-        content: "";
-        margin: 2em;
-        display: block;
-        font-size: 24%;
-    }
-    p {
-     line-height: 10px;
-    }
-    </style>
- -->
-
-
-
-
+<div class="postsize">
 
 
 <!-- * * * * * * * * * * * * * * * * * * * * *  -->
@@ -767,25 +804,15 @@ border-radius:0.9em;
 <!-- <div style="" class="post-background-full post-bgimg bgimg-alignment final"> -->
 <!-- <div class="scrollbox"> -->
 
-
-
-    <!-- * * * * * * * * * * * * * * * * * * * *  -->
-    <!-- ADDING SCROLLBOX WHEEL -->
-    <div class="scrollbox-wheel">
-    <!-- * * * * * * * * * * * * * * * * * * * *  -->
-
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- ADDING SCROLLBOX WHEEL -->
+<div class="scrollbox-wheel">
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 <div class="font-styling">
 <!-- spacer -->
 <div style="width:10px;height:25px;"></div>
 <!-- * * * * * * * * * * * * * * * * * * * * *  -->
-
-<!-- POST TITLE -->
-<!-- <div class="posttitle textbox">
-post title
-</div> -->
-
-
 
 
 <div align="center" style="position:relative;z-index:1;margin-bottom:-55px;margin-left:5%;max-width:90%;"><img src="https://tools.creatureframe.com/assets/eachpost/jazzcat/contentboxdeco_topspillB.png" class="image-fullscroll"></div>
@@ -800,21 +827,11 @@ making the figurines
 
 
 
-<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
-<!-- <div class="bigtitle liltitle" align="center" style="">
-remodeling
-</div> -->
-<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
-
-
-
 
 <!-- . . . . . . . . . . . . . . . . . . . . . -->
 <!-- CONTENT BOX -->
 <div align="center" style="margin-top:-20px;" class="textbox">
 <br>
-
-
 
 <div align="center">
 <img src="jazzcat_WIPnight_assets/cat_catfinal.gif" style="width:50%;margin: -35px 40px -55px -30px;position:relative;float:left;rotate: 5deg;" class="image-fullscroll photoborder">
@@ -889,7 +906,7 @@ like i said in a previous post, designing something for a single camera angle is
 
 
 <br clear="all">
-<div style="margin-bottom:-85px;"></div>
+<div class="window-remodelling-end" style=""></div>
 </div>
 <!-- end content box -->
 <!-- . . . . . . . . . . . . . . . . . . . . . -->
@@ -915,7 +932,7 @@ like i said in a previous post, designing something for a single camera angle is
 
 <div align="center" style="margin-top:-20px;" class="textbox">
 <br>
-<div style="padding:10px 90px">
+<div class="window-reshapecat">
 so in working out what was important to change, i figured everything needed to be chonkier, so it doesnt break,
     and smoother, so that less bubbles get caught in the casts.
     <br><br>
