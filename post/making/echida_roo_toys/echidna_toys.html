@@ -29,16 +29,6 @@
     height:680px;
 } -->
 
-<!--
-/* Firefox */
-height: -moz-calc(100% - 18px);
-/* WebKit */
-height: -webkit-calc(100% - 18px);
-/* Opera */
-height: -o-calc(100% - 18px);
-/* Standard */
-height: calc(100% - 18px);
- -->
 
 
 <!--
@@ -79,8 +69,6 @@ banners:
        --postheight: 680px;
        /* --postheight: 100%; */
        --postheight: calc(100% - 20px);
-       /* --postheight: -moz-calc(100% - 20px); */
-       /* --postheight: -webkit-calc(100% - 20px); */
        --postheight-margintop: 15px;
        --postwidth: 580px;
        --postwidth: 780px;
@@ -116,54 +104,68 @@ banners:
        /* contain, cover, 30%; 200px 100px; */
        --bg-size: contain;
      }
-     .outermostbox {
-         height:100%;
-         height:calc(100% - 30px);
-         /* height:-moz-calc(100% - 30px); */
-         /* height:-webkit-calc(100% - 30px); */
-         /* height:-o-calc(100% - 30px); */
-         width:100%;
-         position:fixed;
-         min-height:100%;
-         overflow-y:auto;
-         /* border:1px solid var(--palette1); */
-         box-shadow:
-        inset rgba(0, 0, 0, 0.3) 1px 2px 25px,
-        inset rgba(0, 0, 0, 0.3) 1px 2px 15px,
-        inset rgba(0, 0, 0, 0.2) 3px 3.5px 6px;
-     }
-     .columnbox{
-         align-items: center;
-         display: flex;
-         justify-content: center;
-         height:100%;
-         /* border:2px solid green; */
-     }
-     #postsize{
-         max-width:var(--postwidth);
-         padding:auto;
-
-         /* height:100%; */
-         height:var(--postheight);
-         margin-top:var(--postheight-margintop);
-         /* border:1px solid red; */
-     }
 
 
+/* outermostbox and columnbox set up for the whole page */
+.outermostbox {
+height:calc(100% - 30px);
+width:100%;
+position:fixed;
+min-height:100%;
+overflow-y:auto;
+/* border:1px solid var(--palette1); */
+margin:0px;
+box-shadow:
+inset rgba(0, 0, 0, 0.3) 1px 2px 25px,
+inset rgba(0, 0, 0, 0.3) 1px 2px 15px,
+inset rgba(0, 0, 0, 0.2) 3px 3.5px 6px;
+/* this as a flexbox replaces the need for the columnbox */
+display: inline-flex;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: space-around;
+align-items: center;
+align-content: center;
+}
+/* .columnbox{
+align-items: center;
+display: flex;
+justify-content: center;
+height:100%;
+} */
+.postsize{
+max-width:var(--postwidth);
+padding:auto;
+/* not needed anymore now using flexbox */
+/* height:var(--postheight); */
+/* margin-top:var(--postheight-margintop); */
 
- </style>
- <!-- * * * * * * * * * * * * * * * * * * * * *  -->
+/* or turn these on for full length */
+height:100%;
+margin:0px;
+/* border:1px solid red; */
+
+/* then turn on flexbox for proper floating */
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+justify-content: center;
+align-items: normal;
+align-content: normal;
+}
+.post-cohostbarrier {
+height:var(--postheight);
+border:1px solid var(--palette-postborder);
+/* margin:0px; */
+/* padding:0px; */
+/* or turn these on for full length */
+/* height:100%; */
+/* margin:0px; */
+/* border:2px solid green; */
+}
 
 
 
-
-
-
-
-
-
-<!-- * * * * * * * * * * * * * * * * * * * * *  -->
-<style>
 /* . . . . . . . . . . . . . . . . . . . . . */
 /* BACKGROUNDS */
 /* . . . . . . . . . . . . . . . . . . . . . */
@@ -365,16 +367,79 @@ rgba(0, 0, 0, 0.2) 0px 2.5px 6px; */
 border-radius:0.9em;
 border-radius:0.4em;
 }
+
+
+
+/* for solid drop shadow
+rgba(255, 255, 255, 1.0) -2px 2px 0px, */
+
+
+
 /** Mozilla Firefox ONLY */
 @-moz-document url-prefix(){
     .scrollbox-wheel{
         scrollbar-color: var(--palette4) var(--palette5);
     }
 }
-/* for solid drop shadow
-rgba(255, 255, 255, 1.0) -2px 2px 0px, */
-.post-cohostbarrier {
-height:var(--postheight);
+
+
+/* Mobile-first approach - hide side images on smaller screens */
+@media only screen and (max-width: 768px) {
+
+    /* CUSTOM WINDOW AND IMAGE CHANGES */
+    .photoborder{
+        padding:2px !important;
+    }
+
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    /* for left/right floating images, to make them fullwidth and inline */
+    .mimageinline{
+        width:100% !important;
+        margin: 10px 0px !important;
+        position:inherit !important;
+        rotate: 0deg !important;
+        float:none !important;
+    }
+    /* for left/right floating images, to make them smaller on their side */
+    .mimagesmaller{
+        width:45% !important;
+    }
+
+    /* .columnbox {
+      width: 100%;
+      padding: 0;
+    } */
+
+    .postsize{
+    max-width:100%;
+    width:100%;
+    padding:none;
+    height:var(--postheight);
+    margin:0px;
+    height:100%;
+    box-sizing: border-box;
+    }
+
+    .post-cohostbarrier {
+    border:1px solid var(--palette-postborder);
+    padding:0px;
+    height:100%;
+    margin:0px;
+    }
+
+    /* Adjust font size for mobile */
+    .bigtitle {
+      font-size: 16pt;
+    }
+
+    .font-styling {
+      font-size: 10pt;
+      padding: 10px;
+    }
 }
 
 
@@ -384,12 +449,13 @@ height:var(--postheight);
 
 
 
-<div class="outermostbox">
-<div class="columnbox">
 
-<!-- <div align="center">
-<div style="v-align:middle;"> -->
-<div id="postsize">
+<div class="outermostbox">
+<!-- <div class="columnbox"> -->
+<div class="postsize">
+<div class="post-cohostbarrier">
+
+
 
 
 
@@ -397,7 +463,9 @@ height:var(--postheight);
 
 <style>
 
-
+/* - - - - - - - - - - - -
+        BANNERS
+- - - - - - - - - - - -  */
 .bannerstart-top{
 top:0px;
 overflow:hidden;
@@ -422,6 +490,8 @@ width:inherit;
 height:var(--bannerstart-height);
 max-width:100%;
 width:100%;
+filter: drop-shadow(0 0 0.45rem rgba(0, 0, 0, 0.6));
+image-rendering:pixelated;
 }
 
 
@@ -434,7 +504,7 @@ width:100%;
     max-width: 1000px;
 }
 .banner-start{
-    margin-top:30px;
+    /* margin-top:30px; */
     filter: none;
     filter: drop-shadow(-2px 2px 3px #813d00);
     filter: drop-shadow(-2px 2px 0.5px #333);
@@ -446,7 +516,10 @@ width:100%;
 } */
 .bannerend-inside{
     height:100%;
-    margin-top:30px;
+    /* margin-top:30px; */
+    /* border:1px solid red; */
+    /* margin-top: 0px; */
+    margin:0px;
 }
 /* .post-cohostbarrier{
     height:650px;
@@ -454,28 +527,13 @@ width:100%;
 .banner-end{
     filter: none;
     filter: drop-shadow(4px 5px 0px #f5b043);
+    filter: drop-shadow(-2px 2px 3.7px rgba(0, 0, 0, 0.5));
     rotate:180deg;
-}
-
-
-.bannerend-inside{
-/* border:1px solid red; */
-margin-top: 0px;
-}
-.banner-end{
-filter: none;
-/* filter: drop-shadow(4px 5px 0px #f5b043); */
-/* filter: drop-shadow(-2px 2px 6.7px rgba(0, 0, 0, 0.5)); */
-rotate:180deg;
-/* border:1px solid purple; */
 }
 
 /* BANNER STYLE FROM ACNL */
 .bannerstart-contain {
 margin-top:calc(var(--bannerend-height) * -1);
-/* margin-top:-moz-calc(var(--bannerend-height) * -1); */
-/* margin-top:-webkit-calc(var(--bannerend-height) * -1); */
-/* margin-top:-o-calc(var(--bannerend-height) * -1); */
 height:var(--bannerend-height);
 }
 </style>
@@ -490,9 +548,6 @@ height:var(--bannerend-height);
     <!-- * * * * * * * * * * * * * * * * * * * * *  -->
     <!--             POST CONTAINER TOP             -->
     <!-- . . . . . . . . . . . . . . . . . . . . .  -->
-
-
-    <div style="" class="post-cohostbarrier">
 
     <!-- TOP BANNER -->
     <div style="" class="bannerstart-top">
@@ -568,7 +623,7 @@ height:var(--bannerend-height);
     <div style="padding:20px;" class="textbox">
 
     <!-- <div align="right" style="width:40%;display:inline-block;position:relative;"> -->
-    <img src="echida_roo_toys_assets/C61A6932-Edit_900h_photo_web.jpg" style="width:55%;width:250px;display:inline-block;position:relative;float:left;margin-right:5%;margin-left:-20px;margin: -35px 3% 5px -20px;rotate:3deg;padding:3px;" class="image-fullscroll photoborder">
+    <img src="echida_roo_toys_assets/C61A6932-Edit_900h_photo_web.jpg" style="width:55%;width:250px;display:inline-block;position:relative;float:left;margin: -35px 3% 10px -20px;rotate:3deg;padding:3px;" class="image-fullscroll photoborder mimagesmaller">
     <!-- style="width:40%;display:inline-block;position:relative;float:left" -->
     <!-- </div> -->
 
@@ -841,58 +896,22 @@ height:var(--bannerend-height);
 
 
 
-
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
-    <!-- spacer to scroll past bottom border -->
-    <div style="width:10px;height:25px;"></div>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
-    <!-- END OF POST CONTENT -->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
-
-
-
-
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
-    <!-- END BOXES FOR POST -->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
-    </div>      <!-- end of  font-styling -->
-    </div></div></div>
-
-
-
-
-
-
-
-
-
-<!-- CLASSES IN jazzcat_style.css TO OVERWRITE HERE IF NEEDING TO CHANGE STUFF :
-banner-end-noflip
-bannerend-inside-bg
-banner-end-bg
- -->
-
-
-
-
-
-
 <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
-<!--           NEW METHOD FOR BANNERS ADDED           -->
+<!-- spacer to scroll past bottom border -->
+<div style="width:10px;height:25px;"></div>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+<!-- END BOXES FOR POST -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+</div> </div></div></div>
+<!-- end of  font-styling, scrollbox-wheel, scrollbox, and the "<div style="" class="post-background-full post-bgimg bgimg-alignment final">" -->
+
+
+
+
+
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+    <!--                   BOTTOM BANNERS                 -->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
 <div style="" class="bannerstart-contain">
 <div style="" class="bannerend-inside">
 <img src="../../assets/deco/banners/postBorder_60x1000-assets/paintycrafts_yellgreen.png" style="" class="banner-img banner-end"></div>
@@ -900,22 +919,10 @@ banner-end-bg
 
 
 
-<!-- /Users/charlie/Documents/work/Folios/charlierenwick_folio_site/creatureframe-com/repo/page_creatureframe/post/assets/deco/banners/postBorder_60x1000-assets/paintycrafts_yellgreen2.png -->
 
-
-
-    <!-- end <div class="font-styling"> and "scrollbox-wheel" and "scrollbox" -->
-
-
-
-</div>
-    <!-- end <div style="" class="post-background-full final"> and outermost "post-cohostbarrier" -->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
-
-    <!-- * * * * * * * * * * * * * * * * * * * *  -->
-    <!-- ADD END DIV FOR SCROLLBOX-WHEEL -->
-    </div>
-    <!-- * * * * * * * * * * * * * * * * * * * *  -->
+</div></div></div>
+<!-- end for post-cohostbarrier, postsize, "outermostbox" -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 
 
@@ -1198,8 +1205,5 @@ banner-end-bg
 
 
 
-
-</div>
-<!-- end <div class="outermostbox"> -->
 </body>
 </html>

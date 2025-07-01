@@ -507,7 +507,20 @@ rgba(255, 255, 255, 1.0) -2px 2px 0px, */
 
     /* CUSTOM WINDOW AND IMAGE CHANGES */
     .photoborder{
-        padding:6px;
+        padding:6px !important;
+    }
+
+    /* for left/right floating images, to make them fullwidth and inline */
+    .mimageinline{
+        width:100% !important;
+        margin: 10px 0px !important;
+        position:inherit !important;
+        rotate: 0deg !important;
+        float:none !important;
+    }
+    /* for left/right floating images, to make them smaller on their side */
+    .mimagesmaller{
+        width:45% !important;
     }
 
     body {
@@ -1161,7 +1174,5 @@ banner-end-bg
 
 
 
-</div>
-<!-- end <div class="outermostbox"> -->
 </body>
 </html>

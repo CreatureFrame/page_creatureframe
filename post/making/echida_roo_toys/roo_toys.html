@@ -159,26 +159,38 @@ bigtitles
         inset rgba(0, 0, 0, 0.3) 1px 2px 25px,
         inset rgba(0, 0, 0, 0.3) 1px 2px 15px,
         inset rgba(0, 0, 0, 0.2) 3px 3.5px 6px;
-
+        /* this as a flexbox replaces the need for the columnbox */
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
      }
-     .columnbox{
+     /* .columnbox{
          align-items: center;
          display: flex;
          justify-content: center;
          height:100%;
-
-         /* border:2px solid green; */
-     }
+     } */
      .postsize{
          max-width:var(--postwidth);
          padding:auto;
+         /* not needed anymore now using flexbox */
+         /* height:var(--postheight); */
+         /* margin-top:var(--postheight-margintop); */
 
-         /* height:100%; */
-         height:var(--postheight);
-         margin-top:var(--postheight-margintop);
-         /* margin:0px; */
-         /* padding:0px; */
-         /* border:1px solid red; */
+         /* or turn these on for full length */
+         height:100%;
+         margin:0px;
+
+         /* then turn on flexbox for proper floating */
+         display: flex;
+         flex-direction: column;
+         flex-wrap: nowrap;
+         justify-content: center;
+         align-items: normal;
+         align-content: normal;
      }
 
      .post-cohostbarrier {
@@ -186,6 +198,9 @@ bigtitles
      border:1px solid var(--palette-postborder);
      /* margin:0px; */
      /* padding:0px; */
+     /* or turn these on for full length */
+     /* height:100%; */
+     /* margin:0px; */
      /* border:2px solid green; */
      }
 
@@ -463,6 +478,66 @@ rgba(255, 255, 255, 1.0) -2px 2px 0px, */
     }
 }
 
+
+/* Mobile-first approach - hide side images on smaller screens */
+@media only screen and (max-width: 768px) {
+
+    /* CUSTOM WINDOW AND IMAGE CHANGES */
+    .photoborder{
+        padding:6px !important;
+    }
+    /* for left/right floating images, to make them fullwidth and inline */
+    .mimageinline{
+        width:100% !important;
+        margin: 10px 0px !important;
+        position:inherit !important;
+        rotate: 0deg !important;
+        float:none !important;
+    }
+    /* for left/right floating images, to make them smaller on their side */
+    .mimagesmaller{
+        width:45% !important;
+    }
+    
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* .columnbox {
+      width: 100%;
+      padding: 0;
+    } */
+
+    .postsize{
+    max-width:100%;
+    width:100%;
+    padding:none;
+    height:var(--postheight);
+    margin:0px;
+    height:100%;
+    box-sizing: border-box;
+    }
+
+    .post-cohostbarrier {
+    border:1px solid var(--palette-postborder);
+    padding:0px;
+    height:100%;
+    margin:0px;
+    }
+
+    /* Adjust font size for mobile */
+    .bigtitle {
+      font-size: 16pt;
+    }
+
+    .font-styling {
+      font-size: 10pt;
+      padding: 10px;
+    }
+}
+
 </style>
 <!-- * * * * * * * * * * * * * * * * * * * * *  -->
 
@@ -475,10 +550,9 @@ rgba(255, 255, 255, 1.0) -2px 2px 0px, */
 
 
 <div class="outermostbox">
-<div class="columnbox">
-
+<!-- <div class="columnbox"> -->
 <div class="postsize">
-
+<div style="" class="post-cohostbarrier">
 
 
 
@@ -584,7 +658,7 @@ height:var(--bannerend-height);
     <!-- . . . . . . . . . . . . . . . . . . . . .  -->
 
 
-    <div style="" class="post-cohostbarrier">
+
 
     <!-- TOP BANNER -->
     <div style="" class="bannerstart-top">
@@ -874,10 +948,6 @@ height:var(--bannerend-height);
 
 
 
-
-
-
-
 <!-- CLASSES IN jazzcat_style.css TO OVERWRITE HERE IF NEEDING TO CHANGE STUFF :
 banner-end-noflip
 bannerend-inside-bg
@@ -886,12 +956,9 @@ banner-end-bg
 
 
 
-
-
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
-<!--           NEW METHOD FOR BANNERS ADDED           -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+ <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+ <!--                   BOTTOM BANNERS                 -->
+ <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
 <div style="" class="bannerstart-contain">
 <div style="" class="bannerend-inside">
 <!-- <img src="../../assets/deco/banners/postBorder_60x1000-assets/paintycrafts_top.png" style="" class="banner-img banner-end"></div> -->
@@ -900,80 +967,24 @@ banner-end-bg
 
 
 
-<!-- /Users/charlie/Documents/work/Folios/charlierenwick_folio_site/creatureframe-com/repo/page_creatureframe/post/assets/deco/banners/postBorder_60x1000-assets/paintycrafts_yellgreen2.png -->
-
-
-
-    <!-- end <div class="font-styling"> and "scrollbox-wheel" and "scrollbox" -->
-
-
-
-</div>
-    <!-- end <div style="" class="post-background-full final"> and outermost "post-cohostbarrier" -->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
-
-    <!-- * * * * * * * * * * * * * * * * * * * *  -->
-    <!-- ADD END DIV FOR SCROLLBOX-WHEEL -->
-    </div>
-    <!-- * * * * * * * * * * * * * * * * * * * *  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- ADDING COHOST LINK TO POST -->
-        <!-- /* background: url('../../assets/icons/cohost logo-assets/cohost_logo_35x25_purple.png') top left; */ -->
-<!--
-<style>
-    .icon-cohost {
-        position:relative;
-        width:35px;
-        height:25px;
-        background: url('../../assets/icons/cohost logo-assets/cohost_logo_35x25_white.png') top left;
-        z-index:100;
-        background-repeat: no-repeat;
-        margin-top: 5px;
-    }
-    .icon-cohost:hover {
-        background: url('../../assets/icons/cohost logo-assets/cohost_logo_35x25_orange.png') top left;
-    }
-</style>
-<div align="right">
-    <a href="https://web.archive.org/web/20240927103348/https://cohost.org/Cro/post/6630216-raindrop-rig-mak" target="_blank"><div class="icon-cohost"></div></a>
-</div>
- -->
-
-
-
-
-
-
-
+</div></div></div>
+<!-- end for post-cohostbarrier, postsize, "outermostbox" -->
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
-</div>
-<!-- end id "postsize" -->
-<!-- * * * * * * * * * * * * * * * * * * * *  -->
-</div>
-<!-- end columnbox -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1199,7 +1210,5 @@ banner-end-bg
 
 
 
-</div>
-<!-- end <div class="outermostbox"> -->
 </body>
 </html>
