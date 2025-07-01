@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- THIS ONE COMBINES A SLIMMED DOWN VERSION OF acnldreams_stylesheet.css AND THE MINIFIED cohostclient.css -->
+<link data-chunk="client" rel="stylesheet" href="../assets/acnldreams_stylesheet_min.css">
+<!-- <link data-chunk="client" rel="stylesheet" href="../3d/jazzcat_style.css"> -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="icon" type="image/png" href="assets/icons/green-computer.gif">
+<title>
+    RSS generator
+</title>
+<link href="https://creatureframe.com/rss.xml" rel="alternate" type="application/rss+xml" title="the creatureframe RSS feed">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+<!--Google Fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<a href="https://creatureframe.com/post/"><div class="goback"></div></a>
+
+<!--
+ORDER:
+outermostbox
+columnbox
+postsize
+post-cohostbarrier
+post-background-full post-bgimg bgimg-alignment final
+scrollbox
+ -->
+
+<!--
+banners:
+ 1000x55px
+ -->
+
+
+ <!-- color:#623008;
+ #813d00
+ color:#723e13;
+ color:#FFDE78;
+#623008
+#f5b043
+#c59172);
+#f9b351
+#44b173
+#70331d
+#ffffff
+#623008;
+#e86363
+#53a2a6
+#c1756f
+#40adaf
+#43a8a3
+#40a89a
+#28776c
+#225b53
+#ede4cf;
+#faf4e9
+transparent
+darkseagreen
+#95705b
+#97615c
+#845653
+
+
+PRESETS FOR ROOS:
+bigtitles
+--palette3: #f5b043;
+--palette3-border: #f5b043;
+--palette3-shad: #40a89a;
+--palette3-shadtext: #28776c;
+bigtitles
+--palette3: #FFDE78;
+--palette3-border: #40a89a;
+--palette3-shad: #40a89a;
+--palette3-shadtext: #95705b;
+bigtitles
+--palette3: #FFDE78;
+--palette3-border: #f5b043;
+--palette3-shad: #f5b043;
+--palette3-shadtext: #97615c;
+
+ -->
+
+
+
+
+<style>
+:root {
+--postheight: calc(100% - 40px);
+--postheight-margintop: 15px;
+--postwidth: 580px;
+--postwidth: 780px;
+
+--bannerstart-height: 55px;
+--bannerend-height: 55px;
+
+/* unused, was edge boder of whole page */
+--palette1: #efe3cf;
+/* for main text (light #ede4cf) */
+--palette2: #473627;
+/* for bigtitles (and liltitles which are kinda a mess rnow) */
+--palette3: #623008;
+--palette3-border: #c59172;
+--palette3-shad: #c59172;
+--palette3-shadtext: none;
+/* for scrollbar */
+--palette4: #FFDE78;
+--palette4-hover: #faf4e9;
+/* and it's border */
+--palette5: #f5b043;
+--palette5-hover: transparent;
+/* for tinytext and tinytextbox (credits box) */
+--palette6: #faf4e9;
+--palette7: #c59172;
+/* for HRs and underlines of .minititle */
+--palette8: #c59172;
+/* border of post window */
+--palette-postborder: #ede4cf;
+--palette-textboxborder: #ede4cf;
+--palette-textboxshad: #ede4cf;
+
+--bg-wholepage: fixed url("../assets/backgrounds/painty/yellow/backgrounds_painty_01_yellow_blur 8x8.jpg");
+--bg-wholepage: fixed url("../assets/backgrounds/painty/yellow/backgrounds_painty_01_yellow_pale.jpg");
+--bg-post: fixed url(../assets/backgrounds/painty/yellow/backgrounds_painty_01_yellow.jpg);
+--bg-textbox: fixed url(../assets/backgrounds/painty/yellow/backgrounds_painty_01_yellow_blur 0x8.jpg);
+--bg-codebox: fixed url(../assets/backgrounds/painty/yellow/backgrounds_painty_01_yellow_blur-0x12_sat.jpg);
+--bg-titlebox: fixed url(../assets/backgrounds/painty/yellow/backgrounds_painty_01_yellow_blur-0x12_sat.jpg);
+--bg-pos: top right;
+/* contain, cover, 30%; 200px 100px; */
+--bg-size: cover;
+}
+
+/* outermostbox and columnbox set up for the whole page */
+.outermostbox {
+height:calc(100% - 30px);
+width:100%;
+position:fixed;
+min-height:100%;
+overflow-y:auto;
+/* border:1px solid var(--palette1); */
+margin:0px;
+box-shadow:
+inset rgba(0, 0, 0, 0.3) 1px 2px 25px,
+inset rgba(0, 0, 0, 0.3) 1px 2px 15px,
+inset rgba(0, 0, 0, 0.2) 3px 3.5px 6px;
+/* this as a flexbox replaces the need for the columnbox */
+display: inline-flex;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: space-around;
+align-items: center;
+align-content: center;
+}
+/* .columnbox{
+align-items: center;
+display: flex;
+justify-content: center;
+height:100%;
+} */
+.postsize{
+max-width:var(--postwidth);
+padding:auto;
+/* not needed anymore now using flexbox */
+/* height:var(--postheight); */
+/* margin-top:var(--postheight-margintop); */
+
+/* or turn these on for full length */
+height:100%;
+margin:0px;
+/* border:1px solid red; */
+
+/* then turn on flexbox for proper floating */
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+justify-content: center;
+align-items: normal;
+align-content: normal;
+}
+.post-cohostbarrier {
+height:var(--postheight);
+border:1px solid var(--palette-postborder);
+/* margin:0px; */
+/* padding:0px; */
+/* or turn these on for full length */
+/* height:100%; */
+/* margin:0px; */
+/* border:2px solid green; */
+}
+
+
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BACKGROUNDS */
+/* . . . . . . . . . . . . . . . . . . . . . */
+.post-bgimg{
+background: var(--bg-post);
+background-position: var(--bg-pos);
+background-size: var(--bg-size);
+}
+
+/* textbox-bgimg not used anymore */
+.textbox{
+background: var(--bg-textbox);
+background-position: var(--bg-pos);
+background-size: var(--bg-size);
+box-shadow: 5px 3px 0px var(--palette-textboxshad);
+box-shadow:
+rgba(0, 0, 0, 0.3) 1px 2px 3px,
+rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
+
+position:relative;
+z-index:5;
+/* font-size:9pt; */
+line-height:135%;
+border:1px solid var(--palette-textboxborder);
+padding:0px 20px;
+}
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BANNER AT START AND END OF POST */
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* banner-img: this has replaced "bannerstart-img" in past posts  */
+
+
+
+/* margin-top: -670px !important; overflow-x:hidden; width:100%; margin-left:-1px; */
+
+
+
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* TEXT STYLES */
+/* . . . . . . . . . . . . . . . . . . . . . */
+.font-styling{
+font: 10pt "Verdana", "Courier", "Helvetica", sans-serif;
+/* font: 12pt "Verdana", "Courier", "Helvetica", sans-serif; */
+font-weight: 300;
+letter-spacing: 0.85px;
+text-align: justify;
+color: var(--palette2);
+
+font: 11pt "Raleway", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+letter-spacing: 1.05px;
+
+font: 12pt "Space Grotesk", sans-serif;
+font-optical-sizing: auto;
+font-weight: 300;
+letter-spacing: 0.25px;
+/* letter-spacing: normal; */
+}
+/* for the top h1 title box, should probs replace textbox w whatever main text is using, or rmv these altogether if not needed */
+.bigtitle{
+font-size: 28pt;
+font-family: courier;
+font-weight: 600;
+text-decoration: none;
+filter: drop-shadow(3px 0px 0px #623008);
+border:none;
+background:transparent;
+background: var(--bg-titlebox);
+background-position: var(--bg-pos);
+background-size: var(--bg-size);
+padding:10px 17px;
+margin:0px;
+
+/* for orange bubble */
+border-radius: 8px;
+margin:10px 40px;
+border:1px solid var(--palette3-border);
+filter: none;
+padding:15px;
+line-height: 74%;
+
+color: var(--palette3);
+box-shadow: none;
+/* filter: drop-shadow(3px 0px 0px #623008); */
+/* softer drop shadow */
+box-shadow:
+rgba(0, 0, 0, 0.2) 2px 4px 12px,
+rgba(0, 0, 0, 0.1) 1px 3px 8px,
+rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
+/* for hard drop shadow */
+box-shadow: 5px 3px 0px #FFDE78;
+box-shadow: 5px 5px 0px var(--palette3-shad);
+
+padding:15px;
+line-height: 74%;
+
+position:relative;
+z-index:15;
+
+/* font-family: "Lusitana", serif; */
+/* font-weight: 400; */
+/* font-weight: 700; */
+
+text-shadow:
+3px 3px 0px var(--palette3-shadtext),
+rgba(0, 0, 0, 0.2) -4px 2px 3px;
+/* EXAMPLES:
+text-shadow:
+  1px 1px 2px red,
+  0 0 1em blue,
+  0 0 0.2em blue;
+text-shadow:
+  3px 3px 0px #623008,
+  -3px -1px 10px #623008;
+text-shadow:
+  3px 3px 0px #623008,
+  rgba(0, 0, 0, 0.2) -4px 2px 3px;
+*/
+
+}
+
+
+.liltitle{
+font-size: 18pt;
+/* background: none; */
+filter: none;
+margin:0% 22% -17px 22%;
+padding:11px;
+border-radius: 8px;
+/* width:80%; */
+width:auto;
+/* margin:0% 10% -17px 10%; */
+color: var(--palette3) !important;
+background: var(--bg-titlebox);
+background-position: var(--bg-pos);
+background-size: var(--bg-size);
+border:1px solid var(--palette3);
+box-shadow: 5px 3px 0px #c59172;
+}
+
+.bigbutton:hover,.lilbutton:hover{
+background: #623008;
+color: #FFDE78 !important;
+border:1px solid #fff;
+}
+
+.buttonholder{
+  display: flex;
+
+  align-items: center;
+  /* flex-flow: column; */
+  flex-direction: column;
+  align-content: center;
+
+  background-color: #bbdefb;
+  height: 100%;
+  padding: 15px;
+  gap: 5px;
+}
+
+/* .buttonholder > div{
+  background: #ffecb3;
+  border: 3px solid #ffcc80;
+  border-radius: 5px;
+  padding: 8px;
+} */
+
+
+.urlyblock{
+	border:none;
+	border-bottom:1px solid #529eaa;
+	border-top:1px solid #529eaa;
+	padding:1px;
+	background:#3c5186;
+}
+
+.urlyblock:hover{
+	border:none;
+	border-bottom:1px solid #f5b043;
+	border-top:1px solid #f5b043;
+	padding:1px;
+	background:#3c5186;
+}
+
+
+.tinytext{
+font: 8pt "Tahoma", "DM Mono", "Courier", "Verdana", "Helvetica", sans-serif;
+font-weight: 500;
+
+font: 9.5pt "Space Grotesk", sans-serif;
+font-optical-sizing: auto;
+font-weight: 100;
+letter-spacing: 0.45px;
+font: 9pt "Raleway", sans-serif;
+/* letter-spacing: normal; */
+
+line-height: 125%;
+letter-spacing: 0.5px;
+color: var(--palette6);
+text-align: justify;
+}
+/* for credits box at end */
+.tinytextbox{
+color: var(--palette6);
+}
+.minititle{
+border:none;
+border-bottom:1px solid var(--palette8);
+}
+</style>
+<style>
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BULLET POINTS FOR LISTS */
+/* . . . . . . . . . . . . . . . . . . . . . */
+ul {
+margin: 0 0 0 22px;
+font: 9pt Verdana;
+letter-spacing: 1.5px;
+font: 10pt "Space Grotesk", sans-serif;
+font-optical-sizing: auto;
+font-weight: 300;
+letter-spacing: 0.45px;
+}
+.list-notes li {
+background: url("../assets/deco/icons/notebook.gif") no-repeat 7px 7px transparent;
+list-style-type: none;
+margin: 0;
+padding: 8px 20px 0px 39px;
+vertical-align: middle;
+margin-top: 7px;
+line-height: 140%;
+}
+
+
+body{
+background: var(--bg-wholepage);
+background-position: var(--bg-pos);
+background-size: var(--bg-size);
+}
+
+
+/* - - - - - - - - - - - -
+        SCROLLBARS
+- - - - - - - - - - - -  */
+/* this one is in the stylesheets and sets up the shadows */
+/* .scrollbox{ */
+    /* over-the-top shadow */
+	/* box-shadow:rgba(0, 0, 0, 0.14) 1px 3px 15px,rgba(0, 0, 0, 0.22) 0px 2.5px 5px,rgba(122, 122, 122, 0.32) 3px 3px 0px,rgba(122, 85, 85, 0.35) 1px 1px 0.3px; */
+    /* for firefox, testing. NOPE it overrides the custom nice one so fuck it! */
+    /* overflow: scroll;
+    scrollbar-color: red orange;
+    scrollbar-width: thin; */
+/* } */
+.scrollbox-wheel{
+line-height:1.7em;
+overflow-y:auto;
+overflow-x:hidden;
+height:100%;
+width:100%;
+margin: auto;
+text-align:justify;
+}
+.scrollbox-wheel::-webkit-scrollbar{
+width:1.1em;
+width:1.75em;
+/* width:1.60em; */
+/* box-shadow:inset 0 0 0.9em 0.1em var(--palette6); */
+/* border:2px solid yellow; */
+}
+.scrollbox-wheel::-webkit-scrollbar-thumb{
+border:0.45em solid transparent;
+border:.1em solid #fff;
+border:.3em solid var(--palette5);
+box-shadow:inset 0 0 0.5em 1.0em var(--palette4);
+/* box-shadow:
+inset 0 0 0.5em 0.8em var(--palette4),
+rgba(0, 0, 0, 0.9) 1px 2px 3px,
+rgba(0, 0, 0, 0.6) 0px 2.5px 6px; */
+border-radius:0.9em;
+}
+/* for solid drop shadow
+rgba(255, 255, 255, 1.0) -2px 2px 0px, */
+.scrollbox-wheel::-webkit-scrollbar-thumb:hover {
+    /* background: var(--palette4-hover); */
+    box-shadow:inset 0 0 0.5em 1.0em var(--palette4-hover);
+    filter: brightness(1.1);
+    border: 0.3em solid var(--palette5-hover);
+}
+
+/* dont really need this one for this page yet do i */
+/* .scrollbox-wheel::-webkit-scrollbar-track {
+    background: var(--palette5);
+    border-radius: 0.9em;
+    border:1px solid aqua;
+} */
+
+
+/** Mozilla Firefox ONLY */
+@-moz-document url-prefix(){
+    .scrollbox-wheel{
+        scrollbar-color: var(--palette4) var(--palette5);
+    }
+}
+
+
+/* Mobile-first approach - hide side images on smaller screens */
+@media only screen and (max-width: 768px) {
+
+    /* CUSTOM WINDOW AND IMAGE CHANGES */
+    .photoborder{
+        padding:6px;
+    }
+
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* .columnbox {
+      width: 100%;
+      padding: 0;
+    } */
+
+    .postsize{
+    max-width:100%;
+    width:100%;
+    padding:none;
+    height:var(--postheight);
+    margin:0px;
+    height:100%;
+    box-sizing: border-box;
+    }
+
+    .post-cohostbarrier {
+    border:1px solid var(--palette-postborder);
+    padding:0px;
+    height:100%;
+    margin:0px;
+    }
+
+    /* Adjust font size for mobile */
+    .bigtitle {
+      font-size: 16pt;
+    }
+
+    .font-styling {
+      font-size: 10pt;
+      padding: 10px;
+    }
+}
+</style>
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+<div class="outermostbox">
+<!-- <div class="columnbox"> -->
+<div class="postsize">
+<div class="post-cohostbarrier">
+
+
+
+
+
+<style>
+/* - - - - - - - - - - - -
+        BANNERS
+- - - - - - - - - - - -  */
+.bannerstart-top{
+top:0px;
+overflow:hidden;
+position:relative;
+z-index:60;
+pointer-events:none;
+margin-top:0px;
+margin-bottom:calc(var(--bannerstart-height) * -1);
+height:var(--bannerstart-height);
+object-fit:cover;
+}
+/* currently used for start and end banners, w end's own style adding "rotate:180deg;" */
+.bannerstart-img2{
+margin:0px 0px;
+pointer-events:none;
+object-fit:cover;
+overflow:hidden;
+width:inherit;
+height:var(--bannerstart-height);
+max-width:100%;
+width:100%;
+filter: drop-shadow(0 0 0.45rem rgba(0, 0, 0, 0.6));
+image-rendering:pixelated;
+}
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BANNER AT START AND END OF POST */
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* banner-img: this has replaced "bannerstart-img" in past posts  */
+.banner-start{
+    margin-top:30px;
+    filter: none;
+    filter: drop-shadow(-2px 2px 3px #813d00);
+    filter: drop-shadow(-2px 2px 0.5px #333);
+    filter: drop-shadow(-2px 2px 3.7px rgba(0, 0, 0, 0.5));
+}
+.bannerend-inside{
+    height:100%;
+    margin-top: 0px;
+}
+/* these two were used for end banner */
+.banner-img{
+    min-width: 1000px;
+    max-width: 1000px;
+}
+.banner-end{
+    filter: none;
+    filter: drop-shadow(4px 5px 0px #f5b043);
+    /* filter: drop-shadow(-2px 2px 6.7px rgba(0, 0, 0, 0.5)); */
+    rotate:180deg;
+}
+/* BANNER STYLE FROM ACNL */
+.bannerstart-contain {
+margin-top:calc(var(--bannerend-height) * -1);
+height:var(--bannerend-height);
+}
+</style>
+
+
+
+
+
+
+
+
+    <!-- * * * * * * * * * * * * * * * * * * * * *  -->
+    <!--                 TOP BANNER                 -->
+    <!-- . . . . . . . . . . . . . . . . . . . . .  -->
+    <div style="" class="bannerstart-top">
+    <img src="../assets/deco/banners/postBorder_60x1000-assets/paintycrafts_orangeyellowbrown.png" class="bannerstart-img2">
+    </div>
+    <!-- * * * * * * * * * * * * * * * * * * * * *  -->
+    <!--             POST CONTAINER TOP             -->
+    <!-- . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- <div style="" class="post-cohostbarrier"> -->
+    <div style="" class="post-background-full post-bgimg bgimg-alignment final">
+    <div class="scrollbox">
+    <!-- * * * * * * * * * * * * * * * * * * * *  -->
+    <!-- ADDING SCROLLBOX WHEEL -->
+    <div class="scrollbox-wheel">
+        <!-- * * * * * * * * * * * * * * * * * * * *  -->
+    <div class="font-styling">
+    <!-- spacer -->
+    <div style="width:10px;height:25px;"></div>
+    <!-- * * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="bigtitle" align="center" style="color:#623008;position:relative;z-index:15;">
+    RSS generator
+    </div>
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+<!--
+text style previously used per contentbox
+
+style="margin-top:-20px;position:relative;z-index:5;font-size:9pt;line-height:155%;" -->
+
+
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- gif demo -->
+    <!-- margin-top:10px; -->
+    <!-- <div align="center" style="margin-top:-15px;position:relative;z-index:10;"><img src="../../../assets/eachpost/tinytools/tinytools_maya_dupeAndHide.gif" class="image-fullscroll lilborder"></div> -->
+
+
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- CONTENT BOX -->
+    <div align="center"  class="textbox">
+    <br>
+
+    i made a spreadsheet for easily adding your pages and auto generating code for your RSS file. it makes it easier to write up each item's details and makes it less hassle to add html tags!
+
+    <br><br>
+    <!-- <div class="buttonholder"> -->
+    <a href="https://docs.google.com/spreadsheets/d/16DWQh9f2i2WDtDPMDPtyBxDc6HVDq2hW5ULrb7eqA58/edit?usp=sharing"  target="_blank"><div class="bigtitle liltitle bigbutton" align="center" style="color:#623008;">
+    it's here
+    </div></a>
+<!-- </div> -->
+
+
+    <br><br>
+    <b>instructions:</b> first <a class="urly" href="https://docs.google.com/spreadsheets/d/16DWQh9f2i2WDtDPMDPtyBxDc6HVDq2hW5ULrb7eqA58/edit?usp=sharing"  target="_blank">go to the spreadsheet</a> and File > Make a Copy, to add it to your own google sheets account (so now you can edit it!)
+
+
+
+    <br><br>
+    </div>
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+    <div align="center" style="margin-top:-40px;position:relative;z-index:10;"><img src="tinytools_assets/rssgenerator_step1_90_90_90.gif" class="image-fullscroll lilborder"></div>
+
+
+
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- CONTENT BOX -->
+    <div align="center"  class="textbox">
+    <br>
+
+    now you can fill in your site's details, and the details for all posts/pages you want to push to your readers. all <strong>yellow</strong> cells are there for you to add stuff to.
+    <br><br>
+    you can add whatever you want to the descriptions; you're essentially making a little mini notification post, telling your readers to come and read the full page at whatever link you've provided
+    <br><br>
+
+
+    <div style="border:1px solid #000;padding:14px;margin:10px;">
+    <b>things to know:</b>
+    <br>- the published date has to be that exact format, if you want to get really specific, you can generate a line for your exact timezone to copypaste from <a href="https://timestampgenerator.com/" target="_blank" class="urly"><b>at this site</b></a>. after pressing "submit", scroll down to the "common date formats" just below it and copy the line called "RFC 2822" (there's a little clipboard button)
+    <div style="height:8px;"></div>
+    - every "post url" listed needs to be unique
+    <div style="height:8px;"></div>
+    - <a href="https://doqmeat.com/notebook/tutorials/rss/" target="_blank" class="urly"><b>this guide</b></a> goes into good detail here on setting up RSS and the weird things to know about it
+    </div>
+
+
+    <br>
+    once you're done, copy the <strong>blue</strong> cell that gives the "output" code, and paste that into your rss.xml file.
+    <br><br>(it can be named whatever.xml, it's just the file that your readers add to their rss readers that will allow them to see your messages)
+
+
+    <br><br>
+    </div>
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+    <div align="center" style="margin-top:-40px;position:relative;z-index:10;"><img src="tinytools_assets/rssgenerator_step2_90_90_90.gif" class="image-fullscroll lilborder"></div>
+
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- CONTENT BOX -->
+    <div align="center"  class="textbox">
+    <br>
+
+    and there you go, it automatically will solve the html tags you add to a description, so it's easy to add images. (and i'm using <a href="https://chromewebstore.google.com/detail/feedbro/mefgmmbdailogpfhfblcnnjfmnpnmdfa?hl=en" target="_blank" class="urly"><b>feedbro extension</b></a> as my rss reader here.)
+
+    <br><br>whenever you want to update your readers who are subscribed to your RSS feed, just add a new post line to your spreadsheet and then copypaste the whole output cell into your .xml again.
+
+    <br><br>
+    and if you want to know more about rss, i found <a href="https://doqmeat.com/notebook/tutorials/rss/" target="_blank" class="urly"><b>doqmeat's guide</b></a> the most digestable for me, but here are some others you may find preferable:
+    <!-- <div style="height:8px;"></div>
+    <a href="https://wiki.melonland.net/rss_guide" target="_blank" class="urly"><b>melon's guide</b></a>
+    <div style="height:8px;"></div>
+    <a href="https://pklucky.neocities.org/coding/rss-tutorial" target="_blank" class="urly"><b>pklucky's guide</b></a>
+    <div style="height:8px;"></div>
+    <a href="https://mayfrogs.neocities.org/ramblings/createrss" target="_blank" class="urly"><b>mayfrog's guide</b></a>
+    <div style="height:8px;"></div>
+    <a href="https://goblin-heart.net/sadgrl/learn/articles/static-rss" target="_blank" class="urly"><b>sadgrl's guide</b></a> -->
+
+
+    <style>
+    /* . . . . . . . . . . . . . . . . . . . . . */
+    /* BULLET POINTS FOR LISTS */
+    /* . . . . . . . . . . . . . . . . . . . . . */
+    ul {
+      margin: 0 0 0 22px;
+      font: 8pt Verdana;
+      letter-spacing: 1.5px;
+    }
+    .list-notes li {
+        background: url(../assets/deco/icons/notebook.gif) no-repeat 7px 7px transparent;
+        list-style-type: none;
+        margin: 0;
+        padding: 8px 20px 0px 39px;
+        vertical-align: middle;
+        margin-top: 7px;
+        line-height: 140%;
+        background: url('../assets/deco/icons/animal crossing other icons/ax-gold.gif') no-repeat 7px 7px transparent;
+        padding: 8px 20px 0px 36px;
+    }
+    </style>
+
+    <ul class="list-notes">
+        <li><a href="https://wiki.melonland.net/rss_guide" target="_blank" class="urly"><b>melon's guide</b></a>
+        </li>
+        <li><a href="https://pklucky.neocities.org/coding/rss-tutorial" target="_blank" class="urly"><b>pklucky's guide</b></a>
+        </li>
+        <li><a href="https://mayfrogs.neocities.org/ramblings/createrss" target="_blank" class="urly"><b>mayfrog's guide</b></a>
+        </li>
+        <li>
+        <a href="https://goblin-heart.net/sadgrl/learn/articles/static-rss" target="_blank" class="urly"><b>sadgrl's guide</b></a>
+        </li>
+    </ul>
+
+
+    <br>
+    hit me up if you find any bugs, just whipped this up this arvo.
+    <br><br>and if you want to subscribe to my rss feed i'll be setting it up at: <br><a href="https://creatureframe.com/rss.xml" target="_blank" class="urly" style="font-family:monospace;"><b>https://creatureframe.com/rss.xml</b></a>
+
+    <br><br>
+    </div>
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+
+
+
+
+
+<!-- inline style was: color:#623008;position:relative;z-index:15; -->
+<div class="bigtitle" align="center" style="">
+how to use RSS
+</div>
+<div class="bigtitle liltitle" align="center" style="">
+as a reader
+</div>
+<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+<!-- CONTENT BOX -->
+<div align="center"  class="textbox">
+<br>
+
+and there you go, it automatically will solve the html tags you add to a description, so it's easy to add images. (and i'm using <a href="https://chromewebstore.google.com/detail/feedbro/mefgmmbdailogpfhfblcnnjfmnpnmdfa?hl=en" target="_blank" class="urly"><b>feedbro extension</b></a> as my rss reader here.)
+
+<br><br>whenever you want to update your readers who are subscribed to your RSS feed, just add a new post line to your spreadsheet and then copypaste the whole output cell into your .xml again.
+
+<br><br>
+and if you want to know more about rss, i found <a href="https://doqmeat.com/notebook/tutorials/rss/" target="_blank" class="urly"><b>doqmeat's guide</b></a> the most digestable for me, but here are some others you may find preferable:
+
+<style>
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BULLET POINTS FOR LISTS */
+/* . . . . . . . . . . . . . . . . . . . . . */
+ul {
+  margin: 0 0 0 22px;
+  font: 8pt Verdana;
+  letter-spacing: 1.5px;
+}
+.list-notes li {
+    background: url(../assets/deco/icons/notebook.gif) no-repeat 7px 7px transparent;
+    list-style-type: none;
+    margin: 0;
+    padding: 8px 20px 0px 39px;
+    vertical-align: middle;
+    margin-top: 7px;
+    line-height: 140%;
+    background: url('../assets/deco/icons/animal crossing other icons/ax-gold.gif') no-repeat 7px 7px transparent;
+    padding: 8px 20px 0px 36px;
+}
+</style>
+
+<ul class="list-notes">
+    <li><a href="https://wiki.melonland.net/rss_guide" target="_blank" class="urly"><b>melon's guide</b></a>
+    </li>
+    <li><a href="https://pklucky.neocities.org/coding/rss-tutorial" target="_blank" class="urly"><b>pklucky's guide</b></a>
+    </li>
+    <li><a href="https://mayfrogs.neocities.org/ramblings/createrss" target="_blank" class="urly"><b>mayfrog's guide</b></a>
+    </li>
+    <li>
+    <a href="https://goblin-heart.net/sadgrl/learn/articles/static-rss" target="_blank" class="urly"><b>sadgrl's guide</b></a>
+    </li>
+</ul>
+
+
+<br>
+hit me up if you find any bugs, just whipped this up this arvo.
+<br><br>and if you want to subscribe to my rss feed i'll be setting it up at: <br><a href="https://creatureframe.com/rss.xml" target="_blank" class="urly" style="font-family:monospace;"><b>https://creatureframe.com/rss.xml</b></a>
+
+<br><br>
+</div>
+<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- CREDITS BOX -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<!-- if add tinytext class, have to manually add text-align: center;  -->
+
+<!-- <div align="center"><div style="padding:5px;line-height:150%;font-family: verdana, tahoma;font-size: 9px;" class="tinytextbox bgimg-alignment textbox">
+<b><u>credits:</u></b><br>
+book pixel sprite by <a href="https://web.archive.org/web/20160225014532/https://ouka.kuronowish.com/rehoeass2/">ReHoeass</a>
+</div></div><br> -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+<!-- spacer to scroll past bottom border -->
+<div style="width:10px;height:25px;"></div>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+<!-- END BOXES FOR POST -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+</div> </div></div></div>
+<!-- end of  font-styling, scrollbox-wheel, scrollbox, and the "<div style="" class="post-background-full post-bgimg bgimg-alignment final">" -->
+
+
+
+
+<!-- CLASSES IN jazzcat_style.css TO OVERWRITE HERE IF NEEDING TO CHANGE STUFF :
+banner-end-noflip
+bannerend-inside-bg
+banner-end-bg
+ -->
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+<!--                   BOTTOM BANNERS                 -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+<div style="" class="bannerstart-contain">
+<div style="" class="bannerend-inside">
+<!-- <img src="../assets/deco/banners/postBorder_60x1000-assets/paintycrafts_top.png" style="" class="banner-img banner-end"></div> -->
+<img src="../assets/deco/banners/postBorder_60x1000-assets/paintycrafts_orangeyellowbrown.png" style="rotate:180deg;" class="bannerstart-img2"></div>
+</div>
+
+
+
+
+</div></div></div>
+<!-- end for post-cohostbarrier, postsize, "outermostbox" -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- HEX TO RGB (255s):
+#f5b043     245,176,67
+#40a89a     64,168,154,
+#97615c     151,97,92,
+#FFDE78     255,222,120,
+
+
+ -->
+
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- COMMENTS BOX -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<style>
+.revealdetails{
+    margin-top:-40px;margin-left:25px;color:#fff;font-family:courier;
+}
+
+:root {
+    /* done either way */
+  /* --commentstransparency: 0.3; */
+  /* can also use a bg image */
+  --commentsbg: rgba(255, 255, 255, 0.4);
+
+  --commentsbg: rgba(151,97,92, 0.95);
+  --commentsborder:1px solid #fff;
+  --commentsbuttonsborder:1px solid #fff;
+  --commentsbuttonsborder-hover:1px solid #40a89a;
+
+  --commentsreplybg: rgba(30, 90, 220, 0.75);
+  --commentsreplyborder:2px dashed #40a89a;
+
+  --commentsfontfam:Verdana;
+  --commentsfontfam:Courier;
+
+  --backgroundblur1: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top left fixed;
+  --backgroundblur2: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top left fixed;
+
+  --commentsfontcolor:#fff;
+  --commentsfontcolor:#FFDE78;
+  --commentsaccentcolor1:#222;
+  --commentsaccentcolor2:#40a89a;
+  --commentsaccentcolor2:#ffffff;
+  --commentsaccentcolor3:#40a89a;
+  --commentsaccentcolor4:#40a89a;
+  --commentsaccentcolor5:#5E2C49;
+  --commentsaccentcolor6:#40a89a;
+
+  --commentsfontfam:Courier;
+  --commentsfontsize:14px;
+  --commentsfontsize:9.5pt;
+
+
+  --buttonbordercolor:#40a89a;
+  --buttontextcolor:#40a89a;
+  --buttonbgcolor:#FFDE78;
+  --buttonbordercolor-hover:#FFDE78;
+  --buttontextcolor-hover:#FFDE78;
+  --buttonbgcolor-hover:#40a89a;
+
+  --inputfieldtextcolor:#5E2C49;
+  --inputfieldbordercolor:#40a89a;
+  --inputfieldbordercolorhighlight:#40a89a;
+}
+
+.commentssection{
+    width:100%;
+    max-width:600px;
+    margin-top: 1px;
+    position: relative;
+    z-index: 100;
+    text-align: justify;
+}
+#c_widget {
+    font-family: var(--commentsfontfam);
+    color: var(--commentsfontcolor);
+    font-weight: 600;
+    font-size: var(--commentsfontsize);
+}
+#c_widget button, #c_widget input[type=submit] {
+    background-color: var(--buttonbgcolor);
+    color: var(--buttontextcolor);
+    border: 1px solid var(--buttonbordercolor);
+}
+#c_widget button:hover, #c_widget input[type=submit]:hover {
+    background-color: var(--buttonbgcolor-hover);
+    color: var(--buttontextcolor-hover);
+    border: 1px solid var(--buttonbordercolor-hover);
+}
+#c_widget button:disabled, #c_widget input[type=submit]:disabled {opacity: 60%;}
+#c_widget button:disabled:hover, #c_widget input[type=submit]:disabled:hover {
+    background-color: var(--buttonbgcolor-hover);
+    color: var(--buttontextcolor-hover);
+    border: 1px solid var(--buttonbordercolor-hover);
+}
+
+/* #c_widget div { */
+    /* padding:5px 5px; */
+/* } */
+
+/* Input section */
+#c_inputDiv {
+    padding: 10px;
+    text-transform: lowercase;
+    /* done either way */
+    /* background-color: rgba(255, 255, 255, var(--commentstransparency) ); */
+    /* background-color: var(--commentsbg); */
+    background: var(--commentsbg);
+    border: var(--commentsborder);
+    border-radius: 5px;
+    border-radius: 8px;
+}
+
+.c-comment {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: var(--commentsbg);
+    border: var(--commentsborder);
+    border-radius: 4px;
+    /* margin-bottom: 0px; */
+}
+
+.c-site {
+    color: var(--commentsaccentcolor5);
+    border:1px solid #fff;
+    padding:3px 6px;
+    border-radius: 4px;
+    background: var(--commentsaccentcolor3);
+    border: var(--commentsbuttonsborder);
+ }
+.c-site:hover {
+    color: var(--commentsaccentcolor4);
+    background: #fff;
+    border: var(--commentsbuttonsborder-hover);
+}
+.c-text {
+    color: var(--commentsaccentcolor2);
+}
+
+.c-reply {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 1);
+    border: var(--commentsbuttonsborder);
+    border-radius: 4px;
+    border: var(--commentsreplyborder);
+    background: var(--commentsreplybg);
+}
+
+/* border colours for inputs */
+.c-input {
+    /* color: #5E2C49; */
+    color: var(--inputfieldtextcolor);
+    border: 1px solid var(--inputfieldbordercolor);
+}
+.c-input:focus {border: 1px solid var(--inputfieldbordercolorhighlight);}
+</style>
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- <br clear="all"> -->
+
+
+
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- COMMENTS SECTION DEMOING COLOURS -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- <div align="center">
+<div class="commentssection">
+<div id="c_widget">
+    <div id="c_inputDiv">
+        <form id="c_form" onsubmit="c_submitButton.disabled = true; v_submitted = true;" method="post" target="c_hiddenIframe" action="https://docs.google.com/forms/d/e/1FAIpQLSfogBDOAZfBlrnJ2e9YsdlwNwdKlyUr4GvQVvKmiM6K48G2xQ/formResponse">
+    <h2 id="c_widgetTitle">Leave a comment!</h2>
+
+    <div id="c_nameWrapper" class="c-inputWrapper">
+        <label class="c-label c-nameLabel" for="entry.694796007">Name</label>
+        <input class="c-input c-nameInput" name="entry.694796007" id="entry.694796007" type="text" maxlength="16" required="">
+    </div>
+
+    <div id="c_websiteWrapper" class="c-inputWrapper">
+        <label class="c-label c-websiteLabel" for="entry.605179758">Website (Optional)</label>
+        <input class="c-input c-websiteInput" name="entry.605179758" id="entry.605179758" type="url" pattern="https://.*">
+    </div>
+
+    <div id="c_textWrapper" class="c-inputWrapper">
+        <label class="c-label c-textLabel" for="entry.341888751"></label>
+        <textarea class="c-input c-textInput" name="entry.341888751" id="entry.341888751" rows="4" cols="50" maxlength="500" required=""></textarea>
+    </div>
+
+    <input id="c_submitButton" name="c_submitButton" type="submit" value="Submit">
+<input type="text" id="entry.1631738198" name="entry.1631738198" style="display: none;"><span id="c_replyingText" style="display: none;"></span><input type="text" id="entry.532799568" name="entry.532799568" style="display: none;"><iframe id="c_hiddenIframe" name="c_hiddenIframe" onload="if(v_submitted){fixFrame()}" style="display: none;"></iframe></form>
+    </div>
+    <div id="c_container"><div id="test name|--|10/4/2024 15:18:27" class="c-comment" style="display: block;"><h3 class="c-name">test name</h3><span class="c-timestamp">04/10/2024</span><a href="https://creatureframe.com/" class="c-site">Website</a><p class="c-text">hello</p><button value="test name|--|10/4/2024 15:18:27" onclick="openReply(this.value)" class="c-replyButton">Reply</button></div></div>
+
+    <div id="hey|--|10/4/2024 17:18:04" class="c-comment" style="display: block;"><h3 class="c-name">hey</h3><span class="c-timestamp">04/10/2024</span><p class="c-text">hallo</p><button value="hey|--|10/4/2024 17:18:04" onclick="openReply(this.value)" class="c-replyButton">Reply</button><button onclick="expandReplies(this.parentElement.id)" class="c-expandButton">Show Replies (1)</button><div id="hey|--|10/4/2024 17:18:04-replies" class="c-replyContainer" style="display: block;"><div id="hey you|--|10/4/2024 19:51:18" class="c-reply"><h3 class="c-name">hey you</h3><span class="c-timestamp">04/10/2024</span><p class="c-text">im replying to you</p></div></div></div>
+</div> </div> </div> -->
+
+
+
+
+
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- COMMENTS SECTION GENERATED -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<details class="revealdetails"><summary>comments</summary>
+<div align="center">
+<div class="commentssection">
+<div id="c_widget"></div>
+<script src="http://creatureframe.com/post/assets/comment-widget.js"></script>
+</div>
+</div>
+</details>
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+</div>
+<!-- end <div class="outermostbox"> -->
+</body>
+</html>
