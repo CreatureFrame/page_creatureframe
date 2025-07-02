@@ -364,23 +364,23 @@ border:1px solid #fff;
   padding: 8px;
 } */
 
-
 .urlyblock{
 	border:none;
-	border-bottom:1px solid #529eaa;
-	border-top:1px solid #529eaa;
-	padding:1px;
-	background:#3c5186;
+	border-bottom:2px solid #529eaa;
+	border-top:2px solid #529eaa;
+	padding:0px 3px;
+	background:transparent;
+    font-weight:600;
 }
 
 .urlyblock:hover{
 	border:none;
-	border-bottom:1px solid #f5b043;
-	border-top:1px solid #f5b043;
-	padding:1px;
+	border-bottom:2px solid #f5b043;
+	border-top:2px solid #f5b043;
+	padding:0px 3px;
 	background:#3c5186;
+	background:rgba(220, 225, 210, 0.5);
 }
-
 
 .tinytext{
 font: 8pt "Tahoma", "DM Mono", "Courier", "Verdana", "Helvetica", sans-serif;
@@ -717,7 +717,7 @@ style="margin-top:-20px;position:relative;z-index:5;font-size:9pt;line-height:15
 
 
     <br><br>
-    <b>instructions:</b> first <a class="urly" href="https://docs.google.com/spreadsheets/d/16DWQh9f2i2WDtDPMDPtyBxDc6HVDq2hW5ULrb7eqA58/edit?usp=sharing"  target="_blank">go to the spreadsheet</a> and File > Make a Copy, to add it to your own google sheets account (so now you can edit it!)
+    <b>instructions:</b> first <a class="urlyblock" href="https://docs.google.com/spreadsheets/d/16DWQh9f2i2WDtDPMDPtyBxDc6HVDq2hW5ULrb7eqA58/edit?usp=sharing"  target="_blank">go to the spreadsheet</a> and File > Make a Copy, to add it to your own google sheets account (so now you can edit it!)
 
 
 
@@ -744,11 +744,11 @@ style="margin-top:-20px;position:relative;z-index:5;font-size:9pt;line-height:15
 
     <div style="border:1px solid #000;padding:14px;margin:10px;">
     <b>things to know:</b>
-    <br>- the published date has to be that exact format, if you want to get really specific, you can generate a line for your exact timezone to copypaste from <a href="https://timestampgenerator.com/" target="_blank" class="urly"><b>at this site</b></a>. after pressing "submit", scroll down to the "common date formats" just below it and copy the line called "RFC 2822" (there's a little clipboard button)
+    <br>- the published date has to be that exact format, if you want to get really specific, you can generate a line for your exact timezone to copypaste from <a href="https://timestampgenerator.com/" target="_blank" class="urlyblock"><b>at this site</b></a>. after pressing "submit", scroll down to the "common date formats" just below it and copy the line called "RFC 2822" (there's a little clipboard button)
     <div style="height:8px;"></div>
     - every "post url" listed needs to be unique
     <div style="height:8px;"></div>
-    - <a href="https://doqmeat.com/notebook/tutorials/rss/" target="_blank" class="urly"><b>this guide</b></a> goes into good detail here on setting up RSS and the weird things to know about it
+    - <a href="https://doqmeat.com/notebook/tutorials/rss/" target="_blank" class="urlyblock"><b>this guide</b></a> goes into good detail here on setting up RSS and the weird things to know about it
     </div>
 
 
@@ -770,13 +770,13 @@ style="margin-top:-20px;position:relative;z-index:5;font-size:9pt;line-height:15
     <div align="center"  class="textbox">
     <br>
 
-    and there you go, it automatically will solve the html tags you add to a description, so it's easy to add images. (and i'm using <a href="https://chromewebstore.google.com/detail/feedbro/mefgmmbdailogpfhfblcnnjfmnpnmdfa?hl=en" target="_blank" class="urly"><b>feedbro extension</b></a> as my rss reader here.)
+    and there you go, it automatically will solve the html tags you add to a description, so it's easy to add images. (and i'm using <a href="https://chromewebstore.google.com/detail/feedbro/mefgmmbdailogpfhfblcnnjfmnpnmdfa?hl=en" target="_blank" class="urlyblock"><b>feedbro extension</b></a> as my rss reader here.)
 
     <br><br>whenever you want to update your readers who are subscribed to your RSS feed, just add a new post line to your spreadsheet and then copypaste the whole output cell into your .xml again.
 
     <br><br>
     hit me up if you find any bugs, just whipped this up this arvo.
-    <br><br>and if you want to subscribe to my rss feed i'll be setting it up at: <br><a href="https://creatureframe.com/rss.xml" target="_blank" class="urly" style="font-family:monospace;"><b>https://creatureframe.com/rss.xml</b></a>
+    <br><br>and if you want to subscribe to my rss feed it's set up at: <br><a href="https://creatureframe.com/rss.xml" target="_blank" class="urlyblock" style="font-family:monospace;"><b>https://creatureframe.com/rss.xml</b></a>
 
     <br><br>
     </div>
@@ -801,12 +801,11 @@ as a reader
 
 
 
-
 <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
 <!-- CONTENT BOX -->
 <div align="center"  class="textbox">
 <div style="height:50px;"></div>
-there are tons of RSS reader extensions, but my favourite is <a href="https://chromewebstore.google.com/detail/feedbro/mefgmmbdailogpfhfblcnnjfmnpnmdfa?hl=en" target="_blank" class="urly"><b>feedbro.</b></a> once you've installed it to your browser you can go to any website where the owner has set up RSS, click on the extension and pick "<b>find feeds in current tab</b>".
+there are tons of RSS reader extensions, but my favourite is <a href="https://chromewebstore.google.com/detail/feedbro/mefgmmbdailogpfhfblcnnjfmnpnmdfa?hl=en" target="_blank" class="urlyblock"><b>feedbro.</b></a> once you've installed it to your browser you can go to any website where the owner has set up RSS, click on the extension and pick "<b>find feeds in current tab</b>".
 
 <br><br>many social media websites have automatic RSS feeders built in too, such as tumblr, bluesky, reddit, youtube, and mastodon. you can add a user's rss feed from anyone's profile page.
 
@@ -820,7 +819,15 @@ there are tons of RSS reader extensions, but my favourite is <a href="https://ch
 <div align="center" style="margin:10px -40px;position:relative;z-index:10;"><img src="tinytools_assets/rssuse_02.png" class="image-fullscroll"></div>
 
 
-and if you want to know more about rss, i found <a href="https://doqmeat.com/notebook/tutorials/rss/" target="_blank" class="urly"><b>doqmeat's guide</b></a> the most digestable for me, but here are some others you may find preferable:
+
+another really good one is <a href="https://fraidyc.at/" class="urlyblock">fraidyc.at</a>. more than just an RSS reader, it'll also attempt to check for updates from users on sites like twitch and instagram. and it looks cute as.
+<br><br>
+<div align="center" style="margin:10px 10px;position:relative;z-index:10;"><img src="tinytools_assets/rssuse_03.png" class="image-fullscroll lilborder"></div>
+
+
+
+<br>
+and if you want to know more about rss, i found <a href="https://doqmeat.com/notebook/tutorials/rss/" target="_blank" class="urlyblock"><b>doqmeat's guide</b></a> the most digestable for me, but here are some others you may find preferable:
 
 <style>
 /* . . . . . . . . . . . . . . . . . . . . . */
