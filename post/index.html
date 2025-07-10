@@ -1403,7 +1403,7 @@ window.addEventListener('load', function() {
 
 
 <!-- method 9 ith resizegrid added -->
-<script>
+<!-- <script>
 console.log('Script loaded');
 
 function resizeGrid() {
@@ -1445,9 +1445,26 @@ window.addEventListener('load', function() {
         // }
     }, 1000);
 });
+</script> -->
+
+
+<!-- 10 : Wait for Images then Trigger Isotope Refresh -->
+<script>
+window.addEventListener('load', function() {
+    setTimeout(() => {
+        console.log('Triggering isotope layout refresh');
+
+        // Get the isotope instance and refresh it
+        const $grid = $('#grid');
+        if ($grid.data('isotope')) {
+            $grid.isotope('layout');
+        }
+
+        // Also call your resize function
+        resizeGrid();
+    }, 1000);
+});
 </script>
-
-
 
 
 
