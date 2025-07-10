@@ -1221,7 +1221,7 @@ jump();
 
 
 <!-- combined method 4 and 5 -->
-<script>
+<!-- <script>
 reloadIt(){
     var timeoutResize;
     $(window).on('resize', function() {
@@ -1234,7 +1234,21 @@ reloadIt(){
     });
 }
 reloadIt;
+</script> -->
+
+
+<!-- method 6 -->
+<script>
+window.addEventListener('load', function() {
+    // Give images a moment to start loading
+    setTimeout(() => {
+        if (!window.location.hash) {
+            window.location.hash = '#';
+        }
+    }, 100);
+});
 </script>
+
 
 
 
