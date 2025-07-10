@@ -1341,7 +1341,7 @@ window.addEventListener('load', function() {
 </script> -->
 
 <!-- method 8 debugging version -->
-<script>
+<!-- <script>
 console.log('Script loaded');
 
 window.addEventListener('load', function() {
@@ -1374,6 +1374,28 @@ window.addEventListener('load', function() {
     }
 
     tryAddHash();
+});
+</script> -->
+
+
+
+<script>
+console.log('Script loaded');
+
+window.addEventListener('load', function() {
+    console.log('Page loaded event fired');
+
+    setTimeout(() => {
+        console.log('Attempting to reload with hash');
+        const currentUrl = window.location.href;
+
+        if (!currentUrl.includes('#')) {
+            console.log('Reloading with hash');
+            window.location.replace(currentUrl + '#');
+        } else {
+            console.log('Hash already present');
+        }
+    }, 1000);
 });
 </script>
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
