@@ -1219,16 +1219,25 @@ jump();
 }
 </script> -->
 
-<script type='text/javascript'>
-function jump(h){
-window.onload = function() {
-    var url = location.href;
-    location.href = "#"+h;
-    history.replaceState(null,null,url);
+
+<!-- combined method 4 and 5 -->
+<script>
+reloadIt(){
+    var timeoutResize;
+    $(window).on('resize', function() {
+        clearTimeout(timeoutResize);
+        timeoutResize = setTimeout(function() {
+            var url = location.href;
+            location.href = "#"+h;
+            history.replaceState(null,null,url);
+        }, 500);
+    });
 }
-}
-jump();
+reloadIt;
 </script>
+
+
+
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 
