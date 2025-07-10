@@ -1238,7 +1238,7 @@ reloadIt;
 
 
 <!-- method 6 -->
-<script>
+<!-- <script>
 window.addEventListener('load', function() {
     // Give images a moment to start loading
     setTimeout(() => {
@@ -1247,9 +1247,46 @@ window.addEventListener('load', function() {
         }
     }, 100);
 });
+</script> -->
+
+
+
+
+<!-- method 4 w resize addd from succulent.js -->
+<script>
+function resizeGrid() {
+    const winWidth = $('main').innerWidth() - 70;
+    const cardWidth = $('.card').outerWidth() + 30;
+    const colNum = Math.floor(winWidth / cardWidth);
+
+    if (colNum > 1) {
+        $('#grid').css({
+            'width': cardWidth * colNum
+        });
+        $('.card').css({
+            'margin': '15px'
+        });
+    } else {
+        $('#grid').css({
+            'width': cardWidth - 30
+        });
+        $('.card').css({
+            'margin': '15px 0'
+        });
+    }
+}
+
+reloadIt(){
+    var timeoutResize;
+    $(window).on('resize', function() {
+        clearTimeout(timeoutResize);
+        timeoutResize = setTimeout(function() {
+            resizeGrid();
+        }, 500);
+    });
+}
+reloadIt;
 </script>
-
-
 
 
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
