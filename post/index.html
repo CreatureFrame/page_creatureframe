@@ -1318,8 +1318,9 @@ window.addEventListener('load', async function() {
 </script> -->
 
 
+
 <!-- method 8 wait for DOM -->
-<script>
+<!-- <script>
 window.addEventListener('load', function() {
     const attempts = [300, 600, 1000, 1500, 2000];
     let currentAttempt = 0;
@@ -1337,8 +1338,44 @@ window.addEventListener('load', function() {
     }
     tryAddHash();
 });
-</script>
+</script> -->
 
+<!-- method 8 debugging version -->
+<script>
+console.log('Script loaded');
+
+window.addEventListener('load', function() {
+    console.log('Page loaded event fired');
+    console.log('Current URL:', window.location.href);
+    console.log('Current hash:', window.location.hash);
+
+    const attempts = [300, 600, 1000, 1500, 2000];
+    let currentAttempt = 0;
+
+    function tryAddHash() {
+        console.log('Attempt', currentAttempt + 1, 'at', attempts[currentAttempt] + 'ms');
+
+        if (currentAttempt < attempts.length) {
+            setTimeout(() => {
+                console.log('Executing attempt', currentAttempt + 1);
+                console.log('Hash before:', window.location.hash);
+
+                if (window.location.hash !== '#') {
+                    console.log('Adding hash');
+                    window.location.hash = '#';
+                } else {
+                    console.log('Hash already present');
+                }
+
+                currentAttempt++;
+                tryAddHash();
+            }, attempts[currentAttempt]);
+        }
+    }
+
+    tryAddHash();
+});
+</script>
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 
