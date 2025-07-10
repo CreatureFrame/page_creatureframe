@@ -1378,8 +1378,8 @@ window.addEventListener('load', function() {
 </script> -->
 
 
-
-<script>
+<!-- method 9 - force switch # -->
+<!-- <script>
 console.log('Script loaded');
 
 window.addEventListener('load', function() {
@@ -1397,7 +1397,64 @@ window.addEventListener('load', function() {
         }
     }, 1000);
 });
+</script> -->
+
+
+
+
+<!-- method 9 ith resizegrid added -->
+<script>
+console.log('Script loaded');
+
+function resizeGrid() {
+    const winWidth = $('main').innerWidth() - 70;
+    const cardWidth = $('.card').outerWidth() + 30;
+    const colNum = Math.floor(winWidth / cardWidth);
+
+    if (colNum > 1) {
+        $('#grid').css({
+            'width': cardWidth * colNum
+        });
+        $('.card').css({
+            'margin': '15px'
+        });
+    } else {
+        $('#grid').css({
+            'width': cardWidth - 30
+        });
+        $('.card').css({
+            'margin': '15px 0'
+        });
+    }
+}
+
+window.addEventListener('load', function() {
+    console.log('Page loaded event fired');
+
+    setTimeout(() => {
+        console.log('Attempting to reload with hash');
+        const currentUrl = window.location.href;
+
+        resizeGrid();
+
+        // if (!currentUrl.includes('#')) {
+        //     console.log('Reloading with hash');
+        //     window.location.replace(currentUrl + '#');
+        // } else {
+        //     console.log('Hash already present');
+        // }
+    }, 1000);
+});
 </script>
+
+
+
+
+
+
+
+
+
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 
