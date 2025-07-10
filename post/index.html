@@ -1253,7 +1253,7 @@ window.addEventListener('load', function() {
 
 
 <!-- method 4 w resize addd from succulent.js -->
-<script>
+<!-- <script>
 function resizeGrid() {
     const winWidth = $('main').innerWidth() - 70;
     const cardWidth = $('.card').outerWidth() + 30;
@@ -1286,7 +1286,39 @@ reloadIt(){
     });
 }
 reloadIt;
+</script> -->
+
+
+
+<!-- method 7 -->
+<script>
+function waitForImages() {
+    const images = document.querySelectorAll('img');
+    const imagePromises = Array.from(images).map(img => {
+        return new Promise((resolve) => {
+            if (img.complete) {
+                resolve();
+            } else {
+                img.onload = resolve;
+                img.onerror = resolve; // Resolve even if image fails to load
+            }
+        });
+    });
+
+    return Promise.all(imagePromises);
+}
+
+// Wait for DOM and images, then add hash
+window.addEventListener('load', async function() {
+    await waitForImages();
+    if (!window.location.hash) {
+        window.location.hash = '#';
+    }
+});
 </script>
+
+
+
 
 
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
