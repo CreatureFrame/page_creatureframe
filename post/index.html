@@ -788,27 +788,23 @@ a:hover {
 
 <!--TITLE-->
 <div id='title'>
-  <!-- <h1>the captain's log</h1> -->
-  <h1>
-      <a href="https://creatureframe.com/">
-          <!-- <img src="https://foollovers.com/mat/i-square/ga10-icon-square.gif"> -->
-          <img src="assets/icons/green-computer.gif">
-      </a>
-      devlogs & shenanigans</h1>
-  <div class="sep"></div>
+<h1>
+<a href="https://creatureframe.com/">
+  <!-- <img src="https://foollovers.com/mat/i-square/ga10-icon-square.gif"> -->
+  <img src="assets/icons/green-computer.gif">
+</a>
+devlogs & shenanigans</h1>
+<div class="sep"></div>
 </div>
 <!--DESCRIPTION-->
 <div id="abt">
-  blab
-  <!-- <br><br>if posts have loaded weird, click "ALL" in the tags below -->
-  <!-- <span><a href="#" data-filter="*">here</a></span> -->
-  <!-- <span> <a href="#" data-filter="*">all</a> </span> -->
-
+blah
 <br><br><br>
-<div class="reloadsign">
-  <!-- <br><br>if posts have loaded weird, click  -->
-  <nav><span><i>if posts have loaded weird, click <a href="#" data-filter="*">here</a></i></span></nav>
-</div>
+
+
+<!-- <div class="reloadsign">
+<nav><span><i>if posts have loaded weird, click <a href="#" data-filter="*">here</a></i></span></nav>
+</div> -->
 
 </div>
 
@@ -949,7 +945,7 @@ weapons
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
         <!--CSS DEMOING - COPY/PASTE START-->
         <!-- turn this on to see what each post will look like, code the css for it as needed, then hide -->
-<!--
+
 <div class="card f2">
 <div class="image-banner"><img src="http://placehold.jp/ddd/666666/250x250.png"></div>
 <div class="box">
@@ -972,7 +968,7 @@ adipiscing elit.
 </div>
 </div>
 </div>
- -->
+
 
         <!--COPY/PASTE END-->
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
@@ -1127,12 +1123,33 @@ https://handlebarsjs.com/guide/builtin-helpers.html
 
 
 
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+        <!--CSS DEMOING - COPY/PASTE START-->
+        <!-- turn this on to see what each post will look like, code the css for it as needed, then hide -->
+
+<div class="card f2">
+<div class="image-banner"><img src="http://placehold.jp/ddd/666666/250x250.png"></div>
+<div class="box">
+<h2>Headline</h2>
+<i>subtitle</i>
+<div class="sep"></div>
+<div class="desc">testing manual post at end
+</div>
+</div>
+</div>
+
+
+        <!--COPY/PASTE END-->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 
 
 
-    </div>
-  </main>
+
+
+
+</div>
+</main>
 </div>
 
 </body>
@@ -1153,301 +1170,7 @@ var templateList = [
 
 
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
-  <!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
-<!-- <script type='text/javascript'>
-  window.onload = function() {
-    if(!window.location.hash) {
-        window.location = window.location + '#loaded';
-        window.location.reload();
-    }
-  }
-</script> -->
-
-
-
 <!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
-<!-- <script type='text/javascript'>
-  if( window.localStorage )
-  {
-    if( !localStorage.getItem('firstLoad') )
-    {
-      localStorage['firstLoad'] = true;
-      window.location.reload();
-    }
-    else
-      localStorage.removeItem('firstLoad');
-  }
-</script> -->
-
-
-<!-- method 3 -->
-<!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
-<!-- <script>
-function reloadIt() {
-    if (window.location.href.substr(-2) !== "?r") {
-        window.location = window.location.href + "?r";
-    }
-}
-setTimeout('reloadIt()', 500)();
-</script> -->
-
-
-<!-- method 4 -->
-<!-- <script>
-reloadIt(){
-    var timeoutResize;
-    $(window).on('resize', function() {
-        clearTimeout(timeoutResize);
-        timeoutResize = setTimeout(function() {
-            resizeGrid();
-        }, 500);
-    });
-}
-reloadIt;
-</script> -->
-
-
-<!-- method 5 -->
-<!-- <script type='text/javascript'>
-function jump(h){
-window.onload = function() {
-    var url = location.href;               //Save down the URL without hash.
-    location.href = "#"+h;                 //Go to the target element.
-    history.replaceState(null,null,url);   //Don't like hashes. Changing it back.
-}
-jump();
-}
-</script> -->
-
-
-<!-- combined method 4 and 5 -->
-<!-- <script>
-reloadIt(){
-    var timeoutResize;
-    $(window).on('resize', function() {
-        clearTimeout(timeoutResize);
-        timeoutResize = setTimeout(function() {
-            var url = location.href;
-            location.href = "#"+h;
-            history.replaceState(null,null,url);
-        }, 500);
-    });
-}
-reloadIt;
-</script> -->
-
-
-<!-- method 6 -->
-<!-- <script>
-window.addEventListener('load', function() {
-    // Give images a moment to start loading
-    setTimeout(() => {
-        if (!window.location.hash) {
-            window.location.hash = '#';
-        }
-    }, 1200);
-});
-</script> -->
-
-
-
-
-<!-- method 4 w resize addd from succulent.js -->
-<!-- <script>
-function resizeGrid() {
-    const winWidth = $('main').innerWidth() - 70;
-    const cardWidth = $('.card').outerWidth() + 30;
-    const colNum = Math.floor(winWidth / cardWidth);
-
-    if (colNum > 1) {
-        $('#grid').css({
-            'width': cardWidth * colNum
-        });
-        $('.card').css({
-            'margin': '15px'
-        });
-    } else {
-        $('#grid').css({
-            'width': cardWidth - 30
-        });
-        $('.card').css({
-            'margin': '15px 0'
-        });
-    }
-}
-
-reloadIt(){
-    var timeoutResize;
-    $(window).on('resize', function() {
-        clearTimeout(timeoutResize);
-        timeoutResize = setTimeout(function() {
-            resizeGrid();
-        }, 500);
-    });
-}
-reloadIt;
-</script> -->
-
-
-
-<!-- method 7 -->
-<!-- <script>
-function waitForImages() {
-    const images = document.querySelectorAll('img');
-    const imagePromises = Array.from(images).map(img => {
-        return new Promise((resolve) => {
-            if (img.complete) {
-                resolve();
-            } else {
-                img.onload = resolve;
-                img.onerror = resolve; // Resolve even if image fails to load
-            }
-        });
-    });
-
-    return Promise.all(imagePromises);
-}
-
-// Wait for DOM and images, then add hash
-window.addEventListener('load', async function() {
-    await waitForImages();
-    if (!window.location.hash) {
-        window.location.hash = '#';
-    }
-});
-</script> -->
-
-
-
-<!-- method 8 wait for DOM -->
-<!-- <script>
-window.addEventListener('load', function() {
-    const attempts = [300, 600, 1000, 1500, 2000];
-    let currentAttempt = 0;
-
-    function tryAddHash() {
-        if (currentAttempt < attempts.length) {
-            setTimeout(() => {
-                if (window.location.hash !== '#') {
-                    window.location.hash = '#';
-                }
-                currentAttempt++;
-                tryAddHash();
-            }, attempts[currentAttempt]);
-        }
-    }
-    tryAddHash();
-});
-</script> -->
-
-<!-- method 8 debugging version -->
-<!-- <script>
-console.log('Script loaded');
-
-window.addEventListener('load', function() {
-    console.log('Page loaded event fired');
-    console.log('Current URL:', window.location.href);
-    console.log('Current hash:', window.location.hash);
-
-    const attempts = [300, 600, 1000, 1500, 2000];
-    let currentAttempt = 0;
-
-    function tryAddHash() {
-        console.log('Attempt', currentAttempt + 1, 'at', attempts[currentAttempt] + 'ms');
-
-        if (currentAttempt < attempts.length) {
-            setTimeout(() => {
-                console.log('Executing attempt', currentAttempt + 1);
-                console.log('Hash before:', window.location.hash);
-
-                if (window.location.hash !== '#') {
-                    console.log('Adding hash');
-                    window.location.hash = '#';
-                } else {
-                    console.log('Hash already present');
-                }
-
-                currentAttempt++;
-                tryAddHash();
-            }, attempts[currentAttempt]);
-        }
-    }
-
-    tryAddHash();
-});
-</script> -->
-
-
-<!-- method 9 - force switch # -->
-<!-- <script>
-console.log('Script loaded');
-
-window.addEventListener('load', function() {
-    console.log('Page loaded event fired');
-
-    setTimeout(() => {
-        console.log('Attempting to reload with hash');
-        const currentUrl = window.location.href;
-
-        if (!currentUrl.includes('#')) {
-            console.log('Reloading with hash');
-            window.location.replace(currentUrl + '#');
-        } else {
-            console.log('Hash already present');
-        }
-    }, 1000);
-});
-</script> -->
-
-
-
-
-<!-- method 9 ith resizegrid added -->
-<!-- <script>
-console.log('Script loaded');
-
-function resizeGrid() {
-    const winWidth = $('main').innerWidth() - 70;
-    const cardWidth = $('.card').outerWidth() + 30;
-    const colNum = Math.floor(winWidth / cardWidth);
-
-    if (colNum > 1) {
-        $('#grid').css({
-            'width': cardWidth * colNum
-        });
-        $('.card').css({
-            'margin': '15px'
-        });
-    } else {
-        $('#grid').css({
-            'width': cardWidth - 30
-        });
-        $('.card').css({
-            'margin': '15px 0'
-        });
-    }
-}
-
-window.addEventListener('load', function() {
-    console.log('Page loaded event fired');
-
-    setTimeout(() => {
-        console.log('Attempting to reload with hash');
-        const currentUrl = window.location.href;
-
-        resizeGrid();
-
-        // if (!currentUrl.includes('#')) {
-        //     console.log('Reloading with hash');
-        //     window.location.replace(currentUrl + '#');
-        // } else {
-        //     console.log('Hash already present');
-        // }
-    }, 1000);
-});
-</script> -->
-
-
 <!-- 10 : Wait for Images then Trigger Isotope Refresh -->
 <script>
 window.addEventListener('load', function() {
