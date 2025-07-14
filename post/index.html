@@ -919,11 +919,11 @@ weapons
 <!-- <span> <a href="https://twitter.com/creatureframe"><img src="assets/deco/icons/twitter_64x_white.png" style="display: inline-block;height:18px;margin-bottom:-2px;"></a> </span> -->
 <!-- <span> <a href="https://bsky.app/profile/creatureframe.bsky.social">bisky</a> </span> -->
 
-<div> <a href="https://creatureframe.com/post/tools/rssgenerator.html#howtorss"><img src="assets/deco/icons/rss_64x.png" style="display: inline-block;height:17px;margin-bottom:-1px;margin-right:7px;">  how to rss</a> </div>
-<div> <a href="https://creatureframe.com/rss.xml"><img src="assets/deco/icons/rss_64x_white.png" style="display: inline-block;height:17px;margin-bottom:-1px;margin-right:7px;">  rss feed</a> </div>
 <div> <a href="https://dev.creatureframe.com/"><img src="assets/deco/icons/tumblr_64x_white.png" style="display: inline-block;height:17px;margin-bottom:-1px;margin-right:13px;">  devlogs</a> </div>
 <div> <a href="https://twitter.com/creatureframe"><img src="assets/deco/icons/twitter_64x_white.png" style="display: inline-block;height:18px;margin-bottom:-2px;margin-right:6px;">  stinky</a> </div>
 <div> <a href="https://bsky.app/profile/creatureframe.bsky.social"><img src="assets/deco/icons/bluesky_64x_white.png" style="display: inline-block;height:17px;margin-bottom:-1px;margin-right:7px;">  bisky</a> </div>
+<div> <a href="https://creatureframe.com/rss.xml"><img src="assets/deco/icons/rss_64x_white.png" style="display: inline-block;height:17px;margin-bottom:-1px;margin-right:7px;">  rss feed</a> </div>
+<div> <a href="https://creatureframe.com/post/tools/rssgenerator.html#howtorss"><img src="assets/deco/icons/rss_64x.png" style="display: inline-block;height:17px;margin-bottom:-1px;margin-right:7px;">  how to rss</a> </div>
 </nav>
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 
@@ -1176,6 +1176,7 @@ var templateList = [
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 <!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
 <!-- 10 : Wait for Images then Trigger Isotope Refresh -->
+<!-- changing from 1000 to 1500 -->
 <script>
 window.addEventListener('load', function() {
     setTimeout(() => {
@@ -1189,12 +1190,50 @@ window.addEventListener('load', function() {
 
         // Also call your resize function
         resizeGrid();
-    }, 1000);
+    }, 1800);
 });
 </script>
 
 
+<script>
+window.addEventListener('load', function() {
+    // Wait for all images in the grid to load
+    const images = $('#grid img');
+    let loadedCount = 0;
 
+    if (images.length === 0) {
+        // No images, just refresh after a delay
+        setTimeout(() => {
+            $('#grid').isotope('layout');
+            resizeGrid();
+        }, 500);
+        return;
+    }
+
+    images.each(function() {
+        const img = $(this);
+        if (this.complete) {
+            loadedCount++;
+        } else {
+            img.on('load error', function() {
+                loadedCount++;
+                if (loadedCount === images.length) {
+                    console.log('All images loaded, refreshing layout');
+                    $('#grid').isotope('layout');
+                    resizeGrid();
+                }
+            });
+        }
+    });
+
+    // If all images were already loaded
+    if (loadedCount === images.length) {
+        console.log('All images already loaded, refreshing layout');
+        $('#grid').isotope('layout');
+        resizeGrid();
+    }
+});
+</script>
 
 
 
