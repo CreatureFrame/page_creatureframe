@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-
-
-
-
 <!--PAGE THEME #11: SUCCULENT 2.0 by @nonspace.
   Find more of my work at https://nonspace.tumblr.com
 
@@ -79,7 +75,7 @@ background: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top center;
   <!-- <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> -->
   <!-- <link rel="icon" type="image/png" href="https://foollovers.com/mat/i-square/ga10-icon-square.gif"> -->
   <link rel="icon" type="image/png" href="assets/icons/green-computer.gif">
-  <title>random posts</title>
+  <title>table of contents</title>
 
   <!-- RSS -->
 <link href="../rss.xml" rel="alternate" type="application/rss+xml" title="the creatureframe RSS feed">
@@ -150,14 +146,8 @@ https://docs.google.com/spreadsheets/d/1A-TYXRt9DTRcCxszcQYPUUlbdJ2IVH6mYpFrRvuS
 
     */
 
-// mc journal
-    // const sheetID = '1G0rvHkZQm9k7IZBDkYmx3BgJP5qw2jtBd52q9M_vfx8';
-    // const sheetTab = 'DATA';
-    // const APIkey = 'AIzaSyAKuzBdtp1Q279bOvN32VRxTbL2pf_1qQ8';
-
-// blog posts
-    const sheetID = '1A-TYXRt9DTRcCxszcQYPUUlbdJ2IVH6mYpFrRvuS6hk';
-    const sheetTab = 'postslist';
+    const sheetID = '1QP1sCGEdUinPv-oBWbIw3RLSWE4MxvV2wWGTs1OZdKs';
+    const sheetTab = 'events_pit';
     const APIkey = 'AIzaSyAKuzBdtp1Q279bOvN32VRxTbL2pf_1qQ8';
 
 </script>
@@ -436,7 +426,6 @@ main {
     border:6px solid #8a6c4a;
     border:6px solid #fffaed;
     color: #e4b176;
-
 }
 /*
 .box:hover {
@@ -460,12 +449,8 @@ main {
   line-height: 160%;
   line-height: 135%;
   overflow: hidden;
-  /* border-bottom: 15px solid var(--cardBackground); */
+  border-bottom: 15px solid var(--cardBackground);
 }
-.box:hover {
-  background: #70493d;
-}
-
 
 .subtitle {
   text-align: right;
@@ -480,8 +465,6 @@ main {
   -moz-box-shadow: 0px 0px 0px 2px rgb(0,0,0), 0px 3px 10px 5px rgba(30,0,0,0.45), 0px 5px 30px 10px rgba(30,0,0,0.3);
   box-shadow: 0px 0px 0px 2px rgb(0,0,0), 0px 3px 10px 5px rgba(30,0,0,0.45), 0px 5px 30px 10px rgba(30,0,0,0.3);
 }
-
-
 
 aside {
     -webkit-box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px, 0px 0px 5px 1px rgba(110,40,40,0.8), 0px 0px 10px 2px rgba(110,40,40,0.2);
@@ -705,8 +688,6 @@ a:hover {
 
 
 
-
-
 /*MEDIA QUIERIES*/
 
 @media only screen and (max-width: 720px) {
@@ -794,23 +775,31 @@ a:hover {
 
 <!--TITLE-->
 <div id='title'>
-<h1>
-<a href="https://creatureframe.com/">
-  <!-- <img src="https://foollovers.com/mat/i-square/ga10-icon-square.gif"> -->
-  <img src="assets/icons/green-computer.gif">
-</a>
-devlogs & shenanigans</h1>
+  <!-- <h1>the captain's log</h1> -->
+  <h1>
+      <a href="https://creatureframe.com/">
+          <!-- <img src="https://foollovers.com/mat/i-square/ga10-icon-square.gif"> -->
+          <img src="assets/icons/green-computer.gif">
+      </a>
+      stuff's happening
+<!-- go touch grass -->
+  </h1>
 <div class="sep"></div>
 </div>
 <!--DESCRIPTION-->
 <div id="abt">
-blah
+  want to suggest an event, fill in the form here
+<!-- <br><br>  i may ignore it -->
+
+  <!-- <br><br>if posts have loaded weird, click "ALL" in the tags below -->
+  <!-- <span><a href="#" data-filter="*">here</a></span> -->
+  <!-- <span> <a href="#" data-filter="*">all</a> </span> -->
+
 <br><br><br>
-
-
-<!-- <div class="reloadsign">
-<nav><span><i>if posts have loaded weird, click <a href="#" data-filter="*">here</a></i></span></nav>
-</div> -->
+<div class="reloadsign">
+  <!-- <br><br>if posts have loaded weird, click  -->
+  <nav><span><i>if posts have loaded weird, click <a href="#" data-filter="*">here</a></i></span></nav>
+</div>
 
 </div>
 
@@ -845,27 +834,24 @@ weapons
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 
-<style>
-.filtertag{
-    margin-right:10px;
-}
-</style>
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 <nav>
 <div class="title-filter">filter by tags :</div>
 
-<span class="filtertag"> <a href="#" data-filter="*">all</a> </span>
-<!-- <span> <a href="#" data-filter=".devlog">devlog</a> </span> -->
-<span class="filtertag"> <a href="#" data-filter=".3D-art">3D-art</a> </span>
-<span class="filtertag"> <a href="#" data-filter=".gamedev">gamedev</a> </span>
-<span class="filtertag"> <a href="#" data-filter=".tools">tools</a> </span>
-<!-- <span> <a href="#" data-filter=".3D-assets">3D-assets</a> </span> -->
-<span class="filtertag"> <a href="#" data-filter=".resources">resources</a> </span>
-<!-- <span> <a href="#" data-filter=".css-crimes">css-crimes</a> </span> -->
-<span class="filtertag"> <a href="#" data-filter=".toymaking">toymaking</a> </span>
+<span> <a href="#" data-filter="*">all</a> </span>
+<span> <a href="#" data-filter=".devlog">devlog</a> </span>
+<span> <a href="#" data-filter=".gamedev">gamedev</a> </span>
+<span> <a href="#" data-filter=".3D-art">3D-art</a> </span>
+<span> <a href="#" data-filter=".tools">tools</a> </span>
+<span> <a href="#" data-filter=".3D-assets">3D-assets</a> </span>
+<span> <a href="#" data-filter=".resources">resources</a> </span>
+<span> <a href="#" data-filter=".css-crimes">css-crimes</a> </span>
 
 </nav>
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
 
 
 
@@ -895,51 +881,14 @@ weapons
 
 
 
-<style>
-    .linksblock{
-        font-size: 16px;
-    }
-    .linksblock a{
-        font-size: 6px !important;
-    }
-
-    .linksblock{
-        margin-top: 26px;
-        margin-bottom: 9px;
-        padding:4px;
-        border:none;
-        border-bottom: 2px solid #6c5c56;
-        border-top: 2px solid #6c5c56;
-        width:98%;
-        color:#a69590;
-    }
-
-</style>
-
-<!-- * * * * * * * * * * * * * * * * * * * *  -->
-<nav>
-<div class="title-filter linksblock">LINKS :</div>
-<!-- <span> <a href="https://dev.creatureframe.com/">other devlogs</a> </span> -->
-<!-- <span> <a href="https://twitter.com/creatureframe">stinky</a> </span> -->
-<!-- <span> <a href="https://dev.creatureframe.com/"><img src="assets/deco/icons/tumblr_64x_white.png" style="display: inline-block;height:17px;margin-bottom:-1px;"></a> </span> -->
-<!-- <span> <a href="https://twitter.com/creatureframe"><img src="assets/deco/icons/twitter_64x_white.png" style="display: inline-block;height:18px;margin-bottom:-2px;"></a> </span> -->
-<!-- <span> <a href="https://bsky.app/profile/creatureframe.bsky.social">bisky</a> </span> -->
-
-<div> <a href="https://dev.creatureframe.com/"><img src="assets/deco/icons/tumblr_64x_white.png" style="display: inline-block;height:17px;margin-bottom:-1px;margin-right:13px;">  devlogs</a> </div>
-<div> <a href="https://twitter.com/creatureframe"><img src="assets/deco/icons/twitter_64x_white.png" style="display: inline-block;height:18px;margin-bottom:-2px;margin-right:6px;">  stinky</a> </div>
-<div> <a href="https://bsky.app/profile/creatureframe.bsky.social"><img src="assets/deco/icons/bluesky_64x_white.png" style="display: inline-block;height:17px;margin-bottom:-1px;margin-right:7px;">  bisky</a> </div>
-<div> <a href="https://creatureframe.com/rss.xml"><img src="assets/deco/icons/rss_64x_white.png" style="display: inline-block;height:17px;margin-bottom:-1px;margin-right:7px;">  rss feed</a> </div>
-<div> <a href="https://creatureframe.com/post/tools/rssgenerator.html#howtorss"><img src="assets/deco/icons/rss_64x.png" style="display: inline-block;height:17px;margin-bottom:-1px;margin-right:7px;">  how to rss</a> </div>
-</nav>
-<!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 
-
-
+<!--  -->
 <!-- <div class="spacer"></div> -->
 <div style="height:40px;
 /* border:1px solid blue; */
 "></div>
+
 <div style="" class="credits">
 <!-- <nav> -->
 <div class="credits-title">credits :</div>
@@ -974,10 +923,8 @@ weapons
 
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
         <!--CSS DEMOING - COPY/PASTE START-->
-        <!-- turn this on to see what each post will look like, code the css for it as needed, then hide
-            (if wanting to add manual posts, they will always load top of the page, before the spreadsheet ones, even if this is placed afterwards)
-         -->
-<!-- 
+        <!-- turn this on to see what each post will look like, code the css for it as needed, then hide -->
+<!--
 <div class="card f2">
 <div class="image-banner"><img src="http://placehold.jp/ddd/666666/250x250.png"></div>
 <div class="box">
@@ -992,22 +939,20 @@ adipiscing elit.
 <br><br>
 <img src='assets/imgs/diagrams/aether portal.png' class='image-float'>
 
+
 <br><br><img src='assets/imgs/default_icons/diamond_x4.png' class='icon_64px'>
 
 <br><br>
 <img src='https://camo.githubusercontent.com/4820d97b35c3c3391186fd2c8c03eae0083ef1b7eea1603f01aac6729cfd8c70/68747470733a2f2f692e6779617a6f2e636f6d2f66636532326431613137356231353264363636343266323966306535393936652e706e67'>
+
 
 </div>
 </div>
 </div>
  -->
 
-
-
         <!--COPY/PASTE END-->
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
-
-
 
 
 
@@ -1159,8 +1104,10 @@ https://handlebarsjs.com/guide/builtin-helpers.html
 
 
 
-</div>
-</main>
+
+
+    </div>
+  </main>
 </div>
 
 </body>
@@ -1181,70 +1128,82 @@ var templateList = [
 
 
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
+  <!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
+<!-- <script type='text/javascript'>
+  window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+  }
+</script> -->
+
+
+
 <!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
-<!-- 10 : Wait for Images then Trigger Isotope Refresh -->
-<!-- changing from 1000 to 1500 -->
-<script>
-window.addEventListener('load', function() {
-    setTimeout(() => {
-        console.log('Triggering isotope layout refresh');
-
-        // Get the isotope instance and refresh it
-        const $grid = $('#grid');
-        if ($grid.data('isotope')) {
-            $grid.isotope('layout');
-        }
-
-        // Also call your resize function
-        resizeGrid();
-    }, 1800);
-});
-</script>
+<!-- <script type='text/javascript'>
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem('firstLoad') )
+    {
+      localStorage['firstLoad'] = true;
+      window.location.reload();
+    }
+    else
+      localStorage.removeItem('firstLoad');
+  }
+</script> -->
 
 
-<script>
-window.addEventListener('load', function() {
-    // Wait for all images in the grid to load
-    const images = $('#grid img');
-    let loadedCount = 0;
+<!-- method 3 -->
+<!-- REFRESH PAGE ONCE AFTER EVERYTHING HAS LOADED -->
+<!-- <script>
+function reloadIt() {
+    if (window.location.href.substr(-2) !== "?r") {
+        window.location = window.location.href + "?r";
+    }
+}
+setTimeout('reloadIt()', 500)();
+</script> -->
 
-    if (images.length === 0) {
-        // No images, just refresh after a delay
-        setTimeout(() => {
-            $('#grid').isotope('layout');
+
+<!-- method 4 -->
+<!-- <script>
+reloadIt(){
+    var timeoutResize;
+    $(window).on('resize', function() {
+        clearTimeout(timeoutResize);
+        timeoutResize = setTimeout(function() {
             resizeGrid();
         }, 500);
-        return;
-    }
-
-    images.each(function() {
-        const img = $(this);
-        if (this.complete) {
-            loadedCount++;
-        } else {
-            img.on('load error', function() {
-                loadedCount++;
-                if (loadedCount === images.length) {
-                    console.log('All images loaded, refreshing layout');
-                    $('#grid').isotope('layout');
-                    resizeGrid();
-                }
-            });
-        }
     });
-
-    // If all images were already loaded
-    if (loadedCount === images.length) {
-        console.log('All images already loaded, refreshing layout');
-        $('#grid').isotope('layout');
-        resizeGrid();
-    }
-});
-</script>
+}
+reloadIt;
+</script> -->
 
 
+<!-- method 5 -->
+<!-- <script type='text/javascript'>
+function jump(h){
+window.onload = function() {
+    var url = location.href;               //Save down the URL without hash.
+    location.href = "#"+h;                 //Go to the target element.
+    history.replaceState(null,null,url);   //Don't like hashes. Changing it back.
+}
+jump();
+}
+</script> -->
 
-
+<!-- <script type='text/javascript'>
+function jump(h){
+window.onload = function() {
+    var url = location.href;
+    location.href = "#"+h;
+    history.replaceState(null,null,url);
+}
+}
+jump();
+</script> -->
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 
 
