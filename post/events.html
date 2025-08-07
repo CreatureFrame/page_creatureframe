@@ -80,34 +80,21 @@ background: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top center;
   <!-- RSS -->
 <link href="../rss.xml" rel="alternate" type="application/rss+xml" title="the creatureframe RSS feed">
 
-  <!--jQuery-->
-  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<!--jQuery-->
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<!--ISOTOPE PLUGIN https://isotope.metafizzy.co/ (for filtering)-->
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<!--Icon Fonts-->
+<script src="https://unpkg.com/feather-icons"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
 
-  <!--ISOTOPE PLUGIN https://isotope.metafizzy.co/ (for filtering)-->
-  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-
-  <!--Icon Fonts-->
-  <script src="https://unpkg.com/feather-icons"></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
-
-  <!--Google Fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- require("@south-paw/typeface-minecraft"); -->
-
+<!--Google Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+<!--HANDLEBARS.JS-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
 
 
-
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-
-  <!--HANDLEBARS.JS-->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
-
-  <!--PAGE SETTINGS-->
-  <!--The template spreadsheet is here:
-https://docs.google.com/spreadsheets/d/124yZTS885Mx4BYFN4PPxjP450LrRrTMmTubI0MoI4WE/edit?usp=sharing
-Instructions are in the "INSTRUCTIONS" tab.-->
 
 
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
@@ -123,26 +110,10 @@ Instructions are in the "INSTRUCTIONS" tab.-->
          1jKi9Knw7e5qr4bXr_zQib8FwpGM7E6eqRx1tH3JruIA (this part)
       /edit?usp=sharing
 
-
-    TO GET API KEY:
-    1. Go to https://console.cloud.google.com/projectselector2/apis/dashboard
-    (of the account the sheet is under)
-    2. Create new project
-    3. Create credentials, choose API key (copy this)
-    4. Restrict application access to HTTP referrer and add the wildcard yoururl.tumblr.com/* (or for multipe sites if needed)
-    5. Libraries > search for Google Sheets > Enable
-
-
-    From JOURNAL spreadsheet:
-    https://docs.google.com/spreadsheets/d/1Swar-rZUcStgl9-EZS9VelTuW_Ms2c8mLc-yVPfV79Y/edit#gid=0
-
-    which is shared to HTMLpipe:
-    https://docs.google.com/spreadsheets/d/1G0rvHkZQm9k7IZBDkYmx3BgJP5qw2jtBd52q9M_vfx8/edit#gid=0
-
     and share "DATA" page to web, as CSV:
-    https://docs.google.com/spreadsheets/d/e/2PACX-1vTjIhLAshuac489P1cux9pq_P0vlM58ZXfuU_LDtoN7uIR9fnAj_tpSu_VCVEfRfI1TiUmywihMthsG/pub?gid=0&single=true&output=csv
+https://docs.google.com/spreadsheets/d/e/2PACX-1vRVCMXs2rKMK6xQmCKniOrr7tx0FH55EeBsD8G5aImxv8mkEA7ei19GvQLtvO2sHTXoPjSOYQ8oDC7d/pub?gid=195847736&single=true&output=csv
 
-https://docs.google.com/spreadsheets/d/1A-TYXRt9DTRcCxszcQYPUUlbdJ2IVH6mYpFrRvuS6hk/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1QP1sCGEdUinPv-oBWbIw3RLSWE4MxvV2wWGTs1OZdKs/edit?usp=sharing
 
     */
 
@@ -1057,10 +1028,9 @@ adipiscing elit.
 <!--GRID ITEM START-->
 <a href="{{this.link}}">
 <div class="card {{this.filters}}">
-    <!-- top banner image -->
-  <!-- <div class="image-banner"><img src="{{this.imageurl}}"></div> -->
-
-  <!-- handlebars check if imageurl
+<!-- top banner image -->
+<!-- <div class="image-banner"><img src="{{this.imageurl}}"></div> -->
+<!-- handlebars check if imageurl
 https://handlebarsjs.com/guide/builtin-helpers.html
  -->
   <!-- <div class="entry"> -->
@@ -1072,7 +1042,7 @@ https://handlebarsjs.com/guide/builtin-helpers.html
   <div class="box">
     <!-- no link header -->
     <div class="titlebar">
-    <h2>{{this.headline}}</h2><div class="subtitle">{{this.title}}</div>
+    <h2>{{this.name}}</h2><div class="subtitle">{{this.location}}</div>
     </div>
     <!-- only header has link -->
     <!-- <h2><a href="{{this.link}}">{{this.headline}}</a></h2> -->
@@ -1084,7 +1054,7 @@ https://handlebarsjs.com/guide/builtin-helpers.html
 
     <div class="sep"></div>
     <div class="desc">
-      {{{this.description}}}
+      {{{this.desc}}}
     </div>
   </div>
 </div>
