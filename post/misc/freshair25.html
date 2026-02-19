@@ -748,6 +748,20 @@ border-radius:0.9em;
 /* image css */
 /* margin:5px; */
 
+
+
+
+.video-container {
+    width: 100%; /* Makes the container full width of its parent */
+    aspect-ratio: 16 / 9; /* Automatically calculates the height based on a 16:9 ratio */
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 </style>
 
 
@@ -769,9 +783,11 @@ border-radius:0.9em;
 <img src='freshair25_assets/Fresh_Air_Camp_Info_Doc_3.jpg' style='rotate: -1deg;' class='image-fullscroll photoborder mimage-inline'> </div>
 </center>
 
+<!-- width="100%" height="auto" -->
 
-<iframe width="100%" height="auto" src="https://www.youtube.com/embed/ph-CFAZaSGI?si=qT1MBHBEbPKioXpj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<div  style='margin:-2px; padding:13px; background-color:#cac96d;' class='video-container photoborder'>
+<iframe  src="https://www.youtube.com/embed/ph-CFAZaSGI?si=qT1MBHBEbPKioXpj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 <br>
 
 <div class="flexbox">
