@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- THIS ONE COMBINES A SLIMMED DOWN VERSION OF acnldreams_stylesheet.css AND THE MINIFIED cohostclient.css -->
+<link data-chunk="client" rel="stylesheet" href="../../assets/acnldreams_stylesheet_min.css">
+<!-- <link data-chunk="client" rel="stylesheet" href="../3d/jazzcat_style.css"> -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="icon" type="image/png" href="assets/icons/green-computer.gif">
+<title>posting</title>
+<!-- RSS -->
+<link href="https://creatureframe.com/rss.xml" rel="alternate" type="application/rss+xml" title="the creatureframe RSS feed">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+
+<!--Google Fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<a href="https://creatureframe.com/post/"><div class="goback"></div></a>
+
+<!-- <div class="qrcode"><img src="../assets/qrcodes/qrcode_cohostpost_rainrig.png"></div> -->
+
+<!-- .bannerstart-contain{
+    margin-top:-680px;
+    height:680px;
+} -->
+
+
+
+<!--
+ORDER:
+outermostbox
+columnbox
+postsize
+post-cohostbarrier
+post-background-full post-bgimg bgimg-alignment final
+scrollbox
+ -->
+
+
+ <!--
+banners:
+ 1000x55px
+ -->
+
+
+ <!-- color:#623008;
+ #813d00
+ color:#723e13;
+ color:#FFDE78;
+#623008
+#f5b043
+#c59172);
+#f9b351
+#44b173
+#70331d
+#ffffff
+#623008;
+#e86363
+#53a2a6
+#c1756f
+#40adaf
+#43a8a3
+#40a89a
+#28776c
+#225b53
+#ede4cf;
+#faf4e9
+transparent
+darkseagreen
+#95705b
+#97615c
+#845653
+
+
+PRESETS FOR ROOS:
+bigtitles
+--palette3: #f5b043;
+--palette3-border: #f5b043;
+--palette3-shad: #40a89a;
+--palette3-shadtext: #28776c;
+bigtitles
+--palette3: #FFDE78;
+--palette3-border: #40a89a;
+--palette3-shad: #40a89a;
+--palette3-shadtext: #95705b;
+bigtitles
+--palette3: #FFDE78;
+--palette3-border: #f5b043;
+--palette3-shad: #f5b043;
+--palette3-shadtext: #97615c;
+
+ -->
+
+
+
+
+ <style>
+     :root {
+       --postheight: 680px;
+       /* --postheight: 100%; */
+       --postheight: calc(100% - 20px);
+       --postheight-margintop: 15px;
+       --postwidth: 580px;
+       --postwidth: 780px;
+
+       --bannerstart-height: 55px;
+       --bannerend-height: 55px;
+
+       /* unused, was edge boder of whole page */
+       --palette1: #efe3cf;
+       /* for main text (light #ede4cf) */
+       --palette2: #faf4e9;
+       /* for bigtitles (and liltitles which are kinda a mess rnow) */
+       --palette3: #FFDE78;
+       --palette3-border: #f5b043;
+       --palette3-shad: #f5b043;
+       --palette3-shadtext: #97615c;
+       /* for scrollbar */
+       --palette4: #e86363;
+       /* and it's border */
+       --palette5: transparent;
+       /* for tinytext and tinytextbox (credits box) */
+       --palette6: #faf4e9;
+       --palette7: #c59172;
+       /* for HRs and underlines of .minititle */
+       --palette8: #c59172;
+       /* border of post window */
+       --palette-postborder: #ede4cf;
+       --palette-textboxborder: #ede4cf;
+       --palette-textboxshad: #ede4cf;
+
+       --bg-wholepage: fixed url(../../assets/deco/backgrounds/roos_DSCF8759/DSCF8759_blur0x20.jpg);
+       --bg-post: fixed url(../../assets/deco/backgrounds/roos_DSCF8759/DSCF8759_blur0x3.jpg);
+       /* --bg-textbox: fixed url(../../assets/deco/backgrounds/roos_DSCF8759/DSCF8759_blur0x30_lighten.jpg); */
+       --bg-textbox: fixed url(../../assets/deco/backgrounds/roos_DSCF8759/DSCF8759_blur0x30_darken.jpg);
+       /* --bg-textbox: fixed url(../../assets/deco/backgrounds/roos_DSCF8759/DSCF8759_blur_60px_noise_darken.jpg); */
+       --bg-codebox: fixed url(../../assets/deco/backgrounds/roos_DSCF8759/Edit_900h_blur0x20.jpg);
+       /* --bg-titlebox: fixed url(../../assets/deco/backgrounds/roos_DSCF8759/DSCF8759_blur_60px_noise_darken.jpg); */
+       --bg-titlebox: fixed url(../../assets/deco/backgrounds/roos_DSCF8759/DSCF8759_blur0x30.jpg);
+       --bg-pos: top right;
+       /* contain, cover, 30%; 200px 100px; */
+       --bg-size: cover;
+     }
+     .outermostbox {
+         height:100%;
+         height:calc(100% - 30px);
+         width:100%;
+         position:fixed;
+         min-height:100%;
+         overflow-y:auto;
+         /* border:1px solid var(--palette1); */
+         /* margin:0px; */
+         box-shadow:
+        inset rgba(0, 0, 0, 0.3) 1px 2px 25px,
+        inset rgba(0, 0, 0, 0.3) 1px 2px 15px,
+        inset rgba(0, 0, 0, 0.2) 3px 3.5px 6px;
+        /* this as a flexbox replaces the need for the columnbox */
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+     }
+     /* .columnbox{
+         align-items: center;
+         display: flex;
+         justify-content: center;
+         height:100%;
+     } */
+     .postsize{
+         max-width:var(--postwidth);
+         padding:auto;
+         /* not needed anymore now using flexbox */
+         /* height:var(--postheight); */
+         /* margin-top:var(--postheight-margintop); */
+
+         /* or turn these on for full length */
+         height:100%;
+         margin:0px;
+
+         /* then turn on flexbox for proper floating */
+         display: flex;
+         flex-direction: column;
+         flex-wrap: nowrap;
+         justify-content: center;
+         align-items: normal;
+         align-content: normal;
+     }
+
+     .post-cohostbarrier {
+     height:var(--postheight);
+     border:1px solid var(--palette-postborder);
+     /* margin:0px; */
+     /* padding:0px; */
+     /* or turn these on for full length */
+     /* height:100%; */
+     /* margin:0px; */
+     /* border:2px solid green; */
+     }
+
+ </style>
+ <!-- * * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+<style>
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BACKGROUNDS */
+/* . . . . . . . . . . . . . . . . . . . . . */
+.post-bgimg{
+background: var(--bg-post);
+background-position: var(--bg-pos);
+background-size: var(--bg-size);
+}
+
+/* textbox-bgimg not used anymore */
+.textbox{
+background: var(--bg-textbox);
+background-position: var(--bg-pos);
+background-size: var(--bg-size);
+box-shadow: 5px 3px 0px var(--palette-textboxshad);
+box-shadow:
+rgba(0, 0, 0, 0.3) 1px 2px 3px,
+rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
+
+position:relative;
+z-index:5;
+/* font-size:9pt; */
+line-height:135%;
+border:1px solid var(--palette-textboxborder);
+}
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BANNER AT START AND END OF POST */
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* banner-img: this has replaced "bannerstart-img" in past posts  */
+
+
+
+/* margin-top: -670px !important; overflow-x:hidden; width:100%; margin-left:-1px; */
+
+
+
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* TEXT STYLES */
+/* . . . . . . . . . . . . . . . . . . . . . */
+.font-styling{
+font: 10pt "Verdana", "Courier", "Helvetica", sans-serif;
+/* font: 12pt "Verdana", "Courier", "Helvetica", sans-serif; */
+font-weight: 300;
+letter-spacing: 0.85px;
+text-align: justify;
+color: var(--palette2);
+
+font: 11pt "Raleway", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+letter-spacing: 1.05px;
+
+font: 12pt "Space Grotesk", sans-serif;
+font-optical-sizing: auto;
+font-weight: 300;
+letter-spacing: 0.25px;
+/* letter-spacing: normal; */
+}
+/* for the top h1 title box, should probs replace textbox w whatever main text is using, or rmv these altogether if not needed */
+.bigtitle{
+font-size: 28pt;
+font-family: courier;
+font-weight: 600;
+text-decoration: none;
+filter: drop-shadow(3px 0px 0px #623008);
+border:none;
+background:transparent;
+background: var(--bg-titlebox);
+background-position: var(--bg-pos);
+background-size: var(--bg-size);
+padding:10px 17px;
+margin:0px;
+
+/* for orange bubble */
+border-radius: 8px;
+margin:10px 40px;
+border:1px solid #fcc724;
+border:1px solid var(--palette3-border);
+filter: none;
+padding:15px;
+line-height: 74%;
+
+color: var(--palette3);
+box-shadow: none;
+/* filter: drop-shadow(3px 0px 0px #623008); */
+/* softer drop shadow */
+box-shadow:
+rgba(0, 0, 0, 0.2) 2px 4px 12px,
+rgba(0, 0, 0, 0.1) 1px 3px 8px,
+rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
+/* for hard drop shadow */
+box-shadow: 5px 3px 0px #FFDE78;
+box-shadow: 5px 5px 0px var(--palette3-shad);
+
+padding:15px;
+line-height: 74%;
+
+position:relative;
+z-index:15;
+
+/* font-family: "Lusitana", serif; */
+/* font-weight: 400; */
+/* font-weight: 700; */
+
+text-shadow:
+3px 3px 0px var(--palette3-shadtext),
+rgba(0, 0, 0, 0.2) -4px 2px 3px;
+/* EXAMPLES:
+text-shadow:
+  1px 1px 2px red,
+  0 0 1em blue,
+  0 0 0.2em blue;
+text-shadow:
+  3px 3px 0px #623008,
+  -3px -1px 10px #623008;
+text-shadow:
+  3px 3px 0px #623008,
+  rgba(0, 0, 0, 0.2) -4px 2px 3px;
+*/
+
+}
+
+
+.liltitle{
+font-size: 18pt;
+/* background: none; */
+filter: none;
+margin:0% 22% -17px 22%;
+padding:11px;
+border-radius: 8px;
+width:80%;
+margin:0% 10% -17px 10%;
+color: var(--palette3) !important;
+background: var(--bg-titlebox);
+background-position: var(--bg-pos);
+background-size: var(--bg-size);
+border:1px solid var(--palette3);
+box-shadow: 5px 3px 0px #f5b043;
+}
+
+
+.tinytext{
+font: 8pt "Tahoma", "DM Mono", "Courier", "Verdana", "Helvetica", sans-serif;
+font-weight: 500;
+
+font: 9.5pt "Space Grotesk", sans-serif;
+font-optical-sizing: auto;
+font-weight: 100;
+letter-spacing: 0.45px;
+font: 9pt "Raleway", sans-serif;
+/* letter-spacing: normal; */
+
+line-height: 125%;
+letter-spacing: 0.5px;
+color: var(--palette6);
+text-align: justify;
+}
+/* for credits box at end */
+.tinytextbox{
+color: var(--palette6);
+}
+.minititle{
+border:none;
+border-bottom:1px solid var(--palette8);
+}
+</style>
+<style>
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BULLET POINTS FOR LISTS */
+/* . . . . . . . . . . . . . . . . . . . . . */
+ul {
+margin: 0 0 0 22px;
+font: 9pt Verdana;
+letter-spacing: 1.5px;
+font: 10pt "Space Grotesk", sans-serif;
+font-optical-sizing: auto;
+font-weight: 300;
+letter-spacing: 0.45px;
+}
+.list-notes li {
+background: url("../../assets/deco/icons/notebook.gif") no-repeat 7px 7px transparent;
+list-style-type: none;
+margin: 0;
+padding: 8px 20px 0px 39px;
+vertical-align: middle;
+margin-top: 7px;
+line-height: 140%;
+}
+
+
+body{
+background: var(--bg-wholepage);
+background-position: var(--bg-pos);
+background-size: var(--bg-size);
+}
+
+
+/* - - - - - - - - - - - -
+        SCROLLBARS
+- - - - - - - - - - - -  */
+/* this one is in the stylesheets and sets up the shadows */
+/* .scrollbox{ */
+    /* over-the-top shadow */
+	/* box-shadow:rgba(0, 0, 0, 0.14) 1px 3px 15px,rgba(0, 0, 0, 0.22) 0px 2.5px 5px,rgba(122, 122, 122, 0.32) 3px 3px 0px,rgba(122, 85, 85, 0.35) 1px 1px 0.3px; */
+    /* for firefox, testing. NOPE it overrides the custom nice one so fuck it! */
+    /* overflow: scroll;
+    scrollbar-color: red orange;
+    scrollbar-width: thin; */
+/* } */
+.scrollbox-wheel{
+line-height:1.7em;
+overflow-y:auto;
+overflow-x:hidden;
+height:100%;
+width:100%;
+margin: auto;
+text-align:justify;
+}
+.scrollbox-wheel::-webkit-scrollbar{
+width:1.1em;
+width:1.75em;
+/* width:1.60em; */
+/* box-shadow:inset 0 0 0.9em 0.1em var(--palette6); */
+/* border:2px solid yellow; */
+}
+.scrollbox-wheel::-webkit-scrollbar-thumb{
+border:0.45em solid transparent;
+border:.1em solid #fff;
+border:.3em solid var(--palette5);
+box-shadow:inset 0 0 0.5em 1.0em var(--palette4);
+/* box-shadow:
+inset 0 0 0.5em 0.8em var(--palette4),
+rgba(0, 0, 0, 0.9) 1px 2px 3px,
+rgba(0, 0, 0, 0.6) 0px 2.5px 6px; */
+border-radius:0.9em;
+}
+/* for solid drop shadow
+rgba(255, 255, 255, 1.0) -2px 2px 0px, */
+.scrollbox-wheel::-webkit-scrollbar-thumb:hover {
+    background: var(--palette4);
+    filter: brightness(1.1);
+    border: 0.3em solid var(--palette1);
+}
+
+/* dont really need this one for this page yet do i */
+/* .scrollbox-wheel::-webkit-scrollbar-track {
+    background: var(--palette5);
+    border-radius: 0.9em;
+    border:1px solid aqua;
+} */
+
+
+/** Mozilla Firefox ONLY */
+@-moz-document url-prefix(){
+    .scrollbox-wheel{
+        scrollbar-color: var(--palette4) var(--palette5);
+    }
+}
+
+
+/* Mobile-first approach - hide side images on smaller screens */
+@media only screen and (max-width: 768px) {
+
+    /* CUSTOM WINDOW AND IMAGE CHANGES */
+    .photoborder{
+        padding:6px !important;
+    }
+    /* for left/right floating images, to make them fullwidth and inline */
+    .mimageinline{
+        width:100% !important;
+        margin: 10px 0px !important;
+        position:inherit !important;
+        rotate: 0deg !important;
+        float:none !important;
+    }
+    /* for left/right floating images, to make them smaller on their side */
+    .mimagesmaller{
+        width:45% !important;
+    }
+    
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* .columnbox {
+      width: 100%;
+      padding: 0;
+    } */
+
+    .postsize{
+    max-width:100%;
+    width:100%;
+    padding:none;
+    height:var(--postheight);
+    margin:0px;
+    height:100%;
+    box-sizing: border-box;
+    }
+
+    .post-cohostbarrier {
+    border:1px solid var(--palette-postborder);
+    padding:0px;
+    height:100%;
+    margin:0px;
+    }
+
+    /* Adjust font size for mobile */
+    .bigtitle {
+      font-size: 16pt;
+    }
+
+    .font-styling {
+      font-size: 10pt;
+      padding: 10px;
+    }
+}
+
+</style>
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+
+
+<div class="outermostbox">
+<!-- <div class="columnbox"> -->
+<div class="postsize">
+<div style="" class="post-cohostbarrier">
+
+
+
+
+<style>
+
+
+.bannerstart-top{
+top:0px;
+overflow:hidden;
+position:relative;
+z-index:60;
+pointer-events:none;
+margin-top:0px;
+margin-bottom:calc(var(--bannerstart-height) * -1);
+height:var(--bannerstart-height);
+/* border:1px solid red; */
+/* rotate:180deg; */
+object-fit:cover;
+/* image-rendering:pixelated; */
+
+}
+
+/* currently used for start and end banners, w end's own style adding "rotate:180deg;" */
+.bannerstart-img2{
+margin:0px 0px;
+pointer-events:none;
+object-fit:cover;
+overflow:hidden;
+width:inherit;
+height:var(--bannerstart-height);
+max-width:100%;
+width:100%;
+filter: drop-shadow(0 0 0.45rem rgba(0, 0, 0, 0.6));
+image-rendering:pixelated;
+}
+
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BANNER AT START AND END OF POST */
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* banner-img: this has replaced "bannerstart-img" in past posts  */
+
+.banner-start{
+    margin-top:30px;
+    filter: none;
+    filter: drop-shadow(-2px 2px 3px #813d00);
+    filter: drop-shadow(-2px 2px 0.5px #333);
+    filter: drop-shadow(-2px 2px 3.7px rgba(0, 0, 0, 0.5));
+}
+/* .bannerstart-contain{
+    margin-top:-680px;
+    height:680px;
+} */
+.bannerend-inside{
+    height:100%;
+    margin-top:30px;
+}
+/* .post-cohostbarrier{
+    height:650px;
+} */
+
+/* these two were used for end banner */
+.banner-img{
+    min-width: 1000px;
+    max-width: 1000px;
+}
+.banner-end{
+    filter: none;
+    filter: drop-shadow(4px 5px 0px #f5b043);
+    rotate:180deg;
+}
+
+
+.bannerend-inside{
+/* border:1px solid red; */
+margin-top: 0px;
+}
+.banner-end{
+filter: none;
+/* filter: drop-shadow(4px 5px 0px #f5b043); */
+/* filter: drop-shadow(-2px 2px 6.7px rgba(0, 0, 0, 0.5)); */
+rotate:180deg;
+/* border:1px solid purple; */
+}
+
+/* BANNER STYLE FROM ACNL */
+.bannerstart-contain {
+margin-top:calc(var(--bannerend-height) * -1);
+height:var(--bannerend-height);
+}
+</style>
+
+
+
+
+
+
+
+
+    <!-- * * * * * * * * * * * * * * * * * * * * *  -->
+    <!--             POST CONTAINER TOP             -->
+    <!-- . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+    <!-- TOP BANNER -->
+    <div style="" class="bannerstart-top">
+    <img src="../../assets/deco/banners/postBorder_60x1000-assets/paintycrafts_top.png" class="bannerstart-img2">
+    </div>
+
+
+
+    <!-- * * * * * * * * * * * * * * * * * * * * *  -->
+    <!--             POST CONTAINER TOP             -->
+    <!-- . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- <div style="" class="post-cohostbarrier"> -->
+    <div style="" class="post-background-full post-bgimg bgimg-alignment final">
+    <div class="scrollbox">
+    <!-- * * * * * * * * * * * * * * * * * * * *  -->
+    <!-- ADDING SCROLLBOX WHEEL -->
+    <div class="scrollbox-wheel">
+        <!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+    <div class="font-styling">
+    <!-- spacer -->
+    <div style="width:10px;height:25px;"></div>
+    <!-- * * * * * * * * * * * * * * * * * * * * *  -->
+
+    <!-- POST TITLE -->
+    <!-- <div class="posttitle textbox">
+    post title
+    </div> -->
+
+
+
+
+    <!-- old post title from 3dcomputers -->
+    <!-- <div class="postsubtitle">
+    <u>3D quickies</u> : <br> old computers
+    </div> -->
+    <!-- spacer -->
+    <!-- <div style="width:10px;height:0px;"></div> -->
+
+
+    <div align="center">
+    <div class="bigtitle" style="">
+    made some roos
+    </div></div>
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- photo of final echidna toys batch A -->
+    <!-- <div align="center" style="margin-top:-10px !important;"><img src="echida_roo_toys_assets/roo_pair_tealpink_R10_R11_C61A6928_web.jpg" width="100%" class="image-fullscroll lilborder"></div> -->
+
+
+    <!-- CONTENT BOX -->
+    <div align="center" style="margin-top: -25px !important;position:relative;" class="textbox">
+
+        <!-- <img src="echida_roo_toys_assets/roo_yellow_R6_C61A6934_web_w.jpg" class="img-sidebyside">
+        <img src="echida_roo_toys_assets/roo_pair_tealpink_R10_R11_C61A6928_web_w.jpg" class="img-sidebyside">
+        <img src="echida_roo_toys_assets/C61A7040_web_w.jpg" class="img-sidebyside">
+        <img src="echida_roo_toys_assets/roo_yellow_R5_C61A6939_web_w.jpg" class="img-sidebyside"> -->
+        <img src="echida_roo_toys_assets/PXL_20240619_100930951_web_w.jpg" class="lilborder">
+
+    <!-- .<br> -->
+    <br>
+    i was really stoked with the final design for these fellas, really hit that cleanliness of shape i've been trying to achieve (and will still be wrestling with) for a long time.
+
+    <br><Br>especially within the limits of casting (having forms that flare downwards, that catch less bubbles, that are less likely to break on demolding, and that can be painted properly)
+
+    </div>
+    <!-- end content box -->
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+
+
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- CONTENT BOX -->
+
+    <div style="padding:20px;" class="textbox">
+
+    <img src="echida_roo_toys_assets/DSCF8759_w.jpg" style="width:45%;display:inline-block;position:relative;float:left;margin: -35px 2% 5px -10px;rotate: 0deg;padding:9px;image-rendering: auto;" class="image-fullscroll photoborder">
+    <!-- <br><br>this photo was one i took around that time, old abandoned building from the 1800s, way out in the bush -->
+
+    like the <a href="https://cohost.org/Cro/post/6405386-link-data-chunk-cl" target="_blank" class="urlyblock">echidnas</a>, this was a project i initially started in 2020 during the big fires.
+
+    <br><br>as a kid i thought australian animals were so overrated, but the older i get the more i appreciate them. especially their hardiness.
+
+    <br><br>
+    i grew up with the common greys, but the cutest ones i've seen are from kangaroo island SA, hands down. their dark chocolatey fur is much fluffier (owing to the island getting the full brunt of antarctic winds), and they can have adorable little white spots randomly dotted about on their faces and bodies. they're smaller too, like everything else on the island.
+    <br><br>
+    <div align="center"><img src="https://tools.creatureframe.com/assets/eachpost/shop-embeds/ref_roo_sketch.png" style="width:30%;filter: drop-shadow(5px -5px 0px #e86363);"></div>
+
+    <!-- <br><br>kangaroo island was peak , small biomes everywhere, the tiny , hundreds of seals laid out across the rocks, teh roos were the cutest: dark, nearly black, wth longer soft fur and little white spots in different places on each individual -->
+
+    <!-- <br><br>importantly, don't drive anywhere after it gets dark -->
+
+
+    </div>
+    <!-- end content box -->
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+    <br clear="all">
+
+
+
+
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- CONTENT BOX -->
+    <div align="center"><div class="bigtitle" align="center">
+    concepting
+    </div></div>
+
+    <!-- image : roos concept sketches -->
+    <div align="center"> <img src="echida_roo_toys_assets/roo_visualDevelopment.jpg" class="image-fullscroll lilborder"> </div>
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+    <div align="center" style="position:relative;margin-top:-10px;" class="textbox">
+
+    i used to more often start by sketching up a page of real life studies of a subject first before trying to design anything, for two reasons:
+    <br><br>1. to learn it's natural form, which will nearly always inform interesting things in a design; nature has cool shapes that often go unnoticed unless you really *look*,
+    <br>2. but also to "get it out of my system", otherwise i start off trying to incorporate too much (very boring) detail.
+
+    <br><br>i've been lazier with it lately but you can still see how i still start off way too overdetailed - it's a ongoing practice, learning how to not overdo it, and learning to break things down as far as can be, while remaining recogniseable.
+
+    <br><br>the whole purpose of this stage for me, at least for designing for a cast (game assets are another game altogether), is exploration of shapes.
+
+    <!-- started off leaning a little too hard into overdetailed forms and too much realism, but it didn't take long to start hitting some interesting shapes. -->
+
+    <!-- <br><br>often i'll sketch up a page of real life studies of a subject first, both to learn it's natural form, which can sometimes inform interesting things in a design, but also to "get it out of my system". i've been lazier with it lately -->
+
+    <!-- - you can see how i start off way too overdetailed, even after "getting it out of the system" with some studies from irl or photos,
+    <br>- its a practice, learning how to not overdo it, learning to break things down as far as can be done while -->
+
+    <!-- started off leaning a little too hard into overdetailed forms and too much realism, but it didn't take long to start hitting some interesting shapes.
+
+    <br><br>often i'll sketch up a page of real life studies of a subject first, both to learn it's natural form, which can sometimes inform interesting things in a design, but also to "get it out of my system". -->
+
+    <!-- <br><br> -->
+
+    </div>
+    <!-- end content box -->
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+
+
+    <div align="center"><div class="bigtitle" align="center">
+    3D model
+    </div></div>
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- CONTENT BOX -->
+
+    <!-- image : blocking out -->
+    <div align="center"> <img src="echida_roo_toys_assets/roo_blockout_gloss.gif" class="image-fullscroll"> </div>
+
+
+
+    <div align="center" style="position:relative;margin-top:5px;margin-bottom:-0px;" class="textbox">
+    the rough blockout, trying to match the concept as closely as possible with as few edges as possible (while keeping clear edge loops, which are needed for subdividing the mesh later). i've learned the importance of sticking to this stage for longer than feels comfortable, and how much time it saves later once you've "res'd up" the mesh.
+    <br><br>
+    then just spent a good chunk of time playing around with which edges to keep sharp and which to smooth out, and seeing which combinations looked better to me
+     <!-- (idk how 3D artists survived before creasing and smooth mesh previewing existed). -->
+    <br><br>
+    no UVing or texture this time, learnt my lesson <a href="https://cohost.org/Cro/post/6405386-link-data-chunk-cl" target="_blank" class="urlyblock">from the echidna</a>. if i was ever going to make this into an animated asset it would need to be retopologised anyway before making any textures.
+    </div>
+
+
+    <!-- image : smoothed -->
+    <div align="center"> <img src="echida_roo_toys_assets/roo_smoothprint_flat.gif" class="image-fullscroll" style="position:relative;z-index:50;margin-bottom:-50px;margin-top:-45px;"> </div>
+
+    <!-- avifs not transparent -->
+    <!-- <div align="center"> <img src="echida_roo_toys_assets/roo_smoothprint.avif" class="image-fullscroll"> </div> -->
+    <!-- <div align="center"> <img src="echida_roo_toys_assets/roo_blockout.avif" class="image-fullscroll"> </div> -->
+
+    <div align="center" style="position:relative;margin-top:-0px !important;" class="textbox">
+
+        <div align="center" style="height:5%;"></div>
+     <br>
+    <!-- <br><br> -->
+    wouldve taken a photo of the mold and casts but theyre packed up in storage atm.<br><br>
+    it still needs some care when casting. the ears need to be filled and have the air banged out at each angle, before filling the rest of the body, and sometimes the head or ears will break right off trying to get them out of the mold, but it's worth it and i feel it's a stronger design than the echidna.
+    <br><br>
+    the master was a heck of a job to sand down though, with all those tiny little edges. that and having to paint into tiny little crevices with the thick bulky paint i use, there's always a compromise between making cool shapes and how difficult (if not sometimes impossible) it is to work with later on
+    <br><br>a number of the turquoise ones have some 4 to 8 layers of paint underneath, as I was trying various browns and blues but couldn't come up with a palette that worked. bloody hell, paint mixing irl is a job and a half. i've become more cowardly with palettes and often give up on making more unusual colour combinations work, compared to working digitally which offers infinite playtime for that
+
+    <br><br>
+    and here's six of the final roos from the finished lot!
+
+    <br><br>
+    <style>
+    .img-sidebyside{
+        width:50%;
+        display:inline-block;
+        position:relative;
+        float:left;
+        border:1px solid #fff;
+        margin: -0.5px;
+    }
+    </style>
+    <img src="echida_roo_toys_assets/roo_yellow_R6_C61A6934_web_w.jpg" class="img-sidebyside">
+    <img src="echida_roo_toys_assets/roo_yellow_R5_C61A6939_web_w.jpg" class="img-sidebyside">
+    <img src="echida_roo_toys_assets/C61A7040_web_w.jpg" class="img-sidebyside">
+    <img src="echida_roo_toys_assets/roo_pair_tealpink_R10_R11_C61A6928_web_w.jpg" class="img-sidebyside">
+
+
+    <!-- C61A7040_web_w.jpg
+    roo_yellow_R6_C61A6934_web_w.jpg
+    roo_yellow_R5_C61A6939_web_w.jpg
+    roo_pair_tealpink_R10_R11_C61A6928_web_w.jpg -->
+
+    <br>
+    .
+
+    </div>
+    <!-- end content box -->
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+
+
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+
+
+
+    <!-- CREDITS BOX -->
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+    <!-- if add tinytext class, have to manually add text-align: center;  -->
+
+    <!-- <div align="center"><div style="padding:5px;line-height:150%;font-family: verdana, tahoma;font-size: 9px;" class="tinytextbox bgimg-alignment textbox">
+    <b><u>credits:</u></b><br>
+    book pixel sprite by <a href="https://web.archive.org/web/20160225014532/https://ouka.kuronowish.com/rehoeass2/">ReHoeass</a>
+    </div></div><br> -->
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+
+
+
+
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+    <!-- spacer to scroll past bottom border -->
+    <div style="width:10px;height:25px;"></div>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+    <!-- END OF POST CONTENT -->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+    <!-- END BOXES FOR POST -->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+    </div>      <!-- end of  font-styling -->
+    </div></div></div>
+
+
+
+
+
+<!-- CLASSES IN jazzcat_style.css TO OVERWRITE HERE IF NEEDING TO CHANGE STUFF :
+banner-end-noflip
+bannerend-inside-bg
+banner-end-bg
+ -->
+
+
+
+ <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+ <!--                   BOTTOM BANNERS                 -->
+ <!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+<div style="" class="bannerstart-contain">
+<div style="" class="bannerend-inside">
+<!-- <img src="../../assets/deco/banners/postBorder_60x1000-assets/paintycrafts_top.png" style="" class="banner-img banner-end"></div> -->
+<img src="../../assets/deco/banners/postBorder_60x1000-assets/paintycrafts_top.png" style="rotate:180deg;" class="bannerstart-img2"></div>
+</div>
+
+
+
+</div></div></div>
+<!-- end for post-cohostbarrier, postsize, "outermostbox" -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- * * * * * * * * * * * * * * * * * * * *  -->
+    <!-- COMMENTS BOX -->
+    <!-- * * * * * * * * * * * * * * * * * * * *  -->
+    <style>
+    .revealdetails{
+        margin-top:-40px;margin-left:25px;color:#fff;font-family:courier;
+    }
+
+    :root {
+        /* done either way */
+      /* --commentstransparency: 0.3; */
+      /* can also use a bg image */
+      --commentsbg: rgba(255, 255, 255, 0.4);
+      --commentsbg: rgba(0, 255, 255, 0.25);
+      --commentsbg: rgba(0, 180, 255, 0.35);
+      --commentsborder:2px dashed #fff;
+      --commentsbuttonsborder:1px solid #fff;
+      --commentsbuttonsborder-hover:1px solid #CE98FB;
+
+      --commentsreplybg: rgba(30, 90, 220, 0.75);
+      --commentsreplyborder:2px dashed #ffc6e4;
+
+      --commentsfontfam:Verdana;
+      --commentsfontfam:Courier;
+
+      --backgroundblur1: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top left fixed;
+      --backgroundblur2: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top left fixed;
+
+      --commentsfontcolor:#fff;
+      --commentsfontcolor:#b5ffe7;
+      --commentsaccentcolor1:#222;
+      --commentsaccentcolor2:#ffc6e4;
+      --commentsaccentcolor2:#ffffff;
+      --commentsaccentcolor3:#FB96D8;
+      --commentsaccentcolor4:#CE98FB;
+      --commentsaccentcolor5:#5E2C49;
+      --commentsaccentcolor6:#ffc6e4;
+
+      --commentsfontfam:Courier;
+      --commentsfontsize:14px;
+      --commentsfontsize:9.5pt;
+    }
+
+    .commentssection{
+        width:100%;
+        max-width:600px;
+        /* display: block; */
+        /* background: aqua; */
+        /* margin-top: -10%; */
+        /* margin-top: -60px; */
+        margin-top: 1px;
+        /* rmv later */
+        /* margin-top: -200px; */
+        position: relative;
+        z-index: 100;
+        /* z-index: 1; */
+        /* align-content: justify; */
+        text-align: justify;
+    }
+
+
+
+    #c_widget {
+        /* background-image: url('https://tools.creatureframe.com/assets/eachpost/jazzcat/bg_jazzcatwindow_blur0x10.png'); */
+        /* background-image: url('../../assets/backgrounds/fades/300px-assets/300px_middark.png'); */
+        /* padding-top: 20px; */
+        /* margin-bottom: 40px; */
+
+        /* border: 2px dashed #fff; */
+
+        /* font-family: 'Courier'; */
+        font-family: var(--commentsfontfam);
+        /* font-size: 14px; */
+        color: var(--commentsfontcolor);
+        font-weight: 600;
+        font-size: var(--commentsfontsize);
+    }
+
+    /* #c_widget div { */
+        /* padding:5px 5px; */
+    /* } */
+
+    /* Input section */
+    #c_inputDiv {
+        padding: 10px;
+        text-transform: lowercase;
+        /* background-color: rgba(255, 255, 255, .3); */
+
+        /* done either way */
+        /* background-color: rgba(255, 255, 255, var(--commentstransparency) ); */
+        /* background-color: var(--commentsbg); */
+        background: var(--commentsbg);
+
+        /* border: 1px dashed #CE98FB; */
+        /* border: 2px dashed #fff; */
+        border: var(--commentsborder);
+        border-radius: 5px;
+        border-radius: 8px;
+        /* color:#222; */
+    }
+
+    .c-comment {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 10px;
+        /* background-color: rgba(255, 255, 255, var(--commentstransparency)); */
+        background: var(--commentsbg);
+        /* border: 1px dashed #CE98FB; */
+        border: var(--commentsborder);
+        border-radius: 4px;
+        /* margin-bottom: 0px; */
+    }
+
+
+    .c-site {
+        color: var(--commentsaccentcolor5);
+        border:1px solid #fff;
+        padding:3px 6px;
+        border-radius: 4px;
+        background: var(--commentsaccentcolor3);
+        border: var(--commentsbuttonsborder);
+     }
+    .c-site:hover {
+        color: var(--commentsaccentcolor4);
+        background: #fff;
+        border: var(--commentsbuttonsborder-hover);
+    }
+    .c-text {
+        color: var(--commentsaccentcolor2);
+    }
+
+    .c-reply {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 1);
+        /* border: 1px dashed #CE98FB; */
+        border: var(--commentsbuttonsborder);
+        border-radius: 4px;
+
+        /* color:#000; */
+
+        border: var(--commentsreplyborder);
+        background: var(--commentsreplybg);
+    }
+    </style>
+    <!-- * * * * * * * * * * * * * * * * * * * *  -->
+    <!-- <br clear="all"> -->
+
+
+
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- COMMENTS SECTION DEMOING COLOURS -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- <div align="center">
+<div class="commentssection">
+<div id="c_widget">
+    <div id="c_inputDiv">
+        <form id="c_form" onsubmit="c_submitButton.disabled = true; v_submitted = true;" method="post" target="c_hiddenIframe" action="https://docs.google.com/forms/d/e/1FAIpQLSfogBDOAZfBlrnJ2e9YsdlwNwdKlyUr4GvQVvKmiM6K48G2xQ/formResponse">
+    <h2 id="c_widgetTitle">Leave a comment!</h2>
+
+    <div id="c_nameWrapper" class="c-inputWrapper">
+        <label class="c-label c-nameLabel" for="entry.694796007">Name</label>
+        <input class="c-input c-nameInput" name="entry.694796007" id="entry.694796007" type="text" maxlength="16" required="">
+    </div>
+
+    <div id="c_websiteWrapper" class="c-inputWrapper">
+        <label class="c-label c-websiteLabel" for="entry.605179758">Website (Optional)</label>
+        <input class="c-input c-websiteInput" name="entry.605179758" id="entry.605179758" type="url" pattern="https://.*">
+    </div>
+
+    <div id="c_textWrapper" class="c-inputWrapper">
+        <label class="c-label c-textLabel" for="entry.341888751"></label>
+        <textarea class="c-input c-textInput" name="entry.341888751" id="entry.341888751" rows="4" cols="50" maxlength="500" required=""></textarea>
+    </div>
+
+    <input id="c_submitButton" name="c_submitButton" type="submit" value="Submit">
+<input type="text" id="entry.1631738198" name="entry.1631738198" style="display: none;"><span id="c_replyingText" style="display: none;"></span><input type="text" id="entry.532799568" name="entry.532799568" style="display: none;"><iframe id="c_hiddenIframe" name="c_hiddenIframe" onload="if(v_submitted){fixFrame()}" style="display: none;"></iframe></form>
+    </div>
+    <div id="c_container"><div id="test name|--|10/4/2024 15:18:27" class="c-comment" style="display: block;"><h3 class="c-name">test name</h3><span class="c-timestamp">04/10/2024</span><a href="https://creatureframe.com/" class="c-site">Website</a><p class="c-text">hello</p><button value="test name|--|10/4/2024 15:18:27" onclick="openReply(this.value)" class="c-replyButton">Reply</button></div></div>
+
+    <div id="hey|--|10/4/2024 17:18:04" class="c-comment" style="display: block;"><h3 class="c-name">hey</h3><span class="c-timestamp">04/10/2024</span><p class="c-text">hallo</p><button value="hey|--|10/4/2024 17:18:04" onclick="openReply(this.value)" class="c-replyButton">Reply</button><button onclick="expandReplies(this.parentElement.id)" class="c-expandButton">Show Replies (1)</button><div id="hey|--|10/4/2024 17:18:04-replies" class="c-replyContainer" style="display: block;"><div id="hey you|--|10/4/2024 19:51:18" class="c-reply"><h3 class="c-name">hey you</h3><span class="c-timestamp">04/10/2024</span><p class="c-text">im replying to you</p></div></div></div>
+</div> </div> </div> -->
+
+
+
+
+
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- COMMENTS SECTION GENERATED -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- <details class="revealdetails"><summary>comments</summary>
+<div align="center">
+<div class="commentssection">
+<div id="c_widget"></div>
+<script src="http://creatureframe.com/post/assets/comment-widget.js"></script>
+</div>
+</div>
+</details> -->
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+</body>
+</html>

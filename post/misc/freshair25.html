@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!-- <link data-chunk="client" rel="stylesheet" href="../../assets/cohoststyle.css"> -->
+<!-- <link data-chunk="client" rel="stylesheet" href="../assets/cohostclient.css"> -->
+<!-- <link data-chunk="client" rel="stylesheet" href="../assets/acnldreams_stylesheet.css"> -->
+<!-- THIS ONE COMBINES A SLIMMED DOWN VERSION OF acnldreams_stylesheet.css AND THE MINIFIED cohostclient.css -->
+<link data-chunk="client" rel="stylesheet" href="../assets/acnldreams_stylesheet_min.css">
+<link data-chunk="client" rel="stylesheet" href="jazzcat_style.css">
+
+
+<meta charset="utf-8">
+<!-- <meta name="viewport" content="width=device-width"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<link rel="icon" type="image/png" href="assets/icons/green-computer.gif">
+<title>posting</title>
+
+<!-- RSS -->
+<link href="https://creatureframe.com/rss.xml" rel="alternate" type="application/rss+xml" title="the creatureframe RSS feed">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+</head>
+<body>
+<!-- <a href="jazzcat_2_rig.html"><div class="goback"></div></a> -->
+<a href="https://creatureframe.com/post/"><div class="goback"></div></a>
+<!-- <a href="jazzcat_1_scene.html"><div class="goforward"></div></a> -->
+
+
+<style>
+    :root {
+      --postheight: 680px;
+      --postheight: 100%;
+      --postheight: calc(100% - 30px);
+      --postheight-margintop: 15px;
+
+      --postwidth: 90%;
+      --endbanner-size: 680px;
+      --palette1: #5770b0;
+      /* for main text (light #ede4cf) */
+      --palette2: #141d38;
+      --palette2: #ede4cf;
+      /* for bigtitle */
+      --palette3: #fcc724;
+      --palette4: #5770b0;
+      --palette5: #f5b043;
+      --palette6: #3c5186;
+
+      --bg-wholepage: fixed url(freshair25_assets/gridbg.jpg);
+      --bg-post: fixed url(freshair25_assets/gridbg.jpg);
+      --bg-textbox: fixed url(../3d/jazzcat_WIPnight_assets/bg_wallflat_blur0x12_noise0.1.jpg);
+
+      --bg-codebox: fixed url(https://tools.creatureframe.com/assets/eachpost/jazzcat/bg_wallflat_blur0x20.jpg);
+      --bg-titlebox: fixed url(../3d/jazzcat_WIPnight_assets/bg_wallflat_blur0x3.jpg);
+      --bg-pos: bottom left;
+      --bg-pos: top center;
+      /* contain, cover, background-size: 300px 150px; */
+      --bg-size:cover;
+    }
+
+
+    .outermostbox {
+        height:100%;
+        height:calc(100% - 30px);
+
+        width:100%;
+        position:fixed;
+        min-height:100%;
+        overflow-y:auto;
+
+        /* border:1px solid yellow; */
+        /* border:4px solid #5770b0; */
+        border:4px solid var(--palette1);
+    }
+    .columnbox{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height:100%;
+
+        /* border:2px solid green; */
+    }
+    /* #postsize{ */
+    .postsize{
+        max-width:var(--postwidth);
+        padding:auto;
+
+        /* height:100%; */
+        height:var(--postheight);
+        margin-top:var(--postheight-margintop);
+        /* border:3px solid red; */
+    }
+
+
+    /* VARS FOR QRCODE */
+    :root {
+      --fiximagesize: 200px;
+      --fiximagesizemargin: 15px;
+    }
+    /* QR code to COHOST POST */
+    .qrcode {
+        position:fixed;
+        /* position:relative; */
+        /* position:absolute; */
+        bottom:var(--fiximagesizemargin);
+        /* left:80%; */
+        right:var(--fiximagesizemargin);
+        /* align:right; */
+        width:var(--fiximagesize);
+        height:var(--fiximagesize);
+        /* dont need margin when using fixed */
+        /* margin:0px var(--fiximagesizemargin) var(--fiximagesizemargin) 0px; */
+        z-index:300;
+        /* border:1px solid red; */
+        border:3px solid var(--palette1);
+    }
+
+
+body{
+    overflow-x:hidden;
+}
+
+</style>
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+<style>
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BACKGROUNDS */
+/* . . . . . . . . . . . . . . . . . . . . . */
+.post-bgimg{
+    background: var(--bg-post);
+    background-position:bottom left;
+    background-position: var(--bg-pos);
+    background-size: var(--bg-size);
+}
+
+/* textbox-bgimg not used anymore */
+.textbox-bgimg, .textbox{
+    background: var(--bg-textbox);
+    background-position: var(--bg-pos);
+    background-size: var(--bg-size);
+    /* border:1px dashed #5770b0; */
+    /* box-shadow: 5px 3px 0px #f5b043; */
+    box-shadow:
+    rgba(0, 0, 0, 0.3) 1px 2px 3px,
+    rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
+
+    position:relative;
+    z-index:5;
+    /* font-size:9pt; */
+    line-height:155%;
+
+
+    /* UNIQUE FOR THIS PAGE */
+    border-radius: 20px;
+    border:2px solid #5770b0;
+    padding: 0px 30px;
+}
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BANNER AT START AND END OF POST */
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* banner-img: this has replaced "bannerstart-img" in past posts  */
+
+
+
+/* margin-top: -670px !important; overflow-x:hidden; width:100%; margin-left:-1px; */
+
+
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* TEXT STYLES */
+/* . . . . . . . . . . . . . . . . . . . . . */
+.font-styling{
+font: 11pt "Verdana", "Courier", "Helvetica", sans-serif;
+font-weight: 400;
+line-height: 145%;
+letter-spacing: 1px;
+padding: 0px;
+text-align: justify;
+border-radius: 6px;
+
+color: var(--palette2);
+}
+/* for the top h1 title box, should probs replace textbox w whatever main text is using, or rmv these altogether if not needed */
+.bigtitle{
+font-size: 28pt;
+font-family: courier;
+font-weight: 600;
+text-decoration: none;
+filter: drop-shadow(3px 0px 0px #623008);
+border:none;
+background:transparent;
+padding:10px 17px;
+margin:0px;
+
+/* for orange bubble */
+border-radius: 8px;
+margin:10px 40px;
+border:1px solid #fcc724;
+filter: none;
+box-shadow: 5px 3px 0px #FFDE78;
+padding:15px;
+
+/* background: fixed url("https://tools.creatureframe.com/assets/eachpost/jazzcat/bg_wallflat_blur0x20.jpg"); */
+background: var(--bg-titlebox);
+background-position: var(--bg-pos);
+background-size: var(--bg-size);
+
+color: var(--palette3);
+
+box-shadow: none;
+/* filter: drop-shadow(3px 0px 0px #623008); */
+box-shadow: 5px 3px 0px #4c6092;
+box-shadow:
+rgba(0, 0, 0, 0.2) 2px 4px 12px,
+rgba(0, 0, 0, 0.1) 1px 3px 8px,
+rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
+
+padding:15px;
+line-height: 74%;
+line-height: 104%;
+
+position:relative;
+z-index:15;
+}
+.liltitle{
+font-size: 22pt;
+/* background: none; */
+filter: none;
+margin:0% 22% -17px 22%;
+padding:11px;
+
+border:1px solid #5770b0;
+box-shadow: 5px 3px 0px #5770b0;
+
+/* border:1px solid #c59172; */
+/* box-shadow: 5px 3px 0px #c59172; */
+/* background: fixed url("https://tools.creatureframe.com/assets/eachpost/jazzcat/bg_wallflat_invert2_blur0x10.jpg"); */
+
+width:80%;
+margin:0% 10% -17px 10%;
+color:#fff !important;
+
+background: #3c5186;
+background: var(--bg-titlebox);
+background-position: var(--bg-pos);
+background-size: var(--bg-size);
+
+border:1px solid #f5b043;
+box-shadow: 5px 3px 0px #f5b043;
+}
+
+.lilnote{
+    /* margin:0% 10% -17px 10%; */
+    margin:0px;
+    margin-top:-20px;
+    padding:10px;
+    width:80%;
+    position:relative;
+    z-index:15;
+
+    /* background: #3c5186; */
+    background: var(--bg-titlebox);
+    background-position: var(--bg-pos);
+    background-size: var(--bg-size);
+
+    color: var(--palette2);
+    /* color: #fff; */
+
+    border:1px solid #f5b043;
+    border:3px solid var(--palette4);
+    border-radius: 8px;
+
+    box-shadow:
+    rgba(0, 0, 0, 0.2) 2px 4px 12px,
+    rgba(0, 0, 0, 0.1) 1px 3px 8px,
+    rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
+    box-shadow: 5px 3px 0px #f5b043;
+    box-shadow: 5px 3px 0px var(--palette3);
+    /* filter: drop-shadow(3px 0px 10px #000); */
+    filter: none;
+
+    font-family: courier;
+    font-size: 12pt;
+    font-weight: 600;
+    line-height: 74%;
+    line-height: 110%;
+    text-decoration: none;
+}
+
+.lilnote:hover{
+    /* background: #3c5186; */
+    /* background: #f5b043; */
+    background: var(--palette5);
+    /* background: var(--bg-titlebox); */
+    background-position: var(--bg-pos);
+    background-size: var(--bg-size);
+
+    /* color: var(--palette3); */
+    /* color: #fff; */
+    color: var(--palette6);
+    /* color: #3c5186; */
+
+    border:3px solid var(--palette3);
+
+    box-shadow: 5px 3px 0px #f5b043;
+    box-shadow: 5px 3px 0px var(--palette4);
+
+    font-family: courier;
+    font-size: 12pt;
+    font-weight: 600;
+    line-height: 74%;
+    line-height: 110%;
+    text-decoration: none;
+}
+
+.tinytext{
+font: 8pt "Tahoma", "DM Mono", "Courier", "Verdana", "Helvetica", sans-serif;
+font-weight: 500;
+line-height: 125%;
+letter-spacing: 0.5px;
+color: #fff;
+color: #473627;
+text-align: justify;
+}
+/* for credits box at end */
+.tinytextbox{
+    color:#473627;
+}
+.minititle{
+border:none;
+border-bottom:1px solid #529eac;
+}
+</style>
+<style>
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BULLET POINTS FOR LISTS */
+/* . . . . . . . . . . . . . . . . . . . . . */
+ul {
+  margin: 0 0 0 22px;
+  font: 8pt Verdana;
+  letter-spacing: 1.5px;
+}
+.list-notes li {
+    background: url(../../../posts/media_ACNLdreams/assets/icons/notebook.gif) no-repeat 7px 7px transparent;
+    list-style-type: none;
+    margin: 0;
+    padding: 8px 20px 0px 39px;
+    vertical-align: middle;
+    margin-top: 7px;
+    line-height: 140%;
+}
+
+
+
+
+</style>
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+<!-- https://tools.creatureframe.com/posts/media_ACNLdreams/assets/icons/notebook.gif -->
+<style>
+body{
+    background: fixed url(https://tools.creatureframe.com/assets/eachpost/jazzcat/bg_jazzcatwindow_blur0x10.png);
+    background: fixed url(../assets/backgrounds/BG_loopingGrids-assets/BG_loopingGrid_A_inv7.png);
+    background: fixed url(https://tools.creatureframe.com/assets/eachpost/jazzcat/bg_jazzcatwindow_blur0x10.png);
+    background: fixed url(https://tools.creatureframe.com/assets/eachpost/jazzcat/bg_jazzcatwindow.png);
+    background-position:bottom left;
+
+    background: var(--bg-wholepage);
+    background-position: var(--bg-pos);
+    background-size: var(--bg-size);
+
+    /* contain, cover, background-size: 300px 150px; */
+    /* background-size: cover; */
+}
+
+
+.scrollbox-wheel{
+line-height:1.7em;
+overflow-y:auto;
+overflow-x:hidden;
+height:100%;
+width:100%;
+margin: auto;
+text-align:justify;
+}
+.scrollbox-wheel::-webkit-scrollbar{
+width:1.1em;
+width:1.75em;
+}
+.scrollbox-wheel::-webkit-scrollbar-thumb{
+border:0.45em solid transparent;
+border:.1em solid #fff;
+border:.2em solid #fff;
+box-shadow:inset 0 0 0.5em 0.5em #5770b0;
+box-shadow:inset 0 0 0.5em 0.8em #5770b0;
+border-radius:0.9em;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width:1.75em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f5b043;
+  border:.2em solid #5770b0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border:0.45em solid transparent;
+    border:.1em solid #fff;
+    border:.2em solid #fff;
+    box-shadow:inset 0 0 0.5em 0.5em #5770b0;
+    box-shadow:inset 0 0 0.5em 0.8em #5770b0;
+    border-radius:0.9em;
+}
+
+/** Mozilla Firefox ONLY */
+@-moz-document url-prefix(){
+    html{
+        scrollbar-color: #5770b0 #f5b043;
+    }
+}
+
+.bannerstart-contain {
+    margin-top:calc(var(--endbanner-size) * -1);
+    height:var(--endbanner-size);
+}
+</style>
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+<!-- border:1px dashed yellow; -->
+
+
+<style>
+    .sidebyside-image{
+    display: inline-block;
+    max-width:550px;
+    vertical-align:top;
+    margin:5px 5px;
+}
+
+.sidebyside-image p {
+    margin:5px -40px 10px -40px;
+}
+
+
+.gifloops {
+    max-width: 100%;
+    /* image-rendering: pixelated; */
+}
+
+</style>
+
+<style>
+
+    .sideimg-left{
+        position: absolute;
+        margin-left: -190px;
+        /* margin-top: -310px; */
+        z-index: 300;
+        max-width:300px;
+        /* max-height:300px; */
+    }
+    .sideimg-right{
+        position: absolute;
+        /* position: inherit; */
+        margin-left: 770px;
+        /* margin-right:770px; */
+        /* margin-top: -310px; */
+        z-index: 300;
+        /* max-width:300px; */
+        width:300px;
+        /* max-height:300px; */
+        /* border:1px solid red; */
+        /* right:0; */
+        /* align:right; */
+    }
+
+    .img-overlapbot{
+        width:60%;
+        display:inline-block;
+        position:relative;
+        float:right;
+        margin: -40px;
+        padding:0px;
+    }
+
+
+
+    .photoborder{
+        border:1px;
+        background-color:#fff;
+        padding:9px;
+        position: relative;
+        /* rotate: 5deg; */
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px, rgba(0, 0, 0, 0.5) 0px 4px 17px -4px;
+        /* image-rendering: pixelated; */
+    }
+
+</style>
+<style>
+.videospot{
+    /* display: inline-block; */
+    max-width:550px;
+    max-height:550px;
+    /* vertical-align:top; */
+    margin: 2px;
+    /* margin-bottom: 40px; */
+    max-width:100%;
+    /* inline-size: 550px; */
+    /* overflow-wrap: break-word; */
+}
+
+
+
+
+/* Mobile-first approach - hide side images on smaller screens */
+@media only screen and (max-width: 768px) {
+
+    /* CUSTOM WINDOW AND IMAGE CHANGES */
+    .photoborder{
+        padding:6px;
+    }
+    .buttontext{
+        font-size: 10pt !important;
+        width:100%  !important;
+    }
+    .window-remodelling-end{
+        margin-bottom:20px !important;
+    }
+    .window-reshapecat{
+        padding:10px 0px !important;
+    }
+    .window-casting-end{
+        margin-bottom:20px !important;
+    }
+    .mmargin-smaller{
+        margin-top:-60px !important;
+    }
+    .mimage-inline{
+        width:100% !important;
+        margin: 10px 0px !important;
+        position:inherit !important;
+        rotate: 0deg !important;
+        float:none !important;
+    }
+    /* .mimage-1, .mimage-2, .mimage-4{
+        width:100% !important;
+        margin: 10px 0px !important;
+        position:inherit !important;
+        rotate: 0deg !important;
+    } */
+    .mimage-1-text{
+        width:100% !important;
+        margin: 10px 0px !important;
+        position:inherit !important;
+        rotate: 0deg !important;
+    }
+    .mimage-3{
+        margin-top:20px;
+        margin:20px -5% 0px -10%;
+        max-width:120%;
+        padding-bottom: 10px;
+        /* border:1px solid red; */
+    }
+    .title-remodelling{
+        max-width:100% !important;
+        padding:14px 0px  !important;
+        margin-bottom:15px !important;
+        margin-top:-25px !important;
+    }
+
+
+
+
+
+    .postsize {
+      width: calc(100% - 20px);
+      max-width: calc(100% - 20px);
+      margin-left: 10px;
+      margin-right: 10px;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    .columnbox {
+      width: 100%;
+      padding: 0;
+    }
+
+    /* Hide side images on mobile to prevent horizontal scrolling */
+    .sideimg-left,
+    .sideimg-right {
+      display: none;
+    }
+
+    /* Adjust font size for mobile */
+    .bigtitle {
+      font-size: 16pt;
+    }
+
+    .font-styling {
+      font-size: 10pt;
+      padding: 10px;
+    }
+}
+
+/* Tablet and small desktop */
+@media only screen and (min-width: 769px) and (max-width: 999px) {
+    .postsize {
+      width: 90%;
+      max-width: 90%;
+    }
+
+    /* Hide side images on tablets too */
+    .sideimg-left,
+    .sideimg-right {
+      display: none;
+    }
+}
+
+/* Large desktop */
+@media (min-width: 1000px) {
+  .postsize {
+    max-width:var(--postwidth);
+  }
+
+  /* Show side images only on large screens */
+  .sideimg-left,
+  .sideimg-right {
+    display: block;
+  }
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡ -->
+<!-- ◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡ -->
+<!-- ◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡ -->
+<!-- ◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡ -->
+<!-- ◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡ -->
+<!-- ◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡ -->
+<!-- ◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡ -->
+<!-- ◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡ -->
+<!-- ◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡ -->
+<!-- ◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡◠◡ -->
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="columnbox">
+<div class="postsize" >
+<!-- <div class="postsize" style="padding:30px;"> -->
+<div class="font-styling">
+<div style="width:10px;height:25px;"></div>
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+<!-- GALLERY -->
+<style>
+
+    .flexbox {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      box-sizing: border-box;
+      margin: 0px -3.5px;
+    }
+
+    .item {
+      box-sizing: border-box;
+      /* width: 33.33%; */
+      width: 50%;
+      margin-bottom: 20px;
+      padding: 0px 3.5px;
+    }
+
+    .content {
+      color: #242424;
+      background-color: #1bbefe;
+      font-weight: 600;
+      text-align: center;
+      box-sizing: border-box;
+      height: 100%;
+      padding: 10px;
+    }
+
+/* image css */
+/* margin:5px; */
+
+</style>
+
+
+
+<!--
+<div class="flexbox">
+  <div class="item">
+      <img src="../3d/jazzcat_WIPnight_assets/casting/PXL_20240507_032452915_web.jpg" style="rotate: 5deg;margin:-5px;" class="image-fullscroll photoborder mimage-inline">
+  </div>
+  <div class="item">
+      <img src="../3d/jazzcat_WIPnight_assets/casting/PXL_20240507_032452915_web.jpg" style="rotate: 5deg;margin:-5px;" class="image-fullscroll photoborder mimage-inline">
+  </div>
+</div> -->
+
+
+
+
+<center>
+<img src='freshair25_assets/Fresh_Air_Camp_Info_Doc_3.jpg' style='rotate: -1deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+</center>
+
+
+<iframe width="100%" height="auto" src="https://www.youtube.com/embed/ph-CFAZaSGI?si=qT1MBHBEbPKioXpj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+<div class="flexbox">
+
+    <div class='item'> <img src='freshair25_assets/photos/C61A9008_web.jpg' style='rotate: -10deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9092_web.jpg' style='rotate: 1deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9573_web.jpg' style='rotate: 2deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A8986_web.jpg' style='rotate: -10deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9333_web.jpg' style='rotate: -3deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9337_web.jpg' style='rotate: 9deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9215_web.jpg' style='rotate: -4deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9540_web.jpg' style='rotate: 5deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9120_web.jpg' style='rotate: 9deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9127_web.jpg' style='rotate: -1deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9135_web.jpg' style='rotate: -10deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9139_web.jpg' style='rotate: 1deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9143_web.jpg' style='rotate: -7deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9168_web.jpg' style='rotate: 5deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9110_web.jpg' style='rotate: -9deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9190_web.jpg' style='rotate: 1deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9197_web.jpg' style='rotate: 1deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9251_web.jpg' style='rotate: -2deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9000_web.jpg' style='rotate: 1deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9258_web.jpg' style='rotate: -6deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9317_web.jpg' style='rotate: 4deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9496_web.jpg' style='rotate: -1deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9571_web.jpg' style='rotate: 4deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+    <div class='item'> <img src='freshair25_assets/photos/C61A9269_web.jpg' style='rotate: -8deg;' class='image-fullscroll photoborder mimage-inline'> </div>
+
+</div>
+
+
+
+
+
+<!-- . . . . . . . . . . . . . . . . . . . . . -->
+<!-- CONTENT BOX -->
+<!-- <div align="center" style="margin-top:-20px;padding:50px;" class="textbox">
+<br>
+
+<div align="center">
+<img src="../3d/jazzcat_WIPnight_assets/cat_catfinal.gif" style="width:50%; margin: -35px 40px -55px -30px; position:relative; float:left; rotate: 5deg;" class="image-fullscroll photoborder mimage-inline">
+</div>
+
+<img src="../3d/jazzcat_WIPnight_assets/casting/PXL_20240507_032452915_web.jpg" style="width:50%; margin: 5px 40px 15px -30px; position:relative; float:left; rotate: 5deg;" class="image-fullscroll photoborder mimage-inline">
+
+<div style="height:10px;"></div>
+
+<div style="width:48%; margin: 0px 10px 0px -30px; position:relative; float:right;" class="mimage-1-text">
+so i'd really wanted to make an interactive figurine for ages, and the opening window seemed like a great contender.
+<br><br>especially if it could be posed in place, and i thought it had cute potential to have paper backdrops tacked to the back as decoration.
+<br><br>
+</div>
+<div class="spc25"></div>
+<br><br>
+</div> -->
+<!-- END CONTENT BOX -->
+<!-- . . . . . . . . . . . . . . . . . . . . . -->
+
+
+
+
+
+<div class="spc25"></div>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+<!-- spacer to scroll past bottom border image -->
+<div style="width:10px;height:60px;"></div>
+<!-- END OF POST CONTENT -->
+<!-- END BOXES FOR POST -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+</div></div></div></div>
+
+
+
+
+
+</body>
+</html>
