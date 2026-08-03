@@ -784,10 +784,11 @@ style="margin-top:-20px;position:relative;z-index:5;font-size:9pt;line-height:15
         /* width:500px; */
         /* width:100%; */
         width: calc(100% - 20px);
-        max-width:100%;
+        /* max-width:100%; */
+        max-width: calc(100% - 20px);
         padding:0px;
         margin: 0px 10px;
-        height:540px;
+        height:560px;
 
         border:1px solid #fff;
         background:#ffc800;
@@ -798,12 +799,12 @@ style="margin-top:-20px;position:relative;z-index:5;font-size:9pt;line-height:15
         background-position: bottom 100% right 50%;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
         box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-        border-radius: 10px;
+        border-radius: 13px;
     }
 
-
-
 </style>
+
+
 
 
 <!-- style="--poster-color:#303030" -->
@@ -879,33 +880,100 @@ https://cdn.polyhaven.com/asset_img/primary/autumn_forest_01.png?height=760&qual
 
 
 
+<!-- ADD TO MODEL VIEWER NOTES:
 
+DIFFERENT WAYS TO SET CAMERA BEGINNING ORBIT. x is to start it from left or right angle, y for height.
+camera-orbit="1.00238rad 3.42971rad 10.06749715129365093m"
+camera-orbit="45deg 55deg 4m"
+
+TO SET ROTATION POINT TO SOMETHING ELSE
+ camera-target="0m 0.75m 0m"
+
+TO ZOOM OUT, make these higher
+ field-of-view="92deg"
+ max-field-of-view="62deg"
+ -->
+
+
+
+
+
+
+<!-- The Model Viewer element -->
+<!-- <model-viewer id="reveal" src="https://creatureframe.com/post/tools/polypizza_assets/modelview/models/Chicken_ANIM_SceneObject.glb" autoplay animation-name="idle" camera-controls></model-viewer> -->
+
+<!-- The Dropdown Menu -->
+<!-- <select id="anim-select">
+  <option value="idle">First Animation</option>
+  <option value="sleep">Second Animation</option>
+</select>
+
+<script>
+  const modelViewer = document.querySelector('#reveal');
+  const select = document.querySelector('#anim-select');
+
+  select.addEventListener('change', (event) => {
+    modelViewer.animationName = event.target.value;
+  });
+</script> -->
+
+
+
+
+<style>
+    #anim-select{
+        background-color: #ffc800;
+        background-color: #ffa2a3;
+        padding:11px;
+        padding-right:21px;
+        margin:11px 9px;
+        font: 16pt Courier;
+        border-radius: 9px;
+        border:3px solid #fff;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        /* Remove default arrow */
+        /* background-image: url(...); */
+        /* Add custom arrow */
+        /* content: url("polypizza_assets/modelview/icons8-drop-down-24.png"); */
+        /* background-image: url("polypizza_assets/modelview/icons8-drop-down-24.png"); */
+        /*  */
+        background-repeat: no-repeat;
+        background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+        background-position: right 15px top 1em, right 10px top 1em;
+        background-size: 5px 5px, 5px 5px;
+    }
+</style>
  <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
  <!-- <br><br> chicken on bg <br> -->
+  <!-- src="https://creatureframe.com/post/tools/polypizza_assets/modelview/models/Chicken_ANIM_SceneObject.gltf" -->
  <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
  <div class="card">
- <model-viewer
+ <model-viewer id="animselector"
  src="https://creatureframe.com/post/tools/polypizza_assets/modelview/models/Chicken_ANIM_SceneObject.glb"
- src="https://creatureframe.com/post/tools/polypizza_assets/modelview/models/Chicken_ANIM_SceneObject.gltf"
- alt="robot"
+ alt="chicken"
  poster="polypizza_assets/modelview/bg/loading.png"
- animation-name="RobotArmature|Robot_Jump"
+ animation-name="idle"
 
  environment-image="https://static.poly.pizza/hdr/BG.hdr"
  skybox-image="https://cdn.polyhaven.com/asset_img/primary/forest_slope.png?height=760&quality=95"
- skybox-height="8.5m"
+ skybox-height="1.5m"
 
- shadow-intensity="0.5"
+ shadow-intensity="1.5"
  shadow-softness="0.5"
- scale="50.2 50.5 50.2"
+ scale="50.0 50.0 50.0"
 
  camera-controls="true"
  disable-zoom disable-tap
 
- camera-orbit="0.30238rad 1.42971rad 0.06749715129365093m"
+ camera-orbit="1.00238rad 3.42971rad 10.06749715129365093m"
+ camera-orbit="45deg 55deg 4m"
+ camera-target="0m 0.75m 0m"
  max-camera-orbit="auto 90deg auto"
- field-of-view="42deg"
- max-field-of-view="42deg"
+ field-of-view="52deg"
+ max-field-of-view="52deg"
 
  ar-status="not-presenting"
  data-js-focus-visible=""
@@ -914,18 +982,37 @@ https://cdn.polyhaven.com/asset_img/primary/autumn_forest_01.png?height=760&qual
  interaction-prompt="auto"
  loading="eager"
  >
- </model-viewer>
- </div>
- <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<!-- - - - - - - - - -  -->
+<select id="anim-select">
+<option value="idle">idle</option>
+<option value="sleep">sleeping</option>
+<option value="run">running</option>
+<option value="peck">peck</option>
+<option value="shock">shocked</option>
+<option value="boom">boom</option>
+</select>
+
+<script>
+const modelViewer = document.querySelector('#animselector');
+const select = document.querySelector('#anim-select');
+
+select.addEventListener('change', (event) => {
+ modelViewer.animationName = event.target.value;
+});
+</script>
+<!-- - - - - - - - - -  -->
+</model-viewer>
+</div>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 
 
 
 
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
-<!-- <br><br> on bg <br> -->
+<!-- <br><br> computer on bg test <br> -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
-<div class="card">
+<!-- <div class="card">
 <model-viewer
 src="https://static.poly.pizza/c10ffc16-c7e2-4090-8c15-758d9931f51a.glb.br"
 alt="robot"
@@ -956,13 +1043,13 @@ interaction-prompt="auto"
 loading="eager"
 >
 </model-viewer>
-</div>
+</div> -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 
 
 
 
-
+<br><br>
 
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
