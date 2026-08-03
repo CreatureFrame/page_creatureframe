@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- THIS ONE COMBINES A SLIMMED DOWN VERSION OF acnldreams_stylesheet.css AND THE MINIFIED cohostclient.css -->
+<link data-chunk="client" rel="stylesheet" href="../assets/acnldreams_stylesheet_min.css">
+<!-- <link data-chunk="client" rel="stylesheet" href="../3d/jazzcat_style.css"> -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="icon" type="image/png" href="assets/icons/green-computer.gif">
+<title>
+    model-viewer and poly.pizza
+</title>
+<link href="https://creatureframe.com/rss.xml" rel="alternate" type="application/rss+xml" title="the creatureframe RSS feed">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+<!--Google Fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Capriola&family=Lusitana:wght@400;700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet">
+
+
+<!-- model-viewer -->
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
+
+
+</head>
+<body>
+<a href="https://creatureframe.com/post/"><div class="goback"></div></a>
+
+
+
+
+
+
+
+<!--
+ORDER:
+outermostbox
+columnbox
+postsize
+post-cohostbarrier
+post-background-full post-bgimg bgimg-alignment final
+scrollbox
+ -->
+
+<!--
+banners:
+ 1000x55px
+ -->
+
+
+ <!-- color:#623008;
+ #813d00
+ color:#723e13;
+ color:#FFDE78;
+#623008
+#f5b043
+#c59172);
+#f9b351
+#44b173
+#70331d
+#ffffff
+#623008;
+#e86363
+#53a2a6
+#c1756f
+#40adaf
+#43a8a3
+#40a89a
+#28776c
+#225b53
+#ede4cf;
+#faf4e9
+transparent
+darkseagreen
+#95705b
+#97615c
+#845653
+
+
+PRESETS FOR ROOS:
+bigtitles
+--palette3: #f5b043;
+--palette3-border: #f5b043;
+--palette3-shad: #40a89a;
+--palette3-shadtext: #28776c;
+bigtitles
+--palette3: #FFDE78;
+--palette3-border: #40a89a;
+--palette3-shad: #40a89a;
+--palette3-shadtext: #95705b;
+bigtitles
+--palette3: #FFDE78;
+--palette3-border: #f5b043;
+--palette3-shad: #f5b043;
+--palette3-shadtext: #97615c;
+
+
+
+PRESET FOR YELLOW PAINTERLY:
+
+/* unused, was edge boder of whole page */
+--palette1: #efe3cf;
+/* for main text (light #ede4cf) */
+--palette2: #473627;
+/* for bigtitles (and liltitles which are kinda a mess rnow) */
+--palette3: #623008;
+--palette3-border: #c59172;
+--palette3-shad: #c59172;
+--palette3-shadtext: none;
+/* for scrollbar */
+--palette4: #FFDE78;
+--palette4-hover: #faf4e9;
+/* and it's border */
+--palette5: #f5b043;
+--palette5-hover: transparent;
+/* for tinytext and tinytextbox (credits box) */
+--palette6: #faf4e9;
+--palette7: #c59172;
+/* for HRs and underlines of .minititle */
+--palette8: #c59172;
+/* border of post window */
+--palette-postborder: #ede4cf;
+--palette-textboxborder: #ede4cf;
+--palette-textboxshad: #ede4cf;
+
+
+ -->
+
+
+
+
+<style>
+:root {
+--postheight: calc(100% - 40px);
+--postheight-margintop: 15px;
+--postwidth: 580px;
+--postwidth: 800px;
+
+--bannerstart-height: 55px;
+--bannerend-height: 55px;
+
+
+/*
+#8b694e
+#ffd889
+#ffa2a3
+#6490fd
+#66524b
+#ff5f7b
+#ffbf6d
+#faf4e9
+*/
+
+/* unused, was edge boder of whole page */
+--palette1: #efe3cf;
+/* for main text (light #ede4cf) */
+--palette2: #2f2217;
+/* for bigtitles (and liltitles which are kinda a mess rnow) */
+--palette3: #ffd889;
+--palette3-border: #ffd889;
+--palette3-shad: #ff5f7b;
+--palette3-shadtext: none;
+/* for scrollbar */
+--palette4: #ffa2a3;
+--palette4-hover: #6490fd;
+/* and it's border */
+--palette5: #ff5f7b;
+--palette5-hover: transparent;
+/* for tinytext and tinytextbox (credits box) */
+--palette6: #faf4e9;
+--palette7: #c59172;
+/* for HRs and underlines of .minititle */
+--palette8: #c59172;
+/* border of post window */
+--palette-postborder: #ede4cf;
+--palette-textboxborder: #ede4cf;
+--palette-textboxshad: #ede4cf;
+--palette-urlyblock: #ede4cf;
+--palette-urlyblock-hover: #ff5f7b;
+
+--bg-wholepage: fixed url("polypizza_assets/bg/bg_blender_cookies.jpg");
+--bg-post: fixed url(polypizza_assets/bg/bg_blender_cookies_blur0x20_noise0.2_exp-10per.jpg);
+--bg-textbox: fixed url(polypizza_assets/bg/bg_blender_cookies_blur0x20_noise0.2.jpg);
+--bg-textbox: fixed url(polypizza_assets/bg/bg_blender_cookies_blur0x40_noise0.4_exp15per.jpg);
+--bg-textbox: fixed url(polypizza_assets/bg/bg_blender_cookies_blur0x40_noise0.4_exp10per_bright10x-10.jpg);
+--bg-textbox: fixed url(polypizza_assets/bg/bg_blender_cookies_blur0x40_noise0.4_exp15per_levels2.jpg);
+--bg-codebox: fixed url(polypizza_assets/bg/bg_blender_cookies_blur0x40_noise0.4_exp10per_bright10x-10.jpg);
+--bg-titlebox: fixed url(polypizza_assets/bg/bg_blender_cookies_blur0x6.jpg);
+--bg-titlebox: fixed url(polypizza_assets/bg/bg_blender_cookies_blur0x20_noise0.2_exp-10per_darker.jpg);
+--bg-pos: top right;
+/* contain, cover, 30%; 200px 100px; */
+--bg-size: cover;
+}
+
+/* outermostbox and columnbox set up for the whole page */
+.outermostbox {
+height:calc(100% - 30px);
+width:100%;
+position:fixed;
+min-height:100%;
+overflow-y:auto;
+/* border:1px solid var(--palette1); */
+margin:0px;
+
+/* adds vignette inner shadow to whole page */
+/* box-shadow:
+inset rgba(0, 0, 0, 0.3) 1px 2px 25px,
+inset rgba(0, 0, 0, 0.3) 1px 2px 15px,
+inset rgba(0, 0, 0, 0.2) 3px 3.5px 6px; */
+/* this as a flexbox replaces the need for the columnbox */
+display: inline-flex;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: space-around;
+align-items: center;
+align-content: center;
+}
+/* .columnbox{
+align-items: center;
+display: flex;
+justify-content: center;
+height:100%;
+} */
+.postsize{
+max-width:var(--postwidth);
+padding:auto;
+/* not needed anymore now using flexbox */
+/* height:var(--postheight); */
+/* margin-top:var(--postheight-margintop); */
+
+/* or turn these on for full length */
+height:100%;
+margin:0px;
+/* border:1px solid red; */
+
+/* then turn on flexbox for proper floating */
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+justify-content: center;
+align-items: normal;
+align-content: normal;
+}
+.post-cohostbarrier {
+height:var(--postheight);
+border:1px solid var(--palette-postborder);
+border:2px solid var(--palette-postborder);
+/* margin:0px; */
+/* padding:0px; */
+/* or turn these on for full length */
+/* height:100%; */
+/* margin:0px; */
+/* border:2px solid green; */
+}
+
+
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BACKGROUNDS */
+/* . . . . . . . . . . . . . . . . . . . . . */
+.post-bgimg{
+background: var(--bg-post);
+background-position: var(--bg-pos);
+background-size: var(--bg-size);
+/* border: 2px solid lime; */
+}
+
+/* textbox-bgimg not used anymore */
+.textbox{
+background: var(--bg-textbox);
+background-position: var(--bg-pos);
+background-size: var(--bg-size);
+box-shadow: 5px 3px 0px var(--palette-textboxshad);
+box-shadow:
+rgba(0, 0, 0, 0.3) 1px 2px 3px,
+rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
+
+position:relative;
+z-index:5;
+/* font-size:9pt; */
+line-height:135%;
+border:1px solid var(--palette-textboxborder);
+padding:0px 20px;
+}
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BANNER AT START AND END OF POST */
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* banner-img: this has replaced "bannerstart-img" in past posts  */
+
+/* margin-top: -670px !important; overflow-x:hidden; width:100%; margin-left:-1px; */
+
+
+
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* TEXT STYLES */
+/* . . . . . . . . . . . . . . . . . . . . . */
+.font-styling{
+font: 10pt "Verdana", "Courier", "Helvetica", sans-serif;
+/* font: 12pt "Verdana", "Courier", "Helvetica", sans-serif; */
+font-weight: 300;
+letter-spacing: 0.85px;
+text-align: justify;
+color: var(--palette2);
+
+font: 13pt "Raleway", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+letter-spacing: 1.05px;
+
+font: 13pt "Space Grotesk", sans-serif;
+font-optical-sizing: auto;
+font-weight: 300;
+letter-spacing: 0.25px;
+/* letter-spacing: normal; */
+}
+
+/* for the top h1 title box, should probs replace textbox w whatever main text is using, or rmv these altogether if not needed */
+.bigtitle{
+font-size: 28pt;
+/* font-family: courier; */
+font-family: Capriola, courier;
+font-weight: 600;
+text-decoration: none;
+/* filter: drop-shadow(3px 0px 0px #623008); */
+border:none;
+background:transparent;
+background: var(--bg-titlebox);
+background-position: var(--bg-pos);
+background-size: var(--bg-size);
+padding:10px 17px;
+margin:0px;
+
+/* for orange bubble */
+border-radius: 8px;
+margin:15px 40px;
+border:1px solid var(--palette3-border);
+filter: none;
+padding:19px;
+letter-spacing: 0.45px;
+line-height: 104%;
+
+/* color: var(--palette3); */
+color: var(--palette3) !important;
+box-shadow: none;
+/* filter: drop-shadow(3px 0px 0px #623008); */
+/* softer drop shadow */
+box-shadow:
+rgba(0, 0, 0, 0.2) 2px 4px 12px,
+rgba(0, 0, 0, 0.1) 1px 3px 8px,
+rgba(0, 0, 0, 0.2) 0px 2.5px 6px;
+/* for hard drop shadow */
+/* box-shadow: 5px 3px 0px #FFDE78; */
+box-shadow: 5px 5px 0px var(--palette3-shad);
+
+position:relative;
+z-index:15;
+
+/* font-family: "Lusitana", serif; */
+/* font-weight: 400; */
+/* font-weight: 700; */
+
+text-shadow:
+3px 3px 0px var(--palette3-shadtext),
+rgba(0, 0, 0, 0.2) -4px 2px 3px;
+/* EXAMPLES:
+text-shadow:
+  1px 1px 2px red,
+  0 0 1em blue,
+  0 0 0.2em blue;
+text-shadow:
+  3px 3px 0px #623008,
+  -3px -1px 10px #623008;
+text-shadow:
+  3px 3px 0px #623008,
+  rgba(0, 0, 0, 0.2) -4px 2px 3px;
+*/
+
+}
+
+
+.liltitle{
+font-size: 20pt;
+/* background: none; */
+filter: none;
+margin:0% 22% -17px 22%;
+padding:13px;
+border-radius: 8px;
+/* width:80%; */
+width:auto;
+/* margin:0% 10% -17px 10%; */
+color: var(--palette3) !important;
+background: var(--bg-titlebox);
+background-position: var(--bg-pos);
+background-size: var(--bg-size);
+border:1px solid var(--palette3);
+/* box-shadow: 5px 3px 0px #c59172; */
+box-shadow: 5px 3px 0px var(--palette5);
+}
+
+.bigbutton:hover,.lilbutton:hover{
+/* background: #623008; */
+background: var(--palette6);
+/* color: #FFDE78 !important; */
+color: var(--palette4) !important;
+border:1px solid #fff;
+box-shadow: 5px 3px 0px var(--palette1);
+}
+
+.buttonholder{
+  display: flex;
+
+  align-items: center;
+  /* flex-flow: column; */
+  flex-direction: column;
+  align-content: center;
+
+  background-color: #bbdefb;
+  height: 100%;
+  padding: 15px;
+  gap: 5px;
+}
+
+/* .buttonholder > div{
+  background: #ffecb3;
+  border: 3px solid #ffcc80;
+  border-radius: 5px;
+  padding: 8px;
+} */
+
+.urlyblock{
+	border:none;
+	/* border-bottom:2px solid #529eaa;
+	border-top:2px solid #529eaa; */
+    border-bottom: 2px solid  var(--palette-urlyblock);
+    border-top: 2px solid  var(--palette-urlyblock);
+	padding:0px 3px;
+	background:transparent;
+    font-weight:600;
+}
+
+.urlyblock:hover{
+	border:none;
+	/* border-bottom:2px solid #f5b043;
+	border-top:2px solid #f5b043; */
+    border-bottom: 2px solid  var(--palette-urlyblock-hover);
+    border-top: 2px solid  var(--palette-urlyblock-hover);
+	padding:0px 3px;
+	background:#3c5186;
+	background:rgba(220, 225, 210, 0.5);
+	background: var(--palette2);
+    color: var(--palette6);
+}
+
+.tinytext{
+font: 8pt "Tahoma", "DM Mono", "Courier", "Verdana", "Helvetica", sans-serif;
+font-weight: 500;
+
+font: 9.5pt "Space Grotesk", sans-serif;
+font-optical-sizing: auto;
+font-weight: 100;
+letter-spacing: 0.45px;
+font: 9pt "Raleway", sans-serif;
+/* letter-spacing: normal; */
+
+line-height: 125%;
+letter-spacing: 0.5px;
+color: var(--palette6);
+text-align: justify;
+}
+/* for credits box at end */
+.tinytextbox{
+color: var(--palette6);
+}
+.minititle{
+border:none;
+border-bottom:1px solid var(--palette8);
+}
+</style>
+<style>
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BULLET POINTS FOR LISTS */
+/* . . . . . . . . . . . . . . . . . . . . . */
+ul {
+margin: 0 0 0 22px;
+font: 9pt Verdana;
+letter-spacing: 1.5px;
+font: 10pt "Space Grotesk", sans-serif;
+font-optical-sizing: auto;
+font-weight: 300;
+letter-spacing: 0.45px;
+}
+.list-notes li {
+background: url("../assets/deco/icons/notebook.gif") no-repeat 7px 7px transparent;
+list-style-type: none;
+margin: 0;
+padding: 8px 20px 0px 39px;
+vertical-align: middle;
+margin-top: 7px;
+line-height: 140%;
+}
+
+
+body{
+background: var(--bg-wholepage);
+background-position: var(--bg-pos);
+background-size: var(--bg-size);
+}
+
+
+/* - - - - - - - - - - - -
+        SCROLLBARS
+- - - - - - - - - - - -  */
+/* this one is in the stylesheets and sets up the shadows */
+/* .scrollbox{ */
+    /* over-the-top shadow */
+	/* box-shadow:rgba(0, 0, 0, 0.14) 1px 3px 15px,rgba(0, 0, 0, 0.22) 0px 2.5px 5px,rgba(122, 122, 122, 0.32) 3px 3px 0px,rgba(122, 85, 85, 0.35) 1px 1px 0.3px; */
+    /* for firefox, testing. NOPE it overrides the custom nice one so fuck it! */
+    /* overflow: scroll;
+    scrollbar-color: red orange;
+    scrollbar-width: thin; */
+/* } */
+
+.scrollbox-wheel{
+line-height:1.7em;
+overflow-y:auto;
+overflow-x:hidden;
+height:100%;
+width:100%;
+margin: auto;
+text-align:justify;
+}
+.scrollbox-wheel::-webkit-scrollbar{
+width:1.1em;
+width:1.75em;
+/* width:1.60em; */
+/* box-shadow:inset 0 0 0.9em 0.1em var(--palette6); */
+/* border:2px solid yellow; */
+}
+.scrollbox-wheel::-webkit-scrollbar-thumb{
+border:0.45em solid transparent;
+border:.1em solid #fff;
+border:.3em solid var(--palette5);
+box-shadow:inset 0 0 0.5em 1.0em var(--palette4);
+/* box-shadow:
+inset 0 0 0.5em 0.8em var(--palette4),
+rgba(0, 0, 0, 0.9) 1px 2px 3px,
+rgba(0, 0, 0, 0.6) 0px 2.5px 6px; */
+border-radius:0.9em;
+}
+/* for solid drop shadow
+rgba(255, 255, 255, 1.0) -2px 2px 0px, */
+.scrollbox-wheel::-webkit-scrollbar-thumb:hover {
+    /* background: var(--palette4-hover); */
+    box-shadow:inset 0 0 0.5em 1.0em var(--palette4-hover);
+    filter: brightness(1.1);
+    border: 0.3em solid var(--palette5-hover);
+}
+
+/* dont really need this one for this page yet do i */
+/* .scrollbox-wheel::-webkit-scrollbar-track {
+    background: var(--palette5);
+    border-radius: 0.9em;
+    border:1px solid aqua;
+} */
+
+
+/** Mozilla Firefox ONLY */
+@-moz-document url-prefix(){
+    .scrollbox-wheel{
+        scrollbar-color: var(--palette4) var(--palette5);
+    }
+}
+
+
+/* Mobile-first approach - hide side images on smaller screens */
+@media only screen and (max-width: 768px) {
+
+    /* CUSTOM WINDOW AND IMAGE CHANGES */
+    .photoborder{
+        padding:6px !important;
+    }
+
+    /* for left/right floating images, to make them fullwidth and inline */
+    .mimageinline{
+        width:100% !important;
+        margin: 10px 0px !important;
+        position:inherit !important;
+        rotate: 0deg !important;
+        float:none !important;
+    }
+    /* for left/right floating images, to make them smaller on their side */
+    .mimagesmaller{
+        width:45% !important;
+    }
+
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* .columnbox {
+      width: 100%;
+      padding: 0;
+    } */
+
+    .postsize{
+    max-width:100%;
+    width:100%;
+    /* border: 2px solid lime; */
+    /* max-width:calc(100% - 30px); */
+    /* width:calc(100% - 30px); */
+    padding:none;
+    height:var(--postheight);
+    margin:0px;
+    height:100%;
+    box-sizing: border-box;
+    }
+
+    .post-cohostbarrier {
+    border:1px solid var(--palette-postborder);
+    padding:0px;
+    height:100%;
+    margin:0px;
+    }
+
+    /* Adjust font size for mobile */
+    .bigtitle {
+      font-size: 21pt;
+    }
+
+    .font-styling {
+      font-size: 10pt;
+      font-size: 15pt;
+      padding: 10px;
+    }
+}
+</style>
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+<div class="outermostbox">
+<!-- <div class="columnbox"> -->
+<div class="postsize">
+<div class="post-cohostbarrier">
+
+
+
+
+
+<style>
+/* - - - - - - - - - - - -
+        BANNERS
+- - - - - - - - - - - -  */
+.bannerstart-top{
+top:0px;
+overflow:hidden;
+position:relative;
+z-index:60;
+pointer-events:none;
+margin-top:0px;
+margin-bottom:calc(var(--bannerstart-height) * -1);
+height:var(--bannerstart-height);
+object-fit:cover;
+}
+/* currently used for start and end banners, w end's own style adding "rotate:180deg;" */
+.bannerstart-img2{
+margin:0px 0px;
+pointer-events:none;
+object-fit:cover;
+overflow:hidden;
+width:inherit;
+height:var(--bannerstart-height);
+max-width:100%;
+width:100%;
+filter: drop-shadow(0 0 0.45rem rgba(0, 0, 0, 0.6));
+image-rendering:pixelated;
+}
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BANNER AT START AND END OF POST */
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* banner-img: this has replaced "bannerstart-img" in past posts  */
+.banner-start{
+    margin-top:30px;
+    filter: none;
+    filter: drop-shadow(-2px 2px 3px #813d00);
+    filter: drop-shadow(-2px 2px 0.5px #333);
+    filter: drop-shadow(-2px 2px 3.7px rgba(0, 0, 0, 0.5));
+}
+.bannerend-inside{
+    height:100%;
+    margin-top: 0px;
+}
+/* these two were used for end banner */
+.banner-img{
+    min-width: 1000px;
+    max-width: 1000px;
+}
+.banner-end{
+    filter: none;
+    filter: drop-shadow(4px 5px 0px #f5b043);
+    /* filter: drop-shadow(-2px 2px 6.7px rgba(0, 0, 0, 0.5)); */
+    rotate:180deg;
+}
+/* BANNER STYLE FROM ACNL */
+.bannerstart-contain {
+margin-top:calc(var(--bannerend-height) * -1);
+height:var(--bannerend-height);
+}
+</style>
+
+
+
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+<!--                 TOP BANNER                 -->
+<!-- . . . . . . . . . . . . . . . . . . . . .  -->
+<!-- <div style="" class="bannerstart-top">
+<img src="../assets/deco/banners/postBorder_60x1000-assets/paintycrafts_orangeyellowbrown.png" class="bannerstart-img2">
+</div> -->
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+<!--             POST CONTAINER TOP             -->
+<!-- . . . . . . . . . . . . . . . . . . . . .  -->
+<!-- <div style="" class="post-cohostbarrier"> -->
+<div style="" class="post-background-full post-bgimg bgimg-alignment final">
+<div class="scrollbox">
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- ADDING SCROLLBOX WHEEL -->
+<div class="scrollbox-wheel">
+    <!-- * * * * * * * * * * * * * * * * * * * *  -->
+<div class="font-styling">
+<!-- spacer -->
+<div style="width:10px;height:25px;"></div>
+<!-- * * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+<div class="bigtitle" align="center" style="color:#623008;position:relative;z-index:15;margin-bottom:-60px;">
+adding 3D models to webpages
+</div>
+<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+<!--
+text style previously used per contentbox
+
+style="margin-top:-20px;position:relative;z-index:5;font-size:9pt;line-height:155%;" -->
+
+
+
+
+<!-- DELETE LATER -->
+<!-- TEST W SLIME SIMPLE -->
+<!-- <model-viewer oncontextmenu="return false;" id="mainModel" environment-image="https://static.poly.pizza/hdr/BG.hdr" class="w-full h-full" src="https://static.poly.pizza/76bc433e-3a73-4101-8990-37af46079e2e.glb.br" alt="Slime Enemy" auto-rotate="true" camera-controls="true" shadow-intensity="1" interaction-prompt="auto" loading="eager" camera-orbit="1.30238rad 1.42971rad 0.06749715129365093m" enable-pan="true" field-of-view="42deg" max-field-of-view="42deg" data-js-focus-visible="" ar-status="not-presenting" style="--poster-color: #303030;" animation-name="undefined">
+</model-viewer> -->
+
+
+
+
+<style>
+
+    .boxed{
+        /* width:500px; */
+        /* width:100%; */
+        width: calc(100% - 20px);
+        max-width:100%;
+        padding:0px;
+        margin: 0px 10px;
+        height:540px;
+
+        border:1px solid #fff;
+        background:#ffc800;
+/*        border:5px solid #ffe196;*/
+        background: fixed url("polypizza_assets/modelview/bg/bgpattern_dusky_ver5.png") bottom center;
+        background: #2A7B9B;
+        background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+        background-position: bottom 100% right 50%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        border-radius: 10px;
+    }
+
+
+
+</style>
+
+
+<!-- style="--poster-color:#303030" -->
+
+
+<!--
+auto-rotate="true"
+ -->
+
+
+
+
+
+ <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+ <!-- <br><br> example <br> -->
+ <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+ <div class="card">
+ <model-viewer
+ src="https://static.poly.pizza/c10ffc16-c7e2-4090-8c15-758d9931f51a.glb.br"
+ alt="robot"
+ poster="polypizza_assets/modelview/bg/loading.png"
+ animation-name="RobotArmature|Robot_Jump"
+
+ environment-image="https://static.poly.pizza/hdr/BG.hdr"
+
+ shadow-intensity="0.5"
+ shadow-softness="0.5"
+ scale="50.2 50.5 50.2"
+
+ camera-controls="true"
+ disable-zoom disable-tap
+
+ camera-orbit="0.30238rad 1.42971rad 0.06749715129365093m"
+ max-camera-orbit="auto 90deg auto"
+ field-of-view="42deg"
+ max-field-of-view="42deg"
+
+ ar-status="not-presenting"
+ data-js-focus-visible=""
+ autoplay
+ class="boxed"
+ style="background: none; border:none; box-shadow:none; border-radius: 0px;"
+ interaction-prompt="auto"
+ loading="eager"
+ >
+ </model-viewer>
+ </div>
+ <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+<!--
+skybox-image="https://modelviewer.dev/shared-assets/environments/whipple_creek_regional_park_04_1k.hdr"
+skybox-height="3.5m"
+scale="50.2 50.5 50.2"
+-->
+
+
+<!-- bg HDRIS from polyhaven: (skybox-height="8.5m" works well for most so far)
+https://cdn.polyhaven.com/asset_img/primary/qwantani.png?height=760&quality=95
+
+https://cdn.polyhaven.com/asset_img/primary/industrial_sunset_02.png?height=760&quality=95
+8 to 10.5 roughly
+skybox-height="8.5m"
+
+https://cdn.polyhaven.com/asset_img/primary/flamingo_pan.png?height=760&quality=95
+https://cdn.polyhaven.com/asset_img/primary/forest_slope.png?height=760&quality=95
+https://cdn.polyhaven.com/asset_img/primary/lakeside_sunrise.png?height=760&quality=95
+https://cdn.polyhaven.com/asset_img/primary/phalzer_forest_01.png?height=760&quality=95
+https://cdn.polyhaven.com/asset_img/primary/mossy_forest.png?height=760&quality=95
+https://cdn.polyhaven.com/asset_img/primary/qwantani_night_puresky.png?height=760&quality=95
+https://cdn.polyhaven.com/asset_img/primary/autumn_forest_01.png?height=760&quality=95
+ -->
+
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<!-- <br><br> on bg <br> -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<div class="card">
+<model-viewer
+src="https://static.poly.pizza/c10ffc16-c7e2-4090-8c15-758d9931f51a.glb.br"
+alt="robot"
+poster="polypizza_assets/modelview/bg/loading.png"
+animation-name="RobotArmature|Robot_Jump"
+
+environment-image="https://static.poly.pizza/hdr/BG.hdr"
+skybox-image="https://cdn.polyhaven.com/asset_img/primary/forest_slope.png?height=760&quality=95"
+skybox-height="8.5m"
+
+shadow-intensity="0.5"
+shadow-softness="0.5"
+scale="50.2 50.5 50.2"
+
+camera-controls="true"
+disable-zoom disable-tap
+
+camera-orbit="0.30238rad 1.42971rad 0.06749715129365093m"
+max-camera-orbit="auto 90deg auto"
+field-of-view="42deg"
+max-field-of-view="42deg"
+
+ar-status="not-presenting"
+data-js-focus-visible=""
+autoplay
+class="boxed"
+interaction-prompt="auto"
+loading="eager"
+>
+</model-viewer>
+</div>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+
+
+
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<!-- <br><br> hazmat man <br> -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<div class="card">
+<model-viewer
+src="https://static.poly.pizza/b18bedd3-8afe-45fa-b1f5-43288396cb5d.glb.br"
+alt="robot"
+poster="polypizza_assets/modelview/bg/loading.png"
+animation-name="RobotArmature|Robot_Jump"
+
+environment-image="https://static.poly.pizza/hdr/BG.hdr"
+skybox-image="https://modelviewer.dev/shared-assets/environments/whipple_creek_regional_park_04_1k.hdr"
+skybox-height="1.0m"
+
+shadow-intensity="0.5"
+shadow-softness="0.5"
+scale="100.2 100.5 100.2"
+
+camera-controls="true"
+disable-zoom disable-tap
+
+camera-orbit="0.30238rad 1.42971rad 0.06749715129365093m"
+max-camera-orbit="auto 90deg auto"
+field-of-view="42deg"
+max-field-of-view="42deg"
+
+ar-status="not-presenting"
+data-js-focus-visible=""
+autoplay
+class="boxed"
+interaction-prompt="auto"
+loading="eager"
+>
+</model-viewer>
+</div>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- gif demo -->
+    <!-- margin-top:10px; -->
+    <!-- <div align="center" style="margin-top:-15px;position:relative;z-index:10;"><img src="../../../assets/eachpost/tinytools/tinytools_maya_dupeAndHide.gif" class="image-fullscroll lilborder"></div> -->
+
+
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- CONTENT BOX -->
+    <div align="center"  class="textbox">
+
+<div style="height:50px;"></div>
+    i made a spreadsheet for easily adding your pages and auto generating code for your RSS file. it makes it easier to write up each item's details and makes it less hassle to add html tags!
+
+    <br><br>
+    <!-- <div class="buttonholder"> -->
+    <a href="https://docs.google.com/spreadsheets/d/16DWQh9f2i2WDtDPMDPtyBxDc6HVDq2hW5ULrb7eqA58/edit?usp=sharing"  target="_blank"><div class="bigtitle liltitle bigbutton" align="center" style="color:#623008;">
+    it's here
+    </div></a>
+<!-- </div> -->
+
+
+    <br><br>
+    <b>instructions:</b> first <a class="urlyblock" href="https://docs.google.com/spreadsheets/d/16DWQh9f2i2WDtDPMDPtyBxDc6HVDq2hW5ULrb7eqA58/edit?usp=sharing"  target="_blank">go to the spreadsheet</a> and File > Make a Copy, to add it to your own google sheets account (so now you can edit it!)
+
+
+
+    <br><br>
+    </div>
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+<!-- margin-top:-40px; -->
+    <div align="center" style="margin-top:-6%;position:relative;z-index:10;"><img src="tinytools_assets/rssgenerator_step1_90_90_90.gif" class="image-fullscroll lilborder"></div>
+
+
+
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- CONTENT BOX -->
+    <div align="center"  class="textbox">
+    <br>
+
+    now you can fill in your site's details, and the details for all posts/pages you want to push to your readers. all <strong>yellow</strong> cells are there for you to add stuff to.
+    <br><br>
+    you can add whatever you want to the descriptions; you're essentially making a little mini notification post, telling your readers to come and read the full page at whatever link you've provided
+    <br><br>
+
+
+    <div style="border:1px solid #000;padding:14px;margin:10px;">
+    <b>things to know:</b>
+    <br>- the published date has to be that exact format, if you want to get really specific, you can generate a line for your exact timezone to copypaste from <a href="https://timestampgenerator.com/" target="_blank" class="urlyblock"><b>at this site</b></a>. after pressing "submit", scroll down to the "common date formats" just below it and copy the line called "RFC 2822" (there's a little clipboard button)
+    <div style="height:8px;"></div>
+    - every "post url" listed needs to be unique
+    <div style="height:8px;"></div>
+    - <a href="https://doqmeat.com/notebook/tutorials/rss/" target="_blank" class="urlyblock"><b>this guide</b></a> goes into good detail here on setting up RSS and the weird things to know about it
+    </div>
+
+
+    <br>
+    once you're done, copy the <strong>blue</strong> cell that gives the "output" code, and paste that into your rss.xml file.
+    <br><br>(it can be named whatever.xml, it's just the file that your readers add to their rss readers that will allow them to see your messages)
+
+
+    <br><br>
+    </div>
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+    <div align="center" style="margin-top:-6%;position:relative;z-index:10;"><img src="tinytools_assets/rssgenerator_step2_90_90_90.gif" class="image-fullscroll lilborder"></div>
+
+
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+    <!-- CONTENT BOX -->
+    <div align="center"  class="textbox">
+    <br>
+
+    and there you go, it automatically will solve the html tags you add to a description, so it's easy to add images. (and i'm using <a href="https://chromewebstore.google.com/detail/feedbro/mefgmmbdailogpfhfblcnnjfmnpnmdfa?hl=en" target="_blank" class="urlyblock"><b>feedbro extension</b></a> as my rss reader here.)
+
+    <br><br>whenever you want to update your readers who are subscribed to your RSS feed, just add a new post line to your spreadsheet and then copypaste the whole output cell into your .xml again.
+
+    <br><br>
+    hit me up if you find any bugs, just whipped this up this arvo.
+    <br><br>and if you want to subscribe to my rss feed it's set up at: <br><a href="https://creatureframe.com/rss.xml" target="_blank" class="urlyblock" style="font-family:monospace;"><b>https://creatureframe.com/rss.xml</b></a>
+
+    <br><br>
+    </div>
+    <!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+
+<!-- example -->
+<!-- <a href="#howtorss">jump link</a> -->
+<div style="height:30px;margin-bottom:-30px;"></div>
+<div id="howtorss"></div>
+<div style="height:30px;margin-top:-30px;"></div>
+
+
+<!-- inline style was: color:#623008;position:relative;z-index:15; -->
+<div class="bigtitle" align="center" style="margin-bottom:-60px;">
+how to use RSS
+</div>
+<!-- <div class="bigtitle liltitle" align="center" style="">
+as a reader
+</div> -->
+<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+
+
+
+<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+<!-- CONTENT BOX -->
+<div align="center"  class="textbox">
+<div style="height:50px;"></div>
+there are tons of RSS reader extensions, but my favourite is <a href="https://chromewebstore.google.com/detail/feedbro/mefgmmbdailogpfhfblcnnjfmnpnmdfa?hl=en" target="_blank" class="urlyblock"><b>feedbro.</b></a> once you've installed it to your browser you can go to any website where the owner has set up RSS, click on the extension and pick "<b>find feeds in current tab</b>".
+
+<br><br>many social media websites have automatic RSS feeders built in too, such as tumblr, bluesky, reddit, youtube, and mastodon. you can add a user's rss feed from anyone's profile page.
+
+<!-- Screenshot-2025-07-01-at-3.06.39 pm_web.jpg -->
+
+<div align="center" style="margin:10px;position:relative;z-index:10;"><img src="tinytools_assets/rssuse_01.jpg" class="image-fullscroll lilborder"></div>
+
+<br> after adding some feeds to your collection, you can then "<b>open feed reader</b>", where you can organise the feeds you're following into folders, and see what's new.
+<br><br>feedbro has a bunch of viewing layouts you can pick from (say for example, if you like to read your news combined in a more dense list). i really like this one that acts like an email inbox, showing the entry in full including any images on the right side.
+
+<div align="center" style="margin:10px -40px;position:relative;z-index:10;"><img src="tinytools_assets/rssuse_02.png" class="image-fullscroll"></div>
+
+
+
+another really good one is <a href="https://fraidyc.at/" class="urlyblock">fraidyc.at</a>. more than just an RSS reader, it'll also attempt to check for updates from users on sites like twitch and instagram. and it looks cute as.
+<br><br>
+<div align="center" style="margin:10px 10px;position:relative;z-index:10;"><img src="tinytools_assets/rssuse_03.png" class="image-fullscroll lilborder"></div>
+
+
+
+<br>
+and if you want to know more about rss, i found <a href="https://doqmeat.com/notebook/tutorials/rss/" target="_blank" class="urlyblock"><b>doqmeat's guide</b></a> the most digestable for me, but here are some others you may find preferable:
+
+<style>
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BULLET POINTS FOR LISTS */
+/* . . . . . . . . . . . . . . . . . . . . . */
+ul {
+  margin: 0 0 0 22px;
+  font: 8pt Verdana;
+  letter-spacing: 1.5px;
+}
+.list-notes li {
+    background: url(../assets/deco/icons/notebook.gif) no-repeat 7px 7px transparent;
+    list-style-type: none;
+    margin: 0;
+    padding: 8px 20px 0px 39px;
+    vertical-align: middle;
+    margin-top: 7px;
+    line-height: 140%;
+    background: url('../assets/deco/icons/animal crossing other icons/ax-gold.gif') no-repeat 7px 7px transparent;
+    padding: 8px 20px 0px 36px;
+}
+</style>
+
+<ul class="list-notes">
+    <li><a href="https://wiki.melonland.net/rss_guide" target="_blank" class="urly"><b>melon's guide</b></a>
+    </li>
+    <li><a href="https://pklucky.neocities.org/coding/rss-tutorial" target="_blank" class="urly"><b>pklucky's guide</b></a>
+    </li>
+    <li><a href="https://mayfrogs.neocities.org/ramblings/createrss" target="_blank" class="urly"><b>mayfrog's guide</b></a>
+    </li>
+    <li>
+    <a href="https://goblin-heart.net/sadgrl/learn/articles/static-rss" target="_blank" class="urly"><b>sadgrl's guide</b></a>
+    </li>
+</ul>
+
+
+<!-- <br><br>and if you want to subscribe to my rss feed i'll be setting it up at: <br><a href="https://creatureframe.com/rss.xml" target="_blank" class="urly" style="font-family:monospace;"><b>https://creatureframe.com/rss.xml</b></a> -->
+
+<br><br>
+</div>
+<!--  . . . . . . . . . . . . . . . . . . . . . .  -->
+
+
+
+
+
+
+<!-- <div style="width:10px;height:25px;"></div> -->
+<style>
+    .revealdetails{
+        margin-top:-40px;
+        margin-left:25px;
+        color:#5E2C49;
+        font-family:courier;
+        position: relative;
+        z-index:1;
+    }
+</style>
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- COMMENTS SECTION GENERATED -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- <details class="revealdetails"><summary>comments</summary>
+<div align="center">
+<div class="commentssection">
+<div id="c_widget"></div>
+<script src="http://creatureframe.com/post/assets/comment-widget.js"></script>
+</div>
+</div>
+</details> -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- <div style="width:10px;height:55px;"></div> -->
+
+
+
+
+
+
+
+<!-- CREDITS BOX -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<!-- if add tinytext class, have to manually add text-align: center;  -->
+
+<!-- <div align="center"><div style="padding:5px;line-height:150%;font-family: verdana, tahoma;font-size: 9px;" class="tinytextbox bgimg-alignment textbox">
+<b><u>credits:</u></b><br>
+book pixel sprite by <a href="https://web.archive.org/web/20160225014532/https://ouka.kuronowish.com/rehoeass2/">ReHoeass</a>
+</div></div><br> -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+<!-- spacer to scroll past bottom border -->
+<div style="width:10px;height:25px;"></div>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+<!-- END BOXES FOR POST -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+</div> </div></div></div>
+<!-- end of  font-styling, scrollbox-wheel, scrollbox, and the "<div style="" class="post-background-full post-bgimg bgimg-alignment final">" -->
+
+
+
+
+<!-- CLASSES IN jazzcat_style.css TO OVERWRITE HERE IF NEEDING TO CHANGE STUFF :
+banner-end-noflip
+bannerend-inside-bg
+banner-end-bg
+ -->
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+<!--                   BOTTOM BANNERS                 -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * *  -->
+<div style="" class="bannerstart-contain">
+<div style="" class="bannerend-inside">
+<!-- <img src="../assets/deco/banners/postBorder_60x1000-assets/paintycrafts_top.png" style="" class="banner-img banner-end"></div> -->
+<img src="../assets/deco/banners/postBorder_60x1000-assets/postBorder_60x1000_digital_A.png" style="rotate:180deg;" class="bannerstart-img2"></div>
+<!-- simpler pixellated one -->
+<!-- <img src="https://tools.creatureframe.com/assets/postBorder_60px-assets/postBorder_60px_B.png" style="rotate:180deg;" class="bannerstart-img2"></div> -->
+</div>
+
+
+
+
+
+
+
+</div></div></div>
+<!-- end for post-cohostbarrier, postsize, "outermostbox" -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- HEX TO RGB (255s):
+#f5b043     245,176,67
+#40a89a     64,168,154,
+#97615c     151,97,92,
+#FFDE78     255,222,120,
+
+
+ -->
+
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- COMMENTS BOX -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<style>
+
+
+:root {
+    /* done either way */
+  /* --commentstransparency: 0.3; */
+  /* can also use a bg image */
+  --commentsbg: rgba(255, 255, 255, 0.4);
+
+  --commentsbg: rgba(151,97,92, 0.95);
+  --commentsborder:1px solid #fff;
+  --commentsbuttonsborder:1px solid #fff;
+  --commentsbuttonsborder-hover:1px solid #40a89a;
+
+  --commentsreplybg: rgba(30, 90, 220, 0.75);
+  --commentsreplyborder:2px dashed #40a89a;
+
+  --commentsfontfam:Verdana;
+  --commentsfontfam:Courier;
+
+  --backgroundblur1: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top left fixed;
+  --backgroundblur2: #e4b176 repeat url('assets/imgs/bg_dark_oak_log.png') top left fixed;
+
+  --commentsfontcolor:#fff;
+  --commentsfontcolor:#FFDE78;
+  --commentsaccentcolor1:#222;
+  --commentsaccentcolor2:#40a89a;
+  --commentsaccentcolor2:#ffffff;
+  --commentsaccentcolor3:#40a89a;
+  --commentsaccentcolor4:#40a89a;
+  --commentsaccentcolor5:#5E2C49;
+  --commentsaccentcolor6:#40a89a;
+
+  --commentsfontfam:Courier;
+  --commentsfontsize:14px;
+  --commentsfontsize:9.5pt;
+
+
+  --buttonbordercolor:#40a89a;
+  --buttontextcolor:#40a89a;
+  --buttonbgcolor:#FFDE78;
+  --buttonbordercolor-hover:#FFDE78;
+  --buttontextcolor-hover:#FFDE78;
+  --buttonbgcolor-hover:#40a89a;
+
+  --inputfieldtextcolor:#5E2C49;
+  --inputfieldbordercolor:#40a89a;
+  --inputfieldbordercolorhighlight:#40a89a;
+}
+
+.commentssection{
+    width:100%;
+    max-width:600px;
+    margin-top: 1px;
+    position: relative;
+    z-index: 100;
+    text-align: justify;
+}
+#c_widget {
+    font-family: var(--commentsfontfam);
+    color: var(--commentsfontcolor);
+    font-weight: 600;
+    font-size: var(--commentsfontsize);
+}
+#c_widget button, #c_widget input[type=submit] {
+    background-color: var(--buttonbgcolor);
+    color: var(--buttontextcolor);
+    border: 1px solid var(--buttonbordercolor);
+}
+#c_widget button:hover, #c_widget input[type=submit]:hover {
+    background-color: var(--buttonbgcolor-hover);
+    color: var(--buttontextcolor-hover);
+    border: 1px solid var(--buttonbordercolor-hover);
+}
+#c_widget button:disabled, #c_widget input[type=submit]:disabled {opacity: 60%;}
+#c_widget button:disabled:hover, #c_widget input[type=submit]:disabled:hover {
+    background-color: var(--buttonbgcolor-hover);
+    color: var(--buttontextcolor-hover);
+    border: 1px solid var(--buttonbordercolor-hover);
+}
+
+/* #c_widget div { */
+    /* padding:5px 5px; */
+/* } */
+
+/* Input section */
+#c_inputDiv {
+    padding: 10px;
+    text-transform: lowercase;
+    /* done either way */
+    /* background-color: rgba(255, 255, 255, var(--commentstransparency) ); */
+    /* background-color: var(--commentsbg); */
+    background: var(--commentsbg);
+    border: var(--commentsborder);
+    border-radius: 5px;
+    border-radius: 8px;
+}
+
+.c-comment {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: var(--commentsbg);
+    border: var(--commentsborder);
+    border-radius: 4px;
+    /* margin-bottom: 0px; */
+}
+
+.c-site {
+    color: var(--commentsaccentcolor5);
+    border:1px solid #fff;
+    padding:3px 6px;
+    border-radius: 4px;
+    background: var(--commentsaccentcolor3);
+    border: var(--commentsbuttonsborder);
+ }
+.c-site:hover {
+    color: var(--commentsaccentcolor4);
+    background: #fff;
+    border: var(--commentsbuttonsborder-hover);
+}
+.c-text {
+    color: var(--commentsaccentcolor2);
+}
+
+.c-reply {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 1);
+    border: var(--commentsbuttonsborder);
+    border-radius: 4px;
+    border: var(--commentsreplyborder);
+    background: var(--commentsreplybg);
+}
+
+/* border colours for inputs */
+.c-input {
+    /* color: #5E2C49; */
+    color: var(--inputfieldtextcolor);
+    border: 1px solid var(--inputfieldbordercolor);
+}
+.c-input:focus {border: 1px solid var(--inputfieldbordercolorhighlight);}
+</style>
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- <br clear="all"> -->
+
+
+
+
+
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- COMMENTS SECTION DEMOING COLOURS -->
+<!-- * * * * * * * * * * * * * * * * * * * *  -->
+<!-- <div align="center">
+<div class="commentssection">
+<div id="c_widget">
+    <div id="c_inputDiv">
+        <form id="c_form" onsubmit="c_submitButton.disabled = true; v_submitted = true;" method="post" target="c_hiddenIframe" action="https://docs.google.com/forms/d/e/1FAIpQLSfogBDOAZfBlrnJ2e9YsdlwNwdKlyUr4GvQVvKmiM6K48G2xQ/formResponse">
+    <h2 id="c_widgetTitle">Leave a comment!</h2>
+
+    <div id="c_nameWrapper" class="c-inputWrapper">
+        <label class="c-label c-nameLabel" for="entry.694796007">Name</label>
+        <input class="c-input c-nameInput" name="entry.694796007" id="entry.694796007" type="text" maxlength="16" required="">
+    </div>
+
+    <div id="c_websiteWrapper" class="c-inputWrapper">
+        <label class="c-label c-websiteLabel" for="entry.605179758">Website (Optional)</label>
+        <input class="c-input c-websiteInput" name="entry.605179758" id="entry.605179758" type="url" pattern="https://.*">
+    </div>
+
+    <div id="c_textWrapper" class="c-inputWrapper">
+        <label class="c-label c-textLabel" for="entry.341888751"></label>
+        <textarea class="c-input c-textInput" name="entry.341888751" id="entry.341888751" rows="4" cols="50" maxlength="500" required=""></textarea>
+    </div>
+
+    <input id="c_submitButton" name="c_submitButton" type="submit" value="Submit">
+<input type="text" id="entry.1631738198" name="entry.1631738198" style="display: none;"><span id="c_replyingText" style="display: none;"></span><input type="text" id="entry.532799568" name="entry.532799568" style="display: none;"><iframe id="c_hiddenIframe" name="c_hiddenIframe" onload="if(v_submitted){fixFrame()}" style="display: none;"></iframe></form>
+    </div>
+    <div id="c_container"><div id="test name|--|10/4/2024 15:18:27" class="c-comment" style="display: block;"><h3 class="c-name">test name</h3><span class="c-timestamp">04/10/2024</span><a href="https://creatureframe.com/" class="c-site">Website</a><p class="c-text">hello</p><button value="test name|--|10/4/2024 15:18:27" onclick="openReply(this.value)" class="c-replyButton">Reply</button></div></div>
+
+    <div id="hey|--|10/4/2024 17:18:04" class="c-comment" style="display: block;"><h3 class="c-name">hey</h3><span class="c-timestamp">04/10/2024</span><p class="c-text">hallo</p><button value="hey|--|10/4/2024 17:18:04" onclick="openReply(this.value)" class="c-replyButton">Reply</button><button onclick="expandReplies(this.parentElement.id)" class="c-expandButton">Show Replies (1)</button><div id="hey|--|10/4/2024 17:18:04-replies" class="c-replyContainer" style="display: block;"><div id="hey you|--|10/4/2024 19:51:18" class="c-reply"><h3 class="c-name">hey you</h3><span class="c-timestamp">04/10/2024</span><p class="c-text">im replying to you</p></div></div></div>
+</div> </div> </div> -->
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -4,6 +4,7 @@
 *.zip
 _*
 *.md
+*.webloc
 *_notes.*
 *_notes
 *.psd

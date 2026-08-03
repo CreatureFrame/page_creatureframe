@@ -1,0 +1,634 @@
+<!--https://modelviewer.dev/docs/-->
+
+
+<head>
+<!-- Import the component, thisll automatically get the newest one -->
+<!--<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>-->
+<!-- <script type="module" src="assets/modelview/model-viewer.min.js"></script> -->
+
+<!-- Import from google -->
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
+<!-- <script type="module" src="/polypizza_assets/modelview/model-viewer_431.min.js"></script> -->
+
+</head>
+<body>
+
+
+<!--
+- - - - - - - - - - - -
+MODELS TO TEST WITH
+- - - - - - - - - - - -
+slime #2
+https://poly.pizza/m/6O6XUMssAW
+https://static.poly.pizza/d0bb28aa-deb9-4c66-a7b6-de1461137cf6.glb.br
+
+slime #1
+https://static.poly.pizza/76bc433e-3a73-4101-8990-37af46079e2e.glb.br
+https://poly.pizza/m/kYEhGbVpvj
+
+hazmat man (needs 50 scale for enviro)
+https://static.poly.pizza/b18bedd3-8afe-45fa-b1f5-43288396cb5d.glb.br
+https://poly.pizza/m/y2ygMH3VYx
+
+alt="Milkfish"
+src="https://static.poly.pizza/716f668e-8b80-432e-8459-62318a19c5f4.glb.br"
+
+alt="Computer Generic 2000s"
+src="https://static.poly.pizza/c10ffc16-c7e2-4090-8c15-758d9931f51a.glb.br"
+
+alpaca all anims
+https://3dart.charlierenwick.com/assets/modelview/Alpaca_animsForFBXmodelviewer_allWithoutIdles.glb
+https://3dart.charlierenwick.com/assets/modelview/Alpaca_animsForFBXmodelviewer.glb
+
+robot
+https://static.poly.pizza/7d95dbce-8c73-489b-8298-f430b1f0dbdf.glb.br
+
+google astronaut etc.
+https://modelviewer.dev/shared-assets/models/reflective-sphere.gltf
+https://modelviewer.dev/shared-assets/models/Astronaut-Unlit.glb
+https://modelviewer.dev/shared-assets/models/glTF-Sample-Assets/Models/DamagedHelmet/glTF/DamagedHelmet.gltf
+https://modelviewer.dev/shared-assets/models/RobotExpressive.glb
+
+
+glamaphone (1.5m)
+https://static.poly.pizza/3436ca32-2562-4edd-9258-8b93c5c3f9b6.glb.br
+boombox (7.5m)
+https://static.poly.pizza/63e3afc9-eb72-483a-adfa-1f38ee803a09.glb.br
+radio
+https://static.poly.pizza/5343ea9f-9594-4e7c-89ca-f37b60a383e6.glb.br
+
+
+- - - -
+HDRIS
+- - - -
+rainforest
+https://modelviewer.dev/shared-assets/environments/whipple_creek_regional_park_1k_HDR.jpg
+https://modelviewer.dev/shared-assets/environments/whipple_creek_regional_park_04_1k.hdr
+
+https://modelviewer.dev/shared-assets/environments/spruit_sunrise_1k_HDR.jpg
+full white
+https://modelviewer.dev/shared-assets/environments/blankwhite.jpg
+https://modelviewer.dev/shared-assets/environments/moon_1k.jpg
+ -->
+
+
+
+
+
+<!-- - - - - - - - - - - - - - - - - - -
+NOTES ON MODEL-VIEWER :
+
+- when rendering pbr/lighting, it MUST have an environment-image specified or else it'll only show black. if model is unlit then it's fine
+
+rainforest
+assets/modelview/whipple_creek_regional_park_04_1k.hdr
+full white
+assets/modelview/blankwhite.hdr
+assets/modelview/moon_1k.hdr
+
+get mroe HDRIs from
+https://polyhaven.com/hdris
+- - - - - - - - - - - - - - - - - - -->
+
+
+
+<!--
+NOTES:
+
+oncontextmenu="return false;"           doesn't seem to do anything true
+
+autoplay or choose a specific
+animation-name="undefined"
+animation-name="attack"
+animation-name="RobotArmature|Robot_Jump"
+
+check anim names via
+https://glb.ee/
+
+-->
+
+
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<br><br><br> Ground-projected Skybox <br>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<model-viewer camera-controls touch-action="pan-y" disable-pan skybox-image="https://modelviewer.dev/shared-assets/environments/whipple_creek_regional_park_1k_HDR.jpg" skybox-height="1.5m" shadow-intensity="2" max-camera-orbit="auto 90deg auto" alt="A 3D astronaut model depicted within a forest" src="https://modelviewer.dev/shared-assets/models/Astronaut-Unlit.glb"></model-viewer>
+
+
+
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<br><br><br> example unlit model in enviro <br>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<!--https://modelviewer.dev/examples/lightingandenv/-->
+<model-viewer camera-controls touch-action="pan-y" skybox-image="https://3dart.charlierenwick.com/assets/modelview/hdrs/whipple_creek_regional_park_04_1k.hdr" alt="An unlit 3D astronaut model depicted within a forest" src="https://modelviewer.dev/shared-assets/models/Astronaut-Unlit.glb"></model-viewer>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+<!-- https://3dart.charlierenwick.com/assets/modelview/hdrs/whipple_creek_regional_park_04_1k.hdr -->
+<!-- https://3dart.charlierenwick.com/assets/modelview/Alpaca_animsForFBXmodelviewer_allWithoutIdles.glb -->
+<!-- https://modelviewer.dev/shared-assets/models/Astronaut-Unlit.glb -->
+<!-- doesnt work anymore
+https://modelviewer.dev/shared-assets/whipple_creek_regional_park_04_1k.hdr
+-->
+
+
+
+
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+    <!--autoplay anims-->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<br> autoplay anims <br>
+    <!-- ../../shared-assets/models/RobotExpressive.glb -->
+    <!-- <model-viewer camera-controls touch-action="pan-y" autoplay ar ar-modes="webxr scene-viewer" scale="0.2 0.2 0.2" shadow-intensity="1" src="polypizza_assets/modelview/models/Animated Robot by Quaternius - QCm7qe9uNJ.glb" alt="An animated 3D model of a robot"></model-viewer> -->
+
+<model-viewer camera-controls touch-action="pan-y" autoplay ar ar-modes="webxr scene-viewer" scale="0.2 0.2 0.2" shadow-intensity="1" src="https://3dart.charlierenwick.com/assets/modelview/Alpaca_animsForFBXmodelviewer_allWithoutIdles.glb" alt="An animated 3D model of a robot"></model-viewer>
+
+
+
+<!-- uploaded ones;
+https://3dart.charlierenwick.com/assets/modelview/Alpaca_animsForFBXmodelviewer_allWithoutIdles.glb
+
+local path:
+polypizza_assets/modelview/models/Animated Robot by Quaternius - QCm7qe9uNJ.glb
+Animated Robot by Quaternius - QCm7qe9uNJ
+Alpaca_animsForFBXmodelviewer
+Alpaca_animsForFBXmodelviewer_allWithoutIdles
+ -->
+
+
+
+
+<!--
+touch-action="pan-y"
+enable-pan="true"
+OR
+disable-zoom disable-tap
+
+max-camera-orbit="auto 90deg auto"
+
+camera-orbit="1.30238rad 1.42971rad 0.06749715129365093m"
+
+
+skybox-image="https://modelviewer.dev/shared-assets/environments/whipple_creek_regional_park_1k_HDR.jpg"
+skybox-height="1.5m"
+OR
+environment-image="https://static.poly.pizza/hdr/BG.hdr"
+ -->
+
+
+<!-- robot -->
+<!-- https://static.poly.pizza/7d95dbce-8c73-489b-8298-f430b1f0dbdf.glb.br -->
+<!-- computer -->
+<!-- https://static.poly.pizza/c10ffc16-c7e2-4090-8c15-758d9931f51a.glb.br -->
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<br><br> example <br>
+<!-- animation-name="RobotArmature|Robot_Jump" -->
+<!-- alt="robot" -->
+<!-- autoplay -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<div class="card">
+<model-viewer
+environment-image="https://static.poly.pizza/hdr/BG.hdr"
+src="https://static.poly.pizza/c10ffc16-c7e2-4090-8c15-758d9931f51a.glb.br"
+poster="polypizza_assets/modelview/bg/loading.png"
+
+skybox-image="https://modelviewer.dev/shared-assets/environments/whipple_creek_regional_park_1k_HDR.jpg"
+skybox-height="1.5m"
+
+shadow-intensity="1"
+shadow-softness="1"
+scale="0.2 0.2 0.2"
+
+camera-controls="true"
+disable-zoom disable-tap disable-pan
+touch-action="pan-y"
+
+auto-rotate="true"
+camera-orbit="0.30238rad 1.42971rad 0.06749715129365093m"
+field-of-view="42deg"
+max-field-of-view="42deg"
+
+ar-status="not-presenting"
+data-js-focus-visible=""
+class="boxed"
+interaction-prompt="auto"
+loading="eager"
+>
+</model-viewer>
+</div>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+<model-viewer camera-controls touch-action="pan-y" disable-pan skybox-image="https://modelviewer.dev/shared-assets/environments/whipple_creek_regional_park_1k_HDR.jpg" skybox-height="1.5m" scale="1.2 1.2 1.2" shadow-intensity="2" max-camera-orbit="auto 90deg auto" alt="A 3D astronaut model depicted within a forest" src="https://static.poly.pizza/d0bb28aa-deb9-4c66-a7b6-de1461137cf6.glb.br" class="boxed"></model-viewer>
+
+<!-- this one allows the background to work
+https://modelviewer.dev/shared-assets/models/Astronaut-Unlit.glb
+the polypizza robot half does
+
+i thought skybox-height="5.5m" (default was 1.5) would make a difference. lower numbers stretch the bottom more
+ -->
+
+
+ <model-viewer camera-controls touch-action="pan-y" disable-pan skybox-image="https://modelviewer.dev/shared-assets/environments/whipple_creek_regional_park_1k_HDR.jpg"
+skybox-height="0.5m"
+scale="50.2 50.2 50.2"
+ shadow-intensity="2" max-camera-orbit="auto 90deg auto" alt="A 3D astronaut model depicted within a forest" src="https://static.poly.pizza/b18bedd3-8afe-45fa-b1f5-43288396cb5d.glb.br"></model-viewer>
+
+glamaphone (1.5m)
+https://static.poly.pizza/3436ca32-2562-4edd-9258-8b93c5c3f9b6.glb.br
+boombox (7.5m)
+https://static.poly.pizza/63e3afc9-eb72-483a-adfa-1f38ee803a09.glb.br
+radio
+https://static.poly.pizza/5343ea9f-9594-4e7c-89ca-f37b60a383e6.glb.br
+
+hazmat man (needs 50 scale for enviro)
+https://static.poly.pizza/b18bedd3-8afe-45fa-b1f5-43288396cb5d.glb.br
+https://poly.pizza/m/y2ygMH3VYx
+
+slime #2
+https://poly.pizza/m/6O6XUMssAW
+https://static.poly.pizza/d0bb28aa-deb9-4c66-a7b6-de1461137cf6.glb.br
+
+slime #1
+https://static.poly.pizza/76bc433e-3a73-4101-8990-37af46079e2e.glb.br
+https://poly.pizza/m/kYEhGbVpvj
+
+hazmat man (needs 50 scale for enviro)
+https://static.poly.pizza/b18bedd3-8afe-45fa-b1f5-43288396cb5d.glb.br
+https://poly.pizza/m/y2ygMH3VYx
+
+alt="Milkfish"
+src="https://static.poly.pizza/716f668e-8b80-432e-8459-62318a19c5f4.glb.br"
+
+alt="Computer Generic 2000s"
+src="https://static.poly.pizza/c10ffc16-c7e2-4090-8c15-758d9931f51a.glb.br"
+
+alpaca all anims
+https://3dart.charlierenwick.com/assets/modelview/Alpaca_animsForFBXmodelviewer_allWithoutIdles.glb
+https://3dart.charlierenwick.com/assets/modelview/Alpaca_animsForFBXmodelviewer.glb
+
+robot
+https://static.poly.pizza/7d95dbce-8c73-489b-8298-f430b1f0dbdf.glb.br
+
+google astronaut etc.
+https://modelviewer.dev/shared-assets/models/reflective-sphere.gltf
+https://modelviewer.dev/shared-assets/models/Astronaut-Unlit.glb
+https://modelviewer.dev/shared-assets/models/glTF-Sample-Assets/Models/DamagedHelmet/glTF/DamagedHelmet.gltf
+https://modelviewer.dev/shared-assets/models/RobotExpressive.glb
+
+- - - -
+HDRIS
+- - - -
+rainforest
+https://modelviewer.dev/shared-assets/environments/whipple_creek_regional_park_1k_HDR.jpg
+https://modelviewer.dev/shared-assets/environments/whipple_creek_regional_park_04_1k.hdr
+
+https://modelviewer.dev/shared-assets/environments/spruit_sunrise_1k_HDR.jpg
+full white
+https://modelviewer.dev/shared-assets/environments/blankwhite.jpg
+https://modelviewer.dev/shared-assets/environments/moon_1k.jpg
+ -->
+
+
+
+<!--
+make cam orbit Z higher if FOV is lower (telephoto)
+camera-orbit="0.30238rad 1.42971rad 5.06749715129365093m"
+field-of-view="32deg"
+
+ -->
+
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<br><br> example in enviro <br>
+<!-- animation-name="RobotArmature|Robot_Jump" -->
+<!-- alt="robot" -->
+<!-- autoplay -->
+<!-- auto-rotate="true" -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<div class="card">
+<model-viewer
+src="https://3dart.charlierenwick.com/assets/modelview/Alpaca_animsForFBXmodelviewer.glb"
+poster="polypizza_assets/modelview/bg/loading.png"
+autoplay
+
+environment-image="https://static.poly.pizza/hdr/BG.hdr"
+skybox-image="https://modelviewer.dev/shared-assets/environments/spruit_sunrise_1k_HDR.jpg"
+skybox-height="1.5m"
+
+shadow-intensity="0.5"
+shadow-softness="0"
+scale="100.2 100.2 100.2"
+
+camera-controls="true"
+disable-zoom disable-tap disable-pan
+touch-action="pan-y"
+
+camera-orbit="0.30238rad 1.42971rad 5.06749715129365093m"
+max-camera-orbit="auto 90deg auto"
+field-of-view="32deg"
+max-field-of-view="42deg"
+
+ar-status="not-presenting"
+data-js-focus-visible=""
+class="boxed"
+interaction-prompt="auto"
+loading="eager"
+>
+</model-viewer>
+</div>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+<!-- rmvd
+style="--poster-color:#303030"
+ -->
+
+
+
+
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<!-- OTHER USEFUL ONES: -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<!-- example transparent backgroaund -->
+<!-- <div class="demo" style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;">
+  <span style="position: absolute; text-align: center; font-size: 100px; line-height: 100px; left: 50%; transform: translateX(-50%);">Background<br>is visible<br>through<br>transparent<br>objects.</span>
+  <model-viewer camera-controls touch-action="pan-y" src="../../shared-assets/models/glTF-Sample-Assets/Models/ToyCar/glTF-Binary/ToyCar.glb" ar alt="A 3D transparency test" style="background-color: unset;"></model-viewer>
+</div> -->
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<br><br> Disable user zoom so that wheel and pinch interactions have the browser's default behavior <br>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<!-- Disable user zoom so that wheel and pinch interactions have the browser's default behavior. -->
+<model-viewer camera-controls touch-action="pan-y" disable-zoom src="https://static.poly.pizza/76bc433e-3a73-4101-8990-37af46079e2e.glb.br" alt="A 3D model of an astronaut"
+autoplay
+animation-name="attack"
+></model-viewer>
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<br><br> Disable Tap so it doesnt reset the rotation point <br>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<!-- Disable Tap -->
+<model-viewer id="pan-demo" disable-tap auto-rotate shadow-intensity="1" camera-controls touch-action="pan-y" src="https://static.poly.pizza/76bc433e-3a73-4101-8990-37af46079e2e.glb.br" alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"></model-viewer>
+
+<!-- disable-zoom disable-tap  -->
+
+
+<!-- Use environment-image to set environmental lighting without changing the background -->
+<model-viewer camera-controls touch-action="pan-y" environment-image="../../shared-assets/environments/whipple_creek_regional_park_1k_HDR.jpg" alt="A 3D model of a sphere reflecting a forest" src="../../shared-assets/models/reflective-sphere.gltf"></model-viewer>
+
+
+<!-- TEMPLATE HEADING -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<br><br> example <br>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+<style>
+
+    .boxed{
+        width:500px;
+        max-width:100%;
+        height:540px;
+        border:1px solid #fff;
+        background:#ffc800;
+        padding:0px;
+        margin:5px;
+/*        border:5px solid #ffe196;*/
+        background: fixed url("polypizza_assets/modelview/bg/bgpattern_dusky_ver5.png") bottom center;
+        background: #2A7B9B;
+        background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+        background-position: bottom 100% right 50%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        border-radius: 10px;
+    }
+
+</style>
+
+
+
+<style>
+    .w-full{
+        width:100%;
+        height:50%;
+    }
+
+    .w-500{
+        width:100%;
+        height:50%;
+    }
+</style>
+
+
+
+<!--https://modelviewer.dev/examples/annotations/index.html-->
+
+
+<!--this one blends work-->
+<!--Alpaca_animsForFBXmodelviewer.glb
+field-of-view="90deg"
+max-field-of-view="20deg"
+-->
+<!--the blender ones fail blend shapes-->
+<!--exportGLBfromblender_2_shapekeytnangents.glb-->
+<!--exportGLBfromblender.glb-->
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<!-- <br><h3>TEST having the div be styled</h3><br>
+
+<div class="boxed">
+<br>hello
+<model-viewer oncontextmenu="return false;"
+environment-image="https://static.poly.pizza/hdr/BG.hdr"
+class="w-full h-full"
+src="https://static.poly.pizza/76bc433e-3a73-4101-8990-37af46079e2e.glb.br"
+alt="Slime Enemy"
+auto-rotate="true"
+camera-controls="true"
+shadow-intensity="1"
+interaction-prompt="auto"
+loading="eager"
+
+camera-orbit="1.30238rad 1.42971rad 0.06749715129365093m"
+style="--poster-color:#303030"
+enable-pan="true"
+field-of-view="42deg"
+max-field-of-view="42deg"
+
+ar-status="not-presenting"
+data-js-focus-visible=""
+animation-name="undefined"><template shadowrootmode="open">
+</model-viewer>
+</div> -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+
+<!-- TO CHOOSE WHICH ANIMATION: -->
+ <!-- animation-name="attack" -->
+
+
+
+
+<!-- fresh from google -->
+<!-- <model-viewer oncontextmenu="return false;" id="mainModel" environment-image="https://static.poly.pizza/hdr/BG.hdr" class="w-full h-full" src="https://static.poly.pizza/76bc433e-3a73-4101-8990-37af46079e2e.glb.br" alt="Slime Enemy" auto-rotate="true" camera-controls="true" shadow-intensity="1" interaction-prompt="auto" loading="eager" camera-orbit="1.30238rad 1.42971rad 0.06749715129365093m" enable-pan="true" field-of-view="42deg" max-field-of-view="42deg" data-js-focus-visible="" ar-status="not-presenting" style="--poster-color: #303030;" animation-name="undefined"><template shadowrootmode="open"> -->
+
+
+
+
+<!-- Model 1 -->
+<!-- <div class="card">
+  <model-viewer
+    id="model-1"
+    src="https://static.poly.pizza/76bc433e-3a73-4101-8990-37af46079e2e.glb.br"
+    poster="assets/chair-poster.webp"
+    alt="A modern office chair"
+    auto-rotate
+    camera-controls>
+  </model-viewer>
+</div> -->
+
+<!-- Model 2 -->
+<!-- <div class="card">
+  <model-viewer
+    id="model-2"
+    src="https://static.poly.pizza/716f668e-8b80-432e-8459-62318a19c5f4.glb.br"
+    poster="assets/lamp-poster.webp"
+    alt="A minimalist desk lamp"
+    auto-rotate
+    camera-controls>
+  </model-viewer>
+</div> -->
+
+
+
+
+<!-- TO TRY
+- add fallback
+polypizza_assets/modelview/bg/loading.png
+
+class="w-full h-full boxed"
+class="boxed"
+ -->
+
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<br><h3>TEST having the model-viewer itself be styled</h3><br>
+
+<!-- from poly pizza -->
+<div class="card">
+<model-viewer oncontextmenu="return false;"
+environment-image="https://static.poly.pizza/hdr/BG.hdr"
+class="boxed"
+src="https://static.poly.pizza/76bc433e-3a73-4101-8990-37af46079e2e.glb.br"
+alt="Slime Enemy"
+auto-rotate="true"
+camera-controls="true"
+shadow-intensity="1"
+interaction-prompt="auto"
+loading="eager"
+poster="polypizza_assets/modelview/bg/loading.png"
+disable-zoom disable-tap
+
+camera-orbit="1.30238rad 1.42971rad 0.06749715129365093m"
+style="--poster-color:#303030"
+enable-pan="true"
+field-of-view="42deg"
+max-field-of-view="42deg"
+
+ar-status="not-presenting"
+data-js-focus-visible=""
+animation-name="undefined">
+</model-viewer>
+</div>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+<!--
+MAKE SURE TO REMOVE WHEN COPIED DIRECT FROM POLYPIZZA
+id="mainModel"
+<template shadowrootmode="open">
+
+MAKE SURE IT HAS:
+</model-viewer>
+ -->
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<div class="card">
+<model-viewer oncontextmenu="return false;"
+environment-image="https://static.poly.pizza/hdr/BG.hdr"
+class="w-full h-full boxed"
+src="https://static.poly.pizza/716f668e-8b80-432e-8459-62318a19c5f4.glb.br"
+alt="Milkfish"
+auto-rotate="true"
+camera-controls="true"
+shadow-intensity="1"
+interaction-prompt="auto"
+loading="eager"
+camera-orbit="1.08800rad 1.47730rad 0.017788043195243842m"
+enable-pan="true"
+field-of-view="42deg"
+max-field-of-view="42deg"
+data-js-focus-visible=""
+ar-status="not-presenting"
+style="--poster-color: #303030;"
+animation-name="undefined">
+</model-viewer>
+</div>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+
+<model-viewer oncontextmenu="return false;" id="mainModel" environment-image="https://static.poly.pizza/hdr/BG.hdr" class="w-full h-full" src="https://static.poly.pizza/c10ffc16-c7e2-4090-8c15-758d9931f51a.glb.br" alt="Computer Generic 2000s" auto-rotate="true" camera-controls="true" shadow-intensity="1" interaction-prompt="auto" loading="eager" camera-orbit="0.33284rad 1.31578rad 0.2116563430219061m" style="--poster-color:#303030" enable-pan="true" field-of-view="42deg" max-field-of-view="42deg" ar-status="not-presenting" data-js-focus-visible="" animation-name="undefined">
+</model-viewer>
+
+
+
+<!--url("assets/modelview/bg/bgpattern_dusky_ver5 fade.png") bottom center;
+background-position: bottom 100% right 50%;
+-->
+
+<!--assets/deco/bgpatternoverlay_hashes01.png-->
+<!--assets/deco/bg03.jpg-->
+
+
+<!--
+<model-viewer
+oncontextmenu="return false;"
+autoplay id="mainModel"
+environment-image="assets/modelview/blankwhite.png"
+class="boxed"
+src="https://static.poly.pizza/76bc433e-3a73-4101-8990-37af46079e2e.glb.br"
+alt="title here"
+auto-rotate="false"
+camera-controls="true"
+shadow-intensity="1"
+interaction-prompt="auto"
+loading="eager"
+enable-pan="true"
+
+data-js-focus-visible=""
+ar-status="not-presenting"
+animation-name="undefined"
+camera-target="0m 0.0105m -0.0005m"
+field-of-view="90deg"
+max-field-of-view="20deg"
+camera-orbit="25deg 75deg 10m"
+>
+</model-viewer> -->
+
+
+
+</body>
