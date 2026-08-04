@@ -213,7 +213,7 @@
     text-decoration: underline;
 
     font: 14pt "Capriola",  "Space Grotesk", "Raleway", sans-serif, courier;
-    text-decoration: none;
+    /* text-decoration: none; */
     letter-spacing: 0.8px !important;
     margin:0px;
 }
