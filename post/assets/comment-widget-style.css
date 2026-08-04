@@ -60,7 +60,8 @@
     overflow: auto;
     /* background-image: url('bow-bg.gif');  */
     /* F2U background provided by https://sadgrl.online/webmastery/downloads/tiledbgs */
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
+
     font-family: "Capriola", "Space Grotesk", "Trebuchet MS", "Raleway", sans-serif;
     font-size: 19pt;
     /* color: #211F24; */
@@ -81,26 +82,45 @@
     color: #CE98FB;
     border: 1px solid #CE98FB;
     border-radius: 5px;
+
+    background-color: var(--buttonbgcolor);
+    color: var(--buttontextcolor);
+    border: 2px solid var(--buttonbordercolor);
+    padding:6px;
 }
 #c_widget button:hover, #c_widget input[type=submit]:hover {
     background-color: #FB96D8;
     color: white;
     border: 1px solid #FB96D8;
+
+    background-color: var(--buttonbgcolor-hover);
+    color: var(--buttontextcolor-hover);
+    border: 2px solid var(--buttonbordercolor-hover);
 }
 #c_widget button:disabled, #c_widget input[type=submit]:disabled {opacity: 60%;}
 #c_widget button:disabled:hover, #c_widget input[type=submit]:disabled:hover {
     background-color: white;
     color: #CE98FB;
     border: 1px solid #CE98FB;
+
+    background-color: var(--buttonbgcolor-hover);
+    color: var(--buttontextcolor-hover);
+    border: 2px solid var(--buttonbordercolor-hover);
+    padding:6px;
 }
 
 /* Input section */
 #c_inputDiv {
     padding: 10px;
     text-transform: lowercase;
-    background-color: rgba(255, 255, 255, .8);
-    border: 1px dashed #CE98FB;
+    /* background-color: rgba(255, 255, 255, .8); */
+    /* border: 1px dashed #CE98FB; */
+    /* border-radius: 5px; */
+
+    background: var(--commentsbg);
+    border: var(--commentsborder);
     border-radius: 5px;
+    border-radius: 8px;
 }
 #c_container {margin-top: 10px;}
 
@@ -110,6 +130,11 @@
     /* font-style: italic; */
     font-style: normal;
     text-decoration: underline;
+
+    font-size: 19pt;
+    font: 19pt "Raleway", sans-serif;
+    font: 19pt "Space Grotesk", sans-serif;
+    font-family: Capriola, courier;
 }
 
 .c-inputWrapper {
@@ -136,12 +161,20 @@
 
 /* Comment section */
 .c-comment {
-    margin-top: 10px;
+    /* margin-top: 10px;
     margin-bottom: 10px;
     padding: 10px;
     background-color: rgba(255, 255, 255, .75);
     border: 1px dashed #CE98FB;
+    border-radius: 4px; */
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px 10px;
+    background: var(--commentsbg);
+    border: var(--commentsborder);
     border-radius: 4px;
+    /* margin-bottom: 0px; */
 }
 .c-reply {
     margin-top: 10px;
@@ -161,6 +194,11 @@
     margin-right: 10px;
     padding: 0;
     text-decoration: underline;
+
+    font: 14pt "Capriola",  "Space Grotesk", "Raleway", sans-serif, courier;
+    text-decoration: none;
+    letter-spacing: 0.8px !important;
+    margin:0px;
 }
 .c-site {
     text-transform: lowercase;
@@ -191,132 +229,3 @@
     margin-right: 4px;
     margin-left: 4px;
 }
-
-
-
-
-
-
-
-/* UPDATED COPYPASTED FROM MODELVIEWER PAGE */
-
-
-.commentssection{
-    width:100%;
-    max-width:600px;
-    margin-top: 1px;
-    position: relative;
-    z-index: 100;
-    text-align: justify;
-}
-#c_widgetTitle{
-    font-size: 19pt;
-    font: 19pt "Raleway", sans-serif;
-    font: 19pt "Space Grotesk", sans-serif;
-    font-family: Capriola, courier;
-}
-#c_widget {
-    font-family: var(--commentsfontfam);
-    color: var(--commentsfontcolor);
-    font-weight: 600;
-    font-weight: 400;
-    /* letter-spacing: 90%; */
-    line-height: 1.04;
-    line-height: 1.44;
-    font-size: var(--commentsfontsize);
-}
-#c_widget button, #c_widget input[type=submit] {
-    background-color: var(--buttonbgcolor);
-    color: var(--buttontextcolor);
-    border: 2px solid var(--buttonbordercolor);
-    padding:6px;
-}
-#c_widget button:hover, #c_widget input[type=submit]:hover {
-    background-color: var(--buttonbgcolor-hover);
-    color: var(--buttontextcolor-hover);
-    border: 2px solid var(--buttonbordercolor-hover);
-}
-#c_widget button:disabled, #c_widget input[type=submit]:disabled {opacity: 60%;}
-#c_widget button:disabled:hover, #c_widget input[type=submit]:disabled:hover {
-    background-color: var(--buttonbgcolor-hover);
-    color: var(--buttontextcolor-hover);
-    border: 2px solid var(--buttonbordercolor-hover);
-    padding:6px;
-}
-
-/* #c_widget div { */
-    /* padding:5px 5px; */
-/* } */
-
-/* Input section */
-#c_inputDiv {
-    padding: 10px;
-    text-transform: lowercase;
-    /* done either way */
-    /* background-color: rgba(255, 255, 255, var(--commentstransparency) ); */
-    /* background-color: var(--commentsbg); */
-    background: var(--commentsbg);
-    border: var(--commentsborder);
-    border-radius: 5px;
-    border-radius: 8px;
-}
-
-.c-comment {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 15px 10px;
-    background: var(--commentsbg);
-    border: var(--commentsborder);
-    border-radius: 4px;
-    /* margin-bottom: 0px; */
-}
-
-.c-name {
-    /* margin-bottom: 0px; */
-    /* margin-left: -1px; */
-    /* padding: 7px 7px; */
-    /* background: var(--commentsbg); */
-    /* border: var(--commentsborder); */
-    /* border-radius: 4px; */
-
-    font: 14pt "Capriola",  "Space Grotesk", "Raleway", sans-serif, courier;
-    text-decoration: none;
-    letter-spacing: 0.8px !important;
-}
-
-.c-site {
-    color: var(--commentsaccentcolor5);
-    border:2px solid #fff;
-    padding:3px 6px;
-    border-radius: 4px;
-    background: var(--commentsaccentcolor3);
-    border: var(--commentsbuttonsborder);
- }
-.c-site:hover {
-    color: var(--commentsaccentcolor4);
-    background: #fff;
-    border: var(--commentsbuttonsborder-hover);
-}
-.c-text {
-    color: var(--commentsaccentcolor2);
-}
-
-.c-reply {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 1);
-    border: var(--commentsbuttonsborder);
-    border-radius: 14px;
-    border: var(--commentsreplyborder);
-    background: var(--commentsreplybg);
-}
-.c-reply:last-child {margin-bottom: 10px;}
-
-/* border colours for inputs */
-.c-input {
-    /* color: #5E2C49; */
-    color: var(--inputfieldtextcolor);
-    border: 1px solid var(--inputfieldbordercolor);
-}
-.c-input:focus {border: 1px solid var(--inputfieldbordercolorhighlight);}
