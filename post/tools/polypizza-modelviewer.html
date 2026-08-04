@@ -715,6 +715,11 @@ rgba(255, 255, 255, 1.0) -2px 2px 0px, */
       padding: 10px;
     }
 }
+/* end of mobile section
+~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+
 </style>
 <!-- * * * * * * * * * * * * * * * * * * * * *  -->
 
@@ -980,6 +985,16 @@ style="margin-top:-20px;position:relative;z-index:5;font-size:9pt;line-height:15
             box-shadow: none;
             border-radius: 13px;
         }
+    }
+
+    /* Target browsers that support -webkit-touch-callout (iOS Safari specific) */
+    @supports (-webkit-touch-callout: none) {
+      .modelviewer_boxed {
+        /* iOS Safari-specific fix */
+        max-width: calc(80% - 6px);
+        margin: 5px 10px;
+        margin-left: 10%;
+      }
     }
 
 </style>
