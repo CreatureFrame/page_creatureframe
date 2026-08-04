@@ -136,7 +136,18 @@ PRESET FOR YELLOW PAINTERLY:
 
  -->
 
-
+<!-- TRY TO FIX IOS -->
+<style>
+ input[type="text"],
+ button,
+ select,
+ textarea {
+   -webkit-appearance: none;
+   appearance: none;
+   /* iOS sometimes forces a default border-radius */
+   border-radius: 0;
+ }
+</style>
 
 
 <style>
@@ -575,7 +586,7 @@ border-bottom:none;
 /* } */
 
 
-::-webkit-scrollbar{
+/* ::-webkit-scrollbar{
 width:1.75em;
 box-shadow:
 inset 0.0em 0.0em 0.7em 0.025em rgba(0, 0, 0, 0.1),
@@ -586,7 +597,8 @@ rgba(0, 0, 0, 0.1) 0px 2.5px 10px;
     background: transparent;
     border-radius: 0.9em;
     border:none;
-}
+} */
+
 
 
 .scrollbox-wheel{
@@ -600,7 +612,7 @@ text-align:justify;
 }
 .scrollbox-wheel::-webkit-scrollbar{
 width:1.1em;
-width:1.75em;
+width:1.75em !important;
 /* width:1.60em; */
 /* box-shadow:inset 0 0 0.9em 0.1em var(--palette6); */
 /* border:2px solid yellow; */
