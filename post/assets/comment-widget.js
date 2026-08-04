@@ -53,7 +53,8 @@ https://docs.google.com/spreadsheets/d/1NqomtLThU7BGr7eUHZS6AP8eh0Ac7CRQV_TyTWb-
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 // The values in this section are REQUIRED for the widget to work! Keep them in quotes!
-const s_stylePath = 'http://creatureframe.com/post/assets/comment-widget-pink.css';
+// const s_stylePath = 'http://creatureframe.com/post/assets/comment-widget-pink.css';
+const s_stylePath = 'http://creatureframe.com/post/assets/comment-widget-style.css';
 const s_formId = '1FAIpQLSfogBDOAZfBlrnJ2e9YsdlwNwdKlyUr4GvQVvKmiM6K48G2xQ';
 const s_nameId = '694796007';
 const s_websiteId = '605179758';
