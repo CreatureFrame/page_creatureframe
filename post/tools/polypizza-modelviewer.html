@@ -989,12 +989,33 @@ style="margin-top:-20px;position:relative;z-index:5;font-size:9pt;line-height:15
 
     /* Target browsers that support -webkit-touch-callout (iOS Safari specific) */
     @supports (-webkit-touch-callout: none) {
-      .modelviewer_boxed {
-        /* iOS Safari-specific fix */
-        max-width: calc(80% - 6px);
-        margin: 5px 10px;
-        margin-left: 10%;
-      }
+        .modelviewer_boxed {
+            /* iOS Safari-specific fix */
+            max-width: calc(80% - 6px);
+            margin: 10px 10px;
+            margin-left: 10%;
+            border-radius: 20px;
+            border:2px solid #ede4cf;
+        }
+
+        /* Create the simulated fixed background */
+        .post-bgimg::before {
+          content: "";
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1; /* Keeps it behind your text content */
+          /* Place your background details here */
+          background-image: var(--bg-post);
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          /* Optional: Prevents momentum scrolling glitches in older iOS Safari */
+          will-change: transform;
+        }
+
     }
 
 </style>
