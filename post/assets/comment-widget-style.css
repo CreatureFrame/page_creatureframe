@@ -82,6 +82,8 @@
     color: #CE98FB;
     border: 1px solid #CE98FB;
     border-radius: 5px;
+    
+    border-radius: 15px;
 
     background-color: var(--buttonbgcolor);
     color: var(--buttontextcolor);
