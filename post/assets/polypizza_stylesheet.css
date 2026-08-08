@@ -172,8 +172,18 @@ border of post window
 
 
 
- 
-
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  height: 100dvh;
+}
+/* body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+} */
 
 
 
@@ -660,11 +670,6 @@ rgba(255, 255, 255, 1.0) -2px 2px 0px, */
         width:45% !important;
     }
 
-    body {
-      width: 100%;
-      max-width: 100%;
-      overflow-x: hidden;
-    }
 
     /* .columnbox {
       width: 100%;
