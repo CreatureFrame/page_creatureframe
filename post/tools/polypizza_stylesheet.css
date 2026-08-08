@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Capriola&family=Lusitana:wght@400;700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300;500&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Capriola&family=Lusitana:wght@400;700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300;500&display=swap');
 
 
 /*
@@ -93,86 +93,6 @@ border of post window
    appearance: none;
    border-radius: 0;
  } */
-
-
-
- :root {
- --postheight: calc(100% - 40px);
- --postheight-margintop: 15px;
- --postwidth: 580px;
- --postwidth: 800px;
-
- --bannerstart-height: 55px;
- --bannerend-height: 55px;
-
-
- /*
- #8b694e
- #ffd889
- #ffa2a3
- #6490fd
- #66524b
- #ff5f7b
- #ffbf6d
- #faf4e9
- #c59172
- #ede4cf
- */
-
- /* unused, was edge boder of whole page */
- --palette1: #efe3cf;
- /* for main text (light #ede4cf) */
- --palette2: #2f2217;
- /* for bigtitles (and liltitles which are kinda a mess rnow) */
- --palette3: #ffd889;
- --palette3-border: #ffd889;
- --palette3-shad: #ff5f7b;
- --palette3-shadtext: none;
- /* for scrollbar */
- --palette4: #ffa2a3;
- --palette4-hover: #6490fd;
- /* and it's border */
- --palette5: #ff5f7b;
- --palette5-hover: transparent;
- /* for tinytext and tinytextbox (credits box) */
- --palette6: #faf4e9;
- --palette7: #c59172;
- /* for HRs and underlines of .minititle */
- --palette8: #c59172;
- /* border of post window */
- --palette-postborder: #ede4cf;
- --palette-postborder: #ffa2a3;
- --palette-textboxborder: #ede4cf;
- --palette-textboxshad: #ede4cf;
- --palette-urlyblock: #ede4cf;
- --palette-urlyblock-hover: #ff5f7b;
-
-
- /* relative links need to be relative to the CSS stylesheet if they aren't designated on this page.
- if using "polypizza_stylesheet.css" then use
- fixed url("../tools/polypizza_assets/bg/bg_blender_cookies.jpg");
- if using "../assets/polypizza_stylesheet.css" then use
- fixed url("../tools/polypizza_assets/bg/bg_blender_cookies.jpg");
-  */
- --bg-wholepage: fixed url("../tools/polypizza_assets/bg/bg_blender_cookies.jpg");
- --bg-post: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x20_noise0.2_exp-10per.jpg);
- /* --bg-textbox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x20_noise0.2.jpg);
- --bg-textbox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x40_noise0.4_exp15per.jpg);
- --bg-textbox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x40_noise0.4_exp10per_bright10x-10.jpg);
- --bg-textbox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x40_noise0.4_exp15per_levels3.jpg); */
- --bg-textbox: rgba(237, 228, 208, 0.6);
- --bg-codebox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x40_noise0.4_exp10per_bright10x-10.jpg);
- --bg-titlebox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x6.jpg);
- --bg-titlebox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x20_noise0.2_exp-10per_darker.jpg);
- --bg-pos: top right;
- /* contain, cover, 30%; 200px 100px; */
- --bg-size: cover;
- }
-
-
-
-
- 
 
 
 
