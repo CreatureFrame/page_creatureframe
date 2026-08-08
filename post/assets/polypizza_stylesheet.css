@@ -1,0 +1,769 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Capriola&family=Lusitana:wght@400;700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300;500&display=swap'); */
+
+
+/*
+
+color:#623008;
+#813d00
+color:#723e13;
+color:#FFDE78;
+#623008
+#f5b043
+#c59172);
+#f9b351
+#44b173
+#70331d
+#ffffff
+#623008;
+#e86363
+#53a2a6
+#c1756f
+#40adaf
+#43a8a3
+#40a89a
+#28776c
+#225b53
+#ede4cf;
+#faf4e9
+transparent
+darkseagreen
+#95705b
+#97615c
+#845653
+
+
+PRESETS FOR ROOS:
+bigtitles
+--palette3: #f5b043;
+--palette3-border: #f5b043;
+--palette3-shad: #40a89a;
+--palette3-shadtext: #28776c;
+bigtitles
+--palette3: #FFDE78;
+--palette3-border: #40a89a;
+--palette3-shad: #40a89a;
+--palette3-shadtext: #95705b;
+bigtitles
+--palette3: #FFDE78;
+--palette3-border: #f5b043;
+--palette3-shad: #f5b043;
+--palette3-shadtext: #97615c;
+
+ */
+
+
+/* PRESET FOR YELLOW PAINTERLY: */
+
+/* unused, was edge boder of whole page
+--palette1: #efe3cf;
+for main text (light #ede4cf)
+--palette2: #473627;
+for bigtitles (and liltitles which are kinda a mess rnow)
+--palette3: #623008;
+--palette3-border: #c59172;
+--palette3-shad: #c59172;
+--palette3-shadtext: none;
+for scrollbar
+--palette4: #FFDE78;
+--palette4-hover: #faf4e9;
+and it's border
+--palette5: #f5b043;
+--palette5-hover: transparent;
+for tinytext and tinytextbox (credits box)
+--palette6: #faf4e9;
+--palette7: #c59172;
+for HRs and underlines of .minititle
+--palette8: #c59172;
+border of post window
+--palette-postborder: #ede4cf;
+--palette-textboxborder: #ede4cf;
+--palette-textboxshad: #ede4cf;
+ */
+
+
+
+/* TRY TO FIX IOS */
+/* iOS sometimes forces a default border-radius */
+/* <style>
+ input[type="text"],
+ button,
+ select,
+ textarea {
+   -webkit-appearance: none;
+   appearance: none;
+   border-radius: 0;
+ } */
+
+
+
+
+/* outermostbox and columnbox set up for the whole page */
+.outermostbox
+{
+    position: fixed;
+    /* adds vignette inner shadow to whole page */
+    /* box-shadow:
+ inset rgba(0, 0, 0, 0.3) 1px 2px 25px,
+ inset rgba(0, 0, 0, 0.3) 1px 2px 15px,
+ inset rgba(0, 0, 0, 0.2) 3px 3.5px 6px; */
+    /* this as a flexbox replaces the need for the columnbox */
+
+    display: inline-flex;
+    overflow-y: auto;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+
+    width: 100%;
+    height: calc(100% - 30px);
+    min-height: 100%;
+    /* border:1px solid var(--palette1); */
+    margin: 0;
+}
+/* .columnbox{
+ align-items: center;
+ display: flex;
+ justify-content: center;
+ height:100%;
+ } */
+.postsize
+{
+    /* border:1px solid red; */
+    /* then turn on flexbox for proper floating */
+    display: flex;
+    align-content: normal;
+    align-items: normal;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+    max-width: var(--postwidth);
+    /* not needed anymore now using flexbox */
+    /* height:var(--postheight); */
+    /* margin-top:var(--postheight-margintop); */
+    /* or turn these on for full length */
+    height: 100%;
+    margin: 0;
+    padding: auto;
+}
+.post-cohostbarrier
+{
+    height: var(--postheight);
+
+    border: 1px solid var(--palette-postborder);
+    border: 2px solid var(--palette-postborder);
+    /* margin:0px; */
+    /* padding:0px; */
+    /* or turn these on for full length */
+    /* height:100%; */
+    /* margin:0px; */
+    /* border:2px solid green; */
+}
+
+
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BACKGROUNDS */
+/* . . . . . . . . . . . . . . . . . . . . . */
+.post-bgimg
+{
+    background: var(--bg-post);
+    background-position: var(--bg-pos);
+    background-size: var(--bg-size);
+    /* border: 2px solid lime; */
+}
+
+/* textbox-bgimg not used anymore */
+.textbox
+{
+    /* font-size:9pt; */
+    line-height: 135%;
+
+    position: relative;
+    z-index: 5;
+
+    padding: 0 20px;
+
+    border: 1px solid var(--palette-textboxborder);
+    background: var(--bg-textbox);
+    background-position: var(--bg-pos);
+    background-size: var(--bg-size);
+    box-shadow: 5px 3px 0 var(--palette-textboxshad);
+    box-shadow: rgba(0, 0, 0, .3) 1px 2px 3px,
+    rgba(0, 0, 0, .2) 0 2.5px 6px;
+}
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BANNER AT START AND END OF POST */
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* banner-img: this has replaced "bannerstart-img" in past posts  */
+
+/* margin-top: -670px !important; overflow-x:hidden; width:100%; margin-left:-1px; */
+
+
+
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* TEXT STYLES */
+/* . . . . . . . . . . . . . . . . . . . . . */
+.font-styling
+{
+    font: 10pt 'Verdana', 'Courier', 'Helvetica', sans-serif;
+    font: 13pt 'Raleway', sans-serif;
+    font: 13pt 'Space Grotesk', sans-serif;
+    /* font: 12pt "Verdana", "Courier", "Helvetica", sans-serif; */
+    font-weight: 300;
+    font-weight: 300;
+    font-style: normal;
+
+    text-align: justify;
+    letter-spacing: .85px;
+    letter-spacing: 1.05px;
+    letter-spacing: .25px;
+
+    color: var(--palette2);
+
+    font-optical-sizing: auto;
+    font-optical-sizing: auto;
+    /* letter-spacing: normal; */
+}
+
+/* for the top h1 title box, should probs replace textbox w whatever main text is using, or rmv these altogether if not needed */
+.bigtitle
+{
+    /* font-family: courier; */
+    /* font-family: Capriola, courier; */
+    /* font-size: 28pt; */
+    font: 28pt 'Capriola', 'Verdana', 'Courier', 'Raleway', 'Space Grotesk', 'Helvetica', sans-serif;
+    /* font: 28pt 'Capriola', sans-serif; */
+    font-weight: 600;
+    line-height: 114%;
+    letter-spacing: .45px;
+    text-decoration: none;
+    position: relative;
+    z-index: 15;
+
+    margin: 0;
+    margin: 15px 40px;
+    padding: 10px 17px;
+    padding: 19px;
+
+    /* color: var(--palette3); */
+
+    color: var(--palette3) !important;
+    /* filter: drop-shadow(3px 0px 0px #623008); */
+    border: none;
+    border: 1px solid var(--palette3-border);
+    /* for orange bubble */
+    border-radius: 8px;
+    background: transparent;
+    background: var(--bg-titlebox);
+    background-position: var(--bg-pos);
+    background-size: var(--bg-size);
+    box-shadow: none;
+    /* filter: drop-shadow(3px 0px 0px #623008); */
+    /* softer drop shadow */
+    box-shadow: rgba(0, 0, 0, .2) 2px 4px 12px,
+    rgba(0, 0, 0, .1) 1px 3px 8px,
+    rgba(0, 0, 0, .2) 0 2.5px 6px;
+    /* for hard drop shadow */
+    /* box-shadow: 5px 3px 0px #FFDE78; */
+    box-shadow: 5px 5px 0 var(--palette3-shad);
+    /* font-family: "Lusitana", serif; */
+    /* font-weight: 400; */
+    /* font-weight: 700; */
+    text-shadow: 3px 3px 0 var(--palette3-shadtext),
+    rgba(0, 0, 0, .6) -4px 2px 0px;
+
+    filter: none;
+    /* EXAMPLES:
+ text-shadow:
+   1px 1px 2px red,
+   0 0 1em blue,
+   0 0 0.2em blue;
+ text-shadow:
+   3px 3px 0px #623008,
+   -3px -1px 10px #623008;
+ text-shadow:
+   3px 3px 0px #623008,
+   rgba(0, 0, 0, 0.2) -4px 2px 3px;
+ */
+}
+
+
+.liltitle
+{
+    font-size: 19pt;
+
+    line-height: 134%;
+    letter-spacing: 1.45px;
+
+    width: auto;
+    /* margin: 0 22% -17px 22%; */
+    padding: 15px 21px;
+    /* margin:0% 10% -17px 10%; */
+
+    color: var(--palette3) !important;
+    border: 1px solid var(--palette3);
+    border-radius: 8px;
+    background: var(--bg-titlebox);
+    background-position: var(--bg-pos);
+    background-size: var(--bg-size);
+    /* box-shadow: 5px 3px 0px #c59172; */
+    box-shadow: 5px 3px 0 var(--palette5);
+    /* background: none; */
+
+    filter: none;
+}
+
+.bigbutton:hover,
+.lilbutton:hover
+{
+    /* color: #FFDE78 !important; */
+    color: var(--palette4) !important;
+    border: 1px solid #fff;
+    /* background: #623008; */
+    background: var(--palette6);
+    box-shadow: 5px 3px 0 var(--palette1);
+}
+
+.buttonholder
+{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    /* flex-flow: column; */
+    flex-direction: column;
+
+    height: 100%;
+    padding: 15px;
+
+    background-color: #bbdefb;
+
+    gap: 5px;
+}
+
+/* .buttonholder > div{
+   background: #ffecb3;
+   border: 3px solid #ffcc80;
+   border-radius: 5px;
+   padding: 8px;
+ } */
+
+.urlyblock
+{
+    font-weight: 600;
+
+    padding: 0 3px;
+
+    border: none;
+    border-top: 2px solid  var(--palette-urlyblock);
+    /* border-bottom:2px solid #529eaa;
+ 	border-top:2px solid #529eaa; */
+    border-bottom: 2px solid  var(--palette-urlyblock);
+    background: transparent;
+}
+
+.urlyblock:hover
+{
+    padding: 0 3px;
+
+    color: var(--palette6);
+    border: none;
+    border-top: 2px solid  var(--palette-urlyblock-hover);
+    /* border-bottom:2px solid #f5b043;
+ 	border-top:2px solid #f5b043; */
+    border-bottom: 2px solid  var(--palette-urlyblock-hover);
+    background: #3c5186;
+    background: rgba(220, 225, 210, .5);
+    background: var(--palette2);
+}
+
+.tinytext
+{
+    font: 8pt 'Tahoma', 'DM Mono', 'Courier', 'Verdana', 'Helvetica', sans-serif;
+    font: 9.5pt 'Space Grotesk', sans-serif;
+    font: 9pt 'Raleway', sans-serif;
+    font-weight: 500;
+    font-weight: 100;
+    /* letter-spacing: normal; */
+    line-height: 125%;
+
+    text-align: justify;
+    letter-spacing: .45px;
+    letter-spacing: .5px;
+
+    color: var(--palette6);
+
+    font-optical-sizing: auto;
+}
+/* for credits box at end */
+.tinytextbox
+{
+    color: var(--palette6);
+}
+.minititle
+{
+    border: none;
+    border-bottom: 1px solid var(--palette8);
+}
+
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BULLET POINTS FOR LISTS */
+/* . . . . . . . . . . . . . . . . . . . . . */
+ul {
+margin: 0 0 0 22px;
+font: 9pt Verdana;
+letter-spacing: 1.5px;
+font: 10pt "Space Grotesk", sans-serif;
+font-optical-sizing: auto;
+font-weight: 300;
+letter-spacing: 0.45px;
+}
+.list-notes li {
+background: url("../assets/deco/icons/notebook.gif") no-repeat 7px 7px transparent;
+list-style-type: none;
+margin: 0;
+padding: 8px 20px 0px 39px;
+vertical-align: middle;
+margin-top: 7px;
+line-height: 140%;
+}
+
+
+body{
+background: var(--bg-wholepage);
+background-position: var(--bg-pos);
+background-size: var(--bg-size);
+}
+
+/* - - - - - - - - - - - -
+        HR STYLE
+- - - - - - - - - - - -  */
+
+/* hr{
+margin:15px 0;
+border-bottom:none;
+border-top:3px solid #529eac;
+padding:0;
+width:100%
+} */
+
+.post-hr-s,hr{
+margin:10px 10%;
+border-bottom:none;
+border-top:3px solid var(--palette4-hover);
+border-top:3px solid var(--palette4);
+/* instead do this way */
+border:none;
+height: 8px;
+background-color: var(--palette4);
+border-radius: 5px;
+padding:0;
+width:80%;
+/* box-shadow:
+    3px 3px 0 var(--palette4-hover),
+    5px 5px 0 var(--palette4),
+    7px 7px 0 var(--palette4-hover); */
+box-shadow:
+    0px 3px 0 var(--palette4-hover);
+}
+
+h2{
+border:none;
+border-bottom:none;
+}
+
+
+
+/* - - - - - - - - - - - -
+        SCROLLBARS
+- - - - - - - - - - - -  */
+/* this one is in the stylesheets and sets up the shadows */
+/* .scrollbox{ */
+    /* over-the-top shadow */
+	/* box-shadow:rgba(0, 0, 0, 0.14) 1px 3px 15px,rgba(0, 0, 0, 0.22) 0px 2.5px 5px,rgba(122, 122, 122, 0.32) 3px 3px 0px,rgba(122, 85, 85, 0.35) 1px 1px 0.3px; */
+    /* for firefox, testing. NOPE it overrides the custom nice one so fuck it! */
+    /* overflow: scroll;
+    scrollbar-color: red orange;
+    scrollbar-width: thin; */
+/* } */
+
+
+/* ::-webkit-scrollbar{
+width:1.75em;
+box-shadow:
+inset 0.0em 0.0em 0.7em 0.025em rgba(0, 0, 0, 0.1),
+rgba(0, 0, 0, 0.1) 1px 2px 10px,
+rgba(0, 0, 0, 0.1) 0px 2.5px 10px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 0.9em;
+    border:none;
+} */
+
+
+
+.scrollbox-wheel{
+line-height:1.7em;
+overflow-y:auto;
+overflow-x:hidden;
+height:100%;
+width:100%;
+margin: auto;
+text-align:justify;
+}
+.scrollbox-wheel::-webkit-scrollbar{
+width:1.1em;
+width:1.75em !important;
+/* width:1.60em; */
+/* box-shadow:inset 0 0 0.9em 0.1em var(--palette6); */
+/* border:2px solid yellow; */
+box-shadow:
+inset 0.0em 0.0em 0.7em 0.025em rgba(0, 0, 0, 0.1),
+rgba(0, 0, 0, 0.1) 1px 2px 10px,
+rgba(0, 0, 0, 0.1) 0px 2.5px 10px;
+}
+.scrollbox-wheel::-webkit-scrollbar-thumb{
+border:0.45em solid transparent;
+border:.35em solid var(--palette5);
+box-shadow:inset 0 0 0.5em 1.0em var(--palette4);
+border-radius:0.9em;
+}
+/* for solid drop shadow
+rgba(255, 255, 255, 1.0) -2px 2px 0px, */
+.scrollbox-wheel::-webkit-scrollbar-thumb:hover {
+    /* background: var(--palette4); */
+    box-shadow:inset 0 0 0.5em 1.0em var(--palette4-hover);
+    filter: brightness(1.1);
+    border: 0.3em solid var(--palette5-hover);
+}
+
+/* dont really need this one for this page yet do i */
+/* .scrollbox-wheel::-webkit-scrollbar-track {
+    background: var(--palette5);
+    border-radius: 0.9em;
+    border:1px solid aqua;
+} */
+
+
+/** Mozilla Firefox ONLY */
+@-moz-document url-prefix(){
+    .scrollbox-wheel{
+        scrollbar-color: var(--palette4) var(--palette5);
+    }
+}
+
+
+/* Mobile-first approach - hide side images on smaller screens */
+@media only screen and (max-width: 768px) {
+
+    /* CUSTOM WINDOW AND IMAGE CHANGES */
+    .photoborder{
+        padding:6px !important;
+    }
+
+    /* for left/right floating images, to make them fullwidth and inline */
+    .mimageinline{
+        width:100% !important;
+        margin: 10px 0px !important;
+        position:inherit !important;
+        rotate: 0deg !important;
+        float:none !important;
+    }
+    /* for left/right floating images, to make them smaller on their side */
+    .mimagesmaller{
+        width:45% !important;
+    }
+
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* .columnbox {
+      width: 100%;
+      padding: 0;
+    } */
+
+    .postsize{
+    max-width:100%;
+    width:100%;
+    /* border: 2px solid lime; */
+    /* max-width:calc(100% - 30px); */
+    /* width:calc(100% - 30px); */
+    padding:none;
+    height:var(--postheight);
+    margin:0px;
+    height:100%;
+    box-sizing: border-box;
+    }
+
+    .post-cohostbarrier {
+    border:1px solid var(--palette-postborder);
+    padding:0px;
+    height:100%;
+    margin:0px;
+    }
+
+    /* Adjust font size for mobile */
+    .bigtitle {
+      font-size: 21pt;
+    }
+
+    .font-styling {
+      font-size: 10pt;
+      font-size: 15pt;
+      padding: 10px;
+    }
+}
+/* end of mobile section
+~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+
+
+/* - - - - - - - - - - - -
+        BANNERS
+- - - - - - - - - - - -  */
+.bannerstart-top{
+top:0px;
+overflow:hidden;
+position:relative;
+z-index:60;
+pointer-events:none;
+margin-top:0px;
+margin-bottom:calc(var(--bannerstart-height) * -1);
+height:var(--bannerstart-height);
+object-fit:cover;
+}
+/* currently used for start and end banners, w end's own style adding "rotate:180deg;" */
+.bannerstart-img2{
+margin:0px 0px;
+pointer-events:none;
+object-fit:cover;
+overflow:hidden;
+width:inherit;
+height:var(--bannerstart-height);
+max-width:100%;
+width:100%;
+filter: drop-shadow(0 0 0.45rem rgba(0, 0, 0, 0.6));
+image-rendering:pixelated;
+}
+
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* BANNER AT START AND END OF POST */
+/* . . . . . . . . . . . . . . . . . . . . . */
+/* banner-img: this has replaced "bannerstart-img" in past posts  */
+.banner-start{
+    margin-top:30px;
+    filter: none;
+    filter: drop-shadow(-2px 2px 3px #813d00);
+    filter: drop-shadow(-2px 2px 0.5px #333);
+    filter: drop-shadow(-2px 2px 3.7px rgba(0, 0, 0, 0.5));
+}
+.bannerend-inside{
+    height:100%;
+    margin-top: 0px;
+}
+/* these two were used for end banner */
+.banner-img{
+    min-width: 1000px;
+    max-width: 1000px;
+}
+.banner-end{
+    filter: none;
+    filter: drop-shadow(4px 5px 0px #f5b043);
+    /* filter: drop-shadow(-2px 2px 6.7px rgba(0, 0, 0, 0.5)); */
+    rotate:180deg;
+}
+/* BANNER STYLE FROM ACNL */
+.bannerstart-contain {
+margin-top:calc(var(--bannerend-height) * -1);
+height:var(--bannerend-height);
+}
+
+
+
+.codebox{
+height:300px;
+overflow-x:hidden;
+overflow-y:auto
+}
+.codebox{
+border:1px solid #c59172;
+border:2px solid #6490fd;
+width:80%;
+margin:0 10% 0 10%;
+padding:10px;
+padding:10px 22px;
+border-radius:3px;
+font:8pt Verdana,Courier,Helvetica,sans-serif;
+font-weight:400;
+line-height:105%;
+letter-spacing:1.5px;
+color:#623008;
+text-align:left;
+/* box-shadow:rgba(50,50,93,.25) 0 2px 5px -1px,rgba(0,0,0,.3) 0 1px 3px -1px; */
+/* box-shadow:rgba(0,0,0,.4) 0 2px 4px,rgba(0,0,0,.3) 0 7px 13px -3px,rgba(0,0,0,.2) 0 -3px 0 inset; */
+box-shadow:
+rgba(0,0,0,.4) 0 2px 4px,
+rgba(255, 162, 163, 1.0) 4px 4px 0px,
+rgba(255, 96, 124, 1.0) 6px 6px 0px,
+rgba(0,0,0,.3) 0 7px 13px -3px,
+rgba(0,0,0,.2) 0 -3px 0 inset;
+
+
+/* background:fixed url(../../../assets/backgrounds/backgrounds_painty_01_yellow_blur-0x12_orange.jpg); */
+/* background-position:bottom left; */
+/* background-position:0 0; */
+/* background: rgba(29, 33, 46, 0.65); */
+background: rgba(33, 19, 16, 0.65);
+font:8pt Courier,Helvetica,monospace;
+color:#ede4cf;
+font-weight:500;
+text-align:left
+}
+
+.codebox1line{
+margin:20px 10%!important;
+width:80%;
+height:auto;
+padding-bottom:14px
+}
+
+
+
+/* FOR COMMENT DROPDOWN */
+.revealdetails{
+    margin:0px 25px 30px 25px;
+    color:#5E2C49;
+    color:#ffffff;
+    font-family:courier;
+    position: relative;
+    z-index:1;
+    border: 2px solid #fff;
+    padding:11px;
+
+    /* margin-bottom: 0px; */
+    /* margin-left: -1px; */
+    /* padding: 7px 7px; */
+    /* background: var(--commentsbg); */
+    border: var(--commentsreplyborder);
+    border-radius: 4px;
+
+    font: 17pt "Capriola",  "Space Grotesk", "Raleway", sans-serif, courier;
+    /* text-decoration: none; */
+    letter-spacing: 0.8px !important;
+
+    box-shadow:
+    rgba(255, 162, 163, 1.0) 4px 4px 0px,
+    rgba(255, 96, 124, 1.0) 7px 7px 0px,
+    rgba(100, 144, 252, 1.0) 3px 3px 0 inset;
+}

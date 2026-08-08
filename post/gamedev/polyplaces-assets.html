@@ -8,9 +8,7 @@
 <!-- <link data-chunk="client" rel="stylesheet" href="polypizza_stylesheet.css"> -->
 <!-- <link data-chunk="client" rel="stylesheet" href="../3d/jazzcat_style.css"> -->
 <meta charset="utf-8">
-<!-- <meta name="viewport" content="width=device-width"> -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width">
 <link rel="icon" type="image/png" href="assets/icons/green-computer.gif">
 <title>
     model-viewer and poly.pizza
@@ -144,7 +142,9 @@ fixed url("../tools/polypizza_assets/bg/bg_blender_cookies.jpg");
 --bg-textbox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x40_noise0.4_exp15per.jpg);
 --bg-textbox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x40_noise0.4_exp10per_bright10x-10.jpg);
 --bg-textbox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x40_noise0.4_exp15per_levels3.jpg); */
---bg-textbox: rgba(237, 228, 208, 0.6);
+--bg-textbox: rgba(237, 228, 208, 0.55);
+--bg-textbox: rgba(215, 208, 192, 0.55);
+--bg-textbox: rgba(237, 229, 211, 0.6);
 --bg-codebox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x40_noise0.4_exp10per_bright10x-10.jpg);
 --bg-titlebox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x6.jpg);
 --bg-titlebox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x20_noise0.2_exp-10per_darker.jpg);
@@ -219,7 +219,7 @@ adding 3D models to webpages
 <div style="height:50px;"></div>
 
 
-<!-- https://cdn.polyhaven.com/asset_img/primary/forest_slope.png?height=760&quality=95 -->
+
 <!-- pre codebox (add &lt; and &gt; to replace ) -->
 <pre class="codebox scrollbox-wheel"><code>
 &lt;div class="card"&gt;
@@ -230,7 +230,7 @@ poster="polypizza_assets/modelview/bg/loading.png"
 animation-name="idle"
 
 environment-image="https://static.poly.pizza/hdr/BG.hdr"
-skybox-image="https://cdn.polyhaven.com/asset_img/primary/cannon.png?height=760&quality=95"
+skybox-image="https://cdn.polyhaven.com/asset_img/primary/forest_slope.png?height=760&quality=95"
 skybox-height="1.5m"
 
 shadow-intensity="1.5"
@@ -438,13 +438,6 @@ scale="30.0 30.0 30.0"
  -->
 
 
-
-
-
-
-
-
-
 <style>
     #anim-select{
         background-color: #ffc800;
@@ -473,43 +466,41 @@ scale="30.0 30.0 30.0"
 </style>
  <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
  <!-- <br><br> chicken on bg <br> -->
-  <!-- src="https://creatureframe.com/post/tools/polypizza_assets/modelview/models/Chicken_ANIM_SceneObject.gltf"
- animation-crossfade-duration="500"
--->
- <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
- <div class="card">
- <model-viewer id="animselector"
- src="https://creatureframe.com/post/tools/polypizza_assets/modelview/models/Chicken_ANIM_SceneObject.glb"
- alt="chicken"
- poster="polypizza_assets/modelview/bg/loading.png"
- animation-name="idle"
+  <!-- src="https://creatureframe.com/post/tools/polypizza_assets/modelview/models/Chicken_ANIM_SceneObject.gltf" -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+<div class="card">
+<model-viewer id="animselector"
+src="https://creatureframe.com/post/tools/polypizza_assets/modelview/models/Chicken_ANIM_SceneObject.glb"
+alt="chicken"
+poster="polypizza_assets/modelview/bg/loading.png"
+animation-name="idle"
 
- environment-image="https://static.poly.pizza/hdr/BG.hdr"
- skybox-image="https://cdn.polyhaven.com/asset_img/primary/forest_slope.png?height=760&quality=95"
- skybox-height="1.5m"
+environment-image="https://static.poly.pizza/hdr/BG.hdr"
+skybox-image="https://cdn.polyhaven.com/asset_img/primary/forest_slope.png?height=760&quality=95"
+skybox-height="1.5m"
 
- shadow-intensity="1.5"
- shadow-softness="0.5"
- scale="50.0 50.0 50.0"
+shadow-intensity="1.5"
+shadow-softness="0.5"
+scale="50.0 50.0 50.0"
 
- camera-controls="true"
- disable-zoom disable-tap
+camera-controls="true"
+disable-zoom disable-tap
 
- camera-orbit="1.00238rad 3.42971rad 10.06749715129365093m"
- camera-orbit="45deg 55deg 4m"
- camera-target="0m 0.75m 0m"
- max-camera-orbit="auto 90deg auto"
- field-of-view="52deg"
- max-field-of-view="52deg"
+camera-orbit="1.00238rad 3.42971rad 10.06749715129365093m"
+camera-orbit="45deg 55deg 4m"
+camera-target="0m 0.75m 0m"
+max-camera-orbit="auto 90deg auto"
+field-of-view="52deg"
+max-field-of-view="52deg"
 
- ar-status="not-presenting"
- data-js-focus-visible=""
- autoplay
+ar-status="not-presenting"
+data-js-focus-visible=""
+autoplay
 animation-crossfade-duration="100"
- class="modelviewer_boxed"
- interaction-prompt="auto"
- loading="eager"
- >
+class="modelviewer_boxed"
+interaction-prompt="auto"
+loading="eager"
+>
 <!-- - - - - - - - - -  -->
 <select id="anim-select">
 <option value="idle">idle</option>
@@ -547,9 +538,6 @@ Chicken_ANIM_SceneObject_unlit.glb
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 <!-- <br><br> chicken  TEXTURE TEST <br> -->
  <!-- src="https://creatureframe.com/post/tools/polypizza_assets/modelview/models/Chicken_ANIM_SceneObject.gltf" -->
- <!-- https://cdn.polyhaven.com/asset_img/primary/phalzer_forest_01.png?height=760&quality=95
-https://cdn.polyhaven.com/asset_img/primary/cannon.png?height=760&quality=95
- -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  -->
 <div class="card">
 <model-viewer
