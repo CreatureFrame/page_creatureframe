@@ -688,15 +688,19 @@ rgba(255, 255, 255, 1.0) -2px 2px 0px, */
     margin:0px;
     height:100%;
     box-sizing: border-box;
-    /* border:2px solid red; */
+
+    border:2px solid cyan;
     height: 100dvh;
     }
 
     .post-cohostbarrier {
     border:1px solid var(--palette-postborder);
     padding:0px;
-    height:100%;
     margin:0px;
+    height:100%;
+
+    height: 100dvh;
+    border:2px solid red;
     }
 
     /* Adjust font size for mobile */
