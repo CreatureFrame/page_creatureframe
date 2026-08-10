@@ -17,9 +17,9 @@
 <!-- <link data-chunk="client" rel="stylesheet" href="../assets/combined.css"> -->
 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <link rel="icon" type="image/png" href="assets/icons/green-computer.gif">
-<title>posting</title>
+<title>rigging the cat scene</title>
 
 <!-- RSS -->
 <link href="https://creatureframe.com/rss.xml" rel="alternate" type="application/rss+xml" title="the creatureframe RSS feed">
@@ -496,6 +496,7 @@ border:0.45em solid transparent;
 border:.2em solid #fff;
 box-shadow:inset 0 0 0.5em 0.8em #5770b0;
 border-radius:0.9em;
+height:20%;
 }
 
 /** Mozilla Firefox ONLY */
@@ -516,6 +517,168 @@ border-radius:0.9em;
     /* margin-top:-o-calc(var(--endbanner-size) * -1); */
     height:var(--endbanner-size);
 }
+
+
+
+
+/* TO ADD BUTTONS TO BOTTOM - hiding them when not mobile */
+/* GO BACK BUTTON IN CORNER */
+.goback-mobile {
+    display:none;
+}
+
+/* GO FORWARD BUTTON IN CORNER */
+.goforward-mobile {
+    display:none;
+}
+
+/* Mobile-first approach - hide side images on smaller screens */
+@media only screen and (max-width: 768px) {
+
+
+    /* outermostbox
+    columnbox
+    postsize
+    post-cohostbarrier
+    post-background-full post-bgimg bgimg-alignment final
+    scrollbox */
+
+    .outermostbox{
+        height: 100vh;
+        height: 100dvh;
+        /* height:calc(100dvh - 10px); */
+        margin:0;
+        padding:0;
+        overflow-y: hidden;
+    }
+
+    .postsize{
+    max-width:100%;
+    width:100%;
+    /* border: 2px solid lime; */
+    /* max-width:calc(100% - 30px); */
+    /* width:calc(100% - 30px); */
+    padding:none;
+    height:var(--postheight);
+    margin:0;
+    padding:0;
+    height:100%;
+    box-sizing: border-box;
+
+    height: 100vh;
+    height: 100dvh;
+    }
+
+    .post-cohostbarrier {
+    border:1px solid var(--palette-postborder);
+    padding:0px;
+    padding:0;
+    height:100%;
+    height: 100vh;
+    height: 100dvh;
+    /* height:calc(100dvh - 10px); */
+    /* border:2px solid cyan; */
+    }
+
+    /* .scrollbox-wheel{
+    margin-top:40px;
+    margin-bottom:-40px;
+    } */
+    .scrollbox-wheel::-webkit-scrollbar{
+    width:2.25em;
+    }
+    .scrollbox-wheel::-webkit-scrollbar-thumb{
+    border:.3em solid #fff;
+    box-shadow:inset 0 0 0.5em 0.0em #5770b0;
+    box-shadow:inset 0 0 0.5em 0.8em #5770b0;
+    border-radius:1.5em;
+    height:20%;
+    }
+
+    /* Adjust font size for mobile */
+    .bigtitle {
+      font-size: 21pt;
+    }
+    .font-styling {
+      font-size: 15pt;
+      padding: 10px;
+      color:#dbf2f1;
+    }
+    #postsize{
+        height: 100vh;
+        height: 100dvh;
+        margin-top:0;
+        margin:0;
+        padding:0;
+    }
+
+    /* GO BACK BUTTON IN CORNER */
+    .goback {
+        /* top:20px;
+        left:20px;
+        width:30px;
+        height:30px; */
+        display:none;
+    }
+
+    /* GO FORWARD BUTTON IN CORNER */
+    .goforward {
+        /* top:20px;
+        right:60px; */
+        display:none;
+    }
+
+
+    /* GO BACK BUTTON IN CORNER */
+    .goback-mobile {
+        display:none;
+        display:flex;
+    }
+
+    /* GO FORWARD BUTTON IN CORNER */
+    .goforward-mobile {
+        display:none;
+        display:flex;
+    }
+
+.button-mobile {
+    background: fixed url("https://tools.creatureframe.com/assets/eachpost/jazzcat/bg_wallflat_invert2_blur0x10.jpg");
+    border-radius: 8px;
+    border:1px solid #5770b0;
+    box-shadow: 5px 3px 0px #5770b0;
+    color:#3c5186 !important;
+    font-family: courier;
+    font-size: 18pt;
+    font-weight: 600;
+    line-height: 90%;
+    margin:10px;
+    padding:14px 17px;
+    text-decoration: none;
+}
+
+.button-mobile:hover {
+box-shadow: 5px 3px 0px #FFDE78;
+background: #5770b0;
+color: #fcc724 !important;
+border:1px solid #fff;
+}
+
+.flexbox-mobile {
+    display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      align-content: stretch;
+      gap: 8px;
+}
+
+}
+/* end of mobile section
+~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+
 </style>
 <!-- * * * * * * * * * * * * * * * * * * * *  -->
 
@@ -943,6 +1106,24 @@ style="max-width:740px;"
 <!-- cat_catfinal.gif -->
 <!-- cat_catfinal_x2_2000k.mp4 -->
 <!-- cat_final_720px_sigged_hald_15fpsR15.mp4 -->
+
+<br>
+
+
+<!--  ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼  -->
+<!-- start flex container for 2 buttons -->
+<div class="flexbox-mobile">
+<!-- bigtitle liltitle bigbutton -->
+<a href="https://creatureframe.com/post/"><div class="goback-mobile button-mobile" align="center">
+back to posts
+</div></a>
+
+<a href="jazzcat_3_toys.html"><div class="goforward-mobile button-mobile" align="center">
+next: cat toys
+</div></a>
+</div>
+<!-- end flex container for 2 buttons -->
+<!-- ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ -->
 
 <br>
 
