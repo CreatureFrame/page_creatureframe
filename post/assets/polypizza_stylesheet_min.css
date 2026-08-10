@@ -146,7 +146,6 @@ border of post window
  /* for HRs and underlines of .minititle */
  --palette8: #c59172;
  /* border of post window */
- --palette-postborder: #ede4cf;
  --palette-postborder: #ffa2a3;
  --palette-textboxborder: #ede4cf;
  --palette-textboxshad: #ede4cf;
@@ -162,10 +161,7 @@ border of post window
   */
  --bg-wholepage: fixed url("../tools/polypizza_assets/bg/bg_blender_cookies.jpg");
  --bg-post: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x20_noise0.2_exp-10per.jpg);
- /* --bg-textbox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x20_noise0.2.jpg);
- --bg-textbox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x40_noise0.4_exp15per.jpg);
- --bg-textbox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x40_noise0.4_exp10per_bright10x-10.jpg);
- --bg-textbox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x40_noise0.4_exp15per_levels3.jpg); */
+ --bg-textbox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x40_noise0.4_exp15per_levels3.jpg); 
  --bg-textbox: rgba(237, 228, 208, 0.6);
  --bg-codebox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x40_noise0.4_exp10per_bright10x-10.jpg);
  --bg-titlebox: fixed url(../tools/polypizza_assets/bg/bg_blender_cookies_blur0x6.jpg);
@@ -174,6 +170,39 @@ border of post window
  /* contain, cover, 30%; 200px 100px; */
  --bg-size: cover;
  }
+
+
+
+/* FROM ACNL MIN  */
+/* . . . . . . . . . . . . . . . . . . . . . */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+}
+html,
+:host {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+  tab-size: 4;
+  /* 3 */
+  font-family: Atkinson Hyperlegible, ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
+  font-variation-settings: normal;
+  /* 6 */
+  -webkit-tap-highlight-color: transparent;
+  /* 7 */
+}
+/* . . . . . . . . . . . . . . . . . . . . . */
 
 
 
@@ -192,23 +221,10 @@ html, body {
   background-position: var(--bg-pos);
   background-size: var(--bg-size);
 }
-/* body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-} */
-
-/* body{
-background-color: #529eac;
-background: var(--bg-wholepage);
-background-position: var(--bg-pos);
-background-size: var(--bg-size);
-} */
 
 
 /* outermostbox and columnbox set up for the whole page */
-.outermostbox
-{
+.outermostbox {
     position: fixed;
     /* adds vignette inner shadow to whole page */
     /* box-shadow:
@@ -237,8 +253,8 @@ background-size: var(--bg-size);
  justify-content: center;
  height:100%;
  } */
-.postsize
-{
+
+.postsize {
     /* border:1px solid red; */
     /* then turn on flexbox for proper floating */
     display: flex;
@@ -723,6 +739,7 @@ rgba(255, 255, 255, 1.0) -2px 2px 0px, */
     }
 
     .font-styling {
+      font-size: 10pt;
       font-size: 15pt;
       padding: 10px;
     }
